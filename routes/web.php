@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{erro?}','LoginController@index')->name('login');
+Route::post('/', 'LoginController@autenticar')->name('login');
+
+Route::middleware('login')->prefix('loged')->group(function (){
+    Route::get('/home','HomeController@index')->name('home');
 });
