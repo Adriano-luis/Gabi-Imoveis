@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+    return redirect()->route('login');
+});
 
-Route::get('/{erro?}','LoginController@index')->name('login');
-Route::post('/', 'LoginController@autenticar')->name('login');
+Route::get('/login/{erro?}','LoginController@index')->name('login');
+Route::post('/login', 'LoginController@autenticar')->name('login');
 
 Route::middleware('login')->prefix('loged')->group(function (){
     Route::get('/home','HomeController@index')->name('home');
