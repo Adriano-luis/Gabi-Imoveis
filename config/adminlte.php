@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/logged/home',
     'logout_url' => 'logout',
     'login_url' => '/login',
     'remember' => null,
@@ -239,24 +239,28 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'Imóveisphp'],
         [
-            'text'        => 'pages',
+            'text'        => 'Lista de Imóveis',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Cadastrar Imóvel',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            //'label'       => 4,
+            //'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'Adicionar Gerenciador',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
