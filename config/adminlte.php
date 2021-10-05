@@ -46,8 +46,8 @@ return [
     */
 
     'logo' => '<b>Gabi</b>Imóveis',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img' => 'assets/images/logo.svg',//'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img_class' => 'brand-image', //img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Gabi Imóveis',
@@ -230,10 +230,10 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type'         => '',
             'topnav_right' => true,
         ],
 
@@ -251,9 +251,9 @@ return [
 
         [
             'text'        => 'Home',
-            'url'         => 'admin/home',
+            'url'         => 'logged/home',
             'icon'        => 'fas fa-home',
-            'active'      => ['home', 'content', 'content*', 'regex:@^content/[0-9]+$@']
+            //'active'      => ['home', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -261,7 +261,7 @@ return [
             'text'        => 'Cliente-modal',
             'url'         => 'admin/cliente',
             'icon'        => 'fas fa-user',
-            'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
+            //'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -272,11 +272,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Cadastrar imóvel',
-                    'url'  => 'menu/child1',
+                    'url'  => 'logged/locacao/cadastrar-imovel',
                 ],
                 [
                     'text' => 'Cadastrar cliente',
-                    'url'  => 'menu/child1',
+                    'url'  => 'logged/locacao/cadastrar-cliente',
                 ],
             ],
         ],
@@ -287,11 +287,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Cadastrar imóvel',
-                    'url'  => 'menu/child1',
+                    'url'  => 'logged/venda/cadastrar-imovel',
                 ],
                 [
                     'text' => 'Cadastrar cliente',
-                    'url'  => 'menu/child1',
+                    'url'  => 'logged/venda/cadastrar-cliente',
                 ],
             ],
         ],
