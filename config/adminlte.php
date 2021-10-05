@@ -278,10 +278,6 @@ return [
                     'text' => 'Cadastrar cliente',
                     'url'  => 'menu/child1',
                 ],
-                [
-                    'text' => 'Locar imóvel',
-                    'url'  => 'menu/child2',
-                ],
             ],
         ],
 
@@ -296,10 +292,6 @@ return [
                 [
                     'text' => 'Cadastrar cliente',
                     'url'  => 'menu/child1',
-                ],
-                [
-                    'text' => 'vender imóvel',
-                    'url'  => 'menu/child2',
                 ],
             ],
         ],
