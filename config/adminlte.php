@@ -243,22 +243,32 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Imóveisphp'],
+
+        [
+        'header'  => 'Funcionalidades',
+        'classes'  => 'text-yellow text-bold',
+        ],
+
         [
             'text'        => 'Lista de Imóveis',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
+            'url'         => 'admin/imoveis',
+            'icon'        => 'fas fa-home',
+            'active'      => ['imoveis', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
         [
             'text'        => 'Cadastrar Imóvel',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
+            'url'         => 'admin/cadastro',
+            'icon'        => 'fas fa-list',
+            'active'      => ['cadastro', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        [
+            'header'   => 'account_settings',
+            'classes'  => 'text-yellow text-bold',
+        ],
         [
             'text' => 'Adicionar Gerenciador',
             'url'  => 'admin/settings',
@@ -269,45 +279,11 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+        
+        ['header' => 'labels',
+         'classes'  => 'text-yellow text-bold',
         ],
-        ['header' => 'labels'],
+        
         [
             'text'       => 'important',
             'icon_color' => 'red',
