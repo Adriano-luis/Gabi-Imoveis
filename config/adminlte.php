@@ -265,6 +265,45 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
+
+        [
+            'text'    => 'Locação',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Cadastrar imóvel',
+                    'url'  => 'menu/child1',
+                ],
+                [
+                    'text' => 'Cadastrar Cliente',
+                    'url'  => 'menu/child1',
+                ],
+                [
+                    'text' => 'Locar imóvel',
+                    'url'  => 'menu/child2',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Venda',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Cadastrar imóvel',
+                    'url'  => 'menu/child1',
+                ],
+                [
+                    'text' => 'Cadastrar Cliente',
+                    'url'  => 'menu/child1',
+                ],
+                [
+                    'text' => 'vender imóvel',
+                    'url'  => 'menu/child2',
+                ],
+            ],
+        ],
+
         [
             'header'   => 'account_settings',
             'classes'  => 'text-yellow text-bold',
@@ -279,7 +318,7 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        
+
         ['header' => 'labels',
          'classes'  => 'text-yellow text-bold',
         ],
