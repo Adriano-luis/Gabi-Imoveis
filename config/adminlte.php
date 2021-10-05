@@ -250,18 +250,18 @@ return [
         ],
 
         [
-            'text'        => 'Lista de Imóveis',
-            'url'         => 'admin/imoveis',
+            'text'        => 'Home',
+            'url'         => 'admin/home',
             'icon'        => 'fas fa-home',
-            'active'      => ['imoveis', 'content', 'content*', 'regex:@^content/[0-9]+$@']
+            'active'      => ['home', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
         [
-            'text'        => 'Cadastrar Imóvel',
-            'url'         => 'admin/cadastro',
-            'icon'        => 'fas fa-list',
-            'active'      => ['cadastro', 'content', 'content*', 'regex:@^content/[0-9]+$@']
+            'text'        => 'Cliente-modal',
+            'url'         => 'admin/cliente',
+            'icon'        => 'fas fa-user',
+            'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -275,7 +275,7 @@ return [
                     'url'  => 'menu/child1',
                 ],
                 [
-                    'text' => 'Cadastrar Cliente',
+                    'text' => 'Cadastrar cliente',
                     'url'  => 'menu/child1',
                 ],
                 [
@@ -294,7 +294,7 @@ return [
                     'url'  => 'menu/child1',
                 ],
                 [
-                    'text' => 'Cadastrar Cliente',
+                    'text' => 'Cadastrar cliente',
                     'url'  => 'menu/child1',
                 ],
                 [
