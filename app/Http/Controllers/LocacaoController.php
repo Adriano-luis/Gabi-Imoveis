@@ -9,8 +9,8 @@ class LocacaoController extends Controller
 
     //Cadastro de Imoveis
     public function novoimovel(){
-        //return view();
-        return 'novo imovel de locação';
+        $teste = [1,2,3,4,5,6];
+        return view('locacao-cadastro',['array'=>$teste]);
     }
 
 

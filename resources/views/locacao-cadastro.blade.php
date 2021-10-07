@@ -1,14 +1,9 @@
-
 @extends('adminlte::page')
 @section('content')
-    <section class="home">
-        <div class="">
 
-        </div>
-    </section>
 @endsection
 @section('css')
-    
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
 @endsection
 @section('js')
     
