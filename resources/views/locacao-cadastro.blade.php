@@ -2,7 +2,7 @@
 @section('content')
 <section class="locacao-cadastro">
     <div class="formulario">
-        <form action="#" method="POST">
+        <form action="{{route('loc-novo-imovel')}}" method="POST">
             @csrf
             <div class="card">
                 <!-- card-header -->
