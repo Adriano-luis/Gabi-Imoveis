@@ -27,6 +27,7 @@ class LocacaoController extends Controller
         $metragemUtil = $request->get('');
         $qtComodos = $request->get('');
         $quarto = $request->get('');
+        $suite = $request->get('');
         $cozinha = $request->get('');
         $lavanderia = $request->get('');
         $salaEstar = $request->get('');
@@ -75,6 +76,7 @@ class LocacaoController extends Controller
             $novoImovel-> metragemUtil = $metragemUtil;
             $novoImovel-> qtComodos = $qtComodos;
             $novoImovel-> quarto = $quarto;
+            $novoImovel-> suite = $suite;
             $novoImovel-> cozinha = $cozinha;
             $novoImovel-> lavanderia = $lavanderia;
             $novoImovel-> salaEstar = $salaEstar;
@@ -115,9 +117,9 @@ class LocacaoController extends Controller
         
         //retornando
         if($imovel != ''){
-            return view('locacao-cadastro',['existeImovel'=>$imovel,'existeLocator'=>$locator]);
+            return view('locacao-cadastro',['existeImovel'=>$imovel]);
         } else{*/
-            return redirect()->route('imovel');
+            return view('locacao-cadastro-cliente',['id'=>1]);
         //}
 
     }
@@ -148,14 +150,20 @@ class LocacaoController extends Controller
 
 
     //Cadastro de de Cliente
-    public function novocliente(){
-
-        return view('locacao-cadastro-cliente');
+    public function novocliente(Request $request){
+        $id = $request->get('id');
+        if($id != ''){
+            return view('locacao-cadastro-cliente',['idImovel'=>$id]);
+        } else{
+            return view('locacao-cadastro-cliente');
+        }
+       
 
     }
 
     public function novoclientePost(Request $request){
         /*//recuperando os dados preenchidos
+        $idImovel = $request->get('');
         $nome = $request->get('');
         $enderecoLocator = $request->get('');
         $numLocator = $request->get('');
@@ -177,6 +185,7 @@ class LocacaoController extends Controller
         $novoLocator =  new Locator();
         $existeLocator = $novoLocator->where('CPF',$cpf)->first()->get();
         if($existeLocator == ''){
+            $novoLocator-> idImovel = $idImovel;
             $novoLocator-> nome = $nome;
             $novoLocator-> endereco = $enderecoLocator;
             $novoLocator-> numero = $numLocator;
@@ -202,7 +211,7 @@ class LocacaoController extends Controller
         if($locator != ''){
             return view('locacao-cadastro',['existeLocator'=>$locator]);
         } else{*/
-            return redirect()->route('home',['c'=>'c']);
+            return redirect()->route('imovel',['c'=>'c']);
         //}
     }
 

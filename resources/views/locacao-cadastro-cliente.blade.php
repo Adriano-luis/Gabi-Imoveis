@@ -16,6 +16,11 @@
                 <!-- card-body -->
                 <div class="card-body">
                     <div class="tab-content p-0">
+                        <label for="">Id do Imóvel</label><br>
+                        <input type="text" name="" id="" 
+                            value="{{isset($id) && $id !='' ? $id : '' }}" 
+                            disabled><br><br>
+
                         <label for="">Nome</label><br>
                         <input type="text" name="" id=""><br><br>
 

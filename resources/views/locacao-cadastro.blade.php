@@ -31,6 +31,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <input type="submit" value="Imprimir">
                 <input type="submit" value="Salvar">
             </form>
@@ -40,6 +41,100 @@
                 <div class="form-group">
                     <label for="exampleDropdownFormEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+=======
+                    <label for="">Endereço</label><br>
+                    <input type="text" name="" id="">
+
+                    <label for="">Nº</label>
+                    <input type="text" name="" id="">
+
+                    <label for="">Bairro</label>
+                    <input type="text" name="" id="">
+
+                    <label for="">Municipio</label>
+                    <input type="text" name="" id="">
+
+                    <label for="">Complemento</label>
+                    <input type="text" name="" id=""><br><br>
+
+                    <label for="">Metragem Total</label><br>
+                    <input type="text" name="" id="">
+
+                    <label for="">Metragem útil</label>
+                    <input type="text" name="" id=""><br><br>
+
+                    <label for="">Qt. Cômodos</label><br>
+                    <input type="number" name="" id=""><br><br>
+
+                    <label for="">Quarto</label><br>
+                    <input type="number" name="" id="">
+
+                    <label for="">Suite</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Cozinha</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Lavanderia</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Sala de Estar</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Sala de Jantar</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Banheiro</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Garagem</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Escritório</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Jardim</label>
+                    <input type="number" name="" id="">
+
+                    <label for="">Varanda</label>
+                    <input type="number" name="" id=""><br><br>
+
+                    <label for="">Água e Luz separadas</label><br>
+                    <input type="radio" name="" id="">Sim
+                    <input type="radio" name="" id="">Não<br><br>
+
+                    <label for="">RGI</label><br>
+                    <input type="text" name="" id=""><br><br>
+
+                    <label for="">Instalação</label><br>
+                    <input type="text" name="" id=""><br><br>
+
+                    <label for="">IPTU</label><br>
+                    <input type="text" name="" id=""><br><br>
+
+                    <label for="">Condomínio</label><br>
+                    <input type="radio" name="" id="">Sim
+                    <input type="radio" name="" id="">Não<br><br>
+
+                    <label for="">Valor do Condomínio</label>
+                    <input type="text" name="" id="">
+
+                    <label for="">Andar</label>
+                    <input type="number" name="" id=""><br><br>
+
+                    <label for="">Mobilhado</label><br>
+                    <input type="radio" name="" id="">Sim
+                    <input type="radio" name="" id="">Não<br><br>
+
+                    <label for="">Aceita Pet</label><br>
+                    <input type="radio" name="" id="">Sim
+                    <input type="radio" name="" id="">Não<br><br>
+
+                    <label for="">Opção de Venda</label><br>
+                    <input type="radio" name="" id="">Sim
+                    <input type="radio" name="" id="">Não<br><br>
+                  </div>
+>>>>>>> ff7ee8f3b8cbd95f9c2565d1ffab534570c2d6f8
                 </div>
                 <div class="form-group">
                     <label for="exampleDropdownFormPassword1">Password</label>
