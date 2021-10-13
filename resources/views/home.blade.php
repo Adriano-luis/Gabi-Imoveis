@@ -3,7 +3,9 @@
 @section('content')
     <section class="home">
         <div class="">
-
+            @if (isset($c))
+                teste
+            @endif
         </div>
     </section>
 @endsection
