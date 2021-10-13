@@ -1,47 +1,22 @@
 @extends('adminlte::page')
 @section('content')
-        <section class='loc-cadastro'>
-        {{-- <div class='forms'>
-            <form action="/action_page.php">
-                <label for="fname">Aluguel</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Condominio</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <h3>Endereço do Imóvel</h3>
-                <label for="lname">Rua</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="lname">Número</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="lname">Complemento</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="lname">Município</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="lname">Bairro</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <h3>Descrição do imóvel</h3>
-                <h2>Quartos</h2>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">1</a>
-                        <a class="dropdown-item" href="#">2</a>
-                        <a class="dropdown-item" href="#">3</a>
-                    </div>
+<section class="locacao-cadastro">
+    <div class="formulario">
+        <form action="{{route('loc-novo-imovel')}}" method="POST">
+            @csrf
+            <div class="card">
+                <!-- card-header -->
+                <div class="card-header ui-sortable-handle" >
+                  <h3 class="card-title">
+                    Imóvel
+                  </h3>
                 </div>
+                <!-- card-body -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <label for="">Valor</label><br>
+                    <input type="text" name="" id=""><br><br>
 
-<<<<<<< HEAD
-                <input type="submit" value="Imprimir">
-                <input type="submit" value="Salvar">
-            </form>
-        </div> --}}
-        <div class="dropdown-menu">
-            <form class="px-4 py-3">
-                <div class="form-group">
-                    <label for="exampleDropdownFormEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-=======
                     <label for="">Endereço</label><br>
                     <input type="text" name="" id="">
 
@@ -134,33 +109,74 @@
                     <input type="radio" name="" id="">Sim
                     <input type="radio" name="" id="">Não<br><br>
                   </div>
->>>>>>> ff7ee8f3b8cbd95f9c2565d1ffab534570c2d6f8
                 </div>
-                <div class="form-group">
-                    <label for="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+            </div>
+            <div class="card">
+                <div class="card-header ui-sortable-handle" >
+                  <h3 class="card-title">
+                    Informações Adicionais
+                  </h3>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                        <label class="form-check-label" for="dropdownCheck">
-                        Remember me
-                        </label>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </form>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">New around here? Sign up</a>
-            <a class="dropdown-item" href="#">Forgot password?</a>
-        </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <label for="">Descrição sobre o Imóvel</label><br>
+                    <input type="text" name="" id=""><br><br>
 
-    </section>
+                    <label for="">Descrição sobre a Mobilha</label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
+
+                    <label for="">Descrição sobre o Condomínio</label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
+
+                    <label for="">Observações</label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
+
+                    <label for="">Imagem 1</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 2</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 3</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 4</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 5</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 6</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 7</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 8</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 9</label><br>
+                    <input type="file" name="" id=""><br><br>
+
+                    <label for="">Imagem 10</label><br>
+                    <input type="file" name="" id=""><br><br>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <input type="submit" value="Salvar">
+            <button>
+                Imprimir
+            </button>
+        </form>
+    </div>
+</section>
+
 @endsection
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
 @endsection
-
 @section('js')
     
 @endsection
