@@ -44,6 +44,9 @@
                     <label for="">Quarto</label><br>
                     <input type="number" name="" id="">
 
+                    <label for="">Suite</label>
+                    <input type="number" name="" id="">
+
                     <label for="">Cozinha</label>
                     <input type="number" name="" id="">
 
