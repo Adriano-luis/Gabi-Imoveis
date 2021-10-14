@@ -8,6 +8,9 @@
                 <h3 class="card-title">Imóvel</h3>
             </div>
             <div class="card-body">
+                @if (isset($existeImovel))
+                    <div>{{$existeImovel}}</div>
+                @endif
                 <div class="form-group col-lg-3">
                     <label for="exampleInputEmail1">Valor</label>
                     <input type="text" name="valor" class="form-control" id="exampleInputEmail1" placeholder="Qual o valor de aluguel do imóvel?">
@@ -98,7 +101,7 @@
                     </div>
                 </div><br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" name="aguaLuz">
                     <label name="aguaLuz" class="form-check-label">Agua e luz separada?</label>
                 </div>
                 <br>
@@ -116,11 +119,15 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
                 </div>
                 <br>
                 <div class="row">
+                    <div class="form-group col-lg-5">
+                        <label for="exampleInputPassword1">Nome do condomínio</label>
+                        <input type="text" name="condominioNome" class="form-control" id="exampleInputPassword1" placeholder="Valor do condomínio">
+                    </div>
                     <div class="form-group mx-1">
                         <label for="exampleInputPassword1">Valor do condomínio</label>
                         <input type="text" name="condominioVal" class="form-control" id="exampleInputPassword1" placeholder="Valor do condomínio">
@@ -132,17 +139,17 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" name="mobiliado">
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" name="pet">
                     <label name="pet" class="form-check-label">Aceita Pet?</label>
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" name="opcVenda">
                     <label name="opcVenda" class="form-check-label">Opção de Venda?</label>
                 </div>
                 <br>

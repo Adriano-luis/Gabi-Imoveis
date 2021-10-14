@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\LocacaoImoveis;
 use App\Locator;
+use Illuminate\Support\Facades\DB;
 
 class LocacaoController extends Controller
 {
@@ -37,16 +38,17 @@ class LocacaoController extends Controller
         $escritorio = $request->get('escritorio');
         $jardim = $request->get('jardim');
         $varanda = $request->get('varanda');
-        $aguaLuz = $request->get('aguaLuz');
+        $request->input('aguaLuz') == 'on'? $aguaLuz = 'Sim': $aguaLuz = 'Nao';
         $rgi = $request->get('rgi');
         $instal = $request->get('instalacao');
         $iptu = $request->get('iptu');
-        $condo = $request->get('condominioCheck');
+        $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
+        $nomeCondo = $request->get('condominioNome');
         $valorCondo = $request->get('condominioVal');
         $andar = $request->get('andar');
-        $mobilhado = $request->get('mobiliado');
-        $pet = $request->get('pet');
-        $optVenda = $request->get('opcVenda');
+        $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
+        $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
+        $request->input('opcVenda') == 'on'? $optVenda = 'Sim': $optVenda = 'Nao';
         /*$descImovel = $request->get('');
         $descMobilha = $request->get('');
         $descCond = $request->get('');
@@ -63,7 +65,7 @@ class LocacaoController extends Controller
         $img10 = $request->get('');*/
 
         //salvando no DB
-        $novoImovel = new LocacaoImoveis();
+        /*$novoImovel = new LocacaoImoveis();
         $existeImovel = $novoImovel->where('RGI',$rgi)->first()->get();
         if($existeImovel == ''){
             $novoImovel-> valor = $valor;
@@ -91,6 +93,7 @@ class LocacaoController extends Controller
             $novoImovel-> instalacao = $instal;
             $novoImovel-> IPTU = $iptu;
             $novoImovel-> condominio = $condo;
+            $novoImovel-> nomeCondominio = $condominioNome;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
             $novoImovel-> mobilhado = $mobilhado;
@@ -109,14 +112,15 @@ class LocacaoController extends Controller
             $novoImovel-> img7 = $img7;
             $novoImovel-> img8 = $img8;
             $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;*/
+            $novoImovel-> img10 = $img10;
             $novoImovel->save();
+
         } else{
             $imovel = 'Imovel já cadastrado!';
-        }
+        }*/
         
         //retornando
-        if($imovel != ''){
+        if(isset($imovel)){
             return view('locacao-cadastro',['existeImovel'=>$imovel]);
         } else{
             return view('locacao-cadastro-cliente',['id'=>1]);
