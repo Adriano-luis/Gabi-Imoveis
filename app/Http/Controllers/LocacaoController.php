@@ -16,38 +16,38 @@ class LocacaoController extends Controller
     }
 
     public function novoimovelPost(Request $request){
-      /* //recuperando os dados preenchidos
-        $valor = $request->get('');
-        $enderecoImovel = $request->get('');
-        $numeroImovel = $request->get('');
-        $bairoImovel = $request->get('');
-        $municipioImovel = $request->get('');
-        $complementoImovel = $request->get('');
-        $metragemTot = $request->get('');
-        $metragemUtil = $request->get('');
-        $qtComodos = $request->get('');
-        $quarto = $request->get('');
-        $suite = $request->get('');
-        $cozinha = $request->get('');
-        $lavanderia = $request->get('');
-        $salaEstar = $request->get('');
-        $salaJantar = $request->get('');
-        $banheiro = $request->get('');
-        $garagem = $request->get('');
-        $escritorio = $request->get('');
-        $jardim = $request->get('');
-        $varanda = $request->get('');
-        $aguaLuz = $request->get('');
-        $rgi = $request->get('');
-        $instal = $request->get('');
-        $iptu = $request->get('');
-        $condo = $request->get('');
-        $valorCondo = $request->get('');
-        $andar = $request->get('');
-        $mobilhado = $request->get('');
-        $pet = $request->get('');
-        $optVenda = $request->get('');
-        $descImovel = $request->get('');
+       //recuperando os dados preenchidos
+        $valor = $request->get('valor');
+        $enderecoImovel = $request->get('rua');
+        $numeroImovel = $request->get('numero');
+        $bairoImovel = $request->get('bairro');
+        $municipioImovel = $request->get('municipio');
+        $complementoImovel = $request->get('complemento');
+        $metragemTot = $request->get('metragemTot');
+        $metragemUtil = $request->get('metragemUtil');
+        $qtComodos = $request->get('qtdCom');
+        $quarto = $request->get('quartos');
+        $suite = $request->get('suites');
+        $cozinha = $request->get('cozinhas');
+        $lavanderia = $request->get('lavanderia');
+        $salaEstar = $request->get('salaEstar');
+        $salaJantar = $request->get('salaJantar');
+        $banheiro = $request->get('banheiros');
+        $garagem = $request->get('vagas');
+        $escritorio = $request->get('escritorio');
+        $jardim = $request->get('jardim');
+        $varanda = $request->get('varanda');
+        $aguaLuz = $request->get('aguaLuz');
+        $rgi = $request->get('rgi');
+        $instal = $request->get('instalacao');
+        $iptu = $request->get('iptu');
+        $condo = $request->get('condominioCheck');
+        $valorCondo = $request->get('condominioVal');
+        $andar = $request->get('andar');
+        $mobilhado = $request->get('mobiliado');
+        $pet = $request->get('pet');
+        $optVenda = $request->get('opcVenda');
+        /*$descImovel = $request->get('');
         $descMobilha = $request->get('');
         $descCond = $request->get('');
         $obs = $request->get('');
@@ -60,7 +60,7 @@ class LocacaoController extends Controller
         $img7 = $request->get('');
         $img8 = $request->get('');
         $img9 = $request->get('');
-        $img10 = $request->get('');
+        $img10 = $request->get('');*/
 
         //salvando no DB
         $novoImovel = new LocacaoImoveis();
@@ -96,7 +96,7 @@ class LocacaoController extends Controller
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> pet = $pet;
             $novoImovel-> opcaoCompra = $optVenda;
-            $novoImovel-> sobreImovel = $descImovel;
+            /*$novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
@@ -109,7 +109,7 @@ class LocacaoController extends Controller
             $novoImovel-> img7 = $img7;
             $novoImovel-> img8 = $img8;
             $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;
+            $novoImovel-> img10 = $img10;*/
             $novoImovel->save();
         } else{
             $imovel = 'Imovel já cadastrado!';
@@ -118,9 +118,9 @@ class LocacaoController extends Controller
         //retornando
         if($imovel != ''){
             return view('locacao-cadastro',['existeImovel'=>$imovel]);
-        } else{*/
+        } else{
             return view('locacao-cadastro-cliente',['id'=>1]);
-        //}
+        }
 
     }
 
