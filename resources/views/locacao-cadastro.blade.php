@@ -126,7 +126,7 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label for="exampleInputPassword1">Nome do condomínio</label>
-                        <input type="text" name="condominioNome" class="form-control" id="exampleInputPassword1" placeholder="Valor do condomínio">
+                        <input type="text" name="condominioNome" class="form-control" id="exampleInputPassword1" placeholder="Nome do condomínio">
                     </div>
                     <div class="form-group mx-1">
                         <label for="exampleInputPassword1">Valor do condomínio</label>

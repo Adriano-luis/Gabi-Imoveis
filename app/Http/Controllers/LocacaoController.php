@@ -99,7 +99,7 @@ class LocacaoController extends Controller
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> pet = $pet;
             $novoImovel-> opcaoCompra = $optVenda;
-            /*$novoImovel-> sobreImovel = $descImovel;
+            $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
