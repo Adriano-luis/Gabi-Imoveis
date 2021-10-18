@@ -12,92 +12,92 @@
                     <div>{{$existeImovel}}</div>
                 @endif
                 <div class="form-group col-lg-3">
-                    <label for="exampleInputEmail1">Valor</label>
-                    <input type="text" name="valor" class="form-control" id="exampleInputEmail1" placeholder="Qual o valor de aluguel do imóvel?">
+                    <label for="valor">Valor</label>
+                    <input type="text" name="valor" class="form-control" id="valor" placeholder="Qual o valor de aluguel do imóvel?">
                 </div><br> 
                 <h5>Endereço</h5>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Logradouro</label>
-                    <input type="text" name="rua" class="form-control" id="exampleInputPassword1" placeholder="Rua...">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" name="rua" class="form-control" id="logradouro" placeholder="Rua...">
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Número</label>
-                        <input type="text" name="numero" class="form-control" id="exampleInputPassword1" placeholder="Número">
+                        <label for="numero">Número</label>
+                        <input type="text" name="numero" class="form-control" id="numero" placeholder="Número">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Bairro</label>
-                        <input type="text" name="bairro" class="form-control" id="exampleInputPassword1" placeholder="Bairro">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" class="form-control" id="bairro" placeholder="Bairro">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Município</label>
-                        <input type="text" name="municipio" class="form-control" id="exampleInputPassword1" placeholder="Município">
+                        <label for="municipio">Município</label>
+                        <input type="text" name="municipio" class="form-control" id="municipio" placeholder="Município">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Complemento</label>
-                        <input type="text" name="complemento" class="form-control" id="exampleInputPassword1" placeholder="Complemento">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" name="complemento" class="form-control" id="complemento" placeholder="Complemento">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="exampleInputPassword1" placeholder="Metragem total">
+                        <label for="metragemTot">Metragem Total</label>
+                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Metragem útil</label>
-                        <input type="text"  name="metragemUtil" class="form-control" id="exampleInputPassword1" placeholder="Metragem útil">
+                        <label for="metragemUtil">Metragem útil</label>
+                        <input type="text"  name="metragemUtil" class="form-control" id="metragemUtil" placeholder="Metragem útil">
                     </div>
                 </div><br><br>
                 <div class="row">
                     <div class="form-group col-lg-3">
-                        <label for="exampleInputPassword1">Quantidade de Cômodos</label>
-                        <input type="number" name="qtdCom" class="form-control" id="exampleInputPassword1" placeholder="Cômodos">
+                        <label for="qtdCom">Quantidade de Cômodos</label>
+                        <input type="number" name="qtdCom" class="form-control" id="qtdCom" placeholder="Cômodos">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Quartos</label>
-                        <input type="number" name="quartos" class="form-control" id="exampleInputPassword1" placeholder="Quartos">
+                        <label for="quartos">Quartos</label>
+                        <input type="number" name="quartos" class="form-control" id="quartos" placeholder="Quartos">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Suíte</label>
-                            <input type="number" name="suites" class="form-control" id="exampleInputPassword1" placeholder="Suíte">
+                            <label for="suites">Suíte</label>
+                            <input type="number" name="suites" class="form-control" id="suites" placeholder="Suíte">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Cozinha</label>
-                            <input type="number" name="cozinhas" class="form-control" id="exampleInputPassword1" placeholder="Cozinha">
+                            <label for="cozinha">Cozinha</label>
+                            <input type="number" name="cozinhas" class="form-control" id="cozinha" placeholder="Cozinha">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Lavanderia</label>
-                            <input type="number" name="lavanderia" class="form-control" id="exampleInputPassword1" placeholder="Lavanderia">
+                            <label for="lavanderia">Lavanderia</label>
+                            <input type="number" name="lavanderia" class="form-control" id="lavanderia" placeholder="Lavanderia">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Sala de Estar</label>
-                            <input type="number" name="salaEstar" class="form-control" id="exampleInputPassword1" placeholder="Sala de Estar">
+                            <label for="salaEstar">Sala de Estar</label>
+                            <input type="number" name="salaEstar" class="form-control" id="salaEstar" placeholder="Sala de Estar">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Sala de Jantar</label>
-                            <input type="number" name="salaJantar" class="form-control" id="exampleInputPassword1" placeholder="Sala de Jantar">
+                            <label for="salajantar">Sala de Jantar</label>
+                            <input type="number" name="salaJantar" class="form-control" id="salajantar" placeholder="Sala de Jantar">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Banheiros</label>
-                            <input type="number" name="banheiros" class="form-control" id="exampleInputPassword1" placeholder="Banheiros">
+                            <label for="banheiros">Banheiros</label>
+                            <input type="number" name="banheiros" class="form-control" id="banheiros" placeholder="Banheiros">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Vagas de Garagem</label>
-                            <input type="number" name="vagas" class="form-control" id="exampleInputPassword1" placeholder="Vagas de Garagem">
+                            <label for="vagas">Vagas de Garagem</label>
+                            <input type="number" name="vagas" class="form-control" id="vagas" placeholder="Vagas de Garagem">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Escritório</label>
-                            <input type="number" name="escritorio" class="form-control" id="exampleInputPassword1" placeholder="Escritório">
+                            <label for="escritorio">Escritório</label>
+                            <input type="number" name="escritorio" class="form-control" id="escritorio" placeholder="Escritório">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="exampleInputPassword1">Jardim</label>
-                            <input type="number" name="jardim" class="form-control" id="exampleInputPassword1" placeholder="Jardim">
+                            <label for="jardim">Jardim</label>
+                            <input type="number" name="jardim" class="form-control" id="jardim" placeholder="Jardim">
                     </div>
                     <div class="form-group mx-1">
-                            <label for="teste">Varanda/sacada</label>
-                            <input type="number" name="varanda" class="form-control" id="teste" placeholder="Varanda/sacada">
+                            <label for="varanda">Varanda/sacada</label>
+                            <input type="number" name="varanda" class="form-control" id="varanda" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
                 <div class="form-check">
@@ -106,16 +106,16 @@
                 </div>
                 <br>
                 <div class="form-group col-lg-2">
-                    <label for="exampleInputPassword1">RGI</label>
-                    <input  type="text" name="rgi" class="form-control" id="exampleInputPassword1" placeholder="RGI">
+                    <label for="rgi">RGI</label>
+                    <input  type="text" name="rgi" class="form-control" id="rgi" placeholder="RGI">
                 </div>
                 <div class="form-group col-lg-2">
-                    <label for="exampleInputPassword1">Instalação</label>
-                    <input type="text" name="instalacao" class="form-control" id="exampleInputPassword1" placeholder="Instalação">
+                    <label for="instalacao">Instalação</label>
+                    <input type="text" name="instalacao" class="form-control" id="instalacao" placeholder="Instalação">
                 </div>
                 <div class="form-group col-lg-2">
-                    <label for="exampleInputPassword1">IPTU</label>
-                    <input type="text" name="iptu" class="form-control" id="exampleInputPassword1" placeholder="IPTU">
+                    <label for="iptu">IPTU</label>
+                    <input type="text" name="iptu" class="form-control" id="iptu" placeholder="IPTU">
                 </div>
                 <br>
                 <div class="form-check">
@@ -125,16 +125,16 @@
                 <br>
                 <div class="row">
                     <div class="form-group col-lg-5">
-                        <label for="exampleInputPassword1">Nome do condomínio</label>
-                        <input type="text" name="condominioNome" class="form-control" id="exampleInputPassword1" placeholder="Nome do condomínio">
+                        <label for="condominioNome">Nome do condomínio</label>
+                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Valor do condomínio">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Valor do condomínio</label>
-                        <input type="text" name="condominioVal" class="form-control" id="exampleInputPassword1" placeholder="Valor do condomínio">
+                        <label for="condominioVal">Valor do condomínio</label>
+                        <input type="text" name="condominioVal" class="form-control" id="condominioVal" placeholder="Valor do condomínio">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="exampleInputPassword1">Andar</label>
-                        <input type="number" name="andar" class="form-control" id="exampleInputPassword1" placeholder="Andar">
+                        <label for="andar">Andar</label>
+                        <input type="number" name="andar" class="form-control" id="andar" placeholder="Andar">
                     </div>
                 </div>
                 <br>
@@ -161,19 +161,19 @@
                 <h3 class="card-title">Informações adicionais</h3>
             </div><br>
             <h5 class="mx-3">Descrições</h5>
-            <textarea class="mx-3 my-2" placeholder="Descrição sobre o Imóvel"></textarea>
+            <textarea name="descricaoImovel" class="mx-3 my-2" placeholder="Descrição sobre o Imóvel"></textarea>
             <br>
-            <textarea class="mx-3 my-2" placeholder="Descrição sobre a mobília"></textarea>
+            <textarea name="descricaoMobilia" class="mx-3 my-2" placeholder="Descrição sobre a mobília"></textarea>
             <br>
-            <textarea class="mx-3 my-2" placeholder="Descrição sobre o condomínio"></textarea>
+            <textarea name="descricaoCond" class="mx-3 my-2" placeholder="Descrição sobre o condomínio"></textarea>
             <br>
-            <textarea class="mx-3 my-2" placeholder="Observações"></textarea>
+            <textarea name="observacao" class="mx-3 my-2" placeholder="Observações"></textarea>
             <div class="form-group mx-3 col-lg-4">
                 <label for="exampleInputFile">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Buscar</label>
+                        <label name="upFotos" class="custom-file-label" for="exampleInputFile">Buscar</label>
                     </div>
                     <div class="input-group-append">
                         <span class="input-group-text">Subir</span>
