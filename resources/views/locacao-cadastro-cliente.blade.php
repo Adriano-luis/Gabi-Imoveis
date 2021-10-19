@@ -56,6 +56,10 @@
                         </select>
                 </div>
                 <div class="form-group col-lg-2">
+                    <label for="profissao"> Data de nascimento</label>
+                    <input  type="date" name="nascimento" class="form-control" id="nascimento">
+                </div>
+                <div class="form-group col-lg-2">
                     <label for="profissao">Profissão</label>
                     <input  type="text" name="profissao" class="form-control" id="profissao" placeholder="Profissão">
                 </div>

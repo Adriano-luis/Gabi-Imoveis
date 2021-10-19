@@ -177,6 +177,7 @@ class LocacaoController extends Controller
         $municipioLocator = $request->get('municipio');
         $compleLocator = $request->get('complemento');
         $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
         $profissao = $request->get('profissao');
         $cpf = $request->get('cpf');
         $rg = $request->get('rg');
@@ -199,6 +200,7 @@ class LocacaoController extends Controller
             $novoLocator-> municipio = $municipioLocator;
             $novoLocator-> complemento = $compleLocator;
             $novoLocator-> estadoCivil = $estadoCivil;
+            $novoLocator-> nascimento = $dataNascimento;
             $novoLocator-> profissao = $profissao;
             $novoLocator-> CPF = $cpf;
             $novoLocator-> RG = $rg;

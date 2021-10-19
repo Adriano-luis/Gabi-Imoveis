@@ -23,6 +23,7 @@ class CreateLocatorsTable extends Migration
             $table->string('municipio');
             $table->string('complemento');
             $table->string('estadoCivil');
+            $table->date('nascimento');
             $table->string('profissao');
             $table->string('CPF');
             $table->string('RG');
