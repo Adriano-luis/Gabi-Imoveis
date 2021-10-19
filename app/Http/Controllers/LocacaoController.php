@@ -49,11 +49,11 @@ class LocacaoController extends Controller
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
         $request->input('opcVenda') == 'on'? $optVenda = 'Sim': $optVenda = 'Nao';
-        /*$descImovel = $request->get('');
-        $descMobilha = $request->get('');
-        $descCond = $request->get('');
-        $obs = $request->get('');
-        $img1 = $request->get('');
+        $descImovel = $request->get('descricaoImovel');
+        $descMobilha = $request->get('descricaoMobilia');
+        $descCond = $request->get('descricaoCond');
+        $obs = $request->get('observacao');
+        /*$img1 = $request->get('');
         $img2 = $request->get('');
         $img3 = $request->get('');
         $img4 = $request->get('');
@@ -166,27 +166,27 @@ class LocacaoController extends Controller
     }
 
     public function novoclientePost(Request $request){
-        /*//recuperando os dados preenchidos
-        $idImovel = $request->get('');
-        $nome = $request->get('');
-        $enderecoLocator = $request->get('');
-        $numLocator = $request->get('');
-        $bairroLocator = $request->get('');
-        $municipioLocator = $request->get('');
-        $compleLocator = $request->get('');
-        $estadoCivil = $request->get('');
-        $profissao = $request->get('');
-        $cpf = $request->get('');
-        $rg = $request->get('');
-        $telefone = $request->get('');
-        $banco = $request->get('');
-        $agencia = $request->get('');
-        $tipoConta = $request->get('');
-        $conta = $request->get('');
-        $pix = $request->get('');
+        //recuperando os dados preenchidos
+        $idImovel = $request->get('idImovel');
+        $nome = $request->get('nome');
+        $enderecoLocator = $request->get('logradouro');
+        $numLocator = $request->get('numero');
+        $bairroLocator = $request->get('bairro');
+        $municipioLocator = $request->get('municipio');
+        $compleLocator = $request->get('complemento');
+        //$estadoCivil = $request->get('');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        //$tipoConta = $request->get('');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
 
         //salvando no DB
-        $novoLocator =  new Locator();
+        /*$novoLocator =  new Locator();
         $existeLocator = $novoLocator->where('CPF',$cpf)->first()->get();
         if($existeLocator == ''){
             $novoLocator-> idImovel = $idImovel;
@@ -209,14 +209,14 @@ class LocacaoController extends Controller
             $novoLocator->save();
         }else{
             $locator = 'Locator já cadastrado!';
-        }
+        }*/
 
          //retornando
-        if($locator != ''){
+        if(isset($locator)){
             return view('locacao-cadastro',['existeLocator'=>$locator]);
-        } else{*/
+        } else{
             return redirect()->route('imovel',['c'=>'c']);
-        //}
+        }
     }
 
     public function editarcliente(Request $request){
