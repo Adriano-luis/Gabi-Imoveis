@@ -17,7 +17,7 @@ class CreateLocacaoImoveisTable extends Migration
             $table->id();
             $table->bigInteger('valor');
             $table->string('endereco');
-            $table->integer('numero');
+            $table->string('numero');
             $table->string('bairro');
             $table->string('municipio');
             $table->string('complemento');
@@ -36,7 +36,7 @@ class CreateLocacaoImoveisTable extends Migration
             $table->integer('jardim');
             $table->integer('varanda');
             $table->string('aguaLuzSeparado');
-            $table->integer('RGI');
+            $table->string('RGI');
             $table->integer('instalacao');
             $table->integer('IPTU');
             $table->string('condominio');

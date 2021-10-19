@@ -65,8 +65,8 @@ class LocacaoController extends Controller
         $img10 = $request->get('');*/
 
         //salvando no DB
-        /*$novoImovel = new LocacaoImoveis();
-        $existeImovel = $novoImovel->where('RGI',$rgi)->first()->get();
+        $novoImovel = new LocacaoImoveis();
+        $existeImovel = $novoImovel->where('RGI',$rgi)->first();
         if($existeImovel == ''){
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
@@ -93,7 +93,7 @@ class LocacaoController extends Controller
             $novoImovel-> instalacao = $instal;
             $novoImovel-> IPTU = $iptu;
             $novoImovel-> condominio = $condo;
-            $novoImovel-> nomeCondominio = $condominioNome;
+            $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
             $novoImovel-> mobilhado = $mobilhado;
@@ -103,7 +103,7 @@ class LocacaoController extends Controller
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
-            $novoImovel-> img1 = $img1;
+            /*$novoImovel-> img1 = $img1;
             $novoImovel-> img2 = $img2;
             $novoImovel-> img3 = $img3;
             $novoImovel-> img4 = $img4;
@@ -112,18 +112,20 @@ class LocacaoController extends Controller
             $novoImovel-> img7 = $img7;
             $novoImovel-> img8 = $img8;
             $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;
+            $novoImovel-> img10 = $img10;*/
             $novoImovel->save();
 
         } else{
             $imovel = 'Imovel já cadastrado!';
-        }*/
+        }
         
         //retornando
         if(isset($imovel)){
             return view('locacao-cadastro',['existeImovel'=>$imovel]);
         } else{
-            return view('locacao-cadastro-cliente',['id'=>1]);
+            $idImovel = new LocacaoImoveis();
+            $id = $idImovel->latest()->get()->first(); 
+            return view('locacao-cadastro-cliente',['id'=>$id->id]);
         }
 
     }
@@ -174,20 +176,20 @@ class LocacaoController extends Controller
         $bairroLocator = $request->get('bairro');
         $municipioLocator = $request->get('municipio');
         $compleLocator = $request->get('complemento');
-        //$estadoCivil = $request->get('');
+        $estadoCivil = $request->get('estadoCivil');
         $profissao = $request->get('profissao');
         $cpf = $request->get('cpf');
         $rg = $request->get('rg');
         $telefone = $request->get('telefone');
         $banco = $request->get('banco');
         $agencia = $request->get('agencia');
-        //$tipoConta = $request->get('');
+        $tipoConta = $request->get('tipoConta');
         $conta = $request->get('conta');
         $pix = $request->get('pix');
 
         //salvando no DB
-        /*$novoLocator =  new Locator();
-        $existeLocator = $novoLocator->where('CPF',$cpf)->first()->get();
+        $novoLocator =  new Locator();
+        $existeLocator = $novoLocator->where('CPF',$cpf)->first();
         if($existeLocator == ''){
             $novoLocator-> idImovel = $idImovel;
             $novoLocator-> nome = $nome;
@@ -209,7 +211,7 @@ class LocacaoController extends Controller
             $novoLocator->save();
         }else{
             $locator = 'Locator já cadastrado!';
-        }*/
+        }
 
          //retornando
         if(isset($locator)){

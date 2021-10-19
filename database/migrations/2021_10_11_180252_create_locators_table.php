@@ -13,26 +13,25 @@ class CreateLocatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locators', function (Blueprint $table) {
+        Schema::create('locator', function (Blueprint $table) {
             $table->id();
             $table->integer('idImovel');
             $table->string('nome');
             $table->string('endereco');
-            $table->integer('numero');
+            $table->string('numero');
             $table->string('bairro');
             $table->string('municipio');
             $table->string('complemento');
             $table->string('estadoCivil');
             $table->string('profissao');
-            $table->integer('CPF');
-            $table->integer('RG');
-            $table->integer('telefone');
+            $table->string('CPF');
+            $table->string('RG');
+            $table->string('telefone');
             $table->string('banco');
-            $table->integer('agencia');
-            $table->integer('tipoConta');
-            $table->integer('conta');
+            $table->string('agencia');
+            $table->string('tipoConta');
+            $table->string('conta');
             $table->string('pix');
-            $table->timestamps();
         });
     }
 
@@ -43,6 +42,6 @@ class CreateLocatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locators');
+        Schema::dropIfExists('locator');
     }
 }
