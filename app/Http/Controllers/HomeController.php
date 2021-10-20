@@ -9,9 +9,6 @@ use App\Locator;
 class HomeController extends Controller
 {
     public function index(Request $request){
-        /*$locator = $request->get('locator');
-        $telefone = $request->get('telefone');*/
-        
         return view('home');
     }
 
@@ -96,6 +93,26 @@ class HomeController extends Controller
             }
         })
         ->get();
+
+        /*$locator = $request->get('locator');
+        $telefone = $request->get('telefone');
+
+        $locator = Locator::where(function($query) use ($locator){
+            if($locator != null){
+                $query->where('nome',$locator);
+            }
+        })
+        ->where(function($query) use ($valor){
+            if($valor != null){
+                $query->where('valor',$valor);
+            }
+        })
+        ->where(function($query) use ($enderecoImovel){
+            if($enderecoImovel != null){
+                $query->where('endereco',$enderecoImovel);
+            }
+        })->get();*/
+        
 
         return view('home',['imoveis'=>$imoveis]);
     }

@@ -8,6 +8,9 @@
             <label for="bairro">Id Imóvel</label>
             <input type="text" name="id" class="form-control" id="" placeholder="">
 
+            <label for="bairro">RGI</label>
+            <input type="text" name="rgi" class="form-control" id="" placeholder="">
+
             <label for="bairro">Valor</label>
             <input type="text" name="valor" class="form-control" id="" placeholder="">
 
@@ -46,15 +49,6 @@
               <input class="form-check-input" type="checkbox" name="pet">
               <label name="pet" class="form-check-label">Aceita Pet?</label>
             </div>
-
-            <label for="bairro">Locator</label>
-            <input type="text" name="locator" class="form-control" id="" placeholder="">
-
-            <label for="bairro">Telefone</label>
-            <input type="text" name="telefone" class="form-control" id="" placeholder="">
-
-            <label for="bairro">RGI</label>
-            <input type="text" name="rgi" class="form-control" id="" placeholder="">
 
             <input type="submit" value="Filtrar">
         </form>
