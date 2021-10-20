@@ -23,6 +23,7 @@ Route::post('/login', 'LoginController@autenticar')->name('login');
 Route::middleware('login')->prefix('logged')->group(function (){
     //Home
     Route::get('/home','HomeController@index')->name('home');
+    Route::post('/home','HomeController@busca')->name('home');
 
     //Modal de cadatro rápido de clientes
 
