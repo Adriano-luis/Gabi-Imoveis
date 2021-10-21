@@ -101,6 +101,14 @@
                     </div>
                 </div>
                 <br>
+                <div class="row px-8">
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Imprimir</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

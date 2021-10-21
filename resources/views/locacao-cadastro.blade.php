@@ -1,5 +1,8 @@
 @extends('adminlte::page')
 @section('content')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
+@endsection
 <section class="locacao-cadastro">
     <form action="{{route('loc-novo-imovel')}}" method="POST">
         @csrf
@@ -180,7 +183,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row align-btn">
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
@@ -193,9 +196,7 @@
 </section>
 
 @endsection
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
-@endsection
+
 @section('js')
     
 @endsection
