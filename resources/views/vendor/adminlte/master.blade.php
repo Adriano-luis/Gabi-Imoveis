@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="urlBase" content="{{ Config::get('urlbase.localUrl') }}"
 
     {{-- Custom Meta Tags --}}
     @yield('meta_tags')
@@ -70,7 +71,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
-
+    <link rel="stylesheet" href="{{ asset('assets/css/template.scss') }}">
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
@@ -103,6 +104,11 @@
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
+    <script src="{{asset('assets/js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.appear.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/script.js')}}"></script>
 
 </body>
 

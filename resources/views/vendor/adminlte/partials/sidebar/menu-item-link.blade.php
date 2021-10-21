@@ -1,6 +1,6 @@
 <li @isset($item['id']) id="{{ $item['id'] }}" @endisset class="nav-item">
     @if ($item['class'] == 'modal-cliente')
-    <i class="fas fa-user" style="color: #c2c7d0;margin-left:17px;margin-right:-9px;    "></i>
+    <i class="fas fa-user" style="color: #c2c7d0;margin-left:17px;margin-right:-9px;"></i>
         @component('_components.modal-cliente') 
         @endcomponent
     @else

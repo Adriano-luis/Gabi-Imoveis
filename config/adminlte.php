@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Gabi Imóveis',
+    'title' => '',
     'title_prefix' => '',
     'title_postfix' => '',
 
