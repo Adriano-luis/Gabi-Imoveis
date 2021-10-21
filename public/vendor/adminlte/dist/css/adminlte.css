@@ -6411,7 +6411,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .modal-backdrop {
-  position: fixed;
+  position: inherit !important;
   top: 0;
   left: 0;
   z-index: 1040;

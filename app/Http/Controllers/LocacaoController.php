@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\LocacaoImoveis;
 use App\Locator;
-use Illuminate\Support\Facades\DB;
 
 class LocacaoController extends Controller
 {
@@ -49,11 +48,11 @@ class LocacaoController extends Controller
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
         $request->input('opcVenda') == 'on'? $optVenda = 'Sim': $optVenda = 'Nao';
-        /*$descImovel = $request->get('');
-        $descMobilha = $request->get('');
-        $descCond = $request->get('');
-        $obs = $request->get('');
-        $img1 = $request->get('');
+        $descImovel = $request->get('descricaoImovel');
+        $descMobilha = $request->get('descricaoMobilia');
+        $descCond = $request->get('descricaoCond');
+        $obs = $request->get('observacao');
+        /*$img1 = $request->get('');
         $img2 = $request->get('');
         $img3 = $request->get('');
         $img4 = $request->get('');
@@ -65,8 +64,8 @@ class LocacaoController extends Controller
         $img10 = $request->get('');*/
 
         //salvando no DB
-        /*$novoImovel = new LocacaoImoveis();
-        $existeImovel = $novoImovel->where('RGI',$rgi)->first()->get();
+        $novoImovel = new LocacaoImoveis();
+        $existeImovel = $novoImovel->where('RGI',$rgi)->first();
         if($existeImovel == ''){
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
@@ -93,17 +92,17 @@ class LocacaoController extends Controller
             $novoImovel-> instalacao = $instal;
             $novoImovel-> IPTU = $iptu;
             $novoImovel-> condominio = $condo;
-            $novoImovel-> nomeCondominio = $condominioNome;
+            $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> pet = $pet;
             $novoImovel-> opcaoCompra = $optVenda;
-            /*$novoImovel-> sobreImovel = $descImovel;
+            $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
-            $novoImovel-> img1 = $img1;
+            /*$novoImovel-> img1 = $img1;
             $novoImovel-> img2 = $img2;
             $novoImovel-> img3 = $img3;
             $novoImovel-> img4 = $img4;
@@ -112,18 +111,20 @@ class LocacaoController extends Controller
             $novoImovel-> img7 = $img7;
             $novoImovel-> img8 = $img8;
             $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;
+            $novoImovel-> img10 = $img10;*/
             $novoImovel->save();
 
         } else{
             $imovel = 'Imovel já cadastrado!';
-        }*/
+        }
         
         //retornando
         if(isset($imovel)){
             return view('locacao-cadastro',['existeImovel'=>$imovel]);
         } else{
-            return view('locacao-cadastro-cliente',['id'=>1]);
+            $idImovel = new LocacaoImoveis();
+            $id = $idImovel->latest()->get()->first(); 
+            return view('locacao-cadastro-cliente',['id'=>$id->id]);
         }
 
     }
@@ -166,28 +167,29 @@ class LocacaoController extends Controller
     }
 
     public function novoclientePost(Request $request){
-        /*//recuperando os dados preenchidos
-        $idImovel = $request->get('');
-        $nome = $request->get('');
-        $enderecoLocator = $request->get('');
-        $numLocator = $request->get('');
-        $bairroLocator = $request->get('');
-        $municipioLocator = $request->get('');
-        $compleLocator = $request->get('');
-        $estadoCivil = $request->get('');
-        $profissao = $request->get('');
-        $cpf = $request->get('');
-        $rg = $request->get('');
-        $telefone = $request->get('');
-        $banco = $request->get('');
-        $agencia = $request->get('');
-        $tipoConta = $request->get('');
-        $conta = $request->get('');
-        $pix = $request->get('');
+        //recuperando os dados preenchidos
+        $idImovel = $request->get('idImovel');
+        $nome = $request->get('nome');
+        $enderecoLocator = $request->get('logradouro');
+        $numLocator = $request->get('numero');
+        $bairroLocator = $request->get('bairro');
+        $municipioLocator = $request->get('municipio');
+        $compleLocator = $request->get('complemento');
+        $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        $tipoConta = $request->get('tipoConta');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
 
         //salvando no DB
         $novoLocator =  new Locator();
-        $existeLocator = $novoLocator->where('CPF',$cpf)->first()->get();
+        $existeLocator = $novoLocator->where('CPF',$cpf)->first();
         if($existeLocator == ''){
             $novoLocator-> idImovel = $idImovel;
             $novoLocator-> nome = $nome;
@@ -197,6 +199,7 @@ class LocacaoController extends Controller
             $novoLocator-> municipio = $municipioLocator;
             $novoLocator-> complemento = $compleLocator;
             $novoLocator-> estadoCivil = $estadoCivil;
+            $novoLocator-> nascimento = $dataNascimento;
             $novoLocator-> profissao = $profissao;
             $novoLocator-> CPF = $cpf;
             $novoLocator-> RG = $rg;
@@ -212,11 +215,11 @@ class LocacaoController extends Controller
         }
 
          //retornando
-        if($locator != ''){
+        if(isset($locator)){
             return view('locacao-cadastro',['existeLocator'=>$locator]);
-        } else{*/
+        } else{
             return redirect()->route('imovel',['c'=>'c']);
-        //}
+        }
     }
 
     public function editarcliente(Request $request){

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Gabi Imóveis',
+    'title' => '',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -261,6 +261,7 @@ return [
             'text'        => 'Cliente-modal',
             'url'         => 'admin/cliente',
             'icon'        => 'fas fa-user',
+            'classes'     => 'modal-cliente',
             //'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',

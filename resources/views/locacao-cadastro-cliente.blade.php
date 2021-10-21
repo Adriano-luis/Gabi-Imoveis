@@ -14,7 +14,8 @@
                 @endif
                 <div class="form-group col-lg-3">
                     <label for="idImovel">Id Imóvel</label>
-                    <input type="text" name="idImovel" class="form-control" id="idImovel" placeholder="">
+                    <input type="text" name="idImovel" class="form-control" id="idImovel"  value="{{isset($id) && $id !='' ? $id : '' }}" 
+                    >
                 </div><br> 
                 <h5>Dados do locator</h5>
                 <div class="form-group">
@@ -46,11 +47,17 @@
                 <br>
                 <div class="form-group col-lg-3">
                         <label>Estado civíl</label>
-                        <select class="custom-select">
-                            <option>Casado</option>
-                            <option>Solteiro</option>
-                            <option>Viúvo</option>
+                        <select class="custom-select" name="estadoCivil">
+                            <option value="solteiro">Solteiro</option>
+                            <option value="casado">Casado</option>
+                            <option value="separado">Separado </option>
+                            <option value="divorciado">Divorciado </option>
+                            <option value="viuvo">Viúvo</option>
                         </select>
+                </div>
+                <div class="form-group col-lg-2">
+                    <label for="profissao"> Data de nascimento</label>
+                    <input  type="date" name="nascimento" class="form-control" id="nascimento">
                 </div>
                 <div class="form-group col-lg-2">
                     <label for="profissao">Profissão</label>
@@ -81,12 +88,12 @@
                     </div>
                     <div class="form-group col-lg-3">
                         <label>Tipo de Conta</label>
-                        <select class="custom-select">
-                            <option>Conta Corrente</option>
-                            <option>Conta Poupança</option>
-                            <option>Conta Salário</option>
-                            <option>Conta Digital</option>
-                            <option>Conta Universitária</option>
+                        <select class="custom-select" name="tipoConta">
+                            <option value="corrente">Conta Corrente</option>
+                            <option value="poupanca">Conta Poupança</option>
+                            <option value="salario">Conta Salário</option>
+                            <option value="digital">Conta Digital</option>
+                            <option value="universitaria">Conta Universitária</option>
                         </select>
                     </div>
                 </div>
@@ -101,13 +108,11 @@
                     </div>
                 </div>
                 <br>
-                <div class="row px-8">
+                <div class="row">
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Imprimir</button>
-                    </div>
+
                 </div>
             </div>
         </form>
