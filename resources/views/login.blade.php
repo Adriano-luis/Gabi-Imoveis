@@ -3,5 +3,5 @@
     {{$erro}}
 @endif
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/template.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/template.scss')}}"/>
 @endsection
