@@ -39,7 +39,7 @@ class HomeController extends Controller
         })
         ->where(function($query) use ($enderecoImovel){
             if($enderecoImovel != null){
-                $query->where('endereco',$enderecoImovel);
+                $query->where('endereco','like','%'.$enderecoImovel.'%');
             }
         })
         ->where(function($query) use ($numeroImovel){
@@ -74,7 +74,7 @@ class HomeController extends Controller
         })
         ->where(function($query) use ($condo){
             if($condo != 'Nao'){
-                $query->where('condominio',$condo);
+                $query->where('condominio','like','%'.$condo.'%');
             }
         })
         ->where(function($query) use ($mobilhado){
@@ -89,7 +89,7 @@ class HomeController extends Controller
         })
         ->where(function($query) use ($rgi){
             if($rgi != null){
-                $query->where('RGI',$rgi);
+                $query->where('RGI','like','%'.$rgi.'%');
             }
         })
         ->get();
@@ -113,7 +113,6 @@ class HomeController extends Controller
             }
         })->get();*/
         
-
         return view('home',['imoveis'=>$imoveis]);
     }
 }
