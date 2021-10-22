@@ -27,6 +27,14 @@ class ClienteController extends Controller
     }
 
     public function busca(Request $request){
+        $telefone = $request->get('telefone');
 
+        $cliente = Clientes::where(function($query) use ($telefone){
+            if($telefone != null){
+                $query->where('telefone',$telefone);
+            }
+        })->get()->first();
+
+        return view('home',['cliente'=>$cliente]);
     }
 }

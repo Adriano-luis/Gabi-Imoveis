@@ -15,20 +15,19 @@
     width: 100% !important;
 }
 
-.btn-clientes{
+.home .btn-clientes{
     background-color: #c7c7c7c7 !important;
     color: #000;
 
     transition: filter 0.2s !important;
 }
 
-.btn-clientes:hover{
+.home .btn-clientes:hover{
     color: #000;
     filter: brightness(0.8) !important;
 }
 
-.btn-size{
-    padding: 1rem !important;
+.home .btn-size{
     padding-left: 2rem !important;
     padding-right: 2rem !important;
 }
