@@ -105,165 +105,143 @@
       </div>
     </div>
 
-    <!-- final dos filtros -->
 
-    <!-- inicio dos cards -->
-
-    <div class="row my-3">
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Primary</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                content
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Success</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                The body of the card
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Warning</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                The body of the card
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-
-        ou
-        <br>
-
-        <div class="col-md-6">
-            <!-- Box Comment -->
+    @if (isset($imoveis))
+      <div class="row">
+        @foreach ($imoveis as $imovel)
+          <div class="col-md-3">
             <div class="card card-widget">
-              <div class="card-header">
+              <div class="card-header imoveisCard">
                 <div class="user-block">
-                  <span class="username"><a href="#">Nome do dono</a></span>
-                  <span class="description">Av. Sete de Setembro 3302 </span>
-                  <span class="description">Apelido do imóvel </span>
-                  <span class="description">Imóvel cadastrado dia 22/10/2021 - 10:56 </span>
+                  <span class="description">id: {{$imovel->id}}</span>
+                  <span class="description">{{$imovel->endereco}}, {{$imovel->numero}}
+                    @if ($imovel->complemento != '')
+                      {{$imovel->complemento}}
+                    @endif
+                    <br>{{$imovel->bairro}} | {{$imovel->municipio}}
+                  </span>
+                  <span class="description">cadastrado {{$imovel->created_at}} </span>
                 </div>
-                <!-- /.user-block -->
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
               </div>
-              <!-- /.card-header -->
+      
               <div class="card-body">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="{{URL::asset('../../assets/images/sala3.jpg')}}" alt="comodos">
+                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{URL::asset('../../assets/images/quarto.jpg')}}" alt="Second slide">
+                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{URL::asset('../../assets/images/banheiro.jpg')}}" alt="Third slide">
+                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Anterior</span>
                   </a>
-                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <a class="carousel-control-next" href="#controleSlide" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Próximo</span>
                   </a>
                 </div>
-                
               </div>
-              <!-- /.card-body -->
               <div class="card-footer card-comments">
                 <div class="card-comment d-flex">
-                  <!-- User image -->
                   <i class="fas fa-ruler-combined pt-2"></i>
-
+      
                   <span class="username px-3">
-                      Quantidade de Comodos
+                    {{$imovel->metragemTotal}} m²
                   </span>
-                    <!-- /.username -->
                 </div><br>
-                <!-- /.card-comment -->
                 <div class="d-flex">
-                  <!-- User image -->
                   <i class="fas fa-toilet"></i>
                   <div class="px-3">
-                    Quantidade de banheiros
+                    @if ($imovel->banheiro != null)
+                      {{$imovel->banheiro}} Banheiro(s)
+
+                      @else
+                      Nenhum banheiro
+                    @endif
                   </div>
                 </div><br>
                 <div class="d-flex">
-                  <!-- User image -->
                   <i class="fas fa-bed"></i>
                   <div class="px-3">
-                    Quantidade de Quartos
+                    @if ($imovel->quarto)
+                      {{$imovel->quarto}} Quarto(s)
+                    @else
+                        Nenhum Quarto
+                    @endif
                   </div>
                 </div><br>
                 <div class="d-flex">
-                  <!-- User image -->
                   <i class="fas fa-car"></i>
                   <div class="px-3">
-                    Quantidade de Garagem
+                    @if ($imovel->garagem)
+                      {{$imovel->garagem}} Vagas de Garagem
+                    @else
+                        Sem Garagem
+                    @endif
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <i><b>R$</b></i>
+                  <div class="px-3">
+                      {{$imovel->valor}} (Aluguel)
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <div class="px-3 btn valorTotal">
+                    <b>
+                    <?php
+                      if ($imovel->IPTU != null){
+                        if($imovel->valorCondominio != null) {
+                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                        }else{
+                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                        }
+                      }else{
+                        if($imovel->valorCondominio != null) {
+                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
+                        }else {
+                          echo  'Total: R$'.($imovel->valor);
+                        }
+                      }
+                    ?>
+                    </b>
                   </div>
                 </div>
-                <!-- /.card-comment -->
               </div>
             </div>
-            <!-- /.card -->
-    </div>
+          </div>
+        @endforeach
+      </div>
+    @endif
 
     @if (isset($cliente))
-        {{$cliente->nome}}
+      <div class="row">
+        @foreach ($cliente as $item)
+          <div class="row my-3">
+            <div class="col clienteCard">
+              <div class="card card-warning">
+                <div class="card-header">
+                  <h3 class="card-title">{{$item->nome}}</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  {{$item->telefone}}
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
     @endif
   </section>
 @endsection

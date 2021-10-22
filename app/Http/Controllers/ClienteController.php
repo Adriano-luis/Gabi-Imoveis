@@ -33,7 +33,7 @@ class ClienteController extends Controller
             if($telefone != null){
                 $query->where('telefone',$telefone);
             }
-        })->get()->first();
+        })->get();
 
         return view('home',['cliente'=>$cliente]);
     }
