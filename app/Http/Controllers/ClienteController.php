@@ -3,11 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Clientes;
 
 class ClienteController extends Controller
 {
     public function salva(Request $request){
-        return true;
+        $nome = $request->get('nome');
+        $telefone = $request->get('telefone');
+
+        $novo = new Clientes ();
+        $existe = $novo->where('telefone',$telefone)->get()->first();
+        if(!isset($existe->id) || $existe->id == ''){
+            $novo-> nome     = $nome;
+            $novo-> telefone = $telefone;
+            $novo->save();
+
+            return true;
+        }else{
+            return false;
+        }
+        
+        
     }
 
     public function busca(Request $request){

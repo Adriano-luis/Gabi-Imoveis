@@ -9,8 +9,11 @@ $(document).ready(function(){
             data: {"_token": $('meta[name="csrf-token"]').attr('content'),nome,telefone},
             success:function(data){
                 if(data == true){
-                    $('#close').trigger('click');
+                    $('.close').trigger('click');
                     alert('Cadastro realizado');
+                }else{
+                    $('.close').trigger('click');
+                    alert('Cliente já tem cadastro!');
                 }
                 
             }
