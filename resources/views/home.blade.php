@@ -78,8 +78,9 @@
                         <label name="pet" class="form-check-label"><h5>Aceita Pet?</h5></label>
                       </div><br>
                     </div>
-                </div>
-          </form>
+                  </div>
+                </form>
+                <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
         </div>                
       </div>
   </section>
