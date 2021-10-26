@@ -184,7 +184,6 @@
                 <div class="user-block">
                   <span class="username"><a href="#">Nome do dono</a></span>
                   <span class="description">Av. Sete de Setembro 3302 </span>
-                  <span class="description">Apelido do imóvel </span>
                   <span class="description">Imóvel cadastrado dia 22/10/2021 - 10:56 </span>
                 </div>
                 <!-- /.user-block -->
