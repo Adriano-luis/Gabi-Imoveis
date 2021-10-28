@@ -142,6 +142,11 @@
                 </div>
                 <br>
                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="individual">
+                    <label name="individual" class="form-check-label">Individual?</label>
+                </div>
+                <br>
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="mobiliado">
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
                 </div>

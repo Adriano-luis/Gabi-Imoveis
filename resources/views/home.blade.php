@@ -19,6 +19,16 @@
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
                 </div>
                 <div class="row">
+                  <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="aluguelCheck">
+                      <label name="aluguelCheck" class="form-check-label"><h5>Aluguel<h5></label>
+                    </div><br>
+                    <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="vendaCheck">
+                      <label name="vendaCheck" class="form-check-label"><h5>Venda<h5></label>
+                    </div><br>
+                  </div>
+                <div class="row">
                   <div class="form-group mx-3">
                       <label for="rgi">RGI</label>
                       <input type="text" name="rgi" class="form-control" id="rgi" placeholder="RGI">
@@ -63,6 +73,10 @@
                     </div>
                 </div><br>
                 <div class="row">
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="individualCheck">
+                    <label name="individualCheck" class="form-check-label"><h5>Individual?<h5></label>
+                  </div><br>
                   <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label"><h5>Condomínio?<h5></label>
@@ -105,6 +119,7 @@
       </div>
     </div>
 
+    <!-- Card do imóvel -->
 
     @if (isset($imoveis))
       <div class="row">
