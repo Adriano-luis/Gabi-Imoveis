@@ -235,6 +235,120 @@
       </div>
     @endif
 
+    @if (isset($imoveisV))
+      <div class="row">
+        @foreach ($imoveisV as $imovel)
+          <div class="col-md-3">
+            <div class="card card-widget">
+              <div class="card-header imoveisCard">
+                <div class="user-block">
+                  <span class="description">id: {{$imovel->id}}</span>
+                  <span class="description">{{$imovel->endereco}}, {{$imovel->numero}}
+                    @if ($imovel->complemento != '')
+                      {{$imovel->complemento}}
+                    @endif
+                    <br>{{$imovel->bairro}} | {{$imovel->municipio}}
+                  </span>
+                  <span class="description">cadastrado {{$imovel->created_at}} </span>
+                </div>
+              </div>
+      
+              <div class="card-body">
+                <div id="controleSlide" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#controleSlide" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer card-comments">
+                <div class="card-comment d-flex">
+                  <i class="fas fa-ruler-combined pt-2"></i>
+      
+                  <span class="username px-3">
+                    {{$imovel->metragemTotal}} m²
+                  </span>
+                </div><br>
+                <div class="d-flex">
+                  <i class="fas fa-toilet"></i>
+                  <div class="px-3">
+                    @if ($imovel->banheiro != null)
+                      {{$imovel->banheiro}} Banheiro(s)
+
+                      @else
+                      Nenhum banheiro
+                    @endif
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <i class="fas fa-bed"></i>
+                  <div class="px-3">
+                    @if ($imovel->quarto)
+                      {{$imovel->quarto}} Quarto(s)
+                    @else
+                        Nenhum Quarto
+                    @endif
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <i class="fas fa-car"></i>
+                  <div class="px-3">
+                    @if ($imovel->garagem)
+                      {{$imovel->garagem}} Vagas de Garagem
+                    @else
+                        Sem Garagem
+                    @endif
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <i><b>R$</b></i>
+                  <div class="px-3">
+                      {{$imovel->valor}} (Valor Estimado)
+                  </div>
+                </div><br>
+                <div class="d-flex">
+                  <div class="px-3 btn valorTotal">
+                    <b>
+                    <?php
+                      if ($imovel->IPTU != null){
+                        if($imovel->valorCondominio != null) {
+                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                        }else{
+                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                        }
+                      }else{
+                        if($imovel->valorCondominio != null) {
+                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
+                        }else {
+                          echo  'Total: R$'.($imovel->valor);
+                        }
+                      }
+                    ?>
+                    </b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    @endif
+
     @if (isset($cliente))
       <div class="row">
         @foreach ($cliente as $item)

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocacaoImoveisTable extends Migration
+class CreateVendaImoveisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLocacaoImoveisTable extends Migration
      */
     public function up()
     {
-        Schema::create('locacao_imoveis', function (Blueprint $table) {
+        Schema::create('venda_imoveis', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('valor');
             $table->string('endereco');
@@ -22,7 +22,7 @@ class CreateLocacaoImoveisTable extends Migration
             $table->string('municipio');
             $table->string('complemento');
             $table->integer('metragemTotal');
-            $table->integer('metragemUtil');
+            $table->integer('terreno');
             $table->integer('qtComodos');
             $table->integer('quarto');
             $table->integer('suite');
@@ -35,18 +35,13 @@ class CreateLocacaoImoveisTable extends Migration
             $table->integer('escritorio');
             $table->integer('jardim');
             $table->integer('varanda');
-            $table->string('aguaLuzSeparado');
-            $table->string('RGI');
-            $table->integer('instalacao');
-            $table->integer('IPTU');
+            $table->string('documento');
             $table->string('condominio');
             $table->text('nomeCondominio');
             $table->integer('valorCondominio');
             $table->integer('andar');
             $table->string('individual');
             $table->string('mobilhado');
-            $table->string('pet');
-            $table->string('opcaoCompra');
             $table->text('sobreImovel');
             $table->text('sobreMobilia');
             $table->text('sobreCondominio');
@@ -72,6 +67,6 @@ class CreateLocacaoImoveisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locacao_imoveis');
+        Schema::dropIfExists('venda_imoveis');
     }
 }

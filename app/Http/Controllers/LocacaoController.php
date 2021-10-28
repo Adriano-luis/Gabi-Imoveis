@@ -45,6 +45,7 @@ class LocacaoController extends Controller
         $nomeCondo = $request->get('condominioNome');
         $valorCondo = $request->get('condominioVal');
         $andar = $request->get('andar');
+        $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
         $request->input('opcVenda') == 'on'? $optVenda = 'Sim': $optVenda = 'Nao';
@@ -95,6 +96,7 @@ class LocacaoController extends Controller
             $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
+            $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> pet = $pet;
             $novoImovel-> opcaoCompra = $optVenda;
