@@ -40,6 +40,7 @@ class CreateVendaImoveisTable extends Migration
             $table->text('nomeCondominio');
             $table->integer('valorCondominio');
             $table->integer('andar');
+            $table->string('individual');
             $table->string('mobilhado');
             $table->text('sobreImovel');
             $table->text('sobreMobilia');

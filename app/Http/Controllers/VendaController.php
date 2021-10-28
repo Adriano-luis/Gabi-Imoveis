@@ -43,6 +43,7 @@ class VendaController extends Controller
         $nomeCondo = $request->get('condominioNome');
         $valorCondo = $request->get('condominioVal');
         $andar = $request->get('andar');
+        $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $descImovel = $request->get('descricaoImovel');
         $descMobilha = $request->get('descricaoMobilia');
@@ -88,6 +89,7 @@ class VendaController extends Controller
             $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
+            $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
@@ -149,9 +151,9 @@ class VendaController extends Controller
     public function novocliente(Request $request){
         $id = $request->get('id');
         if($id != ''){
-            return view('locacao-cadastro-cliente',['idImovel'=>$id]);
+            return view('venda-cadastro-cliente',['idImovel'=>$id]);
         } else{
-            return view('locacao-cadastro-cliente');
+            return view('venda-cadastro-cliente');
         }
        
 
@@ -222,7 +224,7 @@ class VendaController extends Controller
         $editarCliente = new Vendedor();
         $cliente = $editarCliente->where('telefone',$telefone)->get()->toArray();
         if($cliente != ''){
-            return view('ven-cadastro-cliente',['dados'=>$cliente]);
+            return view('venda-cadastro-cliente',['dados'=>$cliente]);
         } else{
             return redirect()->back();
         }

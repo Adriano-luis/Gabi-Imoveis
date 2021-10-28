@@ -43,6 +43,7 @@ class CreateLocacaoImoveisTable extends Migration
             $table->text('nomeCondominio');
             $table->integer('valorCondominio');
             $table->integer('andar');
+            $table->string('individual');
             $table->string('mobilhado');
             $table->string('pet');
             $table->string('opcaoCompra');

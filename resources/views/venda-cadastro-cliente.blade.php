@@ -2,7 +2,7 @@
 @section('content')
 <section class="locacao-cadastro">
     <div class="formulario">
-        <form action="{{route('loc-novo-cliente')}}" method="POST">
+        <form action="{{route('ven-novo-cliente')}}" method="POST">
             @csrf
             <div class="card card-primary">
                 <div class="card-header">
@@ -118,3 +118,4 @@
         </form>
     </div>
 </section>
+@endsection
