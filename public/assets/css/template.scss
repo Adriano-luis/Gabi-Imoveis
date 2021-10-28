@@ -61,3 +61,35 @@
     margin-left: 0.6rem;
     margin-right:2rem;
 }
+
+.descricao-imovel{
+    font-size: 1.5rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.card-rounded{
+    border-radius: 15px;
+}
+
+.align-icons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.align-row{
+    margin-left: 0.2rem !important;
+}
+
+.align-description{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width:993px){
+    .hide{
+        display: none !important;
+    }
+}
