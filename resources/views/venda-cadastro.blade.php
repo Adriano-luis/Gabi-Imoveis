@@ -100,10 +100,28 @@
                             <input type="number" name="varanda" class="form-control" id="varanda" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
-                <div class="form-group col-lg-2">
-                    <label for="documento">Documentação</label>
-                    <input  type="text" name="documento" class="form-control" id="documento" placeholder="Documentação">
-                </div>
+                <div class="row align-row">
+                    <div class="form-check ms-3 px-3">
+                        <input class="form-check-input " type="checkbox" name="contrato">
+                        <label name="contrato" class="form-check-label">Contrato</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="escritura">
+                        <label name="escritura" class="form-check-label">Escritura</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="contratoPoss">
+                        <label name="contratoPoss" class="form-check-label">Contrato possessório</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="usocapiao">
+                        <label name="usocapiao" class="form-check-label">Escritura Usocapião</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="outros">
+                        <label name="outros" class="form-check-label">Outros</label>
+                    </div>
+                </div><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
