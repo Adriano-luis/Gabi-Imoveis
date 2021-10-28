@@ -63,6 +63,10 @@
                     </div>
                 </div><br>
                 <div class="row">
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="individualCheck">
+                    <label name="individualCheck" class="form-check-label"><h5>Individual?<h5></label>
+                  </div><br>
                   <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label"><h5>Condomínio?<h5></label>
