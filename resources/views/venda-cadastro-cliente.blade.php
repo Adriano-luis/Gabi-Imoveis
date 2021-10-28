@@ -9,8 +9,8 @@
                     <h3 class="card-title">Locator</h3>
                 </div>
                 <div class="card-body">
-                    @if (isset($existeImovel))
-                        <div>{{$existeImovel}}</div>
+                    @if (isset($existeVendedor))
+                        <div>{{$existeVendedor}}</div>
                     @endif
                     <div class="form-group col-lg-3">
                         <label for="idImovel">Id Imóvel</label>
@@ -118,5 +118,3 @@
         </form>
     </div>
 </section>
-
-@endsection

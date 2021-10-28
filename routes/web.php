@@ -40,7 +40,9 @@ Route::middleware('login')->prefix('logged')->group(function (){
 
     //Venda
     Route::get('/venda/cadastrar-imovel','VendaController@novoimovel')->name('ven-novo-imovel');
+    Route::post('/venda/cadastrar-imovel','VendaController@novoimovelPost')->name('ven-novo-imovel');
     Route::get('/venda/cadastrar-cliente','VendaController@novocliente')->name('ven-novo-cliente');
+    Route::post('/venda/cadastrar-cliente','VendaController@novoclientePost')->name('ven-novo-cliente');
 
     //Página do Imóvel
     Route::get('/imovel','ImovelController@index')->name('imovel');

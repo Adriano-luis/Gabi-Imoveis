@@ -1,10 +1,7 @@
 @extends('adminlte::page')
 @section('content')
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
-@endsection
 <section class="locacao-cadastro">
-    <form action="{{route('loc-novo-imovel')}}" method="POST">
+    <form action="{{route('ven-novo-imovel')}}" method="POST">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
@@ -16,7 +13,7 @@
                 @endif
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
-                    <input type="text" name="valor" class="form-control" id="valor" placeholder="Qual o valor de aluguel do imóvel?">
+                    <input type="text" name="valor" class="form-control" id="valor" placeholder="Valor avaliado do imóvel?">
                 </div><br> 
                 <h5>Endereço</h5>
                 <div class="form-group">
@@ -43,12 +40,12 @@
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
-                        <label for="metragemTot">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
+                        <label for="terreno">Terreno Livre</label>
+                        <input type="text"  name="terreno" class="form-control" id="terreno" placeholder="Terreno Livre">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="metragemUtil">Metragem útil</label>
-                        <input type="text"  name="metragemUtil" class="form-control" id="metragemUtil" placeholder="Metragem útil">
+                        <label for="metragemTot">Metragem Total</label>
+                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
                     </div>
                 </div><br><br>
                 <div class="row">
@@ -103,24 +100,10 @@
                             <input type="number" name="varanda" class="form-control" id="varanda" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="aguaLuz">
-                    <label name="aguaLuz" class="form-check-label">Agua e luz separada?</label>
-                </div>
-                <br>
                 <div class="form-group col-lg-2">
-                    <label for="rgi">RGI</label>
-                    <input  type="text" name="rgi" class="form-control" id="rgi" placeholder="RGI">
+                    <label for="documento">Documentação</label>
+                    <input  type="text" name="documento" class="form-control" id="documento" placeholder="Documentação">
                 </div>
-                <div class="form-group col-lg-2">
-                    <label for="instalacao">Instalação</label>
-                    <input type="text" name="instalacao" class="form-control" id="instalacao" placeholder="Instalação">
-                </div>
-                <div class="form-group col-lg-2">
-                    <label for="iptu">IPTU</label>
-                    <input type="text" name="iptu" class="form-control" id="iptu" placeholder="IPTU">
-                </div>
-                <br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
@@ -144,16 +127,6 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="mobiliado">
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
-                </div>
-                <br>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="pet">
-                    <label name="pet" class="form-check-label">Aceita Pet?</label>
-                </div>
-                <br>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="opcVenda">
-                    <label name="opcVenda" class="form-check-label">Opção de Venda?</label>
                 </div>
                 <br>
             </div>
@@ -193,6 +166,4 @@
             </div>
         </div>
     </form>
-</section>
-
 @endsection
