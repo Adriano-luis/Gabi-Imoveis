@@ -260,10 +260,10 @@
                     <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                      <img src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                      <img src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
