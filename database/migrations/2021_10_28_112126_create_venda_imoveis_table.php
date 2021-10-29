@@ -51,6 +51,7 @@ class CreateVendaImoveisTable extends Migration
             $table->text('sobreMobilia');
             $table->text('sobreCondominio');
             $table->text('observacoes');
+            $table->string('diponivel');
             $table->string('img1');
             $table->string('img2');
             $table->string('img3');

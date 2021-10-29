@@ -28,6 +28,7 @@ class CreateClientesTable extends Migration
             $table->string('individual');
             $table->string('condominio');
             $table->string('mobilhado');
+            $table->string('diponivel');
             $table->timestamps();
 
         });
