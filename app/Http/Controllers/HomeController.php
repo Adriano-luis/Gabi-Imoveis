@@ -15,8 +15,12 @@ class HomeController extends Controller
 
     public function busca(Request $request){
         $idImovel = $request->get('id');
-        $request->input('aluguelCheck') == 'on'? $aluguel = 'Sim': $aluguel = 'Nao';
-        $request->input('vendaCheck') == 'on'? $venda = 'Sim': $venda = 'Nao';
+        $request->input('resiCheck') == 'on' ? $resi = 'residencial': $resi = null;
+        $request->input('naoResiCheck') == 'on'? $naoResi = 'nResidencial': $naoResi = null;
+        $request->input('apCheck') == 'on'? $ap = 'apartamento': $ap = '';
+        $request->input('casaCheck') == 'on'? $casa = 'casa': $casa = '';
+        $request->input('chacaCheck') == 'on'? $chaca = 'chacara': $chaca = '';
+        $request->input('terreCheck') == 'on'? $terre = 'terreno':  $terre = '';
         $valor = $request->get('valor');
         $enderecoImovel = $request->get('rua');
         $numeroImovel = $request->get('numero');
@@ -32,7 +36,7 @@ class HomeController extends Controller
         $rgi = $request->get('rgi');
 
 
-        if($aluguel == 'Sim'){
+        if($request->input('locacao') == 'Sim'){
             $imoveis = LocacaoImoveis::where(function($query) use ($idImovel){
                 if($idImovel != null){
                     $query->where('id',$idImovel);
@@ -41,6 +45,16 @@ class HomeController extends Controller
             ->where(function($query) use ($valor){
                 if($valor != null){
                     $query->where('valor',$valor);
+                }
+            })
+            ->where(function($query) use ($resi){
+                if($resi != null){
+                    $query->where('tipo',$resi);
+                }
+            })
+            ->where(function($query) use ($naoResi){
+                if($naoResi != null){
+                    $query->where('tipo',$naoResi);
                 }
             })
             ->where(function($query) use ($enderecoImovel){
@@ -104,10 +118,30 @@ class HomeController extends Controller
                 }
             })
             ->get();
-        } else{
+        }else{
             $imoveisV = VendaImoveis::where(function($query) use ($idImovel){
                 if($idImovel != null){
                     $query->where('id',$idImovel);
+                }
+            })
+            ->where(function($query) use ($ap){
+                if($ap != null){
+                    $query->where('tipo',$ap);
+                }
+            })
+            ->where(function($query) use ($casa){
+                if($casa != null){
+                    $query->where('tipo',$casa);
+                }
+            })
+            ->where(function($query) use ($chaca){
+                if($chaca != null){
+                    $query->where('tipo',$chaca);
+                }
+            })
+            ->where(function($query) use ($terre){
+                if($terre != null){
+                    $query->where('tipo',$terre);
                 }
             })
             ->where(function($query) use ($valor){

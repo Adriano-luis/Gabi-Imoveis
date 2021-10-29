@@ -8,7 +8,7 @@
         @csrf
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Imóvel</h3>
+                <h3 class="card-title">Imóvel Locação</h3>
             </div>
             <div class="card-body">
                 @if (isset($existeImovel))
@@ -41,15 +41,9 @@
                         <input type="text" name="complemento" class="form-control" id="complemento" placeholder="Complemento">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group mx-1">
-                        <label for="metragemTot">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
-                    </div>
-                    <div class="form-group mx-1">
-                        <label for="metragemUtil">Metragem útil</label>
-                        <input type="text"  name="metragemUtil" class="form-control" id="metragemUtil" placeholder="Metragem útil">
-                    </div>
+                <div class="form-group mx-1">
+                    <label for="metragemTot">Metragem Total</label>
+                    <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
                 </div><br><br>
                 <div class="row">
                     <div class="form-group col-lg-3">
@@ -157,8 +151,8 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="opcVenda">
-                    <label name="opcVenda" class="form-check-label">Opção de Venda?</label>
+                    <input class="form-check-input" type="checkbox" name="resiCheck">
+                    <label name="resiCheck" class="form-check-label">Residencial?</label>
                 </div>
                 <br>
             </div>

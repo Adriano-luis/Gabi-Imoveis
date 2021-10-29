@@ -5,7 +5,7 @@
         @csrf
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Imóvel</h3>
+                <h3 class="card-title">Imóvel Venda</h3>
             </div>
             <div class="card-body">
                 @if (isset($existeImovel))
@@ -100,6 +100,7 @@
                             <input type="number" name="varanda" class="form-control" id="varanda" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
+                <label>Documentos</label>
                 <div class="row align-row">
                     <div class="form-check ms-3 px-3">
                         <input class="form-check-input " type="checkbox" name="contrato">
@@ -121,7 +122,26 @@
                         <input class="form-check-input" type="checkbox" name="outros">
                         <label name="outros" class="form-check-label">Outros</label>
                     </div>
-                </div><br>
+                </div><br><br>
+                <label>Tipo</label>
+                <div class="row align-row">
+                    <div class="form-check ms-3 px-3">
+                        <input class="form-check-input " type="checkbox" name="apCheck">
+                        <label name="apCheck" class="form-check-label">Apartamento</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="casaCheck">
+                        <label name="casaCheck" class="form-check-label">Casa</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="chacaCheck">
+                        <label name="chacaCheck" class="form-check-label">Chacara</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="terreCheck">
+                        <label name="terreCheck" class="form-check-label">Terreno</label>
+                    </div>
+                </div><br><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
@@ -130,7 +150,7 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label for="condominioNome">Nome do condomínio</label>
-                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Valor do condomínio">
+                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Nome do condomínio">
                     </div>
                     <div class="form-group mx-1">
                         <label for="condominioVal">Valor do condomínio</label>

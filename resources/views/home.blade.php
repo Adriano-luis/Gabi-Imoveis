@@ -2,10 +2,10 @@
 @section('content')
     
   <section class="home">
-    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Filtros Imóveis
+    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseLoc" aria-expanded="false" aria-controls="collapseExample">
+      Filtros Locação
     </button>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseLoc">
       <div class="card card-body position">
         <div class="pesquisa">
           <form action="{{route('home')}}" method="POST">
@@ -15,44 +15,49 @@
                     <div>{{$existeImovel}}</div>
                 @endif
                 <div class="form-group col-lg-1">
+                    <input type="hidden" name="locacao" value="Sim">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
                 </div>
                 <div class="row">
                   <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="aluguelCheck">
-                      <label name="aluguelCheck" class="form-check-label"><h5>Aluguel<h5></label>
+                      <input class="form-check-input" type="checkbox" name="resiCheck">
+                      <label name="resiCheck" class="form-check-label"><h5>Residencial<h5></label>
                     </div><br>
                     <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="vendaCheck">
-                      <label name="vendaCheck" class="form-check-label"><h5>Venda<h5></label>
+                      <input class="form-check-input" type="checkbox" name="naoResiCheck">
+                      <label name="naoResiCheck" class="form-check-label"><h5>Não residencial<h5></label>
                     </div><br>
                   </div>
                 <div class="row">
-                  <div class="form-group mx-3">
-                      <label for="rgi">RGI</label>
-                      <input type="text" name="rgi" class="form-control" id="rgi" placeholder="RGI">
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label>Valor</label>
+                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                      </div>
                   </div>
-                  <div class="form-group mx-3">
-                      <label for="valor">Valor</label>
-                      <input type="text" name="valor" class="form-control" id="Valor" placeholder="Valor">
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label> &nbsp;</label>
+                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                      </div>
                   </div>
                 </div>
                 <div class="row">
-                    <div class="form-group mx-3">
-                        <label for="rua">Rua</label>
-                        <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
-                    </div>
-                    <div class="form-group mx-3">
-                        <label for="numero">Número</label>
-                        <input type="text" name="numero" class="form-control" id="numero" placeholder="Número">
-                    </div>
+                  <div class="form-group mx-3" style="width: 70%">
+                    <label for="rua">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
                   </div>
-                  <div class="row">
-                    <div class="form-group mx-3">
-                        <label for="municipio">Metragem</label>
-                        <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
-                    </div>
+                  <div class="form-group mx-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="bairro" placeholder="bairro">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group mx-3">
+                      <label for="municipio">Metragem</label>
+                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
+                  </div>
                 </div>
                 <div class="row">
                     <div class="form-group mx-3">
@@ -63,14 +68,14 @@
                         <label for="qtQuarto">Quatidade de quarto</label>
                         <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
                     </div>
-                    <div class="form-group mx-3">
+                    <!-- <div class="form-group mx-3">
                         <label for="qtBanheiros">Quatidade de banheiro</label>
                         <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
-                    </div>
+                    </div> 
                     <div class="form-group mx-3">
                         <label for="qtVagas">Quatidade de vagas de garagem</label>
                         <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
-                    </div>
+                    </div> -->
                 </div><br>
                 <div class="row">
                 <div class="form-check mx-3">
@@ -87,10 +92,119 @@
                     <label name="mobiliado" class="form-check-label"><h5>Mobiliado?</h5></label>
                   </div><br>
 
-                  <div class="form-check mx-3">
+                  <!--<div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="pet">
                     <label name="pet" class="form-check-label"><h5>Aceita Pet?</h5></label>
+                  </div>--><br>
+                </div>
+              </div>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+          </form>
+        </div>                
+      </div>
+    </div>
+
+    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseVenda" aria-expanded="false" aria-controls="collapseExample">
+      Filtros Venda
+    </button>
+    <div class="collapse" id="collapseVenda">
+      <div class="card card-body position">
+        <div class="pesquisa">
+          <form action="{{route('home')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                @if (isset($existeImovel))
+                    <div>{{$existeImovel}}</div>
+                @endif
+                <div class="form-group col-lg-1">
+                    <label for="idImovel">Id Imóvel</label>
+                    <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
+                </div>
+                <div class="row">
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="apCheck">
+                    <label name="apCheck" class="form-check-label"><h5>Apartamento<h5></label>
                   </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="casaCheck">
+                    <label name="casaCheck" class="form-check-label"><h5>Casa<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="chacaCheck">
+                    <label name="chacaCheck" class="form-check-label"><h5>Chácaras<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="terreCheck">
+                    <label name="terreCheck" class="form-check-label"><h5>Terreno<h5></label>
+                  </div><br>
+                </div>
+                <div class="row">
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label>Valor</label>
+                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label> &nbsp;</label>
+                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group mx-3" style="width: 70%">
+                    <label for="rua">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="bairro" placeholder="bairro">
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="form-group mx-3">
+                      <label for="municipio">Metragem</label>
+                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
+                  </div>
+                </div> -->
+                <div class="row">
+                    <div class="form-group mx-3">
+                        <label for="qtCom">Quatidade de comodos</label>
+                        <input type="number" name="qtCom" class="form-control" id="qtCom" placeholder="Quatidade de comodos">
+                    </div>
+                    <div class="form-group mx-3">
+                        <label for="qtQuarto">Quatidade de quarto</label>
+                        <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
+                    </div>
+                    <!-- <div class="form-group mx-3">
+                        <label for="qtBanheiros">Quatidade de banheiro</label>
+                        <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
+                    </div> 
+                    <div class="form-group mx-3">
+                        <label for="qtVagas">Quatidade de vagas de garagem</label>
+                        <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
+                    </div> -->
+                </div><br>
+                <div class="row">
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="individualCheck">
+                    <label name="individualCheck" class="form-check-label"><h5>Individual?<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="condominioCheck">
+                    <label name="condominioCheck" class="form-check-label"><h5>Condomínio?<h5></label>
+                  </div><br>
+
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="mobiliado">
+                    <label name="mobiliado" class="form-check-label"><h5>Mobiliado?</h5></label>
+                  </div><br>
+
+                  <!--<div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="pet">
+                    <label name="pet" class="form-check-label"><h5>Aceita Pet?</h5></label>
+                  </div>--><br>
                 </div>
               </div>
             <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>

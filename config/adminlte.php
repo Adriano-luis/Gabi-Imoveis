@@ -258,10 +258,9 @@ return [
             //'label_color' => 'success',
         ],
         [
-            'text'        => 'Cliente-modal',
-            'url'         => 'admin/cliente',
+            'text'        => 'Lista Cliente',
+            'url'         => 'logged/lista-cliente',
             'icon'        => 'fas fa-user',
-            'classes'     => 'modal-cliente',
             //'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',

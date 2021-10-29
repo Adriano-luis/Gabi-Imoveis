@@ -38,7 +38,11 @@ class VendaController extends Controller
         $escritorio = $request->get('escritorio');
         $jardim = $request->get('jardim');
         $varanda = $request->get('varanda');
-        $documento = $request->get('documento');
+        $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
+        $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
+        $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
+        $request->input('usocapiao') == 'on'? $usocapiao = 'Sim': $usocapiao = 'Nao';
+        $request->input('outros') == 'on'? $outros = 'Sim': $outros = 'Nao';
         $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
         $nomeCondo = $request->get('condominioNome');
         $valorCondo = $request->get('condominioVal');
@@ -62,7 +66,7 @@ class VendaController extends Controller
 
         //salvando no DB
         $novoImovel = new VendaImoveis();
-        $existeImovel = $novoImovel->where('documento',$documento)->first();
+        $existeImovel = $novoImovel->where('nomeCondominio',$nomeCondo)->first();
         if($existeImovel == ''){
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
@@ -84,13 +88,21 @@ class VendaController extends Controller
             $novoImovel-> escritorio = $escritorio;
             $novoImovel-> jardim = $jardim;
             $novoImovel-> varanda = $varanda;
-            $novoImovel-> documento = $documento;
+            $novoImovel-> contrato = $contrato;
+            $novoImovel-> escritura = $escritura;
+            $novoImovel-> contratoPoss = $contratoPoss;
+            $novoImovel-> usocapiao = $usocapiao;
+            $novoImovel-> outros = $outros;
             $novoImovel-> condominio = $condo;
             $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
             $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
+            $request->input('apCheck') == 'on'? $novoImovel-> tipo = 'apartamento' : '';
+            $request->input('casaCheck') == 'on'? $novoImovel-> tipo = 'casa' : '';
+            $request->input('chacaCheck') == 'on'? $novoImovel-> tipo = 'chacara': '';
+            $request->input('terreCheck') == 'on'? $novoImovel-> tipo = 'terreno' : '';
             $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
@@ -117,7 +129,7 @@ class VendaController extends Controller
         } else{
             $idImovel = new VendaImoveis();
             $id = $idImovel->latest()->get()->first(); 
-            return view('venda-cadastro-cliente',['id'=>$id->id]);
+            return redirect()->route('ven-cadastro-cliente',['id'=>$id->id]);
         }
 
     }

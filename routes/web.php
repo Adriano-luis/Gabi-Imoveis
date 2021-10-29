@@ -25,8 +25,8 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::get('/home','HomeController@index')->name('home');
     Route::post('/home','HomeController@busca')->name('home');
 
-    //Modal de cadatro rápido de clientes e busca da home
-    Route::post('/cadastro-rapido','ClienteController@salva')->name('cliente');
+    //Cliente
+    Route::get('/lista-cliente','ClienteController@index')->name('cliente');
     Route::post('/cadastro-rapido-busca','ClienteController@busca')->name('cliente-busca');
 
     // Cadastros Locação

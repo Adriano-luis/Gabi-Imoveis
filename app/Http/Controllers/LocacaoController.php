@@ -48,7 +48,7 @@ class LocacaoController extends Controller
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
-        $request->input('opcVenda') == 'on'? $optVenda = 'Sim': $optVenda = 'Nao';
+        $request->input('resiCheck') == 'on'? $resi = 'residencial': 'nResidencial';
         $descImovel = $request->get('descricaoImovel');
         $descMobilha = $request->get('descricaoMobilia');
         $descCond = $request->get('descricaoCond');
@@ -99,7 +99,7 @@ class LocacaoController extends Controller
             $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
             $novoImovel-> pet = $pet;
-            $novoImovel-> opcaoCompra = $optVenda;
+            $novoImovel-> tipo = $resi;
             $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;

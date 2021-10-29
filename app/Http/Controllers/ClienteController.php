@@ -7,21 +7,8 @@ use App\Clientes;
 
 class ClienteController extends Controller
 {
-    public function salva(Request $request){
-        $nome = $request->get('nome');
-        $telefone = $request->get('telefone');
-
-        $novo = new Clientes ();
-        $existe = $novo->where('telefone',$telefone)->get()->first();
-        if(!isset($existe->id) || $existe->id == ''){
-            $novo-> nome     = $nome;
-            $novo-> telefone = $telefone;
-            $novo->save();
-
-            return true;
-        }else{
-            return false;
-        }
+    public function index(Request $request){
+        return view('lista-clientes');
         
         
     }
