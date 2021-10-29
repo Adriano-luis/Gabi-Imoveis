@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\LocacaoImoveis;
 use App\Locator;
 use App\VendaImoveis;
+use App\Clientes;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,8 @@ class HomeController extends Controller
 
     public function busca(Request $request){
         $idImovel = $request->get('id');
+        $clienteNome = $request->get('NomeCliente');
+        $clienteTelefone = $request->get('TelefoneCliente');
         $request->input('resiCheck') == 'on' ? $resi = 'residencial': $resi = null;
         $request->input('naoResiCheck') == 'on'? $naoResi = 'nResidencial': $naoResi = null;
         $request->input('apCheck') == 'on'? $ap = 'apartamento': $ap = '';
@@ -24,17 +27,16 @@ class HomeController extends Controller
         $valorMin = $request->get('valorMin');
         $valorMax = $request->get('valorMax');
         $enderecoImovel = $request->get('rua');
-        $numeroImovel = $request->get('numero');
+        $bairro = $request->get('bairro');
         $metragemTot = $request->get('metragemTot');
         $qtComodos = $request->get('qtCom');
         $qtQuarto = $request->get('qtQuartos');
-        $qtBanheiro = $request->get('qtBanheiros');
-        $qtVagas = $request->get('qtVagas');
+        //$qtBanheiro = $request->get('qtBanheiros');
+        //$qtVagas = $request->get('qtVagas');
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
-        $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
-        $rgi = $request->get('rgi');
+        //$request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
 
 
         if($request->input('locacao') == 'Sim'){
@@ -63,9 +65,9 @@ class HomeController extends Controller
                     $query->where('endereco','like','%'.$enderecoImovel.'%');
                 }
             })
-            ->where(function($query) use ($numeroImovel){
-                if($numeroImovel != null){
-                    $query->where('numero',$numeroImovel);
+            ->where(function($query) use ($bairro){
+                if($bairro != null){
+                    $query->where('bairro',$bairro);
                 }
             })
             ->where(function($query) use ($metragemTot){
@@ -83,16 +85,16 @@ class HomeController extends Controller
                     $query->where('quarto',$qtQuarto);
                 }
             })
-            ->where(function($query) use ($qtBanheiro){
+            /*->where(function($query) use ($qtBanheiro){
                 if($qtBanheiro != null){
                     $query->where('banheiro',$qtBanheiro);
                 }
             })
-            ->where(function($query) use ($qtVagas){
+            >where(function($query) use ($qtVagas){
                 if($qtVagas != null){
                     $query->where('garagem',$qtVagas);
                 }
-            })
+            })*/
             ->where(function($query) use ($individual){
                 if($individual != 'Nao'){
                     $query->where('individual',$individual);
@@ -108,16 +110,11 @@ class HomeController extends Controller
                     $query->where('mobilhado',$mobilhado);
                 }
             })
-            ->where(function($query) use ($pet){
+            /*->where(function($query) use ($pet){
                 if($pet != 'Nao'){
                     $query->where('pet',$pet);
                 }
-            })
-            ->where(function($query) use ($rgi){
-                if($rgi != null){
-                    $query->where('RGI','like','%'.$rgi.'%');
-                }
-            })
+            })*/
             ->get();
         }else{
             $imoveisV = VendaImoveis::where(function($query) use ($idImovel){
@@ -155,9 +152,9 @@ class HomeController extends Controller
                     $query->where('endereco','like','%'.$enderecoImovel.'%');
                 }
             })
-            ->where(function($query) use ($numeroImovel){
-                if($numeroImovel != null){
-                    $query->where('numero',$numeroImovel);
+            ->where(function($query) use ($bairro){
+                if($bairro != null){
+                    $query->where('bairro',$bairro);
                 }
             })
             ->where(function($query) use ($metragemTot){
@@ -175,7 +172,7 @@ class HomeController extends Controller
                     $query->where('quarto',$qtQuarto);
                 }
             })
-            ->where(function($query) use ($qtBanheiro){
+            /*->where(function($query) use ($qtBanheiro){
                 if($qtBanheiro != null){
                     $query->where('banheiro',$qtBanheiro);
                 }
@@ -184,7 +181,7 @@ class HomeController extends Controller
                 if($qtVagas != null){
                     $query->where('garagem',$qtVagas);
                 }
-            })
+            })*/
             ->where(function($query) use ($individual){
                 if($individual != 'Nao'){
                     $query->where('individual',$individual);
@@ -200,7 +197,7 @@ class HomeController extends Controller
                     $query->where('mobilhado',$mobilhado);
                 }
             })
-            ->where(function($query) use ($pet){
+            /*->where(function($query) use ($pet){
                 if($pet != 'Nao'){
                     $query->where('pet',$pet);
                 }
@@ -209,8 +206,33 @@ class HomeController extends Controller
                 if($rgi != null){
                     $query->where('RGI','like','%'.$rgi.'%');
                 }
-            })
+            })*/
             ->get();
+
+        }
+        $tipos = [$resi,$naoResi,$ap,$casa,$chaca,$terre];
+        foreach($tipos as $dado){
+            if($dado != '' && $dado != null){
+                $tipo = $dado;
+            }
+        }
+
+        if($clienteNome != null && $clienteTelefone != null){
+            Clientes::create([
+            'nome'          => $clienteNome,
+            'telefone'      => $clienteTelefone,
+            'valorMin'      => $valorMin,
+            'valorMax'      => $valorMax,
+            'tipo'          => $tipo,
+            'endereco'      => $enderecoImovel,
+            'bairro'        => $bairro,
+            'metragemTotal' => $metragemTot,
+            'qtComodos'     => $qtComodos,
+            'quarto'        => $qtQuarto,
+            'individual'    => $individual,
+            'condominio'    => $condo,
+            'mobilhado'     => $mobilhado
+            ]);
         }
         
 

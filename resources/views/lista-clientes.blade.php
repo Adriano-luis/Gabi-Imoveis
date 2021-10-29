@@ -6,7 +6,17 @@
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
-                    <th></th>
+                    <th>V.Min</th>
+                    <th>V.Max</th>
+                    <th>Tipo</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>m²</th>
+                    <th>Qt.Como.</th>
+                    <th>Qt.Quar.</th>
+                    <th>Indivi.</th>
+                    <th>Condo.</th>
+                    <th>Mobi.</th>
                 </tr>
             </thead>
             <tbody>
@@ -14,7 +24,17 @@
                     <tr>
                         <td>{{$cliente->nome}}</td>
                         <td>{{$cliente->telefone}}</td>
-                        <td></td>
+                        <td>{{$cliente->valorMin}}</td>
+                        <td>{{$cliente->valorMax}}</td>
+                        <td>{{$cliente->tipo}}</td>
+                        <td>{{$cliente->endereco}}</td>
+                        <td>{{$cliente->bairro}}</td>
+                        <td>{{$cliente->metragemTotal}}</td>
+                        <td>{{$cliente->qtComodos}}</td>
+                        <td>{{$cliente->quarto}}</td>
+                        <td>{{$cliente->individual}}</td>
+                        <td>{{$cliente->condominio}}</td>
+                        <td>{{$cliente->mobilhado}}</td>
                     </tr>
                 @endforeach
             </tbody>

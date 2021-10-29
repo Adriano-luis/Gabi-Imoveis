@@ -22,11 +22,11 @@
                   </div>
                   <div class="form-group col-lg-5">
                     <label> Nome do Cliente</label>
-                    <input type="text"  class="form-control" id="NomeClienteModal" placeholder="Nome Completo">
+                    <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
                   </div>
                   <div class="form-group col-lg-6">
                     <label> Telefone do cliente</label>
-                    <input type="text"  class="form-control col-3" id="TelefoneClienteModal" placeholder="Telefone">
+                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="Telefone">
                   </div>
                 </div>
                 <div class="row">
