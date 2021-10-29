@@ -14,10 +14,20 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
-                <div class="form-group col-lg-1">
+                <div class="row">
+                  <div class="form-group col-lg-1">
                     <input type="hidden" name="locacao" value="Sim">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
+                  </div>
+                  <div class="form-group col-lg-5">
+                    <label> Nome do Cliente</label>
+                    <input type="text"  class="form-control" id="NomeClienteModal" placeholder="Nome Completo">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label> Telefone do cliente</label>
+                    <input type="text"  class="form-control col-3" id="TelefoneClienteModal" placeholder="Telefone">
+                  </div>
                 </div>
                 <div class="row">
                   <div class="form-check mx-3">
@@ -116,9 +126,19 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
-                <div class="form-group col-lg-1">
+                <div class="row">
+                  <div class="form-group col-lg-1">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
+                  </div>
+                  <div class="form-group col-lg-5">
+                    <label> Nome do Cliente</label>
+                    <input type="text"  class="form-control" id="NomeClienteModal" placeholder="Nome Completo">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label> Telefone do cliente</label>
+                    <input type="text"  class="form-control col-3" id="TelefoneClienteModal" placeholder="Telefone">
+                  </div>
                 </div>
                 <div class="row">
                   <div class="form-check mx-3">

@@ -8,7 +8,8 @@ use App\Clientes;
 class ClienteController extends Controller
 {
     public function index(Request $request){
-        return view('lista-clientes');
+        $clientes = Clientes::all();
+        return view('lista-clientes',['clientes'=>$clientes]);
         
         
     }
