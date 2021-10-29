@@ -372,6 +372,7 @@
     @if (isset($imoveisV))
       <div class="row">
         @foreach ($imoveisV as $imovel)
+        <a href="{{route('imovel',['id'=>$imovel->id])}}">
           <div class="col-md-3">
             <div class="card card-widget">
               <div class="card-header imoveisCard">
@@ -479,6 +480,7 @@
               </div>
             </div>
           </div>
+        </a>
         @endforeach
       </div>
     @endif

@@ -21,7 +21,8 @@ class HomeController extends Controller
         $request->input('casaCheck') == 'on'? $casa = 'casa': $casa = '';
         $request->input('chacaCheck') == 'on'? $chaca = 'chacara': $chaca = '';
         $request->input('terreCheck') == 'on'? $terre = 'terreno':  $terre = '';
-        $valor = $request->get('valor');
+        $valorMin = $request->get('valorMin');
+        $valorMax = $request->get('valorMax');
         $enderecoImovel = $request->get('rua');
         $numeroImovel = $request->get('numero');
         $metragemTot = $request->get('metragemTot');
@@ -42,9 +43,9 @@ class HomeController extends Controller
                     $query->where('id',$idImovel);
                 }
             })
-            ->where(function($query) use ($valor){
-                if($valor != null){
-                    $query->where('valor',$valor);
+            ->where(function($query) use ($valorMin,$valorMax){
+                if($valorMax != null && $valorMin != null){
+                    $query->whereBetween('valor',[$valorMin,$valorMax]);
                 }
             })
             ->where(function($query) use ($resi){
@@ -144,9 +145,9 @@ class HomeController extends Controller
                     $query->where('tipo',$terre);
                 }
             })
-            ->where(function($query) use ($valor){
-                if($valor != null){
-                    $query->where('valor',$valor);
+            ->where(function($query) use ($valorMin,$valorMax){
+                if($valorMax != null && $valorMin != null){
+                    $query->whereBetween('valor',[$valorMin,$valorMax]);
                 }
             })
             ->where(function($query) use ($enderecoImovel){

@@ -45,7 +45,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/venda/cadastrar-cliente','VendaController@novoclientePost')->name('ven-novo-cliente');
 
     //Página do Imóvel
-    Route::get('/imovel','ImovelController@index')->name('imovel');
+    Route::get('/imovel/{id}','ImovelController@index')->name('imovel');
 
     //Adicionar novo Gerenciado
     //Alterar senha
