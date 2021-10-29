@@ -231,7 +231,8 @@ class HomeController extends Controller
             'quarto'        => $qtQuarto,
             'individual'    => $individual,
             'condominio'    => $condo,
-            'mobilhado'     => $mobilhado
+            'mobilhado'     => $mobilhado,
+            'disponivel'    => 'Sim'
             ]);
         }
         

@@ -107,6 +107,7 @@ class VendaController extends Controller
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
+            $novoImovel-> disponivel = 'Sim';
             /*$novoImovel-> img1 = $img1;
             $novoImovel-> img2 = $img2;
             $novoImovel-> img3 = $img3;
@@ -129,7 +130,7 @@ class VendaController extends Controller
         } else{
             $idImovel = new VendaImoveis();
             $id = $idImovel->latest()->get()->first(); 
-            return redirect()->route('ven-cadastro-cliente',['id'=>$id->id]);
+            return redirect()->route('ven-novo-cliente',['id'=>$id->id]);
         }
 
     }
@@ -159,7 +160,7 @@ class VendaController extends Controller
 
 
 
-    //Cadastro de de Cliente
+    //Cadastro  de Cliente
     public function novocliente(Request $request){
         $id = $request->get('id');
         if($id != ''){
@@ -223,7 +224,7 @@ class VendaController extends Controller
         if(isset($locator)){
             return redirect()->back(['existeVendedor'=>$vendedor]);
         } else{
-            return redirect()->route('imovel',['c'=>'c']);
+            return redirect()->route('imovel',['c'=>'c','venId'=>$idImovel]);
         }
     }
 

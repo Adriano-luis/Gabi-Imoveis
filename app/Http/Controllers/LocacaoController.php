@@ -104,6 +104,7 @@ class LocacaoController extends Controller
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
+            $novoImovel-> disponivel = 'Sim';
             /*$novoImovel-> img1 = $img1;
             $novoImovel-> img2 = $img2;
             $novoImovel-> img3 = $img3;
@@ -220,7 +221,7 @@ class LocacaoController extends Controller
         if(isset($locator)){
             return view('locacao-cadastro',['existeLocator'=>$locator]);
         } else{
-            return redirect()->route('imovel',['c'=>'c']);
+            return redirect()->route('imovel',['c'=>'c','locId'=>$idImovel]);
         }
     }
 

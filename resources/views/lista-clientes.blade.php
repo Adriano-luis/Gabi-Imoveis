@@ -17,6 +17,8 @@
                     <th>Indivi.</th>
                     <th>Condo.</th>
                     <th>Mobi.</th>
+                    <th>Disp.</th>
+                    <th>Opç.</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,8 @@
                         <td>{{$cliente->individual}}</td>
                         <td>{{$cliente->condominio}}</td>
                         <td>{{$cliente->mobilhado}}</td>
+                        <td>{{$cliente->disponivel}}</td>
+                        <td><a href="">Editar</a>-<a href="">Buscar</a> </td>
                     </tr>
                 @endforeach
             </tbody>

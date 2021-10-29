@@ -258,6 +258,7 @@
     @if (isset($imoveis))
       <div class="row">
         @foreach ($imoveis as $imovel)
+        <a href="{{route('imovel',['id'=>$imovel->id])}}">
           <div class="col-md-3">
             <div class="card card-widget">
               <div class="card-header imoveisCard">
@@ -297,74 +298,77 @@
                 </div>
               </div>
               <div class="card-footer card-comments">
-                <div class="card-comment d-flex">
-                  <i class="fas fa-ruler-combined pt-2"></i>
-      
-                  <span class="username px-3">
-                    {{$imovel->metragemTotal}} m²
-                  </span>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-toilet"></i>
-                  <div class="px-3">
-                    @if ($imovel->banheiro != null)
-                      {{$imovel->banheiro}} Banheiro(s)
+                <a href="{{route('imovel',['id'=>$imovel->id])}}">
+                  <div class="card-comment d-flex">
+                    <i class="fas fa-ruler-combined pt-2"></i>
+        
+                    <span class="username px-3">
+                      {{$imovel->metragemTotal}} m²
+                    </span>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-toilet"></i>
+                    <div class="px-3">
+                      @if ($imovel->banheiro != null)
+                        {{$imovel->banheiro}} Banheiro(s)
 
+                        @else
+                        Nenhum banheiro
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-bed"></i>
+                    <div class="px-3">
+                      @if ($imovel->quarto)
+                        {{$imovel->quarto}} Quarto(s)
                       @else
-                      Nenhum banheiro
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-bed"></i>
-                  <div class="px-3">
-                    @if ($imovel->quarto)
-                      {{$imovel->quarto}} Quarto(s)
-                    @else
-                        Nenhum Quarto
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-car"></i>
-                  <div class="px-3">
-                    @if ($imovel->garagem)
-                      {{$imovel->garagem}} Vagas de Garagem
-                    @else
-                        Sem Garagem
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i><b>R$</b></i>
-                  <div class="px-3">
-                      {{$imovel->valor}} (Aluguel)
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <div class="px-3 btn valorTotal">
-                    <b>
-                    <?php
-                      if ($imovel->IPTU != null){
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          Nenhum Quarto
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-car"></i>
+                    <div class="px-3">
+                      @if ($imovel->garagem)
+                        {{$imovel->garagem}} Vagas de Garagem
+                      @else
+                          Sem Garagem
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i><b>R$</b></i>
+                    <div class="px-3">
+                        {{$imovel->valor}} (Aluguel)
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <div class="px-3 btn valorTotal">
+                      <b>
+                      <?php
+                        if ($imovel->IPTU != null){
+                          if($imovel->valorCondominio != null) {
+                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          }else{
+                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          }
                         }else{
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          if($imovel->valorCondominio != null) {
+                            echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
+                          }else {
+                            echo  'Total: R$'.($imovel->valor);
+                          }
                         }
-                      }else{
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
-                        }else {
-                          echo  'Total: R$'.($imovel->valor);
-                        }
-                      }
-                    ?>
-                    </b>
+                      ?>
+                      </b>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
+        </a>
         @endforeach
       </div>
     @endif
@@ -387,7 +391,6 @@
                   <span class="description">cadastrado {{$imovel->created_at}} </span>
                 </div>
               </div>
-      
               <div class="card-body">
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
@@ -412,71 +415,72 @@
                 </div>
               </div>
               <div class="card-footer card-comments">
-                <div class="card-comment d-flex">
-                  <i class="fas fa-ruler-combined pt-2"></i>
-      
-                  <span class="username px-3">
-                    {{$imovel->metragemTotal}} m²
-                  </span>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-toilet"></i>
-                  <div class="px-3">
-                    @if ($imovel->banheiro != null)
-                      {{$imovel->banheiro}} Banheiro(s)
-
+                <a href="{{route('imovel',['id'=>$imovel->id])}}">
+                  <div class="card-comment d-flex">
+                    <i class="fas fa-ruler-combined pt-2"></i>
+        
+                    <span class="username px-3">
+                      {{$imovel->metragemTotal}} m²
+                    </span>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-toilet"></i>
+                    <div class="px-3">
+                      @if ($imovel->banheiro != null)
+                        {{$imovel->banheiro}} Banheiro(s)
+                        @else
+                        Nenhum banheiro
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-bed"></i>
+                    <div class="px-3">
+                      @if ($imovel->quarto)
+                        {{$imovel->quarto}} Quarto(s)
                       @else
-                      Nenhum banheiro
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-bed"></i>
-                  <div class="px-3">
-                    @if ($imovel->quarto)
-                      {{$imovel->quarto}} Quarto(s)
-                    @else
-                        Nenhum Quarto
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-car"></i>
-                  <div class="px-3">
-                    @if ($imovel->garagem)
-                      {{$imovel->garagem}} Vagas de Garagem
-                    @else
-                        Sem Garagem
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i><b>R$</b></i>
-                  <div class="px-3">
-                      {{$imovel->valor}} (Valor Estimado)
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <div class="px-3 btn valorTotal">
-                    <b>
-                    <?php
-                      if ($imovel->IPTU != null){
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          Nenhum Quarto
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-car"></i>
+                    <div class="px-3">
+                      @if ($imovel->garagem)
+                        {{$imovel->garagem}} Vagas de Garagem
+                      @else
+                          Sem Garagem
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i><b>R$</b></i>
+                    <div class="px-3">
+                        {{$imovel->valor}} (Valor Estimado)
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <div class="px-3 btn valorTotal">
+                      <b>
+                      <?php
+                        if ($imovel->IPTU != null){
+                          if($imovel->valorCondominio != null) {
+                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          }else{
+                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          }
                         }else{
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          if($imovel->valorCondominio != null) {
+                            echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
+                          }else {
+                            echo  'Total: R$'.($imovel->valor);
+                          }
                         }
-                      }else{
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
-                        }else {
-                          echo  'Total: R$'.($imovel->valor);
-                        }
-                      }
-                    ?>
-                    </b>
+                      ?>
+                      </b>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>

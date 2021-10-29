@@ -18,5 +18,7 @@ class Clientes extends Model
     'quarto',
     'individual',
     'condominio',
-    'mobilhado'];
+    'mobilhado',
+    'disponivel'
+    ];
 }
