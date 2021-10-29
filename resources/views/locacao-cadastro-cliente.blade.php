@@ -6,7 +6,7 @@
             @csrf
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Locator</h3>
+                    <h3 class="card-title">Cadastrar Locador</h3>
                 </div>
                 <div class="card-body">
                     @if (isset($existeImovel))
@@ -16,14 +16,14 @@
                         <label for="idImovel">Id Imóvel</label>
                         <input type="text" name="idImovel" class="form-control" id="idImovel"  value="{{isset($id) && $id !='' ? $id : '' }}">
                     </div><br> 
-                    <h5>Dados do locator</h5>
+                    <h5>Dados do locador</h5>
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do locator">
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do locador">
                     </div>
                     <div class="form-group">
                         <label for="logradouro">Logradouro</label>
-                        <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do locator">
+                        <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do locador">
                     </div>
                     <div class="row">
                         <div class="form-group mx-1">

@@ -26,7 +26,7 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label> Telefone do cliente</label>
-                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="Telefone">
+                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
                   </div>
                 </div>
                 <div class="row">
@@ -66,7 +66,7 @@
                 <div class="row">
                   <div class="form-group mx-3">
                       <label for="municipio">Metragem</label>
-                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
+                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="m²">
                   </div>
                 </div>
                 <div class="row">
@@ -108,7 +108,7 @@
                   </div>--><br>
                 </div>
               </div>
-            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
           </form>
         </div>                
       </div>
@@ -137,7 +137,7 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label> Telefone do cliente</label>
-                    <input type="text"  class="form-control col-3" id="TelefoneClienteModal" placeholder="Telefone">
+                    <input type="text"  class="form-control col-3" id="TelefoneClienteModal" placeholder="(dd)x xxxx-xxxx">
                   </div>
                 </div>
                 <div class="row">
@@ -185,7 +185,7 @@
                 <!-- <div class="row">
                   <div class="form-group mx-3">
                       <label for="municipio">Metragem</label>
-                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
+                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="m²">
                   </div>
                 </div> -->
                 <div class="row">
@@ -227,7 +227,7 @@
                   </div>--><br>
                 </div>
               </div>
-            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
           </form>
         </div>                
       </div>

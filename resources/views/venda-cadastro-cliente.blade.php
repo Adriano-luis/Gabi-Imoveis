@@ -14,16 +14,16 @@
                     @endif
                     <div class="form-group col-lg-3">
                         <label for="idImovel">Id Imóvel</label>
-                        <input type="text" name="idImovel" class="form-control" id="idImovel"  value="{{isset($id) && $id !='' ? $id : '' }}">
+                        <input type="text" name="idImovel" class="form-control" id="idImovel"  value="{{isset($idImovel) && $idImovel !='' ? $idImovel : '' }}">
                     </div><br> 
-                    <h5>Dados do locator</h5>
+                    <h5>Dados do proprietário</h5>
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do locator">
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do proprietário">
                     </div>
                     <div class="form-group">
                         <label for="logradouro">Logradouro</label>
-                        <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do locator">
+                        <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Endereço do proprietário">
                     </div>
                     <div class="row">
                         <div class="form-group mx-1">

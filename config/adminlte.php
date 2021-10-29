@@ -275,7 +275,7 @@ return [
                     'url'  => 'logged/locacao/cadastrar-imovel',
                 ],
                 [
-                    'text' => 'Cadastrar cliente',
+                    'text' => 'Cadastrar Locador',
                     'url'  => 'logged/locacao/cadastrar-cliente',
                 ],
             ],
@@ -290,7 +290,7 @@ return [
                     'url'  => 'logged/venda/cadastrar-imovel',
                 ],
                 [
-                    'text' => 'Cadastrar cliente',
+                    'text' => 'Cadastrar Proprietário',
                     'url'  => 'logged/venda/cadastrar-cliente',
                 ],
             ],

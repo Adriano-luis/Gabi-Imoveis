@@ -41,11 +41,11 @@
                 <div class="row">
                     <div class="form-group mx-1">
                         <label for="terreno">Terreno Livre</label>
-                        <input type="text"  name="terreno" class="form-control" id="terreno" placeholder="Terreno Livre">
+                        <input type="text"  name="terreno" class="form-control" id="terreno" placeholder="m²">
                     </div>
                     <div class="form-group mx-1">
                         <label for="metragemTot">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
+                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
                     </div>
                 </div><br><br>
                 <div class="row">
@@ -183,11 +183,11 @@
             <br>
             <textarea name="observacao" class="mx-3 my-2" placeholder="Observações"></textarea>
             <div class="form-group mx-3 col-lg-4">
-                <label for="exampleInputFile">Subir as fotos</label>
+                <label for="InputArquivo">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label name="upFotos" class="custom-file-label" for="exampleInputFile">Buscar</label>
+                        <input type="file" class="custom-file-input" id="InputArquivo">
+                        <label name="upFotos" class="custom-file-label" for="InputArquivo">Buscar</label>
                     </div>
                     <div class="input-group-append">
                         <span class="input-group-text">Subir</span>

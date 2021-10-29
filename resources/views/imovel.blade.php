@@ -3,7 +3,7 @@
     <section class="imovel">
         <div class="">
             @if (isset($c))
-                cliente cadastrado
+                <input type="hidden" id="cadastrado" value="Sim">
             @endif
             <div class="row pt-3">
                 <div class="col-lg-8">
