@@ -2,7 +2,7 @@
 @section('content')
     <section class="lista-clientes-editar">
         <div>
-        <form action="{{route('cliente-editar')}}" method="GET">
+        <form action="{{ route('cliente-editar')}}" method="GET">
             @csrf
             <input type="hidden" name="id" value="{{$cliente->id}}">
             <div class="form-group" style="margin-left: 0.4rem;">

@@ -239,15 +239,25 @@
     <div class="collapse" id="collapseExample2">
       <div class="card card-body position">
         <div class="pesquisa">
-          <form action="{{route('cliente-busca')}}" method="POST">
+          <form action="{{route('loc-editar-cliente')}}" method="POST">
             @csrf
             <div class="card-body">
                 <div class="form-group col-lg-2">
-                    <label for="telefone">Telefone</label>
+                    <label for="telefone">Locação: Telefone do Locador</label>
                     <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
                 </div> 
             </div>
-            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
+          </form>
+          <form action="{{route('ven-editar-cliente')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="form-group col-lg-2">
+                    <label for="telefone">Venda: Telefone do Proprietário</label>
+                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
+                </div> 
+            </div>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
           </form>
         </div>                
       </div>

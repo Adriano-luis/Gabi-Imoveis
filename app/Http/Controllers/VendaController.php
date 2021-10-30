@@ -229,13 +229,13 @@ class VendaController extends Controller
     }
 
     public function editarcliente(Request $request){
-        $telefone = $request->get('');
+        $telefone = $request->get('telefone');
         if(!isset($telefone) || $telefone == ''){
             return redirect()->back();
         }
 
         $editarCliente = new Vendedor();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->toArray();
+        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
             return view('venda-cadastro-cliente',['dados'=>$cliente]);
         } else{
@@ -243,5 +243,61 @@ class VendaController extends Controller
         }
 
         
+    }
+
+    public function editarclientePost(Request $request){
+        /*recuperando os dados preenchidos
+        $idImovel = $request->get('idImovel');
+        $nome = $request->get('nome');
+        $enderecoLocator = $request->get('logradouro');
+        $numLocator = $request->get('numero');
+        $bairroLocator = $request->get('bairro');
+        $municipioLocator = $request->get('municipio');
+        $compleLocator = $request->get('complemento');
+        $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        $tipoConta = $request->get('tipoConta');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
+
+        //salvando no DB
+        $novoLocator =  new Vendedor();
+        $existeLocator = $novoLocator->where('CPF',$cpf)->first();
+        if($existeLocator == ''){
+            $novoLocator-> idImovel = $idImovel;
+            $novoLocator-> nome = $nome;
+            $novoLocator-> endereco = $enderecoLocator;
+            $novoLocator-> numero = $numLocator;
+            $novoLocator-> bairro = $bairroLocator;
+            $novoLocator-> municipio = $municipioLocator;
+            $novoLocator-> complemento = $compleLocator;
+            $novoLocator-> estadoCivil = $estadoCivil;
+            $novoLocator-> nascimento = $dataNascimento;
+            $novoLocator-> profissao = $profissao;
+            $novoLocator-> CPF = $cpf;
+            $novoLocator-> RG = $rg;
+            $novoLocator-> telefone = $telefone;
+            $novoLocator-> banco = $banco;
+            $novoLocator-> agencia = $agencia;
+            $novoLocator-> tipoConta = $tipoConta;
+            $novoLocator-> conta = $conta;
+            $novoLocator-> pix = $pix;
+            $novoLocator->save();
+        }else{
+            $locator = 'Vendedor já cadastrado!';
+        }
+
+         //retornando
+        if(isset($locator)){
+            return redirect()->back(['existeVendedor'=>$vendedor]);
+        } else{
+            return redirect()->route('imovel',['c'=>'c','venId'=>$idImovel]);
+        }*/
     }
 }
