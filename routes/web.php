@@ -24,6 +24,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     //Home
     Route::get('/home','HomeController@index')->name('home');
     Route::post('/home','HomeController@busca')->name('home');
+    Route::get('/logout', 'LoginController@sair')->name('sair');
 
     //Cliente
     Route::get('/lista-cliente','ClienteController@index')->name('cliente');

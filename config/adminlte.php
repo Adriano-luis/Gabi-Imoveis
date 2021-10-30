@@ -229,8 +229,8 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => false,
+            'text'         => 'Sair',
+            'topnav_right' => true,
         ],
         [
             'type'         => '',
