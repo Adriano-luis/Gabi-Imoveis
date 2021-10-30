@@ -258,19 +258,24 @@
     @if (isset($imoveis))
       <div class="row">
         @foreach ($imoveis as $imovel)
-        <a href="{{route('imovel',['id'=>$imovel->id])}}">
+        @if (isset($ray) && isset($ray) && $ray == 'sim')
+          <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+
+        @else
+          <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+        @endif
           <div class="col-md-3">
             <div class="card card-widget">
               <div class="card-header imoveisCard">
                 <div class="user-block">
-                  <span class="description">id: {{$imovel->id}}</span>
-                  <span class="description">{{$imovel->endereco}}, {{$imovel->numero}}
-                    @if ($imovel->complemento != '')
-                      {{$imovel->complemento}}
+                  <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>
+                  <span class="description">{{isset($ray) && $ray == 'sim' ? $imovel['endereco']:$imovel->endereco}}, {{isset($ray) && $ray == 'sim' ? $imovel['numero']:$imovel->numero}}
+                    @if ((isset($imovel->complemento) && $imovel->complemento != '') || (isset($imovel['complemento']) && $imovel['complemento'] != ''))
+                      {{ isset($ray) && $ray == 'sim' ? $imovel['complemento']:$imovel->complemento}}
                     @endif
-                    <br>{{$imovel->bairro}} | {{$imovel->municipio}}
+                    <br>{{ isset($ray) && $ray == 'sim' ? $imovel['bairro']:$imovel->bairro}} | {{isset($ray) && $ray == 'sim' ? $imovel['municipio']:$imovel->municipio}}
                   </span>
-                  <span class="description">cadastrado {{$imovel->created_at}} </span>
+                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['created_at']:$imovel->created_at}} </span>
                 </div>
               </div>
       
@@ -298,19 +303,24 @@
                 </div>
               </div>
               <div class="card-footer card-comments">
-                <a href="{{route('imovel',['id'=>$imovel->id])}}">
+                @if ( isset($ray) && $ray == 'sim')
+                  <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+
+                @else
+                  <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+                @endif
                   <div class="card-comment d-flex">
                     <i class="fas fa-ruler-combined pt-2"></i>
         
                     <span class="username px-3">
-                      {{$imovel->metragemTotal}} m²
+                      {{isset($ray) && $ray == 'sim' ? $imovel['metragemTotal']:$imovel->metragemTotal}} m²
                     </span>
                   </div><br>
                   <div class="d-flex">
                     <i class="fas fa-toilet"></i>
                     <div class="px-3">
-                      @if ($imovel->banheiro != null)
-                        {{$imovel->banheiro}} Banheiro(s)
+                      @if ( (isset($imovel->banheiro) && $imovel->banheiro != null) || (isset($imovel['banheiro']) && $imovel['banheiro'] !=  null))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['banheiro']:$imovel->banheiro}} Banheiro(s)
 
                         @else
                         Nenhum banheiro
@@ -320,8 +330,8 @@
                   <div class="d-flex">
                     <i class="fas fa-bed"></i>
                     <div class="px-3">
-                      @if ($imovel->quarto)
-                        {{$imovel->quarto}} Quarto(s)
+                      @if (isset($imovel->quarto) || isset($imovel['quarto']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['quarto']:$imovel->quarto}} Quarto(s)
                       @else
                           Nenhum Quarto
                       @endif
@@ -330,8 +340,8 @@
                   <div class="d-flex">
                     <i class="fas fa-car"></i>
                     <div class="px-3">
-                      @if ($imovel->garagem)
-                        {{$imovel->garagem}} Vagas de Garagem
+                      @if (isset($imovel->garagem) || isset($imovel['garagem']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['garagem']:$imovel->garagem}} Vagas de Garagem
                       @else
                           Sem Garagem
                       @endif
@@ -340,24 +350,28 @@
                   <div class="d-flex">
                     <i><b>R$</b></i>
                     <div class="px-3">
-                        {{$imovel->valor}} (Aluguel)
+                        {{ isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor}} (Aluguel)
                     </div>
                   </div><br>
                   <div class="d-flex">
                     <div class="px-3 btn valorTotal">
                       <b>
                       <?php
-                        if ($imovel->IPTU != null){
-                          if($imovel->valorCondominio != null) {
-                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                        if ((isset($imovel->IPTU) && $imovel->IPTU != null) || (isset($ray) && $ray == 'sim' && $imovel['IPTU'] != null)){
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU)
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
                           }else{
-                            echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU) 
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor));
                           }
                         }else{
-                          if($imovel->valorCondominio != null) {
-                            echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                            echo  'Total: R$'.'<i><b>R$</b></i>'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor) 
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
                           }else {
-                            echo  'Total: R$'.($imovel->valor);
+                            echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
                           }
                         }
                       ?>

@@ -38,7 +38,7 @@
                         <td>{{$cliente->condominio}}</td>
                         <td>{{$cliente->mobilhado}}</td>
                         <td>{{$cliente->disponivel}}</td>
-                        <td><a href="{{route('cliente-editar', ['id'=>$cliente->id])}}">Editar</a> - <a href="">Buscar</a> </td>
+                        <td><a href="{{route('cliente-editar', ['id'=>$cliente->id])}}">Editar</a> - <a href="{{route('cliente-busca',['id'=>$cliente->id])}}">Buscar</a> </td>
                     </tr>
                 @endforeach
             </tbody>

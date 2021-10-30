@@ -11,6 +11,14 @@ use App\Clientes;
 class HomeController extends Controller
 {
     public function index(Request $request){
+        if(isset($request->imoveisV)){
+            return view('home',['imoveisV'=>$request->imoveisV,'ray'=>'sim']);
+            
+        }else if(isset($request->imoveis)){
+            
+            return view('home',['imoveis'=>$request->imoveis,'ray'=>'sim']);
+        }
+
         return view('home');
     }
 
