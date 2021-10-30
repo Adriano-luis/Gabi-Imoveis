@@ -25,4 +25,33 @@ class ClienteController extends Controller
 
         return view('home',['cliente'=>$cliente]);
     }
+
+    public function editar(Request $request){
+        $id = $request->get('id');
+
+        if($request->get('_token') != ''){
+            $cliente = Clientes::where('id',$id)->update([
+                'nome'          => $request->input('NomeCliente'),
+                'telefone'      => $request->input('TelefoneCliente'),
+                'valorMin'      => $request->input('valorMin'),
+                'valorMax'      => $request->input('valorMax'),
+                'tipo'          => $request->input('tipo'),
+                'endereco'      => $request->input('rua'),
+                'bairro'        => $request->input('bairro'),
+                'metragemTotal' => $request->input('metragemTot'),
+                'qtComodos'     => $request->input('qtCom'), 
+                'quarto'        => $request->input('qtQuartos'),
+                'individual'    => $request->input('individualCheck') == 'on' ? 'Sim':'Não',
+                'condominio'    => $request->input('condominioCheck') == 'on' ? 'Sim':'Não',
+                'mobilhado'     => $request->input('mobiliado') == 'on' ? 'Sim':'Não',
+                'disponivel'    => $request->input('disponivel') == 'on' ? 'Sim':'Não',
+            ]);
+            return redirect()->route('cliente');
+        }
+
+        $cliente = Clientes::find($id);
+        return view('lista-clientes-editar',['cliente'=>$cliente]);
+
+        
+    }
 }

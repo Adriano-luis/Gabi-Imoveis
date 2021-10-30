@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content')
     <section class="lista-clientes">
-        <table border="1" width="100%">
+        <table border="1" width="100%" style="text-align:center; font-size:12px">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -12,8 +12,8 @@
                     <th>Endereço</th>
                     <th>Bairro</th>
                     <th>m²</th>
-                    <th>Qt.Como.</th>
-                    <th>Qt.Quar.</th>
+                    <th>Comod.</th>
+                    <th>Quar.</th>
                     <th>Indivi.</th>
                     <th>Condo.</th>
                     <th>Mobi.</th>
@@ -38,7 +38,7 @@
                         <td>{{$cliente->condominio}}</td>
                         <td>{{$cliente->mobilhado}}</td>
                         <td>{{$cliente->disponivel}}</td>
-                        <td><a href="">Editar</a>-<a href="">Buscar</a> </td>
+                        <td><a href="{{route('cliente-editar', ['id'=>$cliente->id])}}">Editar</a> - <a href="">Buscar</a> </td>
                     </tr>
                 @endforeach
             </tbody>

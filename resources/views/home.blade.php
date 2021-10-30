@@ -66,7 +66,7 @@
                 <div class="row">
                   <div class="form-group mx-3">
                       <label for="municipio">Metragem</label>
-                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="m²">
+                      <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
                   </div>
                 </div>
                 <div class="row">
@@ -185,7 +185,7 @@
                 <!-- <div class="row">
                   <div class="form-group mx-3">
                       <label for="municipio">Metragem</label>
-                      <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="m²">
+                      <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
                   </div>
                 </div> -->
                 <div class="row">
