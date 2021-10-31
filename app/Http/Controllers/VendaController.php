@@ -237,7 +237,8 @@ class VendaController extends Controller
         $editarCliente = new Vendedor();
         $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
-            return view('venda-cadastro-cliente',['dados'=>$cliente]);
+            $imoveis = VendaImoveis::where('id',$cliente->idImovel)->get();
+            return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
         } else{
             return redirect()->back();
         }

@@ -105,6 +105,15 @@
     justify-content: flex-start;
 }
 
+.locacao-cadastro .carousel-item img{
+    max-height: 7rem;
+}
+
+.locacao-cadastro a{
+    text-decoration: none;
+    color: #000;
+}
+
 @media only screen and (max-width:993px){
     .imovel .hide{
         display: none !important;

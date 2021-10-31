@@ -226,15 +226,16 @@ class LocacaoController extends Controller
     }
 
     public function editarcliente(Request $request){
-        $telefone = $request->get('');
+        $telefone = $request->get('telefone');
         if(!isset($telefone) || $telefone == ''){
             return redirect()->back();
         }
 
         $editarCliente = new Locator();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->toArray();
+        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
-            return view('locacao-cadastro-cliente',['dados'=>$cliente]);
+            $imoveis = LocacaoImoveis::where('id',$cliente->idImovel)->get();
+            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
         } else{
             return redirect()->back();
         }

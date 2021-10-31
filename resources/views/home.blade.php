@@ -242,7 +242,7 @@
           <form action="{{route('loc-editar-cliente')}}" method="POST">
             @csrf
             <div class="card-body">
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-4">
                     <label for="telefone">Locação: Telefone do Locador</label>
                     <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
                 </div> 
@@ -252,7 +252,7 @@
           <form action="{{route('ven-editar-cliente')}}" method="POST">
             @csrf
             <div class="card-body">
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-4">
                     <label for="telefone">Venda: Telefone do Proprietário</label>
                     <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
                 </div> 
@@ -488,7 +488,7 @@
                   <div class="d-flex">
                     <i><b>R$</b></i>
                     <div class="px-3">
-                        {{ isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor}} (Aluguel)
+                        {{ isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor}}
                     </div>
                   </div><br>
                   <div class="d-flex">
