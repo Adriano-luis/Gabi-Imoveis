@@ -82,7 +82,7 @@ class VendaController extends Controller
         $editarCliente = new Vendedor();
         $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
-            $imoveis = VendaImoveis::where('id',$cliente->idImovel)->get();
+            $imoveis = VendaImoveis::where('idVendedor',$cliente->id)->get();
             return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
         } else{
             return redirect()->back();
@@ -162,6 +162,9 @@ class VendaController extends Controller
     //Cadastro de Imoveis
     public function novoimovel(Request $request){
         $idVendedor = $request->get('id');
+        /*if($idVendedor == '' || $idVendedor == null){
+            return redirect()->back();
+        }*/
         return view('venda-cadastro',['id'=>$idVendedor]);
     }
 

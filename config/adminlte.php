@@ -257,6 +257,7 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
+
         [
             'text'        => 'Lista Cliente',
             'url'         => 'logged/lista-cliente',
@@ -267,35 +268,15 @@ return [
         ],
 
         [
-            'text'    => 'Locação',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Cadastrar Locador',
-                    'url'  => 'logged/locacao/cadastrar-cliente',
-                ],
-                [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/locacao/cadastrar-imovel',
-                ],
-            ],
+            'text' => 'Cadastrar Locador',
+            'url'  => 'logged/locacao/cadastrar-cliente',
         ],
 
         [
-            'text'    => 'Venda',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Cadastrar Proprietário',
-                    'url'  => 'logged/venda/cadastrar-cliente',
-                ],
-                [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/venda/cadastrar-imovel',
-                ],
-
-            ],
+            'text' => 'Cadastrar Imóvel',
+            'url'  => 'logged/venda/cadastrar-imovel',
         ],
+
 
         [
             'header'   => 'account_settings',

@@ -113,11 +113,12 @@
                     <div class="row">
                         @if (isset($dados))
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Atualizar</button>
+                              <button type="submit" class="btn btn-success">Atualizar</button>
+                              <a href="{{route('ven-novo-imovel',['id'=>$dados->id])}}" class="btn btn-primary" style="color: #fff">Cadastrar novo imóvel</a>
                             </div> 
                         @else
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="submit" class="btn btn-success">Salvar</button>
                             </div>
                         @endif
                     </div>

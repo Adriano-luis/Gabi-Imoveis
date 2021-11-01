@@ -82,7 +82,7 @@ class LocacaoController extends Controller
         $editarCliente = new Locator();
         $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
-            $imoveis = LocacaoImoveis::where('id',$cliente->idImovel)->get();
+            $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
             return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
         } else{
             return redirect()->back();
