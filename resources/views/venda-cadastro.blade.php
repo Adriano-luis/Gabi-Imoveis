@@ -4,7 +4,7 @@
     @if (isset($id))
         <input type="hidden" id="cadastrado" value="Sim">
     @endif
-    <form action="{{route('ven-novo-imovel')}}" method="POST">
+    <form action="{{route('ven-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">

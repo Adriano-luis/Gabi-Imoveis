@@ -4,7 +4,7 @@
     @if (isset($id))
         <input type="hidden" id="cadastrado" value="Sim">
     @endif
-    <form action="{{route('loc-novo-imovel')}}" method="POST">
+    <form action="{{route('loc-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
@@ -175,7 +175,7 @@
                 <label for="InputArquivo">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="InputArquivo">
+                        <input type="file" class="custom-file-input" name="upFotos" id="InputArquivo" accept="image/png, image/jpeg"  multiple>
                         <label name="upFotos" class="custom-file-label" for="InputArquivo">Buscar</label>
                     </div>
                     <div class="input-group-append">

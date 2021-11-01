@@ -146,16 +146,66 @@ class LocacaoController extends Controller
         $descMobilha = $request->get('descricaoMobilia');
         $descCond = $request->get('descricaoCond');
         $obs = $request->get('observacao');
-        /*$img1 = $request->get('');
-        $img2 = $request->get('');
-        $img3 = $request->get('');
-        $img4 = $request->get('');
-        $img5 = $request->get('');
-        $img6 = $request->get('');
-        $img7 = $request->get('');
-        $img8 = $request->get('');
-        $img9 = $request->get('');
-        $img10 = $request->get('');*/
+        if($request->hasFile('img1') && $request->file('img1')->isValid()){
+            $img1 = $request->img1;
+            $extension1 = $img1->extension();
+            $imageName1 = md5($img1->getClientOriginalName().strtotime("now")).'.'.$extension1;
+            $img1->move(public_path('assets/images/locacao'),$imageName1);
+        }
+        if($request->hasFile('img2') && $request->file('img2')->isValid()){
+            $img2 = $request->img2;
+            $extension2 = $img2->extension();
+            $imageName2 = md5($img2->getClientOriginalName().strtotime("now")).'.'.$extension2;
+            $img2->move(public_path('assets/images/locacao'),$imageName2);
+        }
+        if($request->hasFile('img3') && $request->file('img3')->isValid()){
+            $img3 = $request->img3;
+            $extension3 = $img3->extension();
+            $imageName3 = md5($img3->getClientOriginalName().strtotime("now")).'.'.$extension3;
+            $img3->move(public_path('assets/images/locacao'),$imageName3);
+        }
+        if($request->hasFile('img4') && $request->file('img4')->isValid()){
+            $img4 = $request->img4;
+            $extension4 = $img4->extension();
+            $imageName4 = md5($img4->getClientOriginalName().strtotime("now")).'.'.$extension4;
+            $img4->move(public_path('assets/images/locacao'),$imageName4);
+        }
+        if($request->hasFile('img5') && $request->file('img5')->isValid()){
+            $img5 = $request->img5;
+            $extension5 = $img5->extension();
+            $imageName5 = md5($img5->getClientOriginalName().strtotime("now")).'.'.$extension5;
+            $img5->move(public_path('assets/images/locacao'),$imageName5);
+        }
+        if($request->hasFile('img6') && $request->file('img6')->isValid()){
+            $img6 = $request->img6;
+            $extension6 = $img6->extension();
+            $imageName6 = md5($img6->getClientOriginalName().strtotime("now")).'.'.$extension6;
+            $img6->move(public_path('assets/images/locacao'),$imageName6);
+        }
+        if($request->hasFile('img7') && $request->file('img7')->isValid()){
+            $img7 = $request->img7;
+            $extension7 = $img7->extension();
+            $imageName7 = md5($img7->getClientOriginalName().strtotime("now")).'.'.$extension7;
+            $img7->move(public_path('assets/images/locacao'),$imageName7);
+        }
+        if($request->hasFile('img8') && $request->file('img8')->isValid()){
+            $img8 = $request->img8;
+            $extension8 = $img8->extension();
+            $imageName8 = md5($img8->getClientOriginalName().strtotime("now")).'.'.$extension8;
+            $img8->move(public_path('assets/images/locacao'),$imageName8);
+        }
+        if($request->hasFile('img9') && $request->file('img9')->isValid()){
+            $img9 = $request->img9;
+            $extension9 = $img9->extension();
+            $imageName9 = md5($img9->getClientOriginalName().strtotime("now")).'.'.$extension9;
+            $img9->move(public_path('assets/images/locacao'),$imageName9);
+        }
+        if($request->hasFile('img10') && $request->file('img10')->isValid()){
+            $img10 = $request->img10;
+            $extension10 = $img10->extension();
+            $imageName10 = md5($img10->getClientOriginalName().strtotime("now")).'.'.$extension10;
+            $img10->move(public_path('assets/images/locacao'),$imageName10);
+        }
 
         //salvando no DB
         $novoImovel = new LocacaoImoveis();
@@ -199,16 +249,16 @@ class LocacaoController extends Controller
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
             $novoImovel-> disponivel = 'Sim';
-            /*$novoImovel-> img1 = $img1;
-            $novoImovel-> img2 = $img2;
-            $novoImovel-> img3 = $img3;
-            $novoImovel-> img4 = $img4;
-            $novoImovel-> img5 = $img5;
-            $novoImovel-> img6 = $img6;
-            $novoImovel-> img7 = $img7;
-            $novoImovel-> img8 = $img8;
-            $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;*/
+            $novoImovel-> img1 = $imageName1;
+            /*$novoImovel-> img2 = $imageName2;
+            $novoImovel-> img3 = $imageName3;
+            $novoImovel-> img4 = $imageName4;
+            $novoImovel-> img5 = $imageName5;
+            $novoImovel-> img6 = $imageName6;
+            $novoImovel-> img7 = $imageName7;
+            $novoImovel-> img8 = $imageName8;
+            $novoImovel-> img9 = $imageName9;
+            $novoImovel-> img10 = $imageName10;*/
             $novoImovel->save();
 
         } else{
@@ -217,8 +267,8 @@ class LocacaoController extends Controller
         }
 
         
-        $idImovel = LocacaoImoveis::latest()->get()->first(); 
-        return view('imovel',['id'=>$idImovel->id]);
+        $dados = LocacaoImoveis::latest()->get()->first(); 
+        return view('imovel',['dados'=>$dados]);
 
     }
 
