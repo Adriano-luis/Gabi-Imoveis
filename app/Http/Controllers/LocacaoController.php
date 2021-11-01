@@ -9,14 +9,107 @@ use App\Locator;
 class LocacaoController extends Controller
 {
 
-    //Cadastro de Imoveis
-    public function novoimovel(){
+    //Cadastro de de Cliente
+    public function novocliente(Request $request){
+
+        return view('locacao-cadastro-cliente');       
+
+    }
+
+    public function novoclientePost(Request $request){
+        //recuperando os dados preenchidos
+        $nome = $request->get('nome');
+        $enderecoLocador = $request->get('logradouro');
+        $numLocador = $request->get('numero');
+        $bairroLocador = $request->get('bairro');
+        $municipioLocador = $request->get('municipio');
+        $compleLocador = $request->get('complemento');
+        $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        $tipoConta = $request->get('tipoConta');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
+
+        //salvando no DB
+        $novoLocador =  new Locator();
+        $existeLocador = $novoLocador->where('CPF',$cpf)->first();
+        if($existeLocador == ''){
+            $novoLocador-> nome = $nome;
+            $novoLocador-> endereco = $enderecoLocador;
+            $novoLocador-> numero = $numLocador;
+            $novoLocador-> bairro = $bairroLocador;
+            $novoLocador-> municipio = $municipioLocador;
+            $novoLocador-> complemento = $compleLocador;
+            $novoLocador-> estadoCivil = $estadoCivil;
+            $novoLocador-> nascimento = $dataNascimento;
+            $novoLocador-> profissao = $profissao;
+            $novoLocador-> CPF = $cpf;
+            $novoLocador-> RG = $rg;
+            $novoLocador-> telefone = $telefone;
+            $novoLocador-> banco = $banco;
+            $novoLocador-> agencia = $agencia;
+            $novoLocador-> tipoConta = $tipoConta;
+            $novoLocador-> conta = $conta;
+            $novoLocador-> pix = $pix;
+            $novoLocador->save();
+
+            $locador = $novoLocador->where('CPF',$cpf)->get()->first();
+            $idLocador = $locador->id;
+
+
+        }else{
+            $locador = 'Já existe um cadastro!';
+            return view('locacao-cadastro',['existeLocador'=>$locador]);
+        }
+            
+
+        return redirect()->route('loc-novo-imovel',['id'=>$idLocador]);
+
+    }
+
+    public function editarcliente(Request $request){
+        $telefone = $request->get('telefone');
+        if(!isset($telefone) || $telefone == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Locator();
+        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
+        if($cliente != ''){
+            $imoveis = LocacaoImoveis::where('id',$cliente->idImovel)->get();
+            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
+        } else{
+            return redirect()->back();
+        }
+
         
-        return view('locacao-cadastro');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //Cadastro de Imoveis
+    public function novoimovel(Request $request){
+        $idLocador = $request->get('id');
+        return view('locacao-cadastro',['id'=>$idLocador]);
     }
 
     public function novoimovelPost(Request $request){
        //recuperando os dados preenchidos
+        $id = $request->get('idLocador');
         $valor = $request->get('valor');
         $enderecoImovel = $request->get('rua');
         $numeroImovel = $request->get('numero');
@@ -68,6 +161,7 @@ class LocacaoController extends Controller
         $novoImovel = new LocacaoImoveis();
         $existeImovel = $novoImovel->where('RGI',$rgi)->first();
         if($existeImovel == ''){
+            $novoImovel-> idLocador = $id;
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
             $novoImovel-> numero = $numeroImovel;
@@ -119,16 +213,12 @@ class LocacaoController extends Controller
 
         } else{
             $imovel = 'Imovel já cadastrado!';
-        }
-        
-        //retornando
-        if(isset($imovel)){
             return view('locacao-cadastro',['existeImovel'=>$imovel]);
-        } else{
-            $idImovel = new LocacaoImoveis();
-            $id = $idImovel->latest()->get()->first(); 
-            return view('locacao-cadastro-cliente',['id'=>$id->id]);
         }
+
+        
+        $idImovel = LocacaoImoveis::latest()->get()->first(); 
+        return view('imovel',['id'=>$idImovel->id]);
 
     }
 
@@ -149,103 +239,4 @@ class LocacaoController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-    //Cadastro de de Cliente
-    public function novocliente(Request $request){
-        $id = $request->get('id');
-        if($id != ''){
-            return view('locacao-cadastro-cliente',['idImovel'=>$id]);
-        } else{
-            return view('locacao-cadastro-cliente');
-        }
-       
-
-    }
-
-    public function novoclientePost(Request $request){
-        //recuperando os dados preenchidos
-        $idImovel = $request->get('idImovel');
-        $nome = $request->get('nome');
-        $enderecoLocator = $request->get('logradouro');
-        $numLocator = $request->get('numero');
-        $bairroLocator = $request->get('bairro');
-        $municipioLocator = $request->get('municipio');
-        $compleLocator = $request->get('complemento');
-        $estadoCivil = $request->get('estadoCivil');
-        $dataNascimento = $request->get('nascimento');
-        $profissao = $request->get('profissao');
-        $cpf = $request->get('cpf');
-        $rg = $request->get('rg');
-        $telefone = $request->get('telefone');
-        $banco = $request->get('banco');
-        $agencia = $request->get('agencia');
-        $tipoConta = $request->get('tipoConta');
-        $conta = $request->get('conta');
-        $pix = $request->get('pix');
-
-        //salvando no DB
-        $novoLocator =  new Locator();
-        $existeLocator = $novoLocator->where('CPF',$cpf)->first();
-        if($existeLocator == ''){
-            $novoLocator-> nome = $nome;
-            $novoLocator-> endereco = $enderecoLocator;
-            $novoLocator-> numero = $numLocator;
-            $novoLocator-> bairro = $bairroLocator;
-            $novoLocator-> municipio = $municipioLocator;
-            $novoLocator-> complemento = $compleLocator;
-            $novoLocator-> estadoCivil = $estadoCivil;
-            $novoLocator-> nascimento = $dataNascimento;
-            $novoLocator-> profissao = $profissao;
-            $novoLocator-> CPF = $cpf;
-            $novoLocator-> RG = $rg;
-            $novoLocator-> telefone = $telefone;
-            $novoLocator-> banco = $banco;
-            $novoLocator-> agencia = $agencia;
-            $novoLocator-> tipoConta = $tipoConta;
-            $novoLocator-> conta = $conta;
-            $novoLocator-> pix = $pix;
-            $novoLocator->save();
-
-            $imovel =  new LocacaoImoveis();
-            $registro = $imovel->where('id',$idImovel)->first();
-            if($registro != ''){
-                $imovel->idVendedor = $idImovel;
-                $imovel->save();
-            }
-        }else{
-            $locator = 'Locator já cadastrado!';
-        }
-
-         //retornando
-        if(isset($locator)){
-            return view('locacao-cadastro',['existeLocator'=>$locator]);
-        } else{
-            return redirect()->route('imovel',['c'=>'c','locId'=>$idImovel]);
-        }
-    }
-
-    public function editarcliente(Request $request){
-        $telefone = $request->get('telefone');
-        if(!isset($telefone) || $telefone == ''){
-            return redirect()->back();
-        }
-
-        $editarCliente = new Locator();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
-        if($cliente != ''){
-            $imoveis = LocacaoImoveis::where('id',$cliente->idImovel)->get();
-            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
-        } else{
-            return redirect()->back();
-        }
-
-        
-    }
 }

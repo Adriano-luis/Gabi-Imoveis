@@ -12,10 +12,6 @@
                     @if (isset($existeImovel))
                         <div>{{$existeImovel}}</div>
                     @endif
-                    <div class="form-group col-lg-3">
-                        <label for="idImovel">Id Imóvel</label>
-                        <input type="text" name="idImovel" class="form-control" id="idImovel"  value="<?php if(isset($idImovel) && $idImovel !=''){echo $idImovel;}else if(isset($dados->idImovel)){ echo $dados->idImovel;}?>">
-                    </div><br> 
                     <h5>Dados do locador</h5>
                     <div class="form-group">
                         <label for="nome">Nome</label>
@@ -57,11 +53,11 @@
                         </div>
                         <div class="form-group col-lg-2">
                             <label for="profissao"> Data de nascimento</label>
-                            <input  type="date" name="nascimento" class="form-control" id="nascimento" value="{{isset($dados->nascimento) ? $dados->nascimento :''}}>
+                            <input  type="date" name="nascimento" class="form-control" id="nascimento" value="{{isset($dados->nascimento) ? $dados->nascimento :''}}">
                         </div>
                         <div class="form-group col-lg-2">
                             <label for="profissao">Profissão</label>
-                            <input  type="text" name="profissao" class="form-control" id="profissao" value="{{isset($dados->profissao) ? $dados->profissao :''}} placeholder="Profissão">
+                            <input  type="text" name="profissao" class="form-control" id="profissao" value="{{isset($dados->profissao) ? $dados->profissao :''}}" placeholder="Profissão">
                         </div>
                     </div>
                     <div class="row">

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 @section('content')
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
-@endsection
 <section class="locacao-cadastro">
+    @if (isset($id))
+        <input type="hidden" id="cadastrado" value="Sim">
+    @endif
     <form action="{{route('loc-novo-imovel')}}" method="POST">
         @csrf
         <div class="card card-primary">
@@ -14,6 +14,7 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="idLocador" value="{{$id ?? ''}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
                     <input type="text" name="valor" class="form-control" id="valor" placeholder="Qual o valor de aluguel do imóvel?">

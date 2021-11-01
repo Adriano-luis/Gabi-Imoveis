@@ -218,7 +218,7 @@ class VendaController extends Controller
         $novoImovel = new VendaImoveis();
         $existeImovel = $novoImovel->where('nomeCondominio',$nomeCondo)->first();
         if($existeImovel == ''){
-            $novoImovel-> idImovel = $id;
+            $novoImovel-> idVendedor = $id;
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
             $novoImovel-> numero = $numeroImovel;
