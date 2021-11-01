@@ -1,6 +1,9 @@
 @extends('adminlte::page')
 @section('content')
 <section class="locacao-cadastro">
+    @if (isset($id))
+        <input type="hidden" id="cadastrado" value="Sim">
+    @endif
     <form action="{{route('ven-novo-imovel')}}" method="POST">
         @csrf
         <div class="card card-primary">
@@ -11,6 +14,7 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="idVendedor" value="{{$id ?? ''}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
                     <input type="text" name="valor" class="form-control" id="valor" placeholder="Valor avaliado do imóvel?">

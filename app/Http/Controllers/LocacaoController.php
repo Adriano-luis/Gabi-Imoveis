@@ -194,7 +194,6 @@ class LocacaoController extends Controller
         $novoLocator =  new Locator();
         $existeLocator = $novoLocator->where('CPF',$cpf)->first();
         if($existeLocator == ''){
-            $novoLocator-> idImovel = $idImovel;
             $novoLocator-> nome = $nome;
             $novoLocator-> endereco = $enderecoLocator;
             $novoLocator-> numero = $numLocator;
@@ -213,6 +212,13 @@ class LocacaoController extends Controller
             $novoLocator-> conta = $conta;
             $novoLocator-> pix = $pix;
             $novoLocator->save();
+
+            $imovel =  new LocacaoImoveis();
+            $registro = $imovel->where('id',$idImovel)->first();
+            if($registro != ''){
+                $imovel->idVendedor = $idImovel;
+                $imovel->save();
+            }
         }else{
             $locator = 'Locator já cadastrado!';
         }

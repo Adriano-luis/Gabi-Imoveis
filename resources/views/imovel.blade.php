@@ -2,9 +2,6 @@
 @section('content')
     <section class="imovel">
         <div class="">
-            @if (isset($c))
-                <input type="hidden" id="cadastrado" value="Sim">
-            @endif
             <div class="row pt-3">
                 <div class="col-lg-8">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

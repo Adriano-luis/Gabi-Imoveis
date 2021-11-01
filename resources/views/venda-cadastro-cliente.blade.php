@@ -12,10 +12,6 @@
                     @if (isset($existeVendedor))
                         <div>{{$existeVendedor}}</div>
                     @endif
-                    <div class="form-group col-lg-3">
-                        <label for="idImovel">Id Imóvel</label>
-                        <input type="text" name="idImovel" class="form-control" id="idImovel"  value="<?php if(isset($idImovel) && $idImovel !=''){echo $idImovel;}else if(isset($dados->idImovel)){ echo $dados->idImovel;}?>">
-                    </div><br> 
                     <h5>Dados do proprietário</h5>
                     <div class="form-group">
                         <label for="nome">Nome</label>

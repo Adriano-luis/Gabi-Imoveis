@@ -271,12 +271,12 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/locacao/cadastrar-imovel',
-                ],
-                [
                     'text' => 'Cadastrar Locador',
                     'url'  => 'logged/locacao/cadastrar-cliente',
+                ],
+                [
+                    'text' => 'Cadastrar imóvel',
+                    'url'  => 'logged/locacao/cadastrar-imovel',
                 ],
             ],
         ],
@@ -286,13 +286,14 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/venda/cadastrar-imovel',
-                ],
-                [
                     'text' => 'Cadastrar Proprietário',
                     'url'  => 'logged/venda/cadastrar-cliente',
                 ],
+                [
+                    'text' => 'Cadastrar imóvel',
+                    'url'  => 'logged/venda/cadastrar-imovel',
+                ],
+
             ],
         ],
 

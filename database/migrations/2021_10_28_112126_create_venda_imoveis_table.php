@@ -15,6 +15,7 @@ class CreateVendaImoveisTable extends Migration
     {
         Schema::create('venda_imoveis', function (Blueprint $table) {
             $table->id();
+            $table->integer('idImovel');
             $table->bigInteger('valor');
             $table->string('endereco');
             $table->string('numero');
