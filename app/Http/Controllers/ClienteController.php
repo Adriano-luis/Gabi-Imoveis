@@ -44,6 +44,21 @@ class ClienteController extends Controller
 
     }
 
+    public function buscaCliente(Request $request){
+        $telefone = $request->get('telefonePesquisa');
+        if(!isset($telefone) || $telefone == ''){
+            return redirect()->back();
+        }
+
+        $cliente = new Clientes();
+        $cliente = $cliente->where('telefone',$telefone)->get();
+        if($cliente != ''){
+            return view('lista-clientes',['clientes'=>$cliente]); 
+        } else{
+            return redirect()->back();
+        }
+    }
+
     public function busca(Request $request){
         $id = $request->get('id');
 

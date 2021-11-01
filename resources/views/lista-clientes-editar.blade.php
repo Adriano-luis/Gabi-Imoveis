@@ -34,6 +34,7 @@
                 </div>
                 <div class="form-group  col-1" style="padding-top: 0.5rem">
                     <label>&nbsp;</label>
+                    <label>&nbsp;</label>
                     Até
                 </div>
                 <div class="form-group mx-3 col-3">
@@ -66,6 +67,8 @@
                     <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" value="{{$cliente->quarto}}" placeholder="Quatidade de quartos">
                 </div>
             </div><br>
+            <label for="obs">Observações</label>
+            <input type="text" class="form-control" name="obs" id="obs" value="$cliente->observacoes"><br>
             <div class="row">
                 <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="individualCheck" {{$cliente->individual == 'Sim' ? "checked='checked'":''}}>
