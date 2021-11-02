@@ -146,7 +146,9 @@ class LocacaoController extends Controller
         $descMobilha = $request->get('descricaoMobilia');
         $descCond = $request->get('descricaoCond');
         $obs = $request->get('observacao');
-        if($request->hasFile('img1') && $request->file('img1')->isValid()){
+        
+        
+        /*if($request->hasFile('img1') && $request->file('img1')->isValid()){
             $img1 = $request->img1;
             $extension1 = $img1->extension();
             $imageName1 = md5($img1->getClientOriginalName().strtotime("now")).'.'.$extension1;
@@ -205,7 +207,7 @@ class LocacaoController extends Controller
             $extension10 = $img10->extension();
             $imageName10 = md5($img10->getClientOriginalName().strtotime("now")).'.'.$extension10;
             $img10->move(public_path('assets/images/locacao'),$imageName10);
-        }
+        }*/
 
         //salvando no DB
         $novoImovel = new LocacaoImoveis();
@@ -249,16 +251,38 @@ class LocacaoController extends Controller
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
             $novoImovel-> disponivel = 'Sim';
-            $novoImovel-> img1 = $imageName1;
-            /*$novoImovel-> img2 = $imageName2;
-            $novoImovel-> img3 = $imageName3;
-            $novoImovel-> img4 = $imageName4;
-            $novoImovel-> img5 = $imageName5;
-            $novoImovel-> img6 = $imageName6;
-            $novoImovel-> img7 = $imageName7;
-            $novoImovel-> img8 = $imageName8;
-            $novoImovel-> img9 = $imageName9;
-            $novoImovel-> img10 = $imageName10;*/
+            if ($request->hasFile('upFotos')){
+                $aux = 1;
+                foreach ($request->file('upFotos') as $imagem){
+                    $extension = $imagem->extension();
+                    $imageName = md5($imagem->getClientOriginalName().strtotime("now")).'.'.$extension;
+                    $imagem->move(public_path('assets/images/locacao'),$imageName);
+
+                    if($aux == 1){
+                        $novoImovel-> img1 = $imageName;
+                    }else if($aux == 2){
+                        $novoImovel-> img2 = $imageName;
+                    }else if($aux == 3){
+                        $novoImovel-> img3 = $imageName;
+                    }else if($aux == 4){
+                        $novoImovel-> img4 = $imageName;
+                    }else if($aux == 5){
+                        $novoImovel-> img5 = $imageName;
+                    }else if($aux == 6){
+                        $novoImovel-> img6 = $imageName;
+                    }else if($aux == 7){
+                        $novoImovel-> img7 = $imageName;
+                    }else if($aux == 8){
+                        $novoImovel-> img8 = $imageName;
+                    }else if($aux == 9){
+                        $novoImovel-> img9 = $imageName;
+                    }else{
+                        $novoImovel-> img10 = $imageName;
+                    }
+                    $aux++;
+                }
+            }
+            
             $novoImovel->save();
 
         } else{
