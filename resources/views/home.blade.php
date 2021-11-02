@@ -269,9 +269,9 @@
       <div class="row">
         @foreach ($imoveis as $imovel)
           @if (isset($ray) && isset($ray) && $ray == 'sim')
-            <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+            <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
           @else
-            <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+            <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
             <div class="card card-widget">
@@ -292,13 +292,74 @@
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img1"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img1")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img2"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img2")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img3"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img3")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img4"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img4")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img5"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img5")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img6"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img6")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img7"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img7")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img8"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img8")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img9"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img9")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img10"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img10")}}" alt="comodos">
+                      @endif
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
@@ -313,10 +374,10 @@
               </div>
               <div class="card-footer card-comments">
                 @if ( isset($ray) && $ray == 'sim')
-                  <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+                  <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
 
                 @else
-                  <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+                  <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
                 @endif
                   <div class="card-comment d-flex">
                     <i class="fas fa-ruler-combined pt-2"></i>
@@ -400,9 +461,9 @@
       <div class="row">
         @foreach ($imoveisV as $imovel)
           @if (isset($ray) && isset($ray) && $ray == 'sim')
-            <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+            <a href="{{route('imovel',['venId'=>$imovel['id']])}}">
           @else
-            <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+            <a href="{{route('imovel',['venId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
             <div class="card card-widget">
@@ -422,13 +483,74 @@
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img1"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img1")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img2"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img2")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img3"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img3")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img4"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img4")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img5"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img5")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img6"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img6")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img7"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img7")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img8"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img8")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img9"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img9")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img10"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img10")}}" alt="comodos">
+                      @endif
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
@@ -443,9 +565,9 @@
               </div>
               <div class="card-footer card-comments">
                 @if (isset($ray) && isset($ray) && $ray == 'sim')
-                  <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+                  <a href="{{route('imovel',['venId'=>$imovel['id']])}}">
                 @else
-                  <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+                  <a href="{{route('imovel',['venId'=>$imovel->id])}}"> 
                 @endif
                   <div class="card-comment d-flex">
                     <i class="fas fa-ruler-combined pt-2"></i>

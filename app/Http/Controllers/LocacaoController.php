@@ -292,7 +292,7 @@ class LocacaoController extends Controller
 
         
         $dados = LocacaoImoveis::latest()->get()->first(); 
-        return view('imovel',['dados'=>$dados]);
+        return view('imovel',['dadosImovel'=>$dados]);
 
     }
 

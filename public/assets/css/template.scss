@@ -75,6 +75,7 @@
 }
 
 .home .carousel-item img{
+    width: 10rem;
     max-height: 7rem;
 }
 
@@ -107,6 +108,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.imovel .carousel-item img{
+    width: 52rem !important;
+    height: 32rem !important;
 }
 
 .locacao-cadastro .carousel-item img{
