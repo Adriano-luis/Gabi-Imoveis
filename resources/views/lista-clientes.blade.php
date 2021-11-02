@@ -6,13 +6,13 @@
             <div class="col-3">
                 <form action="{{route('cliente-busca-pagina')}}" method="POST">
                     @csrf
-                    <div class="row">
-                        <div class="col-8">
-                            <input type="text" name="telefonePesquisa" placeholder="(dd)x xxxx-xxxx">
+                    <div class="row" style="margin-top: 0.5rem">
+                        <div class="form-group col-8">
+                            <input type="text" class="form-control" name="telefonePesquisa" placeholder="(dd)x xxxx-xxxx">
                         </div>
                         
                         <div class="col-4">
-                            <button class="btn btn-size" type="submit"><i class="fas fa-search"></i></button>
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                         </div>
                         
                     </div>
@@ -20,7 +20,7 @@
                 </form>
             </div>
         </div>
-        <table border="1" width="100%" style="text-align:center; font-size:12px">
+        <table border="1" class="table table-striped"  style="text-align:center; font-size:12px">
             <thead>
                 <tr>
                     <th>Nome</th>
