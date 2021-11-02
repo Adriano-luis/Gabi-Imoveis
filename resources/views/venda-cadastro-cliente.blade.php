@@ -6,7 +6,7 @@
             @csrf
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Proprietário</h3>
+                    <h3 class="card-title">Cadastrar Proprietário</h3>
                 </div>
                 <div class="card-body">
                     @if (isset($existeVendedor))

@@ -273,8 +273,8 @@ return [
         ],
 
         [
-            'text' => 'Cadastrar Imóvel',
-            'url'  => 'logged/venda/cadastrar-imovel',
+            'text' => 'Cadastrar Proprietário',
+            'url'  => 'logged/venda/cadastrar-cliente',
         ],
 
 
