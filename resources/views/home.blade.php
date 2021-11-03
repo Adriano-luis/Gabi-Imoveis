@@ -160,12 +160,10 @@
                 </div>
                 <div class="row">
                   <div class="row">
-<<<<<<< HEAD
                     <div class="form-group mx-3">
                         <label for="municipio">Metragem</label>
                         <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Metragem">
                     </div>
-=======
                       <div class="form-group mx-3">
                         <label>Valor</label>
                         <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
@@ -177,7 +175,6 @@
                         <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
                       </div>
                   </div>
->>>>>>> d7a0c2b282930bda4c6423d7460a2a0b0f3aec85
                 </div>
                 <div class="row">
                   <div class="form-group mx-3" style="width: 70%">
