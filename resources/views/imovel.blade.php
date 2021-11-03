@@ -20,34 +20,74 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img1")}}" alt="First slide">
+                                @if ($dadosImovel->img1 != null || $dadosImovel->img1 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img1")}}" alt="Primeira imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img2")}}" alt="Second slide">
+                                @if ($dadosImovel->img2 != null || $dadosImovel->img2 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img2")}}" alt="Segunda imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif                               
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img3")}}" alt="Second slide">
+                                @if ($dadosImovel->img3 != null || $dadosImovel->img3 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img3")}}" alt="Terceira imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif     
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img4")}}" alt="Second slide">
+                                @if ($dadosImovel->img4 != null || $dadosImovel->img4 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img4")}}" alt="Quarta imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif     
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img5")}}" alt="Second slide">
+                                @if ($dadosImovel->img5 != null || $dadosImovel->img5 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img5")}}" alt="Quinta imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif                              
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img6")}}" alt="Second slide">
+                                @if ($dadosImovel->img6 != null || $dadosImovel->img6 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img6")}}" alt="Sexta imagem">
+                                @else
+                                    Sem imagem! 
+                                @endif                              
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img7")}}" alt="Second slide">
+                                @if ($dadosImovel->img7 != null || $dadosImovel->img7 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img7")}}" alt="Sétima imagem">
+                                @else
+                                    Sem imagem!
+                                @endif                                
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img8")}}" alt="Second slide">
+                                @if ($dadosImovel->img8 != null || $dadosImovel->img8 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img8")}}" alt="Oitava imagem">
+                                @else
+                                    Sem imagem!
+                                @endif
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img9")}}" alt="Second slide">
+                                @if ($dadosImovel->img9 != null || $dadosImovel->img9 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img9")}}" alt="Nona imagem">
+                                @else
+                                    Sem imagem!
+                                @endif
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img10")}}" alt="Second slide">
+                                @if ($dadosImovel->img10 != null || $dadosImovel->img10 != '')
+                                    <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img10")}}" alt="Décima imagem">
+                                @else
+                                    Sem imagem!
+                                @endif
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

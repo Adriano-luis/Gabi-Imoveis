@@ -190,7 +190,7 @@
                 <label for="InputArquivo">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="InputArquivo">
+                        <input type="file" class="custom-file-input" name="upFotos[]" id="InputArquivo" multiple>
                         <label name="upFotos" class="custom-file-label" for="InputArquivo">Buscar</label>
                     </div>
                     <div class="input-group-append">
