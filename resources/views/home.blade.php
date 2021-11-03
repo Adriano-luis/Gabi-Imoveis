@@ -51,7 +51,7 @@
                   <div class="row">
                     <div class="form-group mx-3">
                         <label for="municipio">Metragem</label>
-                        <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Município">
+                        <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Metragem">
                     </div>
                 </div>
                 <div class="row">
