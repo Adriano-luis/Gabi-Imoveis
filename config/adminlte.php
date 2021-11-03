@@ -284,7 +284,7 @@ return [
         ],
         [
             'text' => 'Adicionar Gerenciador',
-            'url'  => 'admin/settings',
+            'url'  => 'logged/adicionar-gerenciador',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
