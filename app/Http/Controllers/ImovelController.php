@@ -18,7 +18,6 @@ class ImovelController extends Controller
         }else{
             $imovel = VendaImoveis::find($idVen);
         }
-        dd($imovel);
 
         if($clienteCadastrado == 'c'){
             return view('imovel',['c'=>'c','dadosImovel'=>$imovel]);
