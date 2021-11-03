@@ -15,7 +15,6 @@ class CreateLocatorsTable extends Migration
     {
         Schema::create('locator', function (Blueprint $table) {
             $table->id();
-            $table->integer('idImovel');
             $table->string('nome');
             $table->string('endereco');
             $table->string('numero');

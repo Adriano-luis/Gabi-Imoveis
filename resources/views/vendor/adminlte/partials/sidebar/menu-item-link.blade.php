@@ -1,30 +1,21 @@
 <li @isset($item['id']) id="{{ $item['id'] }}" @endisset class="nav-item">
-    @if ($item['class'] == 'modal-cliente')
-    <i class="fas fa-user" style="color: #c2c7d0;margin-left:17px;margin-right:-9px;"></i>
-        @component('_components.modal-cliente') 
-        @endcomponent
-    @else
-        <a class="nav-link {{ $item['class'] }} @isset($item['shift']) {{ $item['shift'] }} @endisset"
-            href="{{ $item['href'] }}" @isset($item['target']) target="{{ $item['target'] }}" @endisset
-            {!! $item['data-compiled'] ?? '' !!}>
+    <a class="nav-link {{ $item['class'] }} @isset($item['shift']) {{ $item['shift'] }} @endisset"
+        href="{{ $item['href'] }}" @isset($item['target']) target="{{ $item['target'] }}" @endisset
+        {!! $item['data-compiled'] ?? '' !!}>
 
-            <i class="{{ $item['icon'] ?? 'far fa-fw fa-circle' }} {{
-                isset($item['icon_color']) ? 'text-'.$item['icon_color'] : ''
-            }}"></i>
+        <i class="{{ $item['icon'] ?? 'far fa-fw fa-circle' }} {{
+            isset($item['icon_color']) ? 'text-'.$item['icon_color'] : ''
+        }}"></i>
 
-            <p>
-                {{ $item['text'] }}
+        <p>
+            {{ $item['text'] }}
 
-                @isset($item['label'])
-                    <span class="badge badge-{{ $item['label_color'] ?? 'primary' }} right">
-                        {{ $item['label'] }}
-                    </span>
-                @endisset
-            </p>
+            @isset($item['label'])
+                <span class="badge badge-{{ $item['label_color'] ?? 'primary' }} right">
+                    {{ $item['label'] }}
+                </span>
+            @endisset
+        </p>
 
-        </a>
-    @endif
-
-    
-
+    </a>
 </li>

@@ -20,4 +20,9 @@ $(document).ready(function(){
         });
 
     });
+
+    $c = $('#cadastrado').val();
+    if($c == 'Sim'){
+        alert('Cliente Cadastrado');
+    }
 });

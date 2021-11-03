@@ -2,6 +2,3 @@
 @if (isset($erro))
     {{$erro}}
 @endif
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/template.scss')}}"/>
-@endsection

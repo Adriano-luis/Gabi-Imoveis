@@ -1,19 +1,20 @@
 @extends('adminlte::page')
 @section('content')
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.scss')}}"/>
-@endsection
 <section class="locacao-cadastro">
-    <form action="{{route('loc-novo-imovel')}}" method="POST">
+    @if (isset($id))
+        <input type="hidden" id="cadastrado" value="Sim">
+    @endif
+    <form action="{{route('loc-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Imóvel</h3>
+                <h3 class="card-title">Imóvel Locação</h3>
             </div>
             <div class="card-body">
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="idLocador" value="{{$id ?? ''}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
                     <input type="text" name="valor" class="form-control" id="valor" placeholder="Qual o valor de aluguel do imóvel?">
@@ -41,15 +42,9 @@
                         <input type="text" name="complemento" class="form-control" id="complemento" placeholder="Complemento">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group mx-1">
-                        <label for="metragemTot">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
-                    </div>
-                    <div class="form-group mx-1">
-                        <label for="metragemUtil">Metragem útil</label>
-                        <input type="text"  name="metragemUtil" class="form-control" id="metragemUtil" placeholder="Metragem útil">
-                    </div>
+                <div class="form-group mx-1">
+                    <label for="metragemTot">Metragem Total</label>
+                    <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
                 </div><br><br>
                 <div class="row">
                     <div class="form-group col-lg-3">
@@ -129,7 +124,7 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label for="condominioNome">Nome do condomínio</label>
-                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Valor do condomínio">
+                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Nome do condomínio">
                     </div>
                     <div class="form-group mx-1">
                         <label for="condominioVal">Valor do condomínio</label>
@@ -157,8 +152,8 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="opcVenda">
-                    <label name="opcVenda" class="form-check-label">Opção de Venda?</label>
+                    <input class="form-check-input" type="checkbox" name="resiCheck">
+                    <label name="resiCheck" class="form-check-label">Residencial?</label>
                 </div>
                 <br>
             </div>
@@ -177,11 +172,11 @@
             <br>
             <textarea name="observacao" class="mx-3 my-2" placeholder="Observações"></textarea>
             <div class="form-group mx-3 col-lg-4">
-                <label for="exampleInputFile">Subir as fotos</label>
+                <label for="InputArquivo">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label name="upFotos" class="custom-file-label" for="exampleInputFile">Buscar</label>
+                        <input type="file" class="custom-file-input" name="upFotos[]" id="InputArquivo" accept="image/png, image/jpeg"  multiple>
+                        <label name="upFotos" class="custom-file-label" for="InputArquivo">Buscar</label>
                     </div>
                     <div class="input-group-append">
                         <span class="input-group-text">Subir</span>

@@ -15,7 +15,6 @@ class CreateVendedorsTable extends Migration
     {
         Schema::create('vendedor', function (Blueprint $table) {
             $table->id();
-            $table->integer('idImovel');
             $table->string('nome');
             $table->string('endereco');
             $table->string('numero');

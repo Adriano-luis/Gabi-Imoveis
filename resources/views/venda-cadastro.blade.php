@@ -1,16 +1,20 @@
 @extends('adminlte::page')
 @section('content')
 <section class="locacao-cadastro">
-    <form action="{{route('ven-novo-imovel')}}" method="POST">
+    @if (isset($id))
+        <input type="hidden" id="cadastrado" value="Sim">
+    @endif
+    <form action="{{route('ven-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Imóvel</h3>
+                <h3 class="card-title">Imóvel Venda</h3>
             </div>
             <div class="card-body">
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="idVendedor" value="{{$id ?? ''}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
                     <input type="text" name="valor" class="form-control" id="valor" placeholder="Valor avaliado do imóvel?">
@@ -41,11 +45,11 @@
                 <div class="row">
                     <div class="form-group mx-1">
                         <label for="terreno">Terreno Livre</label>
-                        <input type="text"  name="terreno" class="form-control" id="terreno" placeholder="Terreno Livre">
+                        <input type="text"  name="terreno" class="form-control" id="terreno" placeholder="m²">
                     </div>
                     <div class="form-group mx-1">
                         <label for="metragemTot">Metragem Total</label>
-                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="Metragem total">
+                        <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
                     </div>
                 </div><br><br>
                 <div class="row">
@@ -100,6 +104,7 @@
                             <input type="number" name="varanda" class="form-control" id="varanda" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
+                <label>Documentos</label>
                 <div class="row align-row">
                     <div class="form-check ms-3 px-3">
                         <input class="form-check-input " type="checkbox" name="contrato">
@@ -121,7 +126,26 @@
                         <input class="form-check-input" type="checkbox" name="outros">
                         <label name="outros" class="form-check-label">Outros</label>
                     </div>
-                </div><br>
+                </div><br><br>
+                <label>Tipo</label>
+                <div class="row align-row">
+                    <div class="form-check ms-3 px-3">
+                        <input class="form-check-input " type="checkbox" name="apCheck">
+                        <label name="apCheck" class="form-check-label">Apartamento</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="casaCheck">
+                        <label name="casaCheck" class="form-check-label">Casa</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="chacaCheck">
+                        <label name="chacaCheck" class="form-check-label">Chacara</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="terreCheck">
+                        <label name="terreCheck" class="form-check-label">Terreno</label>
+                    </div>
+                </div><br><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck">
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
@@ -130,7 +154,7 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label for="condominioNome">Nome do condomínio</label>
-                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Valor do condomínio">
+                        <input type="text" name="condominioNome" class="form-control" id="condominioNome" placeholder="Nome do condomínio">
                     </div>
                     <div class="form-group mx-1">
                         <label for="condominioVal">Valor do condomínio</label>
@@ -163,11 +187,11 @@
             <br>
             <textarea name="observacao" class="mx-3 my-2" placeholder="Observações"></textarea>
             <div class="form-group mx-3 col-lg-4">
-                <label for="exampleInputFile">Subir as fotos</label>
+                <label for="InputArquivo">Subir as fotos</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label name="upFotos" class="custom-file-label" for="exampleInputFile">Buscar</label>
+                        <input type="file" class="custom-file-input" id="InputArquivo">
+                        <label name="upFotos" class="custom-file-label" for="InputArquivo">Buscar</label>
                     </div>
                     <div class="input-group-append">
                         <span class="input-group-text">Subir</span>

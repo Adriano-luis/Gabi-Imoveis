@@ -229,8 +229,8 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => false,
+            'text'         => 'Sair',
+            'topnav_right' => true,
         ],
         [
             'type'         => '',
@@ -257,45 +257,26 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
+
         [
-            'text'        => 'Cliente-modal',
-            'url'         => 'admin/cliente',
+            'text'        => 'Lista Cliente',
+            'url'         => 'logged/lista-cliente',
             'icon'        => 'fas fa-user',
-            'classes'     => 'modal-cliente',
             //'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
             //'label'       => 4,
             //'label_color' => 'success',
         ],
 
         [
-            'text'    => 'Locação',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/locacao/cadastrar-imovel',
-                ],
-                [
-                    'text' => 'Cadastrar cliente',
-                    'url'  => 'logged/locacao/cadastrar-cliente',
-                ],
-            ],
+            'text' => 'Cadastrar Locador',
+            'url'  => 'logged/locacao/cadastrar-cliente',
         ],
 
         [
-            'text'    => 'Venda',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Cadastrar imóvel',
-                    'url'  => 'logged/venda/cadastrar-imovel',
-                ],
-                [
-                    'text' => 'Cadastrar cliente',
-                    'url'  => 'logged/venda/cadastrar-cliente',
-                ],
-            ],
+            'text' => 'Cadastrar Proprietário',
+            'url'  => 'logged/venda/cadastrar-cliente',
         ],
+
 
         [
             'header'   => 'account_settings',
@@ -310,26 +291,6 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
-
-        ['header' => 'labels',
-         'classes'  => 'text-yellow text-bold',
-        ],
-        
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
         ],
     ],
 

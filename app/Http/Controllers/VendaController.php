@@ -10,45 +10,202 @@ class VendaController extends Controller
 {
 
 
-    //Cadastro de Imoveis
-    public function novoimovel(){
+    
+    //Cadastro  de Cliente
+    public function novocliente(Request $request){
 
-        return view('venda-cadastro');
+        return view('venda-cadastro-cliente');
+       
+    }
+
+    public function novoclientePost(Request $request){
+        //recuperando os dados preenchidos
+        $nome = $request->get('nome');
+        $enderecoVendedor = $request->get('logradouro');
+        $numVendedor = $request->get('numero');
+        $bairroVendedor = $request->get('bairro');
+        $municipioVendedor = $request->get('municipio');
+        $compleVendedor = $request->get('complemento');
+        $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        $tipoConta = $request->get('tipoConta');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
+
+        //salvando no DB
+        $novoVendedor =  new Vendedor();
+        $existeVendedor = $novoVendedor->where('CPF',$cpf)->get()->first();
+        if($existeVendedor == ''){
+            $novoVendedor-> nome = $nome;
+            $novoVendedor-> endereco = $enderecoVendedor;
+            $novoVendedor-> numero = $numVendedor;
+            $novoVendedor-> bairro = $bairroVendedor;
+            $novoVendedor-> municipio = $municipioVendedor;
+            $novoVendedor-> complemento = $compleVendedor;
+            $novoVendedor-> estadoCivil = $estadoCivil;
+            $novoVendedor-> nascimento = $dataNascimento;
+            $novoVendedor-> profissao = $profissao;
+            $novoVendedor-> CPF = $cpf;
+            $novoVendedor-> RG = $rg;
+            $novoVendedor-> telefone = $telefone;
+            $novoVendedor-> banco = $banco;
+            $novoVendedor-> agencia = $agencia;
+            $novoVendedor-> tipoConta = $tipoConta;
+            $novoVendedor-> conta = $conta;
+            $novoVendedor-> pix = $pix;
+            $novoVendedor->save();
+
+            $vendedor = $novoVendedor->where('CPF',$cpf)->get()->first();
+            $idVendedor = $vendedor->id;
+
+        }else{
+            $vendedorExiste = 'Já existe um cadastro!';
+            return redirect()->back(['existeVendedor'=>$vendedorExiste]);
+        }
+
+        return redirect()->route('ven-novo-imovel',['id'=>$idVendedor]);
+
+    }
+
+    public function editarcliente(Request $request){
+        $telefone = $request->get('telefone');
+        if(!isset($telefone) || $telefone == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Vendedor();
+        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
+        if($cliente != ''){
+            $imoveis = VendaImoveis::where('idVendedor',$cliente->id)->get();
+            return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
+        } else{
+            return redirect()->back();
+        }
+
+        
+    }
+
+    public function editarclientePost(Request $request){
+        /*recuperando os dados preenchidos
+        $idImovel = $request->get('idImovel');
+        $nome = $request->get('nome');
+        $enderecoVendedor = $request->get('logradouro');
+        $numVendedor = $request->get('numero');
+        $bairroVendedor = $request->get('bairro');
+        $municipioVendedor = $request->get('municipio');
+        $compleVendedor = $request->get('complemento');
+        $estadoCivil = $request->get('estadoCivil');
+        $dataNascimento = $request->get('nascimento');
+        $profissao = $request->get('profissao');
+        $cpf = $request->get('cpf');
+        $rg = $request->get('rg');
+        $telefone = $request->get('telefone');
+        $banco = $request->get('banco');
+        $agencia = $request->get('agencia');
+        $tipoConta = $request->get('tipoConta');
+        $conta = $request->get('conta');
+        $pix = $request->get('pix');
+
+        //salvando no DB
+        $novoVendedor =  new Vendedor();
+        $existeVendedor = $novoVendedor->where('CPF',$cpf)->first();
+        if($existeVendedor == ''){
+            $novoVendedor-> idImovel = $idImovel;
+            $novoVendedor-> nome = $nome;
+            $novoVendedor-> endereco = $enderecoVendedor;
+            $novoVendedor-> numero = $numVendedor;
+            $novoVendedor-> bairro = $bairroVendedor;
+            $novoVendedor-> municipio = $municipioVendedor;
+            $novoVendedor-> complemento = $compleVendedor;
+            $novoVendedor-> estadoCivil = $estadoCivil;
+            $novoVendedor-> nascimento = $dataNascimento;
+            $novoVendedor-> profissao = $profissao;
+            $novoVendedor-> CPF = $cpf;
+            $novoVendedor-> RG = $rg;
+            $novoVendedor-> telefone = $telefone;
+            $novoVendedor-> banco = $banco;
+            $novoVendedor-> agencia = $agencia;
+            $novoVendedor-> tipoConta = $tipoConta;
+            $novoVendedor-> conta = $conta;
+            $novoVendedor-> pix = $pix;
+            $novoVendedor->save();
+        }else{
+            $Vendedor = 'Vendedor já cadastrado!';
+        }
+
+         //retornando
+        if(isset($Vendedor)){
+            return redirect()->back(['existeVendedor'=>$vendedor]);
+        } else{
+            return redirect()->route('imovel',['c'=>'c','venId'=>$idImovel]);
+        }*/
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //Cadastro de Imoveis
+    public function novoimovel(Request $request){
+        $idVendedor = $request->get('id');
+        /*if($idVendedor == '' || $idVendedor == null){
+            return redirect()->back();
+        }*/
+        return view('venda-cadastro',['id'=>$idVendedor]);
     }
 
     public function novoimovelPost(Request $request){
        //recuperando os dados preenchidos
-        $valor = $request->get('valor');
-        $enderecoImovel = $request->get('rua');
-        $numeroImovel = $request->get('numero');
-        $bairoImovel = $request->get('bairro');
-        $municipioImovel = $request->get('municipio');
-        $complementoImovel = $request->get('complemento');
-        $metragemTot = $request->get('metragemTot');
-        $terreno = $request->get('terreno');
-        $qtComodos = $request->get('qtdCom');
-        $quarto = $request->get('quartos');
-        $suite = $request->get('suites');
-        $cozinha = $request->get('cozinhas');
-        $lavanderia = $request->get('lavanderia');
-        $salaEstar = $request->get('salaEstar');
-        $salaJantar = $request->get('salaJantar');
-        $banheiro = $request->get('banheiros');
-        $garagem = $request->get('vagas');
-        $escritorio = $request->get('escritorio');
-        $jardim = $request->get('jardim');
-        $varanda = $request->get('varanda');
-        $documento = $request->get('documento');
+        $id                 = $request->get('idVendedor');
+        $valor              = $request->get('valor');
+        $enderecoImovel     = $request->get('rua');
+        $numeroImovel       = $request->get('numero');
+        $bairoImovel        = $request->get('bairro');
+        $municipioImovel    = $request->get('municipio');
+        $complementoImovel  = $request->get('complemento');
+        $metragemTot        = $request->get('metragemTot');
+        $terreno            = $request->get('terreno');
+        $qtComodos          = $request->get('qtdCom');
+        $quarto             = $request->get('quartos');
+        $suite              = $request->get('suites');
+        $cozinha            = $request->get('cozinhas');
+        $lavanderia         = $request->get('lavanderia');
+        $salaEstar          = $request->get('salaEstar');
+        $salaJantar         = $request->get('salaJantar');
+        $banheiro           = $request->get('banheiros');
+        $garagem            = $request->get('vagas');
+        $escritorio         = $request->get('escritorio');
+        $jardim             = $request->get('jardim');
+        $varanda            = $request->get('varanda');
+        $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
+        $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
+        $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
+        $request->input('usocapiao') == 'on'? $usocapiao = 'Sim': $usocapiao = 'Nao';
+        $request->input('outros') == 'on'? $outros = 'Sim': $outros = 'Nao';
         $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
-        $nomeCondo = $request->get('condominioNome');
-        $valorCondo = $request->get('condominioVal');
-        $andar = $request->get('andar');
+        $nomeCondo          = $request->get('condominioNome');
+        $valorCondo         = $request->get('condominioVal');
+        $andar              = $request->get('andar');
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
-        $descImovel = $request->get('descricaoImovel');
-        $descMobilha = $request->get('descricaoMobilia');
-        $descCond = $request->get('descricaoCond');
-        $obs = $request->get('observacao');
+        $descImovel         = $request->get('descricaoImovel');
+        $descMobilha        = $request->get('descricaoMobilia');
+        $descCond           = $request->get('descricaoCond');
+        $obs                = $request->get('observacao');
         /*$img1 = $request->get('');
         $img2 = $request->get('');
         $img3 = $request->get('');
@@ -62,8 +219,9 @@ class VendaController extends Controller
 
         //salvando no DB
         $novoImovel = new VendaImoveis();
-        $existeImovel = $novoImovel->where('documento',$documento)->first();
+        $existeImovel = $novoImovel->where('nomeCondominio',$nomeCondo)->first();
         if($existeImovel == ''){
+            $novoImovel-> idVendedor = $id;
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
             $novoImovel-> numero = $numeroImovel;
@@ -84,17 +242,26 @@ class VendaController extends Controller
             $novoImovel-> escritorio = $escritorio;
             $novoImovel-> jardim = $jardim;
             $novoImovel-> varanda = $varanda;
-            $novoImovel-> documento = $documento;
+            $novoImovel-> contrato = $contrato;
+            $novoImovel-> escritura = $escritura;
+            $novoImovel-> contratoPoss = $contratoPoss;
+            $novoImovel-> usocapiao = $usocapiao;
+            $novoImovel-> outros = $outros;
             $novoImovel-> condominio = $condo;
             $novoImovel-> nomeCondominio = $nomeCondo;
             $novoImovel-> valorCondominio = $valorCondo;
             $novoImovel-> andar = $andar;
             $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
+            $request->input('apCheck') == 'on'? $novoImovel-> tipo = 'apartamento' : '';
+            $request->input('casaCheck') == 'on'? $novoImovel-> tipo = 'casa' : '';
+            $request->input('chacaCheck') == 'on'? $novoImovel-> tipo = 'chacara': '';
+            $request->input('terreCheck') == 'on'? $novoImovel-> tipo = 'terreno' : '';
             $novoImovel-> sobreImovel = $descImovel;
             $novoImovel-> sobreMobilia = $descMobilha;
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
+            $novoImovel-> disponivel = 'Sim';
             /*$novoImovel-> img1 = $img1;
             $novoImovel-> img2 = $img2;
             $novoImovel-> img3 = $img3;
@@ -109,16 +276,12 @@ class VendaController extends Controller
 
         } else{
             $imovel = 'Imovel já cadastrado!';
+            return view('venda-cadastro',['existeImovel'=>$imovel]);
         }
         
-        //retornando
-        if(isset($imovel)){
-            return view('venda-cadastro',['existeImovel'=>$imovel]);
-        } else{
-            $idImovel = new VendaImoveis();
-            $id = $idImovel->latest()->get()->first(); 
-            return view('venda-cadastro-cliente',['id'=>$id->id]);
-        }
+
+        $idImovel = VendaImoveis::latest()->get()->first(); 
+        return redirect()->route('imovel',['id'=>$idImovel->id]);
 
     }
 
@@ -138,97 +301,4 @@ class VendaController extends Controller
 
     }
 
-
-
-
-
-
-
-
-
-
-    //Cadastro de de Cliente
-    public function novocliente(Request $request){
-        $id = $request->get('id');
-        if($id != ''){
-            return view('venda-cadastro-cliente',['idImovel'=>$id]);
-        } else{
-            return view('venda-cadastro-cliente');
-        }
-       
-
-    }
-
-    public function novoclientePost(Request $request){
-        //recuperando os dados preenchidos
-        $idImovel = $request->get('idImovel');
-        $nome = $request->get('nome');
-        $enderecoLocator = $request->get('logradouro');
-        $numLocator = $request->get('numero');
-        $bairroLocator = $request->get('bairro');
-        $municipioLocator = $request->get('municipio');
-        $compleLocator = $request->get('complemento');
-        $estadoCivil = $request->get('estadoCivil');
-        $dataNascimento = $request->get('nascimento');
-        $profissao = $request->get('profissao');
-        $cpf = $request->get('cpf');
-        $rg = $request->get('rg');
-        $telefone = $request->get('telefone');
-        $banco = $request->get('banco');
-        $agencia = $request->get('agencia');
-        $tipoConta = $request->get('tipoConta');
-        $conta = $request->get('conta');
-        $pix = $request->get('pix');
-
-        //salvando no DB
-        $novoLocator =  new Vendedor();
-        $existeLocator = $novoLocator->where('CPF',$cpf)->first();
-        if($existeLocator == ''){
-            $novoLocator-> idImovel = $idImovel;
-            $novoLocator-> nome = $nome;
-            $novoLocator-> endereco = $enderecoLocator;
-            $novoLocator-> numero = $numLocator;
-            $novoLocator-> bairro = $bairroLocator;
-            $novoLocator-> municipio = $municipioLocator;
-            $novoLocator-> complemento = $compleLocator;
-            $novoLocator-> estadoCivil = $estadoCivil;
-            $novoLocator-> nascimento = $dataNascimento;
-            $novoLocator-> profissao = $profissao;
-            $novoLocator-> CPF = $cpf;
-            $novoLocator-> RG = $rg;
-            $novoLocator-> telefone = $telefone;
-            $novoLocator-> banco = $banco;
-            $novoLocator-> agencia = $agencia;
-            $novoLocator-> tipoConta = $tipoConta;
-            $novoLocator-> conta = $conta;
-            $novoLocator-> pix = $pix;
-            $novoLocator->save();
-        }else{
-            $locator = 'Vendedor já cadastrado!';
-        }
-
-         //retornando
-        if(isset($locator)){
-            return redirect()->back(['existeVendedor'=>$vendedor]);
-        } else{
-            return redirect()->route('imovel',['c'=>'c']);
-        }
-    }
-
-    public function editarcliente(Request $request){
-        $telefone = $request->get('');
-        if(!isset($telefone) || $telefone == ''){
-            return redirect()->back();
-        }
-
-        $editarCliente = new Vendedor();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->toArray();
-        if($cliente != ''){
-            return view('venda-cadastro-cliente',['dados'=>$cliente]);
-        } else{
-            return redirect()->back();
-        }
-
-        
-    }
 }

@@ -15,6 +15,7 @@ class CreateLocacaoImoveisTable extends Migration
     {
         Schema::create('locacao_imoveis', function (Blueprint $table) {
             $table->id();
+            $table->integer('idLocador');
             $table->bigInteger('valor');
             $table->string('endereco');
             $table->string('numero');
@@ -46,11 +47,12 @@ class CreateLocacaoImoveisTable extends Migration
             $table->string('individual');
             $table->string('mobilhado');
             $table->string('pet');
-            $table->string('opcaoCompra');
+            $table->string('tipo');
             $table->text('sobreImovel');
             $table->text('sobreMobilia');
             $table->text('sobreCondominio');
             $table->text('observacoes');
+            $table->string('disponivel');
             $table->string('img1');
             $table->string('img2');
             $table->string('img3');

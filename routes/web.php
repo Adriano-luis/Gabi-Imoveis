@@ -24,25 +24,31 @@ Route::middleware('login')->prefix('logged')->group(function (){
     //Home
     Route::get('/home','HomeController@index')->name('home');
     Route::post('/home','HomeController@busca')->name('home');
+    Route::get('/logout', 'LoginController@sair')->name('sair');
 
-    //Modal de cadatro rápido de clientes e busca da home
-    Route::post('/cadastro-rapido','ClienteController@salva')->name('cliente');
-    Route::post('/cadastro-rapido-busca','ClienteController@busca')->name('cliente-busca');
+    //Cliente
+    Route::get('/lista-cliente','ClienteController@index')->name('cliente');
+    Route::get('/cadastro-rapido-busca','ClienteController@busca')->name('cliente-busca');
+    Route::get('/lista-cliente/editar','ClienteController@editar')->name('cliente-editar');
+    Route::post('/lista-cliente/busca','ClienteController@buscaCliente')->name('cliente-busca-pagina');
 
     // Cadastros Locação
     Route::get('/locacao/cadastrar-imovel','LocacaoController@novoimovel')->name('loc-novo-imovel');
     Route::post('/locacao/cadastrar-imovel','LocacaoController@novoimovelPost')->name('loc-novo-imovel');
     Route::get('/locacao/cadastrar-cliente/{id?}','LocacaoController@novocliente')->name('loc-novo-cliente');
     Route::post('/locacao/cadastrar-cliente','LocacaoController@novoclientePost')->name('loc-novo-cliente');
-    //Editar Locação
+
+    Route::post('/locacao/editar-cliente','LocacaoController@editarcliente')->name('loc-editar-cliente');
     Route::post('/locacao/editar-imovel/{id?}','LocacaoController@editarimovel')->name('loc-editar-imovel');
-    Route::post('/locacao/editar-cliente/{id?}','LocacaoController@editarcliente')->name('loc-editar-cliente');
 
     //Venda
     Route::get('/venda/cadastrar-imovel','VendaController@novoimovel')->name('ven-novo-imovel');
     Route::post('/venda/cadastrar-imovel','VendaController@novoimovelPost')->name('ven-novo-imovel');
     Route::get('/venda/cadastrar-cliente','VendaController@novocliente')->name('ven-novo-cliente');
     Route::post('/venda/cadastrar-cliente','VendaController@novoclientePost')->name('ven-novo-cliente');
+
+    Route::post('/venda/editar-cliente','VendaController@editarcliente')->name('ven-editar-cliente');
+    Route::post('/venda/editar-cliente/post','VendaController@editarclientePost')->name('ven-editar-cliente-post');
 
     //Página do Imóvel
     Route::get('/imovel','ImovelController@index')->name('imovel');

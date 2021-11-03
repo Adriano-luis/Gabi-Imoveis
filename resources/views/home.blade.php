@@ -2,10 +2,10 @@
 @section('content')
     
   <section class="home">
-    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Filtros Imóveis
+    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseLoc" aria-expanded="false" aria-controls="collapseExample">
+      Filtros Locação
     </button>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseLoc">
       <div class="card card-body position">
         <div class="pesquisa">
           <form action="{{route('home')}}" method="POST">
@@ -14,45 +14,60 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
-                <div class="form-group col-lg-1">
+                <div class="row">
+                  <div class="form-group col-lg-1">
+                    <input type="hidden" name="locacao" value="Sim">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
+                  </div>
+                  <div class="form-group col-lg-5">
+                    <label> Nome do Cliente</label>
+                    <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label> Telefone do cliente</label>
+                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
+                  </div>
                 </div>
                 <div class="row">
                   <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="aluguelCheck">
-                      <label name="aluguelCheck" class="form-check-label"><h5>Aluguel<h5></label>
+                      <input class="form-check-input" type="checkbox" name="resiCheck">
+                      <label name="resiCheck" class="form-check-label"><h5>Residencial<h5></label>
                     </div><br>
                     <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="vendaCheck">
-                      <label name="vendaCheck" class="form-check-label"><h5>Venda<h5></label>
+                      <input class="form-check-input" type="checkbox" name="naoResiCheck">
+                      <label name="naoResiCheck" class="form-check-label"><h5>Não residencial<h5></label>
                     </div><br>
                   </div>
                 <div class="row">
-                  <div class="form-group mx-3">
-                      <label for="rgi">RGI</label>
-                      <input type="text" name="rgi" class="form-control" id="rgi" placeholder="RGI">
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label>Valor</label>
+                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                      </div>
                   </div>
-                  <div class="form-group mx-3">
-                      <label for="valor">Valor</label>
-                      <input type="text" name="valor" class="form-control" id="Valor" placeholder="Valor">
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label> &nbsp;</label>
+                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                      </div>
                   </div>
                 </div>
                 <div class="row">
-                    <div class="form-group mx-3">
-                        <label for="rua">Rua</label>
-                        <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
-                    </div>
-                    <div class="form-group mx-3">
-                        <label for="numero">Número</label>
-                        <input type="text" name="numero" class="form-control" id="numero" placeholder="Número">
-                    </div>
+                  <div class="form-group mx-3" style="width: 70%">
+                    <label for="rua">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
                   </div>
-                  <div class="row">
-                    <div class="form-group mx-3">
-                        <label for="municipio">Metragem</label>
-                        <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Metragem">
-                    </div>
+                  <div class="form-group mx-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="bairro" placeholder="bairro">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group mx-3">
+                      <label for="municipio">Metragem</label>
+                      <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
+                  </div>
                 </div>
                 <div class="row">
                     <div class="form-group mx-3">
@@ -63,14 +78,14 @@
                         <label for="qtQuarto">Quatidade de quarto</label>
                         <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
                     </div>
-                    <div class="form-group mx-3">
+                    <!-- <div class="form-group mx-3">
                         <label for="qtBanheiros">Quatidade de banheiro</label>
                         <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
-                    </div>
+                    </div> 
                     <div class="form-group mx-3">
                         <label for="qtVagas">Quatidade de vagas de garagem</label>
                         <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
-                    </div>
+                    </div> -->
                 </div><br>
                 <div class="row">
                 <div class="form-check mx-3">
@@ -87,13 +102,139 @@
                     <label name="mobiliado" class="form-check-label"><h5>Mobiliado?</h5></label>
                   </div><br>
 
-                  <div class="form-check mx-3">
+                  <!--<div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="pet">
                     <label name="pet" class="form-check-label"><h5>Aceita Pet?</h5></label>
-                  </div><br>
+                  </div>--><br>
                 </div>
               </div>
-            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
+          </form>
+        </div>                
+      </div>
+    </div>
+
+    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseVenda" aria-expanded="false" aria-controls="collapseExample">
+      Filtros Venda
+    </button>
+    <div class="collapse" id="collapseVenda">
+      <div class="card card-body position">
+        <div class="pesquisa">
+          <form action="{{route('home')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                @if (isset($existeImovel))
+                    <div>{{$existeImovel}}</div>
+                @endif
+                <div class="row">
+                  <div class="form-group col-lg-1">
+                    <label for="idImovel">Id Imóvel</label>
+                    <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
+                  </div>
+                  <div class="form-group col-lg-5">
+                    <label> Nome do Cliente</label>
+                    <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label> Telefone do cliente</label>
+                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="apCheck">
+                    <label name="apCheck" class="form-check-label"><h5>Apartamento<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="casaCheck">
+                    <label name="casaCheck" class="form-check-label"><h5>Casa<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="chacaCheck">
+                    <label name="chacaCheck" class="form-check-label"><h5>Chácaras<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="terreCheck">
+                    <label name="terreCheck" class="form-check-label"><h5>Terreno<h5></label>
+                  </div><br>
+                </div>
+                <div class="row">
+                  <div class="row">
+<<<<<<< HEAD
+                    <div class="form-group mx-3">
+                        <label for="municipio">Metragem</label>
+                        <input type="text" name="metragemTot" class="form-control" id="municipio" placeholder="Metragem">
+                    </div>
+=======
+                      <div class="form-group mx-3">
+                        <label>Valor</label>
+                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="form-group mx-3">
+                        <label> &nbsp;</label>
+                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                      </div>
+                  </div>
+>>>>>>> d7a0c2b282930bda4c6423d7460a2a0b0f3aec85
+                </div>
+                <div class="row">
+                  <div class="form-group mx-3" style="width: 70%">
+                    <label for="rua">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="bairro" placeholder="bairro">
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="form-group mx-3">
+                      <label for="municipio">Metragem</label>
+                      <input type="text" name="metragemTot" class="form-control" id="metragemTot" placeholder="m²">
+                  </div>
+                </div> -->
+                <div class="row">
+                    <div class="form-group mx-3">
+                        <label for="qtCom">Quatidade de comodos</label>
+                        <input type="number" name="qtCom" class="form-control" id="qtCom" placeholder="Quatidade de comodos">
+                    </div>
+                    <div class="form-group mx-3">
+                        <label for="qtQuarto">Quatidade de quarto</label>
+                        <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
+                    </div>
+                    <!-- <div class="form-group mx-3">
+                        <label for="qtBanheiros">Quatidade de banheiro</label>
+                        <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
+                    </div> 
+                    <div class="form-group mx-3">
+                        <label for="qtVagas">Quatidade de vagas de garagem</label>
+                        <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
+                    </div> -->
+                </div><br>
+                <div class="row">
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="individualCheck">
+                    <label name="individualCheck" class="form-check-label"><h5>Individual?<h5></label>
+                  </div><br>
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="condominioCheck">
+                    <label name="condominioCheck" class="form-check-label"><h5>Condomínio?<h5></label>
+                  </div><br>
+
+                  <div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="mobiliado">
+                    <label name="mobiliado" class="form-check-label"><h5>Mobiliado?</h5></label>
+                  </div><br>
+
+                  <!--<div class="form-check mx-3">
+                    <input class="form-check-input" type="checkbox" name="pet">
+                    <label name="pet" class="form-check-label"><h5>Aceita Pet?</h5></label>
+                  </div>--><br>
+                </div>
+              </div>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
           </form>
         </div>                
       </div>
@@ -105,15 +246,25 @@
     <div class="collapse" id="collapseExample2">
       <div class="card card-body position">
         <div class="pesquisa">
-          <form action="{{route('cliente-busca')}}" method="POST">
+          <form action="{{route('loc-editar-cliente')}}" method="POST">
             @csrf
             <div class="card-body">
-                <div class="form-group col-lg-2">
-                    <label for="telefone">Telefone</label>
+                <div class="form-group col-lg-4">
+                    <label for="telefone">Locação: Telefone do Locador</label>
                     <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
                 </div> 
             </div>
-            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Filtrar</h5></button>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
+          </form>
+          <form action="{{route('ven-editar-cliente')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="form-group col-lg-4">
+                    <label for="telefone">Venda: Telefone do Proprietário</label>
+                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
+                </div> 
+            </div>
+            <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
           </form>
         </div>                
       </div>
@@ -124,18 +275,23 @@
     @if (isset($imoveis))
       <div class="row">
         @foreach ($imoveis as $imovel)
+          @if (isset($ray) && isset($ray) && $ray == 'sim')
+            <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
+          @else
+            <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
+          @endif
           <div class="col-md-3">
             <div class="card card-widget">
               <div class="card-header imoveisCard">
                 <div class="user-block">
-                  <span class="description">id: {{$imovel->id}}</span>
-                  <span class="description">{{$imovel->endereco}}, {{$imovel->numero}}
-                    @if ($imovel->complemento != '')
-                      {{$imovel->complemento}}
+                  <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>
+                  <span class="description">{{isset($ray) && $ray == 'sim' ? $imovel['endereco']:$imovel->endereco}}, {{isset($ray) && $ray == 'sim' ? $imovel['numero']:$imovel->numero}}
+                    @if ((isset($imovel->complemento) && $imovel->complemento != '') || (isset($imovel['complemento']) && $imovel['complemento'] != ''))
+                      {{ isset($ray) && $ray == 'sim' ? $imovel['complemento']:$imovel->complemento}}
                     @endif
-                    <br>{{$imovel->bairro}} | {{$imovel->municipio}}
+                    <br>{{ isset($ray) && $ray == 'sim' ? $imovel['bairro']:$imovel->bairro}} | {{isset($ray) && $ray == 'sim' ? $imovel['municipio']:$imovel->municipio}}
                   </span>
-                  <span class="description">cadastrado {{$imovel->created_at}} </span>
+                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['created_at']:$imovel->created_at}} </span>
                 </div>
               </div>
       
@@ -143,13 +299,74 @@
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img1"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img1")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img2"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img2")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img3"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img3")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img4"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img4")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img5"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img5")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img6"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img6")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img7"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img7")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img8"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img8")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img9"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img9")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img10"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img10")}}" alt="comodos">
+                      @endif
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
@@ -163,74 +380,86 @@
                 </div>
               </div>
               <div class="card-footer card-comments">
-                <div class="card-comment d-flex">
-                  <i class="fas fa-ruler-combined pt-2"></i>
-      
-                  <span class="username px-3">
-                    {{$imovel->metragemTotal}} m²
-                  </span>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-toilet"></i>
-                  <div class="px-3">
-                    @if ($imovel->banheiro != null)
-                      {{$imovel->banheiro}} Banheiro(s)
+                @if ( isset($ray) && $ray == 'sim')
+                  <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
 
+                @else
+                  <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
+                @endif
+                  <div class="card-comment d-flex">
+                    <i class="fas fa-ruler-combined pt-2"></i>
+        
+                    <span class="username px-3">
+                      {{isset($ray) && $ray == 'sim' ? $imovel['metragemTotal']:$imovel->metragemTotal}} m²
+                    </span>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-toilet"></i>
+                    <div class="px-3">
+                      @if ( (isset($imovel->banheiro) && $imovel->banheiro != null) || (isset($imovel['banheiro']) && $imovel['banheiro'] !=  null))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['banheiro']:$imovel->banheiro}} Banheiro(s)
+
+                        @else
+                        Nenhum banheiro
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-bed"></i>
+                    <div class="px-3">
+                      @if (isset($imovel->quarto) || isset($imovel['quarto']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['quarto']:$imovel->quarto}} Quarto(s)
                       @else
-                      Nenhum banheiro
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-bed"></i>
-                  <div class="px-3">
-                    @if ($imovel->quarto)
-                      {{$imovel->quarto}} Quarto(s)
-                    @else
-                        Nenhum Quarto
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-car"></i>
-                  <div class="px-3">
-                    @if ($imovel->garagem)
-                      {{$imovel->garagem}} Vagas de Garagem
-                    @else
-                        Sem Garagem
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i><b>R$</b></i>
-                  <div class="px-3">
-                      {{$imovel->valor}} (Aluguel)
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <div class="px-3 btn valorTotal">
-                    <b>
-                    <?php
-                      if ($imovel->IPTU != null){
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          Nenhum Quarto
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-car"></i>
+                    <div class="px-3">
+                      @if (isset($imovel->garagem) || isset($imovel['garagem']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['garagem']:$imovel->garagem}} Vagas de Garagem
+                      @else
+                          Sem Garagem
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i><b>R$</b></i>
+                    <div class="px-3">
+                        {{ isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor}} (Aluguel)
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <div class="px-3 btn valorTotal">
+                      <b>
+                      <?php
+                        if ((isset($imovel->IPTU) && $imovel->IPTU != null) || (isset($ray) && $ray == 'sim' && $imovel['IPTU'] != null)){
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU)
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
+                          }else{
+                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU) 
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor));
+                          }
                         }else{
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                            echo  'Total: R$'.'<i><b>R$</b></i>'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor) 
+                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
+                          }else {
+                            echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
+                          }
                         }
-                      }else{
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
-                        }else {
-                          echo  'Total: R$'.($imovel->valor);
-                        }
-                      }
-                    ?>
-                    </b>
+                      ?>
+                      </b>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
+        </a>
         @endforeach
       </div>
     @endif
@@ -238,32 +467,97 @@
     @if (isset($imoveisV))
       <div class="row">
         @foreach ($imoveisV as $imovel)
+          @if (isset($ray) && isset($ray) && $ray == 'sim')
+            <a href="{{route('imovel',['venId'=>$imovel['id']])}}">
+          @else
+            <a href="{{route('imovel',['venId'=>$imovel->id])}}"> 
+          @endif
           <div class="col-md-3">
             <div class="card card-widget">
               <div class="card-header imoveisCard">
                 <div class="user-block">
-                  <span class="description">id: {{$imovel->id}}</span>
-                  <span class="description">{{$imovel->endereco}}, {{$imovel->numero}}
-                    @if ($imovel->complemento != '')
-                      {{$imovel->complemento}}
+                  <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>
+                  <span class="description">{{isset($ray) && $ray == 'sim' ? $imovel['endereco']:$imovel->endereco}}, {{isset($ray) && $ray == 'sim' ? $imovel['numero']:$imovel->numero}}
+                    @if ((isset($imovel->complemento) && $imovel->complemento != '') || (isset($imovel['complemento']) && $imovel['complemento'] != ''))
+                      {{ isset($ray) && $ray == 'sim' ? $imovel['complemento']:$imovel->complemento}}
                     @endif
-                    <br>{{$imovel->bairro}} | {{$imovel->municipio}}
+                    <br>{{ isset($ray) && $ray == 'sim' ? $imovel['bairro']:$imovel->bairro}} | {{isset($ray) && $ray == 'sim' ? $imovel['municipio']:$imovel->municipio}}
                   </span>
-                  <span class="description">cadastrado {{$imovel->created_at}} </span>
+                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['created_at']:$imovel->created_at}} </span>
                 </div>
               </div>
-      
               <div class="card-body">
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="{{asset('assets/images/sala3.jpg')}}" alt="comodos">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img1"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img1")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/quarto.jpg')}}" alt="Second slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img2"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img2")}}" alt="comodos">
+                      @endif
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="{{asset('assets/images/banheiro.jpg')}}" alt="Third slide">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img3"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img3")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img4"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img4")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img5"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img5")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img6"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img6")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img7"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img7")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img8"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img8")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img9"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img9")}}" alt="comodos">
+                      @endif
+                    </div>
+                    <div class="carousel-item">
+                      @if (isset($ray) && $ray == 'sim')
+                        <img src="{{asset('assets/images/locacao/$imovel["img10"]')}}" alt="comodos">
+                      @else
+                        <img src="{{asset("assets/images/locacao/$imovel->img10")}}" alt="comodos">
+                      @endif
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
@@ -277,74 +571,74 @@
                 </div>
               </div>
               <div class="card-footer card-comments">
-                <div class="card-comment d-flex">
-                  <i class="fas fa-ruler-combined pt-2"></i>
-      
-                  <span class="username px-3">
-                    {{$imovel->metragemTotal}} m²
-                  </span>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-toilet"></i>
-                  <div class="px-3">
-                    @if ($imovel->banheiro != null)
-                      {{$imovel->banheiro}} Banheiro(s)
+                @if (isset($ray) && isset($ray) && $ray == 'sim')
+                  <a href="{{route('imovel',['venId'=>$imovel['id']])}}">
+                @else
+                  <a href="{{route('imovel',['venId'=>$imovel->id])}}"> 
+                @endif
+                  <div class="card-comment d-flex">
+                    <i class="fas fa-ruler-combined pt-2"></i>
+        
+                    <span class="username px-3">
+                      {{isset($ray) && $ray == 'sim' ? $imovel['metragemTotal']:$imovel->metragemTotal}} m²
+                    </span>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-toilet"></i>
+                    <div class="px-3">
+                      @if ( (isset($imovel->banheiro) && $imovel->banheiro != null) || (isset($imovel['banheiro']) && $imovel['banheiro'] !=  null))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['banheiro']:$imovel->banheiro}} Banheiro(s)
 
+                        @else
+                        Nenhum banheiro
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-bed"></i>
+                    <div class="px-3">
+                      @if (isset($imovel->quarto) || isset($imovel['quarto']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['quarto']:$imovel->quarto}} Quarto(s)
                       @else
-                      Nenhum banheiro
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-bed"></i>
-                  <div class="px-3">
-                    @if ($imovel->quarto)
-                      {{$imovel->quarto}} Quarto(s)
-                    @else
-                        Nenhum Quarto
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i class="fas fa-car"></i>
-                  <div class="px-3">
-                    @if ($imovel->garagem)
-                      {{$imovel->garagem}} Vagas de Garagem
-                    @else
-                        Sem Garagem
-                    @endif
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <i><b>R$</b></i>
-                  <div class="px-3">
-                      {{$imovel->valor}} (Valor Estimado)
-                  </div>
-                </div><br>
-                <div class="d-flex">
-                  <div class="px-3 btn valorTotal">
-                    <b>
-                    <?php
-                      if ($imovel->IPTU != null){
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor + $imovel->valorCondominio);
+                          Nenhum Quarto
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i class="fas fa-car"></i>
+                    <div class="px-3">
+                      @if (isset($imovel->garagem) || isset($imovel['garagem']))
+                        {{isset($ray) && $ray == 'sim' ? $imovel['garagem']:$imovel->garagem}} Vagas de Garagem
+                      @else
+                          Sem Garagem
+                      @endif
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <i><b>R$</b></i>
+                    <div class="px-3">
+                        {{ isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor}}
+                    </div>
+                  </div><br>
+                  <div class="d-flex">
+                    <div class="px-3 btn valorTotal">
+                      <b>
+                      <?php
+                        if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                          echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
+                          + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
                         }else{
-                          echo  'Total: R$'.($imovel->IPTU + $imovel->valor);
+                          echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
                         }
-                      }else{
-                        if($imovel->valorCondominio != null) {
-                          echo  'Total: R$'.'<i><b>R$</b></i>'.($imovel->valor + $imovel->valorCondominio);
-                        }else {
-                          echo  'Total: R$'.($imovel->valor);
-                        }
-                      }
-                    ?>
-                    </b>
+                      ?>
+                      </b>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
+        </a>
         @endforeach
       </div>
     @endif

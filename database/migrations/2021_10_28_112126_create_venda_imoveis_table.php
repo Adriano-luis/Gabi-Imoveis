@@ -15,6 +15,7 @@ class CreateVendaImoveisTable extends Migration
     {
         Schema::create('venda_imoveis', function (Blueprint $table) {
             $table->id();
+            $table->integer('idVendedor');
             $table->bigInteger('valor');
             $table->string('endereco');
             $table->string('numero');
@@ -35,17 +36,23 @@ class CreateVendaImoveisTable extends Migration
             $table->integer('escritorio');
             $table->integer('jardim');
             $table->integer('varanda');
-            $table->string('documento');
+            $table->string('contrato');
+            $table->string('escritura');
+            $table->string('contratoPoss');
+            $table->string('usocapiao');
+            $table->string('outros');
             $table->string('condominio');
             $table->text('nomeCondominio');
             $table->integer('valorCondominio');
             $table->integer('andar');
             $table->string('individual');
             $table->string('mobilhado');
+            $table->string('tipo');
             $table->text('sobreImovel');
             $table->text('sobreMobilia');
             $table->text('sobreCondominio');
             $table->text('observacoes');
+            $table->string('disponivel');
             $table->string('img1');
             $table->string('img2');
             $table->string('img3');
