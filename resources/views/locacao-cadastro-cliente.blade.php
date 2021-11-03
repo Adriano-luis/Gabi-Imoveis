@@ -128,9 +128,9 @@
       <div class="row">
         @foreach ($imoveis as $imovel)
           @if (isset($ray) && isset($ray) && $ray == 'sim')
-            <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+            <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
           @else
-            <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+            <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
             <div class="card card-widget">
@@ -172,10 +172,10 @@
               </div>
               <div class="card-footer card-comments">
                 @if ( isset($ray) && $ray == 'sim')
-                  <a href="{{route('imovel',['id'=>$imovel['id']])}}">
+                  <a href="{{route('imovel',['locId'=>$imovel['id']])}}">
 
                 @else
-                  <a href="{{route('imovel',['id'=>$imovel->id])}}"> 
+                  <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
                 @endif
                   <div class="card-comment d-flex">
                     <i class="fas fa-ruler-combined pt-2"></i>
