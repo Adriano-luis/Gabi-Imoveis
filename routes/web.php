@@ -54,6 +54,9 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::get('/imovel','ImovelController@index')->name('imovel');
 
     //Adicionar novo Gerenciado
+    Route::get('/adicionar-gerenciador','GerenciadorController@index')->name('gerenciador');
+    Route::post('/adicionar-gerenciador','GerenciadorController@cadastrar')->name('gerenciador');
+
     //Alterar senha
 
 });
