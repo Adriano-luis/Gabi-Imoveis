@@ -7,8 +7,8 @@
                 <input type="text" name="nomeContribuinte" class="form-control" id="nomeContribuinte" placeholder="Nome">
             </div>
             <div class="form-group col-lg-2">
-                <label for="cargo">Cargo</label>
-                <input type="text"  class="form-control" id="cargo" name="cargo" placeholder="Cargo">
+                <label for="cargo">Email</label>
+                <input type="text"  class="form-control" id="email" name="email" placeholder="Email">
             </div>
             <div class="form-group col-lg-2">
                 <label for="senha">Senha</label>
