@@ -156,7 +156,11 @@ border-top: 2px dashed #bbb;
     color: #000;
 }
 
-
+.docImprimir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media only screen and (max-width:993px){
     .imovel .hide{
