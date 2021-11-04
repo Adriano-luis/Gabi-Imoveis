@@ -58,6 +58,11 @@
     margin-bottom: -0.5rem;
 }
 
+.ajust-carrousel{
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .home .fa-bed{
     margin-right: -0.5rem;
 }
@@ -124,6 +129,10 @@ hr.solid {
     border-top: 2px solid #bbb;
   }
 
+.dashed {
+border-top: 2px dashed #bbb;
+}
+
 .imovel-description{
     margin-bottom: 0rem !important;
 }
@@ -131,6 +140,11 @@ hr.solid {
 .imovel .carousel-item img{
     width: 52rem !important;
     height: 32rem !important;
+}
+
+.imovel-btn-print{
+    float: right !important;
+    margin-bottom: 1rem !important;
 }
 
 .locacao-cadastro .carousel-item img{

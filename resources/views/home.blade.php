@@ -294,7 +294,7 @@
       
               <div class="card-body">
                 <div id="controleSlide" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner ajust-carrousel">
                     <div class="carousel-item active">
                       @if (isset($ray) && $ray == 'sim')
                         @if (isset($imovel['img1']))

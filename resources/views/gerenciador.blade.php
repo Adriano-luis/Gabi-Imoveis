@@ -8,11 +8,15 @@
             </div>
             <div class="form-group col-lg-2">
                 <label for="cargo">Cargo</label>
-                <input type="text"  class="form-control" name="cargo" placeholder="Cargo">
+                <input type="text"  class="form-control" id="cargo" name="cargo" placeholder="Cargo">
             </div>
             <div class="form-group col-lg-2">
-                <label for="senha"> Senha</label>
-                <input type="text"  class="form-control" name="senha" placeholder="Senha">
+                <label for="senha">Senha</label>
+                <input type="text"  class="form-control" id="senha" name="senha" placeholder="Senha">
+            </div>
+            <div class="form-group col-lg-2">
+                <label for="checkSenha">Confirmar senha</label>
+                <input type="text"  class="form-control" id="checkSenha" name="checkSenha" placeholder="Senha">
             </div>
         </form>
     </section>

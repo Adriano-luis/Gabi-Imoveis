@@ -138,7 +138,21 @@
                             </div>
                         </div>
                     </div>
+                    <hr class="solid"><br>
+                    <div class="row align-row">
+                        <i class="fas fa-list fa-2x"></i>
+                        <div class="align-description">
+                            <div>
+                                <p class="font-weight-bold mx-2 imovel-description">Descrição da imobiliária</p>
+                                <p class="px-2">Alguma coisa que os funcionários escreverem ao cadastrar o imóvel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
                 </div>
+
+                {{-- card sticky --}}
+
                 <div class="col-4 hide">
 
                     <div class="card sticky-top card-rounded" style="width: 18rem;">
@@ -148,6 +162,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Aluguel: R$</li>
                             <li class="list-group-item">Condomínio: R$</li>
+                            <hr class="dashed">
                             <li class="list-group-item">Total: R$</li>
                         </ul>
                     </div>
