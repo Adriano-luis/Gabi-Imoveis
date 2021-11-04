@@ -206,16 +206,8 @@ class VendaController extends Controller
         $descMobilha        = $request->get('descricaoMobilia');
         $descCond           = $request->get('descricaoCond');
         $obs                = $request->get('observacao');
-        /*$img1 = $request->get('');
-        $img2 = $request->get('');
-        $img3 = $request->get('');
-        $img4 = $request->get('');
-        $img5 = $request->get('');
-        $img6 = $request->get('');
-        $img7 = $request->get('');
-        $img8 = $request->get('');
-        $img9 = $request->get('');
-        $img10 = $request->get('');*/
+
+
 
         //salvando no DB
         $novoImovel = new VendaImoveis();
@@ -262,16 +254,38 @@ class VendaController extends Controller
             $novoImovel-> sobreCondominio = $descCond;
             $novoImovel-> observacoes = $obs;
             $novoImovel-> disponivel = 'Sim';
-            /*$novoImovel-> img1 = $img1;
-            $novoImovel-> img2 = $img2;
-            $novoImovel-> img3 = $img3;
-            $novoImovel-> img4 = $img4;
-            $novoImovel-> img5 = $img5;
-            $novoImovel-> img6 = $img6;
-            $novoImovel-> img7 = $img7;
-            $novoImovel-> img8 = $img8;
-            $novoImovel-> img9 = $img9;
-            $novoImovel-> img10 = $img10;*/
+            if ($request->hasFile('upFotos')){
+                $aux = 1;
+                foreach ($request->file('upFotos') as $imagem){
+                    $extension = $imagem->extension();
+                    $imageName = md5($imagem->getClientOriginalName().strtotime("now")).'.'.$extension;
+                    $imagem->move(public_path('assets/images/locacao'),$imageName);
+
+                    if($aux == 1){
+                        $novoImovel-> img1 = $imageName;
+                    }else if($aux == 2){
+                        $novoImovel-> img2 = $imageName;
+                    }else if($aux == 3){
+                        $novoImovel-> img3 = $imageName;
+                    }else if($aux == 4){
+                        $novoImovel-> img4 = $imageName;
+                    }else if($aux == 5){
+                        $novoImovel-> img5 = $imageName;
+                    }else if($aux == 6){
+                        $novoImovel-> img6 = $imageName;
+                    }else if($aux == 7){
+                        $novoImovel-> img7 = $imageName;
+                    }else if($aux == 8){
+                        $novoImovel-> img8 = $imageName;
+                    }else if($aux == 9){
+                        $novoImovel-> img9 = $imageName;
+                    }else{
+                        $novoImovel-> img10 = $imageName;
+                    }
+                    $aux++;
+                }
+            }
+
             $novoImovel->save();
 
         } else{
@@ -280,8 +294,8 @@ class VendaController extends Controller
         }
         
 
-        $idImovel = VendaImoveis::latest()->get()->first(); 
-        return redirect()->route('imovel',['id'=>$idImovel->id]);
+        $dados = VendaImoveis::latest()->get()->first(); 
+        return view('imovel',['dadosImovel'=>$dados]);
 
     }
 

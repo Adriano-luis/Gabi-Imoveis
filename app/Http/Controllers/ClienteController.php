@@ -257,8 +257,9 @@ class ClienteController extends Controller
         }
         
         if(isset($imoveisV)){
-            return redirect()->route('home',['imoveisV'=>$imoveisV]);
+            return redirect()->route('home',['imoveisV'=>$imoveisV,'ray' => 'sim']);
         }
-        return redirect()->route('home',['imoveis'=>$imoveis]);
+
+        return redirect()->route('home',['imoveis'=>$imoveis,'ray' => 'sim']);
     }
 }
