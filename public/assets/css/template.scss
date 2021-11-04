@@ -79,6 +79,10 @@
     margin-right:2rem;
 }
 
+.home-card-alugado{
+    border: 1px solid red !important;
+}
+
 .home .carousel-item img{
     width: 10rem;
     max-height: 7rem;
@@ -113,6 +117,15 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    
+}
+
+hr.solid {
+    border-top: 2px solid #bbb;
+  }
+
+.imovel-description{
+    margin-bottom: 0rem !important;
 }
 
 .imovel .carousel-item img{
@@ -128,6 +141,8 @@
     text-decoration: none;
     color: #000;
 }
+
+
 
 @media only screen and (max-width:993px){
     .imovel .hide{

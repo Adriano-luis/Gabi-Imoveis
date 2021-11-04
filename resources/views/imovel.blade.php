@@ -87,12 +87,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <p class="font-weight-bold px-3">Descrição do proprietário</p>
                     </div>
+                    <hr class="solid"><br>
                     <div class="row align-row">
+                        <i class="fas fa-list fa-2x"></i>
                         <div class="align-description">
-                            <i class="fas fa-list fa-2x"></i>
                             <div>
+                                <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
                                 <p class="px-2">Armarios planejados na cozinha , recem reformado , proximo ao shopping frei caneca , Avenida Paulista, Hospital Sirio Libanês .</p>
                             </div>
                         </div>
