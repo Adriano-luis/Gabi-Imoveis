@@ -162,6 +162,23 @@ border-top: 2px dashed #bbb;
     justify-content: center;
 }
 
+.alinhamento-titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .alinhamento-texto{
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+  }
+  
+  .alinhamento-data{
+      float: right;
+  }
+
+
 @media only screen and (max-width:993px){
     .imovel .hide{
         display: none !important;
