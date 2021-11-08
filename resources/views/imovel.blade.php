@@ -411,7 +411,7 @@
                                 <h5 class="card-title">id:{{$dadosImovel->id}} </h5>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                    <li class="list-group-item">Valor: R${{$dadosImovel->valor}}</li>
                                     @if ($dadosImovel->condominio == 'Sim')
                                         <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
                                     @endif

@@ -59,7 +59,7 @@
                             <label for="profissao">Profissão</label>
                             <input  type="text" name="profissao" class="form-control" value="{{isset($dados->profissao) ? $dados->profissao :''}}" id="profissao" placeholder="Profissão">
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row">
                         <div class="form-group col-lg-2">
                             <label for="cpf">CPF</label>
@@ -73,7 +73,7 @@
                             <label for="telefone">Telefone</label>
                             <input type="phone" name="telefone" class="form-control" value="{{isset($dados->telefone) ? $dados->telefone :''}}" id="telefone" placeholder="(dd)x xxxx-xxxx">
                         </div>
-                    </div>
+                    </div><br>
                     
                     <h5>Dados de Conta Bancária</h5>
                     <div class="row">
@@ -110,7 +110,7 @@
                         
                     </div>
                     <br>
-                    <div class="row">
+                    <div class="row float-right">
                         @if (isset($dados))
                             <div class="card-footer">
                               <button type="submit" class="btn btn-success">Atualizar</button>

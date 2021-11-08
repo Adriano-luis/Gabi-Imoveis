@@ -106,7 +106,7 @@
                             <input type="text" name="pix" class="form-control" id="pix" value="{{isset($dados->pix) ? $dados->pix :''}}" placeholder="PIX">
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row float-right">
                         <div class="card-footer">
                             @if (isset($dados))
                             <div class="card-footer">
