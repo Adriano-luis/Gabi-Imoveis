@@ -269,13 +269,13 @@ class LocacaoController extends Controller
     }
 
     public function editarimovel(Request $request){
-        $id = $request->get('');
-        if(!isset($id) || $id == ''){
+        $idLoc = $request->get('idLoc');
+        if(!isset($idLoc) || $idLoc == ''){
             return redirect()->back();
         }
 
         $editarImovel = new LocacaoImoveis();
-        $imovel = $editarImovel->where('id',$id)->get()->toArray();
+        $imovel = $editarImovel->where('id',$idLoc)->get()->first();
         if($imovel != ''){
             return view('locacao-cadastro',['dados'=>$imovel]);
         } else{
