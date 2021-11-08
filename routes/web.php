@@ -48,7 +48,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/venda/cadastrar-cliente','VendaController@novoclientePost')->name('ven-novo-cliente');
     Route::post('/venda/editar-cliente','VendaController@editarcliente')->name('ven-editar-cliente');
     Route::post('/venda/editar-cliente/post','VendaController@editarclientePost')->name('ven-editar-cliente-post');
-    Route::get('/locacao/editar-imovel','VendaController@editarimovel')->name('ven-editar-imovel');
+    Route::get('/venda/editar-imovel','VendaController@editarimovel')->name('ven-editar-imovel');
 
     //Página do Imóvel
     Route::get('/imovel','ImovelController@index')->name('imovel');
