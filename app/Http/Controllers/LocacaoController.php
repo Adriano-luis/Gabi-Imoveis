@@ -73,6 +73,22 @@ class LocacaoController extends Controller
 
     }
 
+    public function verCliente(Request $request){
+        $id = $request->get('id');
+        if(!isset($id) || $id == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Locator();
+        $cliente = $editarCliente->where('id',$id)->get()->first();
+        if($cliente != ''){
+            $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
+            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
+        } else{
+            return redirect()->back();
+        }
+    }
+
     public function editarcliente(Request $request){
         $telefone = $request->get('telefone');
         if(!isset($telefone) || $telefone == ''){

@@ -73,6 +73,22 @@ class VendaController extends Controller
 
     }
 
+    public function verCliente(Request $request){
+        $id = $request->get('id');
+        if(!isset($id) || $id == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Vendedor();
+        $cliente = $editarCliente->where('id',$id)->get()->first();
+        if($cliente != ''){
+            $imoveis = VendaImoveis::where('idVendedor',$cliente->id)->get();
+            return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
+        } else{
+            return redirect()->back();
+        }
+    }
+
     public function editarcliente(Request $request){
         $telefone = $request->get('telefone');
         if(!isset($telefone) || $telefone == ''){

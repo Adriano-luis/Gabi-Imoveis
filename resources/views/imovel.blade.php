@@ -257,7 +257,7 @@
                         <div class="row float-right">
                             <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
                             <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
-                            <a href="" class="btn btn-primary imovel-btn-print">Proprietário</a>
+                            <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
                         </div>
                     </div>
 
@@ -418,7 +418,7 @@
                             <div class="row float-right">
                                 <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
                                 <a href="{{route('ven-editar-imovel',['venId'=>$dadosImovel->id])}}" type="submit" class="btn btn-primary imovel-btn-print mx-2">Editar</a>
-                                <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
+                                <a href="{{route('ven-editar-cliente',['id'=>$dadosImovel->idVendedor])}}" type="submit" class="btn btn-primary imovel-btn-print">Proprietário</a>
                             </div>
                         </div>
 
