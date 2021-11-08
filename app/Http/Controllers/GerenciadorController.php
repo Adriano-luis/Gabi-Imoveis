@@ -48,8 +48,16 @@ class GerenciadorController extends Controller
     }
 
     public function alterarSenha(){
-        $lista = Funcionario::all();
-        return view('alterar-senha',['lista'=>$lista]);
+        $gerenciador = User::where('id',1)->get()->first();
+        if($gerenciador->email == $_SESSION['email']){
+
+            $lista = Funcionario::all();
+            return view('alterar-senha',['lista'=>$lista]);
+            
+        }else{
+            return redirect()->back();
+        }
+        
     }
 
     public function alterarSenhaPost(Request $request){
