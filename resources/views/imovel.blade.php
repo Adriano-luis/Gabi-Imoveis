@@ -1,7 +1,6 @@
 @extends('adminlte::page')
 @section('content')
     <section class="imovel">
-        <h1>Também precisa de um botão de editar e outro  de ver proprietário</h1>
         <div class="">
             <div class="row pt-3">
                 <div class="col-lg-8">
@@ -177,7 +176,11 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+                        <div class="row float-right">
+                            <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
+                            <button type="submit" class="btn btn-primary imovel-btn-print px-2">Editar</button>
+                            <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
+                        </div>
                     </div>
 
                     {{-- card sticky --}}
@@ -278,7 +281,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+                                <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
                         </div>
 
                         {{-- card sticky --}}
