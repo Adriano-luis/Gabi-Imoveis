@@ -57,5 +57,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/adicionar-gerenciador','GerenciadorController@cadastrar')->name('gerenciador');
 
     //Alterar senha
+    Route::get('/alterar-senha','GerenciadorController@alterarSenha')->name('alterar-senha');
+    Route::post('/alterar-senha','GerenciadorController@alterarSenhaPost')->name('alterar-senha');
 
 });

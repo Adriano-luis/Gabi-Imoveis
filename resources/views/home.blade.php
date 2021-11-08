@@ -278,7 +278,7 @@
             <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
-            <div class="card card-widget home-card-alugado">
+            <div class="card card-widget">
               <div class="card-header imoveisCard">
                 <div class="user-block">
                   <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>

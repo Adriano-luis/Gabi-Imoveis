@@ -28,8 +28,8 @@ class GerenciadorController extends Controller
 
         if($senha == $check){
             $novoContribuente = new Funcionario;
-            $existe = $novoContribuente->where('email',$email);
-            if($existe == ''){
+            $existe = $novoContribuente->where('email',$email)->get()->first();
+            if(!isset($existe->nome)){
                 $senha = Hash::make($senha);
                 $novoContribuente-> nome = $nome;
                 $novoContribuente-> email = $email;
@@ -45,5 +45,19 @@ class GerenciadorController extends Controller
 
         
 
+    }
+
+    public function alterarSenha(){
+        $lista = Funcionario::all();
+        return view('alterar-senha',['lista'=>$lista]);
+    }
+
+    public function alterarSenhaPost(Request $request){
+        $senha = $request->get('senhaModal');
+        $senha = Hash::make($senha);
+
+        Funcionario::where('email',$request->EmailModal)->update(['senha'=>$senha]);
+
+        return redirect()->back();
     }
 }
