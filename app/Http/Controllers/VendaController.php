@@ -277,13 +277,13 @@ class VendaController extends Controller
     }
 
     public function editarimovel(Request $request){
-        $id = $request->get('');
+        $id = $request->get('venId');
         if(!isset($id) || $id == ''){
             return redirect()->back();
         }
 
         $editarImovel = new VendaImoveis();
-        $imovel = $editarImovel->where('id',$id)->get()->toArray();
+        $imovel = $editarImovel->where('id',$id)->get()->first();
         if($imovel != ''){
             return view('venda-cadastro',['dados'=>$imovel]);
         } else{

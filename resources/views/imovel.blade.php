@@ -417,7 +417,7 @@
                             </div>
                             <div class="row float-right">
                                 <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
-                                <button type="submit" class="btn btn-primary imovel-btn-print mx-2">Editar</button>
+                                <a href="{{route('ven-editar-imovel',['venId'=>$dadosImovel->id])}}" type="submit" class="btn btn-primary imovel-btn-print mx-2">Editar</a>
                                 <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
                             </div>
                         </div>
