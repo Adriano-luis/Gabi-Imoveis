@@ -40,7 +40,7 @@
                     Pix: ______________________________________________________<br>
                       <span class="alinhamento-data">Guarulhos____ de ________________de______</span>
                     </section>
-                        <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+                        <button type="submit" class="btn btn-primary imovel-btn-print" onClick="window.print()>Imprimir</button>
                   </body>
             </div>
         </form>
