@@ -289,7 +289,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'logged/alterar-senha',
             'icon' => 'fas fa-fw fa-lock',
         ],
     ],

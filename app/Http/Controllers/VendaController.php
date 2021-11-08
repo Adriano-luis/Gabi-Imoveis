@@ -92,59 +92,36 @@ class VendaController extends Controller
     }
 
     public function editarclientePost(Request $request){
-        /*recuperando os dados preenchidos
-        $idImovel = $request->get('idImovel');
-        $nome = $request->get('nome');
-        $enderecoVendedor = $request->get('logradouro');
-        $numVendedor = $request->get('numero');
-        $bairroVendedor = $request->get('bairro');
-        $municipioVendedor = $request->get('municipio');
-        $compleVendedor = $request->get('complemento');
-        $estadoCivil = $request->get('estadoCivil');
-        $dataNascimento = $request->get('nascimento');
-        $profissao = $request->get('profissao');
-        $cpf = $request->get('cpf');
-        $rg = $request->get('rg');
-        $telefone = $request->get('telefone');
-        $banco = $request->get('banco');
-        $agencia = $request->get('agencia');
-        $tipoConta = $request->get('tipoConta');
-        $conta = $request->get('conta');
-        $pix = $request->get('pix');
-
+        
         //salvando no DB
-        $novoVendedor =  new Vendedor();
-        $existeVendedor = $novoVendedor->where('CPF',$cpf)->first();
-        if($existeVendedor == ''){
-            $novoVendedor-> idImovel = $idImovel;
-            $novoVendedor-> nome = $nome;
-            $novoVendedor-> endereco = $enderecoVendedor;
-            $novoVendedor-> numero = $numVendedor;
-            $novoVendedor-> bairro = $bairroVendedor;
-            $novoVendedor-> municipio = $municipioVendedor;
-            $novoVendedor-> complemento = $compleVendedor;
-            $novoVendedor-> estadoCivil = $estadoCivil;
-            $novoVendedor-> nascimento = $dataNascimento;
-            $novoVendedor-> profissao = $profissao;
-            $novoVendedor-> CPF = $cpf;
-            $novoVendedor-> RG = $rg;
-            $novoVendedor-> telefone = $telefone;
-            $novoVendedor-> banco = $banco;
-            $novoVendedor-> agencia = $agencia;
-            $novoVendedor-> tipoConta = $tipoConta;
-            $novoVendedor-> conta = $conta;
-            $novoVendedor-> pix = $pix;
-            $novoVendedor->save();
-        }else{
-            $Vendedor = 'Vendedor já cadastrado!';
-        }
+        $editarCliente = new Vendedor();
+        $cliente = $editarCliente->where('telefone',$request->get('telefone'))->get()->first();
+        if($cliente != ''){
+            $editarCliente->where('telefone',$request->get('telefone'))->update([
+                'nome'          => $request->get('nome'),
+                'endereco'      => $request->get('logradouro'),
+                'numero'        => $request->get('numero'),
+                'bairro'        => $request->get('bairro'),
+                'municipio'     => $request->get('municipio'),
+                'complemento'   => $request->get('complemento'),
+                'estadoCivil'   => $request->get('estadoCivil'),
+                'nascimento'    => $request->get('nascimento'),
+                'profissao'     => $request->get('profissao'),
+                'CPF'           => $request->get('cpf'),
+                'RG'            => $request->get('rg'),
+                'telefone'      => $request->get('telefone'),
+                'banco'         => $request->get('banco'),
+                'agencia'       => $request->get('agencia'),
+                'tipoConta'     => $request->get('tipoConta'),
+                'conta'         => $request->get('conta'),
+                'pix'           => $request->get('pix'),
+            ]);
 
-         //retornando
-        if(isset($Vendedor)){
-            return redirect()->back(['existeVendedor'=>$vendedor]);
-        } else{
-            return redirect()->route('imovel',['c'=>'c','venId'=>$idImovel]);
-        }*/
+            $cliente = $editarCliente->where('telefone',$request->get('telefone'))->get()->first();
+            
+        }
+        
+        return redirect()->route('home');
     }
     
     

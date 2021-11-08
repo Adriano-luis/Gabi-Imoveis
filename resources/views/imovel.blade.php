@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('content')
     <section class="imovel">
+        <h1>Também precisa de um botão de editar e outro  de ver proprietário</h1>
         <div class="">
             <div class="row pt-3">
                 <div class="col-lg-8">
@@ -99,74 +100,205 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div><br>
-                    <div>
-                        <p class="font-weight-bold descricao-imovel">Imóvel para "Locação/Venda"</p>
-                        <p class="text-muted">Av. Sete de Setembro, 3302</p>
-                        <p class="text-muted">Data que foi postado</p>
-                    </div>
-                    <div class="row">
-                        <div class="px-3 align-icons">
-                            <i class="fas fa-ruler-combined fa-2x"></i>
-                            <p>67m²</p>
+                    @if (isset($dadosImovel->idLocador))
+                        <div>
+                            <p class="font-weight-bold descricao-imovel">Imóvel para Locação</p>
+                            <p class="text-muted">
+                                {{$dadosImovel->endereco}}, {{$dadosImovel->numero}}
+                                | {{$dadosImovel->bairro}} - {{$dadosImovel->municipio}} 
+                            </p>
+                            <p class="text-muted">{{$dadosImovel->created_at}}</p>
                         </div>
-                        <div class="px-3 align-icons">
-                            <i class="fas fa-bed fa-2x"></i>
-                            <p>2 quarto</p>
-                        </div>
-                        <div class="px-3 align-icons">
-                            <i class="fas fa-shower fa-2x"></i>
-                            <p>1 banheiro</p>
-                        </div>
-                        <div class="px-3 align-icons">
-                            <i class="fas fa-car fa-2x"></i>
-                            <p>1 vaga</p>
-                        </div>
-                        <div class="px-3 align-icons">
-                            <i class="fas fa-paw fa-2x"></i>
-                            <p>Sim</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                    </div>
-                    <hr class="solid"><br>
-                    <div class="row align-row">
-                        <i class="fas fa-list fa-2x"></i>
-                        <div class="align-description">
-                            <div>
-                                <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
-                                <p class="px-2">Armarios planejados na cozinha , recem reformado , proximo ao shopping frei caneca , Avenida Paulista, Hospital Sirio Libanês .</p>
+                        <div class="row">
+                            <div class="px-3 align-icons">
+                                <i class="fas fa-ruler-combined fa-2x"></i>
+                                <p>{{$dadosImovel->metragemTotal}}m²</p>
+                            </div>
+                            <div class="px-3 align-icons">
+                                <i class="fas fa-bed fa-2x"></i>
+                                <p>{{$dadosImovel->quarto}} quarto(s)</p>
+                            </div>
+                            <div class="px-3 align-icons">
+                                <i class="fas fa-shower fa-2x"></i>
+                                <p>{{$dadosImovel->banheiro}} banheiro(s)</p>
+                            </div>
+                            <div class="px-3 align-icons">
+                                <i class="fas fa-car fa-2x"></i>
+                                <p>{{$dadosImovel->garagem}} vaga(s)</p>
+                            </div>
+                            <div class="px-3 align-icons">
+                                <i class="fas fa-paw fa-2x"></i>
+                                <p>{{$dadosImovel->pet}}</p>
                             </div>
                         </div>
-                    </div>
-                    <hr class="solid"><br>
-                    <div class="row align-row">
-                        <i class="fas fa-list fa-2x"></i>
-                        <div class="align-description">
-                            <div>
-                                <p class="font-weight-bold mx-2 imovel-description">Descrição da imobiliária</p>
-                                <p class="px-2">Alguma coisa que os funcionários escreverem ao cadastrar o imóvel</p>
+                        <div class="row">
+                        </div>
+                        <hr class="solid"><br>
+                        <div class="row align-row">
+                            <i class="fas fa-list fa-2x"></i>
+                            <div class="align-description">
+                                <div>
+                                    <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
+                                    <p class="px-2">{{$dadosImovel->sobreImovel}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
-                </div>
-
-                {{-- card sticky --}}
-
-                <div class="col-4 hide">
-
-                    <div class="card sticky-top card-rounded" style="width: 18rem;">
-                        <div class="card-header">
-                        <h5 class="card-title">Nome da rua</h5>
+                        @if ($dadosImovel->mobilhado == 'Sim')
+                            <hr class="solid"><br>
+                            <div class="row align-row">
+                                <i class="fas fa-list fa-2x"></i>
+                                <div class="align-description">
+                                    <div>
+                                        <p class="font-weight-bold mx-2 imovel-description">Mobilha</p>
+                                        <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($dadosImovel->condominio == 'Sim')
+                            <hr class="solid"><br>
+                            <div class="row align-row">
+                                <i class="fas fa-list fa-2x"></i>
+                                <div class="align-description">
+                                    <div>
+                                        <p class="font-weight-bold mx-2 imovel-description">Condomínio</p>
+                                        <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        <hr class="solid"><br>
+                        <div class="row align-row">
+                            <i class="fas fa-list fa-2x"></i>
+                            <div class="align-description">
+                                <div>
+                                    <p class="font-weight-bold mx-2 imovel-description">Observações</p>
+                                    <p class="px-2">{{$dadosImovel->observacoes}}</p>
+                                </div>
+                            </div>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Aluguel: R$</li>
-                            <li class="list-group-item">Condomínio: R$</li>
-                            <hr class="dashed">
-                            <li class="list-group-item">Total: R$</li>
-                        </ul>
+                        <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
                     </div>
-                </div>
+
+                    {{-- card sticky --}}
+
+                    <div class="col-4 hide">
+
+                        <div class="card sticky-top card-rounded" style="width: 18rem;">
+                            <div class="card-header">
+                            <h5 class="card-title">id:{{$dadosImovel->id}} </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                @if ($dadosImovel->condominio == 'Sim')
+                                    <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
+                                @endif
+                                <li class="list-group-item">Total: R$</li>
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+                    
+                    @if (isset($dadosImovel->idVendedor))
+                            <div>
+                                <p class="font-weight-bold descricao-imovel">Imóvel para Venda</p>
+                                <p class="text-muted">
+                                    {{$dadosImovel->endereco}}, {{$dadosImovel->numero}}, @if ($dadosImovel->complemeto != null)
+                                        {{$dadosImovel->complemeto}}
+                                    @endif
+                                    | {{$dadosImovel->bairro}} - {{$dadosImovel->municipio}} 
+                                </p>
+                                <p class="text-muted">{{$dadosImovel->created_at}}</p>
+                            </div>
+                            <div class="row">
+                                <div class="px-3 align-icons">
+                                    <i class="fas fa-ruler-combined fa-2x"></i>
+                                    <p>{{$dadosImovel->metragemTotal}}m²</p>
+                                </div>
+                                <div class="px-3 align-icons">
+                                    <i class="fas fa-bed fa-2x"></i>
+                                    <p>{{$dadosImovel->quarto}} quarto(s)</p>
+                                </div>
+                                <div class="px-3 align-icons">
+                                    <i class="fas fa-shower fa-2x"></i>
+                                    <p>{{$dadosImovel->banheiro}} banheiro(s)</p>
+                                </div>
+                                <div class="px-3 align-icons">
+                                    <i class="fas fa-car fa-2x"></i>
+                                    <p>{{$dadosImovel->garagem}} vaga(s)</p>
+                                </div>
+                                <div class="px-3 align-icons">
+                                    <i class="fas fa-paw fa-2x"></i>
+                                    <p>{{$dadosImovel->pet}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <hr class="solid"><br>
+                            <div class="row align-row">
+                                <i class="fas fa-list fa-2x"></i>
+                                <div class="align-description">
+                                    <div>
+                                        <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
+                                        <p class="px-2">{{$dadosImovel->sobreImovel}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @if ($dadosImovel->mobilhado == 'Sim')
+                                <hr class="solid"><br>
+                                <div class="row align-row">
+                                    <i class="fas fa-list fa-2x"></i>
+                                    <div class="align-description">
+                                        <div>
+                                            <p class="font-weight-bold mx-2 imovel-description">Mobilha</p>
+                                            <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($dadosImovel->condominio == 'Sim')
+                                <hr class="solid"><br>
+                                <div class="row align-row">
+                                    <i class="fas fa-list fa-2x"></i>
+                                    <div class="align-description">
+                                        <div>
+                                            <p class="font-weight-bold mx-2 imovel-description">Condomínio</p>
+                                            <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            <hr class="solid"><br>
+                            <div class="row align-row">
+                                <i class="fas fa-list fa-2x"></i>
+                                <div class="align-description">
+                                    <div>
+                                        <p class="font-weight-bold mx-2 imovel-description">Observações</p>
+                                        <p class="px-2">{{$dadosImovel->observacoes}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+                        </div>
+
+                        {{-- card sticky --}}
+
+                        <div class="col-4 hide">
+
+                            <div class="card sticky-top card-rounded" style="width: 18rem;">
+                                <div class="card-header">
+                                <h5 class="card-title">id:{{$dadosImovel->id}} </h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                    @if ($dadosImovel->condominio == 'Sim')
+                                        <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
+                                    @endif
+                                    <li class="list-group-item">Total: R$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
             </div>
         </div>
     </section>

@@ -82,7 +82,6 @@ class LocacaoController extends Controller
         $editarCliente = new Locator();
         $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
         if($cliente != ''){
-            
             $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
             return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
         } else{
@@ -90,6 +89,38 @@ class LocacaoController extends Controller
         }
 
         
+    }
+
+    public function editarclientePost(Request $request){
+        //salvando no DB
+        $editarCliente = new Locator();
+        $cliente = $editarCliente->where('telefone',$request->get('telefone'))->get()->first();
+        if($cliente != ''){
+            $editarCliente->where('telefone',$request->get('telefone'))->update([
+                'nome'          => $request->get('nome'),
+                'endereco'      => $request->get('logradouro'),
+                'numero'        => $request->get('numero'),
+                'bairro'        => $request->get('bairro'),
+                'municipio'     => $request->get('municipio'),
+                'complemento'   => $request->get('complemento'),
+                'estadoCivil'   => $request->get('estadoCivil'),
+                'nascimento'    => $request->get('nascimento'),
+                'profissao'     => $request->get('profissao'),
+                'CPF'           => $request->get('cpf'),
+                'RG'            => $request->get('rg'),
+                'telefone'      => $request->get('telefone'),
+                'banco'         => $request->get('banco'),
+                'agencia'       => $request->get('agencia'),
+                'tipoConta'     => $request->get('tipoConta'),
+                'conta'         => $request->get('conta'),
+                'pix'           => $request->get('pix'),
+            ]);
+
+            $cliente = $editarCliente->where('telefone',$request->get('telefone'))->get()->first();
+            
+        }
+        
+        return redirect()->route('home');
     }
     
     

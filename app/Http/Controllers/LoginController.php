@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Funcionario;
 
 class LoginController extends Controller
 {
@@ -54,6 +55,26 @@ class LoginController extends Controller
                 }
             }
         }
+
+
+        //Consultando no DB
+        $user = new Funcionario();
+        $usuario = $user->where('email',$email)->get()->first();
+        if($usuario != '' || $usuario != null){
+            if (Hash::check($senha, $usuario->senha)) {
+                if(isset($usuario->nome)){
+
+                    session_start();
+                    $_SESSION['id'] = $usuario->id;
+                    $_SESSION['nome'] = $usuario->nome;
+                    $_SESSION['email'] = $usuario->email;
+        
+                    return redirect()->route('home');
+        
+                }
+            }
+        }
+
 
         return redirect()->route('login',['erro'=>1]);
 
