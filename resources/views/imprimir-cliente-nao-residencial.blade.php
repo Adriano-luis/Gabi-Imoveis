@@ -4,7 +4,7 @@
 
     <section class="alinhamento-texto">
         <div class="contrato-card">
-            Nome:____________________________________________________________<br>
+            Nome:<input><br>
 
             Estado Civil: ______________________Profissão: _______________________<br>
             <h4 class="alinhamento-titulo">Telefones: </h4>
