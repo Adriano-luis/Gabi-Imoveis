@@ -129,53 +129,111 @@
                                 <i class="fas fa-paw fa-2x"></i>
                                 <p>{{$dadosImovel->pet}}</p>
                             </div>
+                                <div class="px-3 align-icons">
+                                <i class="fas fa-building fa-2x"></i>
+                                <p>{{$dadosImovel->andar}}º Andar</p>
+                            </div>
                         </div>
+
+                        <hr class="solid">
                         <div class="row">
-                        </div>
-                        <hr class="solid"><br>
-                        <div class="row align-row">
-                            <i class="fas fa-list fa-2x"></i>
-                            <div class="align-description">
-                                <div>
-                                    <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
-                                    <p class="px-2">{{$dadosImovel->sobreImovel}}</p>
+                            <div class="col-lg-3">
+                                <div class="row align-row align-items-center p-2">
+                                    <i class="fas fa-home fa-2x"></i>
+                                    <p class="font-weight-bold mx-2 imovel-description">Descrição dos cômodos</p>
                                 </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Quarto(s): {{$dadosImovel->quarto}}</li>
+                                    <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
+                                    <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
+                                    <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
+                                    <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaJantar}}</li>
+                                    <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
+                                    <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
+                                    <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
+                                    <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
+                                    <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="solid">
+                        <div class="row align-row">
+                            <div class="col-lg-3">
+                                <div class="row align-items-center p-2">
+                                    <i class="fas fa-list fa-2x"></i>
+                                    <p class="font-weight-bold mx-2 imovel-description">Outras descrições</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Tipo: {{$dadosImovel->tipo}}</li>
+                                    <li class="list-group-item">Nome do Condomínio: {{$dadosImovel->nomeCondominio}}</li>
+                                    <li class="list-group-item">RGI: {{$dadosImovel->RGI}}</li>
+                                    <li class="list-group-item">Instalação: {{$dadosImovel->instalacao}}</li>
+                                    <li class="list-group-item">IPTU: {{$dadosImovel->IPTU}}</li>
+                                    <li class="list-group-item">Individual: {{$dadosImovel->individual}}</li>
+                                    <li class="list-group-item">Andar: {{$dadosImovel->andar}}</li>
+                                    <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
+                                    <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
+                                    <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
+                                    <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="solid">
+                        <div class="row align-row">
+                            <div class="col-lg-3">
+                                <div class="row align-items-center p-2">
+                                    <i class="fas fa-list fa-2x"></i>
+                                    <p class="font-weight-bold mx-2 imovel-description">Descrição do proprietário</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="px-2">{{$dadosImovel->sobreImovel}}</p>
                             </div>
                         </div>
                         @if ($dadosImovel->mobilhado == 'Sim')
-                            <hr class="solid"><br>
+                            <hr class="solid">
                             <div class="row align-row">
-                                <i class="fas fa-list fa-2x"></i>
-                                <div class="align-description">
-                                    <div>
-                                        <p class="font-weight-bold mx-2 imovel-description">Mobilha</p>
-                                        <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                <div class="col-lg-3">
+                                    <div class="row align-items-center p-2">
+                                        <i class="fas fa-list fa-2x"></i>
+                                        <p class="font-weight-bold mx-2 imovel-description">Mobília</p>
                                     </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="px-2">{{$dadosImovel->sobreMobilia}}</p>
                                 </div>
                             </div>
                         @endif
                         @if ($dadosImovel->condominio == 'Sim')
                             <hr class="solid"><br>
                             <div class="row align-row">
-                                <i class="fas fa-list fa-2x"></i>
-                                <div class="align-description">
-                                    <div>
+                                <div class="col-lg-3">
+                                    <div class="row align-items-center p-2">
+                                        <i class="fas fa-list fa-2x"></i>
                                         <p class="font-weight-bold mx-2 imovel-description">Condomínio</p>
-                                        <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
                                     </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="px-2">{{$dadosImovel->sobreCondominio}}</p>
                                 </div>
                             </div>
                         @endif
-                        <hr class="solid"><br>
-                        <div class="row align-row">
-                            <i class="fas fa-list fa-2x"></i>
-                            <div class="align-description">
-                                <div>
-                                    <p class="font-weight-bold mx-2 imovel-description">Observações</p>
-                                    <p class="px-2">{{$dadosImovel->observacoes}}</p>
+                            <hr class="solid">
+                            <div class="row align-row">
+                                <div class="col-lg-3">
+                                    <div class="row align-items-center p-2">
+                                        <i class="fas fa-list fa-2x"></i>
+                                        <p class="font-weight-bold mx-2 imovel-description">Observações</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="px-2">{{$dadosImovel->obsevacoes}}</p>
                                 </div>
                             </div>
-                        </div>
                         <div class="row float-right">
                             <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
                             <button type="submit" class="btn btn-primary imovel-btn-print px-2">Editar</button>
