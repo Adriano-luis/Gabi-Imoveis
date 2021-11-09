@@ -65,8 +65,12 @@ Route::middleware('login')->prefix('logged')->group(function (){
 
     //Imprimir
     Route::get('/imprimir/nresidencial','ImprimirController@nresidencial')->name('imprimir-nresidencial');
+    //Route::post('/imprimir/nresidencial','ImprimirController@imprimir')->name('imprimir-nresidencial');
     Route::get('/imprimir/residencial','ImprimirController@residencial')->name('imprimir-residencial');
+
     Route::get('/imprimir/locacao','ImprimirController@locacao')->name('imprimir-locacao');
+    Route::post('/imprimir/locacao','ImprimirController@imprimirId')->name('imprimir-id');
     Route::get('/imprimir/venda','ImprimirController@venda')->name('imprimir-venda');
+    Route::post('/imprimir/venda','ImprimirController@imprimirId')->name('imprimir-id-venda');
 
 });

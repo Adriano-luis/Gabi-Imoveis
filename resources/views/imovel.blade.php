@@ -274,7 +274,27 @@
                                 @if ($dadosImovel->condominio == 'Sim')
                                     <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
                                 @endif
-                                <li class="list-group-item">Total: R$</li>
+                                <li class="list-group-item">
+                                    <?php
+                                        if (isset($dadosImovel->IPTU) && $dadosImovel->IPTU != null){
+                                            if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null) {
+                                                echo  'Total: R$'.($dadosImovel->IPTU
+                                                + $dadosImovel->valor
+                                                + $dadosImovel->valorCondominio);
+                                            }else{
+                                                echo  'Total: R$'.($dadosImovel->IPTU 
+                                                + $dadosImovel->valor);
+                                            }
+                                        }else{
+                                            if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
+                                                echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
+                                                + $dadosImovel->valorCondominio);
+                                            }else {
+                                                echo  'Total: R$'.$dadosImovel->valor;
+                                            }
+                                        }
+                                    ?>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -435,7 +455,27 @@
                                     @if ($dadosImovel->condominio == 'Sim')
                                         <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
                                     @endif
-                                    <li class="list-group-item">Total: R$</li>
+                                    <li class="list-group-item">
+                                        <?php
+                                            if (isset($dadosImovel->IPTU) && $dadosImovel->IPTU != null){
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null) {
+                                                    echo  'Total: R$'.($dadosImovel->IPTU
+                                                    + $dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else{
+                                                    echo  'Total: R$'.($dadosImovel->IPTU 
+                                                    + $dadosImovel->valor);
+                                                }
+                                            }else{
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
+                                                    echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else {
+                                                    echo  'Total: R$'.$dadosImovel->valor;
+                                                }
+                                            }
+                                        ?>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
