@@ -73,6 +73,22 @@ class LocacaoController extends Controller
 
     }
 
+    public function verCliente(Request $request){
+        $id = $request->get('id');
+        if(!isset($id) || $id == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Locator();
+        $cliente = $editarCliente->where('id',$id)->get()->first();
+        if($cliente != ''){
+            $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
+            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
+        } else{
+            return redirect()->back();
+        }
+    }
+
     public function editarcliente(Request $request){
         $telefone = $request->get('telefone');
         if(!isset($telefone) || $telefone == ''){
@@ -269,13 +285,13 @@ class LocacaoController extends Controller
     }
 
     public function editarimovel(Request $request){
-        $id = $request->get('');
-        if(!isset($id) || $id == ''){
+        $idLoc = $request->get('idLoc');
+        if(!isset($idLoc) || $idLoc == ''){
             return redirect()->back();
         }
 
         $editarImovel = new LocacaoImoveis();
-        $imovel = $editarImovel->where('id',$id)->get()->toArray();
+        $imovel = $editarImovel->where('id',$idLoc)->get()->first();
         if($imovel != ''){
             return view('locacao-cadastro',['dados'=>$imovel]);
         } else{

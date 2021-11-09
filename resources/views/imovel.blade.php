@@ -23,70 +23,130 @@
                                 @if ($dadosImovel->img1 != null || $dadosImovel->img1 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img1")}}" alt="Primeira imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img2 != null || $dadosImovel->img2 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img2")}}" alt="Segunda imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif                               
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img3 != null || $dadosImovel->img3 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img3")}}" alt="Terceira imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif     
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img4 != null || $dadosImovel->img4 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img4")}}" alt="Quarta imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif     
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img5 != null || $dadosImovel->img5 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img5")}}" alt="Quinta imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div> 
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif                              
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img6 != null || $dadosImovel->img6 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img6")}}" alt="Sexta imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif                              
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img7 != null || $dadosImovel->img7 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img7")}}" alt="Sétima imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif                                
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img8 != null || $dadosImovel->img8 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img8")}}" alt="Oitava imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img9 != null || $dadosImovel->img9 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img9")}}" alt="Nona imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif
                             </div>
                             <div class="carousel-item">
                                 @if ($dadosImovel->img10 != null || $dadosImovel->img10 != '')
                                     <img class="d-block w-100" src="{{asset("assets/images/locacao/$dadosImovel->img10")}}" alt="Décima imagem">
                                 @else
+<<<<<<< HEAD
                                     <div class="imovel-setsize">sem imagem</div>
+=======
+                                    <div class="imovel-setsize">
+                                        Sem imagem! 
+                                    </div>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                                 @endif
                             </div>
                         </div>
@@ -235,9 +295,15 @@
                                 </div>
                             </div>
                         <div class="row float-right">
+<<<<<<< HEAD
                             <button type="submit" class="btn btn-primary imovel-btn-print" onClick="window.print()>Imprimir</button>
                             <button type="submit" class="btn btn-primary imovel-btn-print px-2">Editar</button>
                             <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
+=======
+                            <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
+                            <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
+                            <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                         </div>
                     </div>
 
@@ -396,9 +462,15 @@
                                 </div>
                             </div>
                             <div class="row float-right">
+<<<<<<< HEAD
                                 <button type="submit" class="btn btn-primary imovel-btn-print" onClick="window.print()">Imprimir</button>
                                 <button type="submit" class="btn btn-primary imovel-btn-print mx-2">Editar</button>
                                 <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
+=======
+                                <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
+                                <a href="{{route('ven-editar-imovel',['venId'=>$dadosImovel->id])}}" type="submit" class="btn btn-primary imovel-btn-print mx-2">Editar</a>
+                                <a href="{{route('ven-editar-cliente',['id'=>$dadosImovel->idVendedor])}}" type="submit" class="btn btn-primary imovel-btn-print">Proprietário</a>
+>>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                             </div>
                         </div>
 
