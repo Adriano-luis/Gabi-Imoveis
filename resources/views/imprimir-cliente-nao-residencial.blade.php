@@ -52,13 +52,6 @@
             <div class="alinhamento-titulo">Ass.: Locatário<div>
         </div>
     </section>
-<<<<<<< HEAD
-        <div class="row">
-            <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
-            <button type="submit" class="btn btn-primary imovel-btn-print">Editar</button>
-        </div>
-=======
         <button onclick="window.print()" class="btn btn-primary imovel-btn-print">Imprimir</button>
->>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
     </form>
 </section>
