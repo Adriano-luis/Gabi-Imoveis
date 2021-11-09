@@ -5,7 +5,7 @@
         <h2 class="alinhamento-titulo"><b>AUTORIZAÇÃO DE LOCAÇÃO DE IMÓVEL</b></h2>
         <section class="alinhamento-texto">
             <div class="row px-2 align-items-center">
-                VALOR DA LOCAÇÃO:<input style='width: auto'>
+                VALOR DA LOCAÇÃO:<input style='width: auto' value="{{}}">
             </div>
             Autorizo GABI MOVEIS CRECI 161.918 F, com escritório situado a Rua Guarabira 191, São João - Guarulhos, a promover a LOCAÇÃO do imóvel de minha propriedade, 
             fazer levantamento de cadastro, assinar vistoria, aditivo de renovação e receber aluguel do seguinte imóvel:
@@ -40,8 +40,14 @@
             Banco: <input style='width: auto'> Agência: <input style='width: auto'><br>
                 Corrente/Poupança: <input style='width: auto'> N° conta: <input style='width: auto'><br>
             Pix: <input style='width: auto'><br>
-            <span class="alinhamento-data">Guarulhos<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span>
-        </section><br><br>
+            <span class="alinhamento-data">Guarulhos<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span><br><br>
+        </section>
+        <section class="alinhamento-texto">
+            <div>
+                Imobiliária: <input style='width: auto'><br><br>
+                Proprietário(a): <input style='width: auto'><br>
+            </div>
+        </section>
         <div class="alinhamento-titulo">
             <button onclick="window.print()" class="btn btn-primary imovel-btn-print py-2 hide-print">Imprimir</button>
         </div>
