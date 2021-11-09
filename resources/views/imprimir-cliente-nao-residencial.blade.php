@@ -1,57 +1,82 @@
+@extends('adminlte::page')
+@section('content')
 <section class="imprimir">
     <form action="">
     <h3 class="alinhamento-titulo">FICHA CAPTAÇÃO DE INQUILINO NÃO - RESIDENCIAL<h3>
 
     <section class="alinhamento-texto">
         <div class="contrato-card">
-            Nome:<input><br>
+            <div class="row">
+                Nome:<input style='width: auto'><br>
+            </div>
+            <div class="row">
+                Estado Civil:<input> 
+                Profissão:<input>
+            </div>
+                <h4 class="alinhamento-titulo"><bold>Telefones</bold> </h4>
+                Comercial: <input> 	Pessoal:<input> 
+            </div><br>
 
-            Estado Civil: ______________________Profissão: _______________________<br>
-            <h4 class="alinhamento-titulo">Telefones: </h4>
-            Comercial _____________________	Pessoal  ___________________________
-        </div><br>
-
-        <div class="contrato-card">
-            Nome:_____________________________________________________________<br>
-
-            Estado Civil: ____________________Profissão:  __________________________<br>
-            Telefones:
-            Comercial _____________________Pessoal ______________________________<br>
-        </div><br>
-        <div class="contrato-card">
-            Valor:  ________________________	<br>
-
-            Deposito ( ) _____________________Fiador ( ) ___________________________<br>
+            <div class="contrato-card">
+            <div class="row">
+                Nome:<input><br>
+            </div>
+            <div class="row">
+                <p>Estado Civil:</p><input> 
+                Profissão:<input>
+            </div>
+                <h4 class="alinhamento-titulo"><bold>Telefones</bold> </h4>
+                Comercial: <input> 	Pessoal:<input> 
             </div><br>
             <div class="contrato-card">
-            Data vencimento:  ________________	<br>
+                <div class="row">
+                    Nome:<input><br>
+                </div>
+                <div class="row">
+                    Deposito (_<input style="width: 4px">):<input> 
+                    Fiador (_<input style="width: 4px">):<input>
+                </div>
+                </div><br>
+                <div class="contrato-card">
+                Data vencimento:<input style='width: auto'><br>
+                Tempo de contrato:<input style='width: auto'><br>
+                Finalidade:<input style='width: auto'><br>
+            </div><br>
 
-            Tempo de contrato:______________________________	
-            
+            <div class="contrato-card">
+                <h4 class="alinhamento-titulo">Referências</h4>
+                    <div class="row">
+                        Nome:<input> 
+                        Telefone:<input>
+                    </div>
+                    <div class="row">
+                        Grau de parentesco:<input style='width: auto'><br>
+                    </div><br>
+                    <div class="row">
+                        Nome:<input> 
+                        Telefone:<input>
+                    </div>
+                    <div class="row">
+                        Grau de parentesco:<input style='width: auto'><br>
+                    </div>
+            </div><br>
+            <div class="contrato-card">
+                <h4 class="alinhamento-titulo">Documentos necessários</h4>
+                <ul>
+                    <li>Xerox ( RG e CPF )</li>
+                    <li>Taxa R$ 50,00 (pesquisa CPF) por pessoa (Esse valor não será devolvido em hipótese alguma)</li>
+                    <li>Se for comercial comprovante de endereço</li>
+                    <li>Caso houver desistência depois do contrato feito, será cobrado R$ 150,00 (cento e cinquenta reais) pelo contrato.</li>
+                </ul><br><br>
 
-            Finalidade: _______________________________________________
-        </div><br>
 
-        <div class="contrato-card">
-            <h4 class="alinhamento-titulo">Referências</h4>
-                Nome: _________________________________Fone___________________ <br>Grau de parentesco  _______________________________<br>
-                Nome:__________________________________Fone _______________________<br>
-                Grau de parentesco  __________________________<br>
-        </div><br>
-        <div class="contrato-card">
-            <h4 class="alinhamento-titulo">Documentos necessários</h4>
-            <ul>
-                <li>Xerox ( RG e CPF )</li>
-                <li>Taxa R$ 50,00 (pesquisa CPF) por pessoa (Esse valor não será devolvido em hipótese alguma)</li>
-                <li>Se for comercial comprovante de endereço</li>
-                <li>Caso houver desistência depois do contrato feito, será cobrado R$ 150,00 (cento e cinquenta reais) pelo contrato.</li>
-            </ul><br><br>
-
-
-            <div class="alinhamento-titulo">________________________</div>
-            <div class="alinhamento-titulo">Ass.: Locatário<div>
+                <div class="alinhamento-titulo">________________________</div>
+                <div class="alinhamento-titulo">Ass.: Locatário<div>
         </div>
-    </section>
-        <button onclick="window.print()" class="btn btn-primary imovel-btn-print">Imprimir</button>
+    </section><br>
+    <div class="alinhamento-titulo">
+        <button onclick="window.print()" class="btn btn-primary imovel-btn-print py-2 hide-print">Imprimir</button>
+    </div>
     </form>
 </section>
+@endsection

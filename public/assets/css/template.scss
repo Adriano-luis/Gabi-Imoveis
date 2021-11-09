@@ -165,31 +165,45 @@ border-top: 2px dashed #bbb;
     justify-content: center;
 }
 
-.alinhamento-titulo{
+.imprimir input{
+    border: 0;
+    outline: none;
+    height: 2.0625rem;
+    width: 16rem;
+}
+
+
+.imprimir .alinhamento-titulo{
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
   
-  .alinhamento-texto{
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: justify;
-  }
-  
-  .alinhamento-data{
-      float: right;
-  }
+.imprimir .alinhamento-texto{
+margin-left: 25%;
+margin-right: 25%;
+text-align: justify;
+}
 
-  .contrato-card{
-    border-radius: 5px;
-    border: 1px solid black;
-    padding: 1rem;
-  }
+.imprimir .alinhamento-data{
+    float: right;
+}
+
+.contrato-card{
+border-radius: 5px;
+border: 2px solid black;
+padding: 1rem;
+}
 
 
 @media only screen and (max-width:993px){
     .imovel .hide{
         display: none !important;
+    }
+}
+
+@media print{
+    .hide-print{
+        display:none;
     }
 }

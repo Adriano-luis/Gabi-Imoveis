@@ -1,41 +1,64 @@
+@extends('adminlte::page')
+@section('content')
 <section class="imprimir">
     <form action="">
-        <h3 class="alinhamento-titulo">FICHA CAPTAÇÃO DE INQUILINO - RESIDENCIAL<h3>
-        <section class="alinhamento-texto">
-            <div class="contrato-card">
-                Nome:____________________________________________________________<br>
+    <h3 class="alinhamento-titulo">FICHA CAPTAÇÃO DE INQUILINO - RESIDENCIAL<h3>
 
-                Estado Civil: ______________________Profissão: _______________________<br>
-                <h4 class="alinhamento-titulo">Telefones: </h4>
-                Comercial _____________________	Pessoal  ___________________________
+    <section class="alinhamento-texto">
+        <div class="contrato-card">
+            <div class="row">
+                Nome:<input style='width: auto'><br>
+            </div>
+            <div class="row">
+                Estado Civil:<input> 
+                Profissão:<input>
+            </div>
+                <h4 class="alinhamento-titulo"><bold>Telefones</bold> </h4>
+                Comercial: <input> 	Pessoal:<input> 
             </div><br>
 
             <div class="contrato-card">
-                Nome:_____________________________________________________________<br>
-
-                Estado Civil: ____________________Profissão:  __________________________<br>
-                Telefones:
-                Comercial _____________________Pessoal ______________________________<br>
+            <div class="row">
+                Nome:<input><br>
+            </div>
+            <div class="row">
+                <p>Estado Civil:</p><input> 
+                Profissão:<input>
+            </div>
+                <h4 class="alinhamento-titulo"><bold>Telefones</bold> </h4>
+                Comercial: <input> 	Pessoal:<input> 
             </div><br>
             <div class="contrato-card">
-                Valor:  ________________________	<br>
-
-                Deposito ( ) _____________________Fiador ( ) ___________________________<br>
+                <div class="row">
+                    Nome:<input><br>
+                </div>
+                <div class="row">
+                    Deposito (_<input style="width: 4px">):<input> 
+                    Fiador (_<input style="width: 4px">):<input>
+                </div>
                 </div><br>
                 <div class="contrato-card">
-                Data vencimento:  ________________	<br>
-
-                Tempo de contrato:______________________________	
-                
-
-                Finalidade: _______________________________________________
+                Data vencimento:<input style='width: auto'><br>
+                Tempo de contrato:<input style='width: auto'><br>
+                Finalidade:<input style='width: auto'><br>
             </div><br>
 
             <div class="contrato-card">
                 <h4 class="alinhamento-titulo">Referências</h4>
-                    Nome: _________________________________Fone___________________ <br>Grau de parentesco  _______________________________<br>
-                    Nome:__________________________________Fone _______________________<br>
-                    Grau de parentesco  __________________________<br>
+                    <div class="row">
+                        Nome:<input> 
+                        Telefone:<input>
+                    </div>
+                    <div class="row">
+                        Grau de parentesco:<input style='width: auto'><br>
+                    </div><br>
+                    <div class="row">
+                        Nome:<input> 
+                        Telefone:<input>
+                    </div>
+                    <div class="row">
+                        Grau de parentesco:<input style='width: auto'><br>
+                    </div>
             </div><br>
             <div class="contrato-card">
                 <h4 class="alinhamento-titulo">Documentos necessários</h4>
@@ -49,8 +72,11 @@
 
                 <div class="alinhamento-titulo">________________________</div>
                 <div class="alinhamento-titulo">Ass.: Locatário<div>
-            </div>
-        </section>
-            <button onclick="window.print()" class="btn btn-primary imovel-btn-print">Imprimir</button>
+        </div>
+    </section><br>
+    <div class="alinhamento-titulo">
+        <button onclick="window.print()" class="btn btn-primary imovel-btn-print py-2 hide-print">Imprimir</button>
+    </div>
     </form>
 </section>
+@endsection

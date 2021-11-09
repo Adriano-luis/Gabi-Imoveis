@@ -255,15 +255,9 @@
                                 </div>
                             </div>
                         <div class="row float-right">
-<<<<<<< HEAD
-                            <button type="submit" class="btn btn-primary imovel-btn-print" onClick="window.print()>Imprimir</button>
-                            <button type="submit" class="btn btn-primary imovel-btn-print px-2">Editar</button>
-                            <button type="submit" class="btn btn-primary imovel-btn-print">Proprietário</button>
-=======
                             <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
                             <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
                             <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
->>>>>>> c1ea8a0584c60384354750da498bf78cfa39201d
                         </div>
                     </div>
 
