@@ -63,4 +63,10 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::get('/alterar-senha','GerenciadorController@alterarSenha')->name('alterar-senha');
     Route::post('/alterar-senha','GerenciadorController@alterarSenhaPost')->name('alterar-senha');
 
+    //Imprimir
+    Route::get('/imprimir/nresidencial','ImprimirController@nresidencial')->name('imprimir-nresidencial');
+    Route::get('/imprimir/residencial','ImprimirController@residencial')->name('imprimir-residencial');
+    Route::get('/imprimir/locacao','ImprimirController@locacao')->name('imprimir-locacao');
+    Route::get('/imprimir/venda','ImprimirController@venda')->name('imprimir-venda');
+
 });

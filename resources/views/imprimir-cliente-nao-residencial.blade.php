@@ -1,5 +1,5 @@
 <section class="imprimir">
-    <form action="{{route('imprimir-captacao-inquilino-nao-residencial')}}">
+    <form action="">
     <h3 class="alinhamento-titulo">FICHA CAPTAÇÃO DE INQUILINO NÃO - RESIDENCIAL<h3>
 
     <section class="alinhamento-texto">
@@ -52,6 +52,6 @@
             <div class="alinhamento-titulo">Ass.: Locatário<div>
         </div>
     </section>
-        <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+        <button onclick="window.print()" class="btn btn-primary imovel-btn-print">Imprimir</button>
     </form>
 </section>

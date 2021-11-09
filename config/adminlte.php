@@ -276,6 +276,32 @@ return [
             'text' => 'Cadastrar Proprietário',
             'url'  => 'logged/venda/cadastrar-cliente',
         ],
+        [
+            'text'       => 'Imprimir Documentos',
+            'icon'       => 'far fa-fw fa-file',
+            'submenu'    => [
+                [
+                    'text' => 'Não Residencial', 
+                    'icon' => 'nav-icon fas fa-edit',
+                    'url'  => 'logged/imprimir/nresidencial',
+                ],
+                [
+                    'text' => 'Residencial', 
+                    'icon' => 'nav-icon fas fa-edit',
+                    'url'  => 'logged/imprimir/residencial',
+                ],
+                [
+                    'text' => 'Autorização de Locação', 
+                    'icon' => 'nav-icon fas fa-edit',
+                    'url'  => 'logged/imprimir/locacao',
+                ],
+                [
+                    'text' => 'Venda', 
+                    'icon' => 'nav-icon fas fa-edit',
+                    'url'  => 'logged/imprimir/venda',
+                ],
+            ]
+        ],
 
 
         [

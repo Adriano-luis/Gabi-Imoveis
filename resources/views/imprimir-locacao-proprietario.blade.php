@@ -1,5 +1,5 @@
     <section class="imprimir">
-        <form action="{{route('imprimir-locacao-proprietario')}}">
+        <form action="">
             <div class="docImprimir">
                 <body>
                     <h2 class="alinhamento"><b>AUTORIZAÇÃO DE LOCAÇÃO DE IMÓVEL</b></h2>
@@ -40,7 +40,7 @@
                     Pix: ______________________________________________________<br>
                       <span class="alinhamento-data">Guarulhos____ de ________________de______</span>
                     </section>
-                        <button type="submit" class="btn btn-primary imovel-btn-print">Imprimir</button>
+                        <button  class="btn btn-primary imovel-btn-print" onclick="window.print()">Imprimir</button>
                   </body>
             </div>
         </form>
