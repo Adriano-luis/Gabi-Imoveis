@@ -4,7 +4,7 @@
         <div class="">
             <div class="row pt-3">
                 <div class="col-lg-8">
-                    <div id="carouselExampleIndicators bg-dark" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -520,7 +520,7 @@
                                                 }
                                             }else{
                                                 if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
-                                                    echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
+                                                    echo  'Total: R$'.'<i><b></b></i>'.($dadosImovel->valor
                                                     + $dadosImovel->valorCondominio);
                                                 }else {
                                                     echo  'Total: R$'.$dadosImovel->valor;
