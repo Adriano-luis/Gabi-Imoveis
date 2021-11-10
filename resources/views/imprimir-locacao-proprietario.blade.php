@@ -44,7 +44,7 @@
         <section class="alinhamento-texto">
             <div>
                 Imobiliária:     ___________________________________<br><br>
-                Proprietário(a): ___________________________________
+                Proprietário(a): ________________________________
             </div>
         </section>
         <div class="alinhamento-titulo">

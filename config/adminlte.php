@@ -296,7 +296,7 @@ return [
                     'url'  => 'logged/imprimir/locacao',
                 ],
                 [
-                    'text' => 'Venda', 
+                    'text' => 'Autorização de Venda', 
                     'icon' => 'nav-icon fas fa-edit',
                     'url'  => 'logged/imprimir/venda',
                 ],
