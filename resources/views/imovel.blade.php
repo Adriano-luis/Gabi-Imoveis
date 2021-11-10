@@ -255,7 +255,33 @@
                                 </div>
                             </div>
                         <div class="row float-right">
-                            <button type="submit" class="btn btn-primary imovel-btn-print ">Imprimir</button>
+                            <div class="row float-right">
+                                <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary corTexto" data-toggle="modal" data-target="#enviarModal">
+                                Enviar
+                            </button>
+                            
+                            <!-- Modal -->
+                            
+                                <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">Telefone para envio:</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                        <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                             <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
                             <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
                         </div>
@@ -418,7 +444,7 @@
                                     <div class="align-description">
                                         <div>
                                             <p class="font-weight-bold mx-2 imovel-description">Condomínio</p>
-                                            <p class="px-2">{{$dadosImovel->sobreMobilha}}</p>
+                                            <p class="px-2">{{$dadosImovel->sobreCondominio}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -436,7 +462,33 @@
                                 </div>
                             </div>
                             <div class="row float-right">
-                                <button type="submit" class="btn btn-primary imovel-btn-print" onClick="window.print()">Imprimir</button>
+                                <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary corTexto" data-toggle="modal" data-target="#enviarModal">
+                                Enviar
+                            </button>
+                            
+                            <!-- Modal -->
+                            
+                                <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">Telefone para envio:</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                        <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                           
                                 <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
                                 <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
                             </div>
