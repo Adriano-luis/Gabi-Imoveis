@@ -257,7 +257,7 @@
                         <div class="row float-right">
                             <div class="row float-right">
                                 <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary corTexto" data-toggle="modal" data-target="#enviarModal">
+                            <button type="button" class="btn btn-primary corTexto mx-2 imovel-btn-print" data-toggle="modal" data-target="#enviarModal">
                                 Enviar
                             </button>
                             
@@ -282,48 +282,48 @@
                                     </div>
                                 </div>
                                 </div>
-                            <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
+                            <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2 mx-2">Editar</a>
                             <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
                         </div>
                     </div>
-
+                </div>
                     {{-- card sticky --}}
 
-                    <div class="col-4 hide">
+                        <div class="col-4 hide">
 
-                        <div class="card sticky-top card-rounded" style="width: 18rem;">
-                            <div class="card-header">
-                            <h5 class="card-title">id:{{$dadosImovel->id}} </h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
-                                @if ($dadosImovel->condominio == 'Sim')
-                                    <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
-                                @endif
-                                <li class="list-group-item">
-                                    <?php
-                                        if (isset($dadosImovel->IPTU) && $dadosImovel->IPTU != null){
-                                            if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null) {
-                                                echo  'Total: R$'.($dadosImovel->IPTU
-                                                + $dadosImovel->valor
-                                                + $dadosImovel->valorCondominio);
+                            <div class="card sticky-top card-rounded" style="width: 18rem;">
+                                <div class="card-header">
+                                <h5 class="card-title">id:{{$dadosImovel->id}} </h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                    @if ($dadosImovel->condominio == 'Sim')
+                                        <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
+                                    @endif
+                                    <li class="list-group-item">
+                                        <?php
+                                            if (isset($dadosImovel->IPTU) && $dadosImovel->IPTU != null){
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null) {
+                                                    echo  'Total: R$'.($dadosImovel->IPTU
+                                                    + $dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else{
+                                                    echo  'Total: R$'.($dadosImovel->IPTU 
+                                                    + $dadosImovel->valor);
+                                                }
                                             }else{
-                                                echo  'Total: R$'.($dadosImovel->IPTU 
-                                                + $dadosImovel->valor);
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
+                                                    echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else {
+                                                    echo  'Total: R$'.$dadosImovel->valor;
+                                                }
                                             }
-                                        }else{
-                                            if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
-                                                echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
-                                                + $dadosImovel->valorCondominio);
-                                            }else {
-                                                echo  'Total: R$'.$dadosImovel->valor;
-                                            }
-                                        }
-                                    ?>
-                                </li>
-                            </ul>
+                                        ?>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     @endif
                     
                     @if (isset($dadosImovel->idVendedor))
@@ -463,7 +463,7 @@
                             </div>
                             <div class="row float-right">
                                 <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary corTexto" data-toggle="modal" data-target="#enviarModal">
+                            <button type="button" class="btn btn-primary imovel-btn-print corTexto" data-toggle="modal" data-target="#enviarModal">
                                 Enviar
                             </button>
                             
