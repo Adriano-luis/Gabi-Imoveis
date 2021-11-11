@@ -273,12 +273,16 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
-                                        <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                        <form action="{{route('enviarWhats')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="envioLoc" value="{{$dadosImovel->id}}">
+                                            <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                            <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
                                     </div>
+                                        </form>
                                     </div>
                                 </div>
                                 </div>
