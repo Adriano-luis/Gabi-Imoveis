@@ -169,7 +169,7 @@
                                     <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
                                     <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
                                     <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
-                                    <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaJantar}}</li>
+                                    <li class="list-group-item">Sala(s) de jantar: {{$dadosImovel->salaJantar}}</li>
                                     <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
                                     <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
                                     <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
@@ -195,10 +195,6 @@
                                     <li class="list-group-item">IPTU: {{$dadosImovel->IPTU}}</li>
                                     <li class="list-group-item">Individual: {{$dadosImovel->individual}}</li>
                                     <li class="list-group-item">Andar: {{$dadosImovel->andar}}</li>
-                                    <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
-                                    <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
-                                    <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
-                                    <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -381,7 +377,7 @@
                                     <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
                                     <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
                                     <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
-                                    <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaJantar}}</li>
+                                    <li class="list-group-item">Sala(s) de jantar: {{$dadosImovel->salaJantar}}</li>
                                     <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
                                     <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
                                     <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
@@ -407,10 +403,6 @@
                                     <li class="list-group-item">IPTU: {{$dadosImovel->IPTU}}</li>
                                     <li class="list-group-item">Individual: {{$dadosImovel->individual}}</li>
                                     <li class="list-group-item">Andar: {{$dadosImovel->andar}}</li>
-                                    <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
-                                    <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
-                                    <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
-                                    <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
                                 </ul>
                             </div>
                         </div>
