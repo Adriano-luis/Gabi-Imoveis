@@ -268,6 +268,15 @@ return [
         ],
 
         [
+            'text'        => 'Imoveis Parados',
+            'url'         => 'logged/parados',
+            'icon'        => 'fas fa-user',
+            //'active'      => ['cliente', 'content', 'content*', 'regex:@^content/[0-9]+$@']
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+
+        [
             'text' => 'Cadastrar Locador',
             'url'  => 'logged/locacao/cadastrar-cliente',
         ],

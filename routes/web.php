@@ -75,4 +75,8 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::get('/imprimir/venda','ImprimirController@venda')->name('imprimir-venda');
     Route::post('/imprimir/venda','ImprimirController@imprimirId')->name('imprimir-id-venda');
 
+
+    //Imóvel Parado
+    Route::get('/parados','ImovelParado@index')->name('imovel-parado');
+
 });
