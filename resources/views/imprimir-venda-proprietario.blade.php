@@ -27,15 +27,15 @@
         </section>
         <section class="alinhamento-texto">
             <h4 class="alinhamento"><b>Dados do proprietário</b></h4>
-            Nome: <input style='width: auto' value="{{$locador->nome}}"><br>
-            Endereço: <input style='width: 70%' value="{{$locador->endereco}}"> n° <input style='width: 4rem' value="{{$locador->numero}}"><br>
-            Estado Civil: <input style='width: auto' value="{{$locador->estadoCivil}}"> Profissão: <input style='width: auto' value="{{$locador->profissao}}"><br>
-            CPF: <input style='width: auto' value="{{$locador->CPF}}"> RG: <input style='width: auto' value="{{$locador->RG}}"><br>
-            Telefone: <input style='width: 6.4rem' value="{{$locador->telefone}}">
+            Nome: <input style='width: auto' value="{{$vendedor->nome}}"><br>
+            Endereço: <input style='width: 70%' value="{{$vendedor->endereco}}"> n° <input style='width: 4rem' value="{{$vendedor->numero}}"><br>
+            Estado Civil: <input style='width: auto' value="{{$vendedor->estadoCivil}}"> Profissão: <input style='width: auto' value="{{$vendedor->profissao}}"><br>
+            CPF: <input style='width: auto' value="{{$vendedor->CPF}}"> RG: <input style='width: auto' value="{{$vendedor->RG}}"><br>
+            Telefone: <input style='width: 6.4rem' value="{{$vendedor->telefone}}">
                 <h4 class="alinhamento"><b>Conta bancária</b></h4>
-            Banco: <input style='width: auto' value="{{$locador->banco}}"> Agência: <input style='width: auto' value="{{$locador->agencia}}"><br>
-                Corrente/Poupança: <input style='width: auto' value="{{$locador->tipoConta}}"> N° conta: <input style='width: auto' value="{{$locador->conta}}"><br>
-            Pix: <input style='width: auto' value="{{$locador->pix}}"><br>
+            Banco: <input style='width: auto' value="{{$vendedor->banco}}"> Agência: <input style='width: auto' value="{{$vendedor->agencia}}"><br>
+                Corrente/Poupança: <input style='width: auto' value="{{$vendedor->tipoConta}}"> N° conta: <input style='width: auto' value="{{$vendedor->conta}}"><br>
+            Pix: <input style='width: auto' value="{{$vendedor->pix}}"><br>
             <span class="alinhamento-data">Guarulhos<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span><br><br>
         </section>
         <section class="alinhamento-texto">

@@ -33,13 +33,19 @@ class ImprimirController extends Controller
         $idVenda = $request->get('idVenda');
 
         if(isset($idVenda) && $idVenda != null){
-            $imovel =  LocacaoImoveis::where('id',$idVenda)->get()->first();
+            $imovel =  VendaImoveis::where('id',$idVenda)->get()->first();
+            if($imovel == null){
+                return redirect()->back();
+            }
             $vendedor =  Locator::where('id',$imovel->idVendedor)->get()->first();
 
-            return view('imprimir-locacao-proprietario',['imovel'=>$imovel,'vendedor'=>$vendedor]);
+            return view('imprimir-venda-proprietario',['imovel'=>$imovel,'vendedor'=>$vendedor]);
         }
 
         $imovel =  LocacaoImoveis::where('id',$id)->get()->first();
+        if($imovel == null){
+            return redirect()->back();
+        }
         $locador =  Locator::where('id',$imovel->idLocador)->get()->first();
 
         return view('imprimir-locacao-proprietario',['imovel'=>$imovel,'locador'=>$locador]);
