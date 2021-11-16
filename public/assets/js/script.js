@@ -54,4 +54,61 @@ $(document).ready(function(){
         });
 
     });*/
+
+    $('#btnInteressadosLoc').click(function() {
+
+        $.ajax({
+            type:'POST',
+            url:$('meta[name="urlBase"]').attr('content')+'interessados',
+            data: {"_token": $('meta[name="csrf-token"]').attr('content')},
+            beforeSend:function(){
+				$('#interessadosLoc').html('<option>Carregando clientes...</option>');
+			},
+			success:function(json){
+				
+				$('#interessadosLoc').html('<option>Selecione o cliente...</option>');
+				if (json != '') {
+					$.each(json, function(key,value){
+						$('#interessadosLoc').append('<option value="'+value['nome']+'">'+value['nome']+'</option>');
+					})
+				}else{
+                    $('#interessadosLoc').html('<option>Sem clientes cadastrados...</option>');
+                }
+
+			},
+			error:function(){
+				alert('Algo deu errado!');
+			}
+        });
+
+    });
+
+
+    $('#btnInteressados').click(function() {
+
+
+        $.ajax({
+            type:'POST',
+            url:$('meta[name="urlBase"]').attr('content')+'interessados',
+            data: {"_token": $('meta[name="csrf-token"]').attr('content')},
+            beforeSend:function(){
+				$('#interessadosVen').html('<option>Carregando clientes...</option>');
+			},
+			success:function(json){
+				
+				$('#interessadosVen').html('<option>Selecione o cliente...</option>');
+				if (json) {
+					$.each(json, function(key,value){
+						$('#interessadosVen').append('<option>'+value['nome']+'</option>');
+					})
+				}
+
+			},
+			error:function(){
+				alert('Algo deu errado!');
+			}
+        });
+
+    });
+
 });

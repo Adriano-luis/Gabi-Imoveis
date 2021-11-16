@@ -1,6 +1,6 @@
 <?php
 return [
-    'localUrl' => '/Gabi-Imoveis/public/logged/',
+    'localUrl' => 'http://gabi-imoveis.test/logged/',
     'url'      => ''
 ];
 ?>

@@ -238,18 +238,77 @@
                                 </div>
                             </div>
                         @endif
-                            <hr class="solid">
-                            <div class="row align-row">
-                                <div class="col-lg-3">
-                                    <div class="row align-items-center p-2">
-                                        <i class="fas fa-list fa-2x"></i>
-                                        <p class="font-weight-bold mx-2 imovel-description">Observações</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <p class="px-2">{{$dadosImovel->obsevacoes}}</p>
+                        <hr class="solid">
+                        <div class="row align-row">
+                            <div class="col-lg-3">
+                                <div class="row align-items-center p-2">
+                                    <i class="fas fa-list fa-2x"></i>
+                                    <p class="font-weight-bold mx-2 imovel-description">Observações</p>
                                 </div>
                             </div>
+                            <div class="col-lg-8">
+                                <p class="px-2">{{$dadosImovel->obsevacoes}}</p>
+                            </div>
+                        </div>
+                        <hr class="solid">
+                        <div class="row align-row">
+                            <div class="card col">
+                                <div class="card-header ui-sortable-handle" style="cursor: move;">
+                                    <h3 class="card-title">
+                                    <i class="fas fa-chart-pie mr-1"></i>
+                                        Interessados
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <table border="1" class="table table-striped"  style="text-align:center; font-size:12px">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Telefone</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($interessados as $interessado)
+                                                <tr>
+                                                    <td>{{$interessado->nome}}</td>
+                                                    <td>{{$interessado->telefone}}</td>
+                                                    <td><a href="#">Remover</a></td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressadosLoc" data-toggle="modal" data-target="#enviarModal">
+                                        Adicionar Interessado
+                                    </button>
+                                    
+                                    <!-- Modal -->
+                                    
+                                    <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="ModalLabel">Nome</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="{{route('interessados-salvar')}}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden"  name="interessadoSalvaLoc" value="{{$dadosImovel->id}}">
+                                                    <div class="modal-body">
+                                                        <select name="InteressadosLoc" id="interessadosLoc" class="col"></select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.card-body -->
+                                </div>
+                            </div>
+                        </div>
                         <div class="row float-right">
                             <div class="row float-right">
                                 <!-- Button trigger modal -->
@@ -271,7 +330,7 @@
                                     <div class="modal-body">
                                         <form action="{{route('enviarWhats')}}" method="POST">
                                             @csrf
-                                            <input type="hidden" name="envioLoc" value="{{$dadosImovel->id}}">
+                                            <input type="hidden" id="envioLoc" name="envioLoc" value="{{$dadosImovel->id}}">
                                             <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
                                             <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
                                     </div>
@@ -457,6 +516,65 @@
                                     <p class="px-2">{{$dadosImovel->observacoes}}</p>
                                 </div>
                             </div>
+                            <hr class="solid">
+                            <div class="row align-row">
+                                <div class="card col">
+                                    <div class="card-header ui-sortable-handle" style="cursor: move;">
+                                      <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+                                            Interessados
+                                      </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table border="1" class="table table-striped"  style="text-align:center; font-size:12px">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Telefone</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($interessados as $interessado)
+                                                    <tr>
+                                                        <td>{{$interessado->nome}}</td>
+                                                        <td>{{$interessado->telefone}}</td>
+                                                        <a href="#">Remover</a>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressados" data-toggle="modal" data-target="#enviarModal">
+                                            Adicionar Interessado
+                                        </button>
+                                        
+                                        <!-- Modal -->
+                                        
+                                        <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="ModalLabel">Nome</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form action="{{route('interessados-salvar')}}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden"  name="interessadoSalvaVen" value="{{$dadosImovel->id}}">
+                                                        <div class="modal-body">
+                                                            <select name="InteressadosVen" id="interessadosVen" class="col"></select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary" id="EnviarWhats">Adiconar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.card-body -->
+                                </div>
+                            </div>
                             <div class="row float-right">
                                 <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary imovel-btn-print corTexto" data-toggle="modal" data-target="#enviarModal">
@@ -465,7 +583,7 @@
                             
                             <!-- Modal -->
                             
-                                <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     <div class="modal-header">
@@ -475,12 +593,16 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
-                                        <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                        <form action="{{route('enviarWhats')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" id="envioVen" name="envioVen" value="{{$dadosImovel->id}}">
+                                            <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                            <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
                                     </div>
+                                        </form>
                                     </div>
                                 </div>
                                 </div>

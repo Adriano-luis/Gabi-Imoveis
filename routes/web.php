@@ -55,6 +55,8 @@ Route::middleware('login')->prefix('logged')->group(function (){
     //Página do Imóvel
     Route::get('/imovel','ImovelController@index')->name('imovel');
     Route::post('/imovel','ImovelController@enviar')->name('enviarWhats');
+    Route::post('/interessados','ImovelController@novoInteressado')->name('interessados');
+    Route::post('/interessados-salvar','ImovelController@interessadoSalva')->name('interessados-salvar');
 
 
     //Adicionar novo Gerenciado

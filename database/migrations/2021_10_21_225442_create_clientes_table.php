@@ -17,6 +17,8 @@ class CreateClientesTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('telefone');
+            $table->integer('idLoc');
+            $table->integer('idVen');
             $table->integer('valorMin');
             $table->integer('valorMax');
             $table->string('tipo');
