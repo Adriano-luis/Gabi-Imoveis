@@ -283,7 +283,7 @@ class VendaController extends Controller
 
         } else{
             $imovel = 'Imovel já cadastrado!';
-            return view('venda-cadastro',['existeImovel'=>$imovel]);
+            return view('venda-cadastro',['existeImovel'=>$imovel,'id'=>$id]);
         }
         
 
