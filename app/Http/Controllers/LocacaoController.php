@@ -275,7 +275,7 @@ class LocacaoController extends Controller
 
         } else{
             $imovel = 'Imovel já cadastrado!';
-            return view('locacao-cadastro',['existeImovel'=>$imovel]);
+            return view('locacao-cadastro',['existeImovel'=>$imovel,'id'=>$id]);
         }
 
         
