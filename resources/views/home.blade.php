@@ -386,11 +386,11 @@
                       @endif
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
+                  <a class="carousel-control-prev-{{$id}}" href="#controleSlide" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
                   </a>
-                  <a class="carousel-control-next" href="#controleSlide" role="button" data-slide="next">
+                  <a class="carousel-control-next-{{id}}" href="#controleSlide" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Próximo</span>
                   </a>
@@ -504,7 +504,7 @@
                 </div>
               </div>
               <div class="card-body">
-                <div id="controleSlide" class="carousel slide" data-ride="carousel">
+                <div id="controleSlide-{{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       @if (isset($ray) && $ray == 'sim')
@@ -577,11 +577,11 @@
                       @endif
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#controleSlide" role="button" data-slide="prev">
+                  <a class="carousel-control-prev" href="#controleSlide-{{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
                   </a>
-                  <a class="carousel-control-next" href="#controleSlide" role="button" data-slide="next">
+                  <a class="carousel-control-next" href="#controleSlide-{{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Próximo</span>
                   </a>
