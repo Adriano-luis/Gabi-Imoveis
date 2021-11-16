@@ -24,7 +24,6 @@
             RGI: <input style='width: auto' value="{{$imovel->RGI}}"> Instalação: <input style='width: auto' value="{{$imovel->instalacao}}"> 
         </section>
             
-        </section>
         <section class="alinhamento-texto">
             <h4 class="alinhamento"><b>Dados do proprietário</b></h4>
             Nome: <input style='width: auto' value="{{$vendedor->nome}}"><br>

@@ -9,7 +9,7 @@
             </div>
             Autorizo GABI MOVEIS CRECI 161.918 F, com escritório situado a Rua Guarabira 191, São João - Guarulhos, a promover a LOCAÇÃO do imóvel de minha propriedade, 
             fazer levantamento de cadastro, assinar vistoria, aditivo de renovação e receber aluguel do seguinte imóvel:
-        </section>
+        </section><br>
         <section class="alinhamento-texto">
             <h4 class="alinhamento"><b>Dados do imóvel</b></h4>
             Endereço: <input value="{{$imovel->endereco}}"> n°<input value="{{$imovel->numero}}"><br>
@@ -25,7 +25,7 @@
             mesmo com o contrato vencido, o proprietário não poderá renovar o contrato/aditivo de locação diretamente ou através de terceiros ao Locatário apresentado 
             por esta imobiliária, sob pena de assim fazendo, pagar o percentual de 10% (dez por cento) de administração, referente a 12 meses de locação. Em caso de 
             venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de 6% (seis por cento) do valor 
-            da venda a GABI IMOVEIS.<p>
+            da venda a GABI IMOVEIS.<p><br>
             
         </section>
         <section class="alinhamento-texto">
