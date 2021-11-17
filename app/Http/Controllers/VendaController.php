@@ -311,36 +311,130 @@ class VendaController extends Controller
     }
 
     public function editarImovelPost(Request $request){
-        
         //salvando no DB
-        /*$editarImovel = new VendaImoveis();
-        $imovel = $editarImovel->where('telefone',$request->get('telefone'))->get()->first();
+        $editarImovel = new VendaImoveis();
+        $imovel = $editarImovel->where('id',$request->get('id'))->get()->first();
         if($imovel != ''){
-            $editarImovel->where('telefone',$request->get('telefone'))->update([
-                'nome'          => $request->get('nome'),
-                'endereco'      => $request->get('logradouro'),
-                'numero'        => $request->get('numero'),
-                'bairro'        => $request->get('bairro'),
-                'municipio'     => $request->get('municipio'),
-                'complemento'   => $request->get('complemento'),
-                'estadoCivil'   => $request->get('estadoCivil'),
-                'nascimento'    => $request->get('nascimento'),
-                'profissao'     => $request->get('profissao'),
-                'CPF'           => $request->get('cpf'),
-                'RG'            => $request->get('rg'),
-                'telefone'      => $request->get('telefone'),
-                'banco'         => $request->get('banco'),
-                'agencia'       => $request->get('agencia'),
-                'tipoConta'     => $request->get('tipoConta'),
-                'conta'         => $request->get('conta'),
-                'pix'           => $request->get('pix'),
-            ]);
+            $valor              = $request->get('valor');
+            $enderecoImovel     = $request->get('rua');
+            $numeroImovel       = $request->get('numero');
+            $bairoImovel        = $request->get('bairro');
+            $municipioImovel    = $request->get('municipio');
+            $complementoImovel  = $request->get('complemento');
+            $metragemTot        = $request->get('metragemTot');
+            $terreno            = $request->get('terreno');
+            $qtComodos          = $request->get('qtdCom');
+            $quarto             = $request->get('quartos');
+            $suite              = $request->get('suites');
+            $cozinha            = $request->get('cozinhas');
+            $lavanderia         = $request->get('lavanderia');
+            $salaEstar          = $request->get('salaEstar');
+            $salaJantar         = $request->get('salaJantar');
+            $banheiro           = $request->get('banheiros');
+            $garagem            = $request->get('vagas');
+            $escritorio         = $request->get('escritorio');
+            $jardim             = $request->get('jardim');
+            $varanda            = $request->get('varanda');
+            $criado = $request->get('criado');
+            $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
+            $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
+            $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
+            $request->input('usocapiao') == 'on'? $usocapiao = 'Sim': $usocapiao = 'Nao';
+            $request->input('outros') == 'on'? $outros = 'Sim': $outros = 'Nao';
+            $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
+            $nomeCondo          = $request->get('condominioNome');
+            $valorCondo         = $request->get('condominioVal');
+            $andar              = $request->get('andar');
+            $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
+            $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
+            $descImovel         = $request->get('descricaoImovel');
+            $descMobilha        = $request->get('descricaoMobilia');
+            $descCond           = $request->get('descricaoCond');
+            $obs                = $request->get('observacao');
+    
+    
+    
+            //salvando no DB
+            $imovel-> valor = $valor;
+            $imovel-> endereco = $enderecoImovel;
+            $imovel-> numero = $numeroImovel;
+            $imovel-> bairro = $bairoImovel;
+            $imovel-> municipio = $municipioImovel;
+            $imovel-> complemento = $complementoImovel;
+            $imovel-> metragemTotal = $metragemTot;
+            $imovel-> terreno = $terreno;
+            $imovel-> qtComodos = $qtComodos;
+            $imovel-> quarto = $quarto;
+            $imovel-> suite = $suite;
+            $imovel-> cozinha = $cozinha;
+            $imovel-> lavanderia = $lavanderia;
+            $imovel-> salaEstar = $salaEstar;
+            $imovel-> salaJantar = $salaJantar;
+            $imovel-> banheiro = $banheiro;
+            $imovel-> garagem = $garagem;
+            $imovel-> escritorio = $escritorio;
+            $imovel-> jardim = $jardim;
+            $imovel-> varanda = $varanda;
+            $imovel-> criado = $criado;
+            $imovel-> contrato = $contrato;
+            $imovel-> escritura = $escritura;
+            $imovel-> contratoPoss = $contratoPoss;
+            $imovel-> usocapiao = $usocapiao;
+            $imovel-> outros = $outros;
+            $imovel-> condominio = $condo;
+            $imovel-> nomeCondominio = $nomeCondo;
+            $imovel-> valorCondominio = $valorCondo;
+            $imovel-> andar = $andar;
+            $imovel-> individual = $individual;
+            $imovel-> mobilhado = $mobilhado;
+            $request->input('apCheck') == 'on'? $imovel-> tipo = 'apartamento' : '';
+            $request->input('casaCheck') == 'on'? $imovel-> tipo = 'casa' : '';
+            $request->input('chacaCheck') == 'on'? $imovel-> tipo = 'chacara': '';
+            $request->input('terreCheck') == 'on'? $imovel-> tipo = 'terreno' : '';
+            $imovel-> sobreImovel = $descImovel;
+            $imovel-> sobreMobilia = $descMobilha;
+            $imovel-> sobreCondominio = $descCond;
+            $imovel-> observacoes = $obs;
+            $imovel-> disponivel = 'Sim';
+            if ($request->hasFile('upFotos')){
+                $aux = 1;
+                foreach ($request->file('upFotos') as $imagem){
+                    $extension = $imagem->extension();
+                    $imageName = md5($imagem->getClientOriginalName().strtotime("now")).'.'.$extension;
+                    $imagem->move(public_path('assets/images/locacao'),$imageName);
 
-            $imovel = $editarImovel->where('telefone',$request->get('telefone'))->get()->first();
+                    if($aux == 1){
+                        $imovel-> img1 = $imageName;
+                    }else if($aux == 2){
+                        $imovel-> img2 = $imageName;
+                    }else if($aux == 3){
+                        $imovel-> img3 = $imageName;
+                    }else if($aux == 4){
+                        $imovel-> img4 = $imageName;
+                    }else if($aux == 5){
+                        $imovel-> img5 = $imageName;
+                    }else if($aux == 6){
+                        $imovel-> img6 = $imageName;
+                    }else if($aux == 7){
+                        $imovel-> img7 = $imageName;
+                    }else if($aux == 8){
+                        $imovel-> img8 = $imageName;
+                    }else if($aux == 9){
+                        $imovel-> img9 = $imageName;
+                    }else{
+                        $imovel-> img10 = $imageName;
+                    }
+                    $aux++;
+                }
+            }
+
+            $imovel->update();
+
+            $imovel = $editarImovel->where('id',$request->get('id'))->get()->first();
             
-        }
         
-        return redirect()->route('home');*/
+            return redirect()->route('imovel',['venId'=>$imovel->id]);
+        }
     }
 
 }

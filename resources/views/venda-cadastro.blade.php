@@ -14,6 +14,7 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="id" value="{{isset($dados) ? $dados->id : ''}}">
                 <input type="hidden" name="idVendedor" value="{{$id ?? $dados->idVendedor}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
@@ -106,7 +107,7 @@
                 </div><br>
                 <div class="form-group">
                     <label name="aguaLuz" class="form-check-label">Cadastro feito em:</label><br>
-                    <input class="form-control col-2" type="date" name="criado" {{isset($dados) ? $dados->criado: ''}}>
+                    <input class="form-control col-2" type="date" name="criado" value="{{isset($dados) ? $dados->criado: ''}}">
                 </div>
                 <label>Documentos</label>
                 <div class="row align-row">
