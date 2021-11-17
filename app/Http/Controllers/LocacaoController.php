@@ -190,7 +190,7 @@ class LocacaoController extends Controller
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
         $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
-        $request->input('resiCheck') == 'on'? $resi = 'residencial': 'nResidencial';
+        $request->input('resiCheck') == 'on'? $resi = 'residencial': $resi = 'nResidencial';
         $descImovel = $request->get('descricaoImovel');
         $descMobilha = $request->get('descricaoMobilia');
         $descCond = $request->get('descricaoCond');
@@ -300,6 +300,132 @@ class LocacaoController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function editarImovelPost(Request $request){
+        //salvando no DB
+        $editarImovel = new LocacaoImoveis();
+        $imovel = $editarImovel->where('id',$request->get('id'))->get()->first();
+        if($imovel != ''){
+            $valor = $request->get('valor');
+            $enderecoImovel = $request->get('rua');
+            $numeroImovel = $request->get('numero');
+            $bairoImovel = $request->get('bairro');
+            $municipioImovel = $request->get('municipio');
+            $complementoImovel = $request->get('complemento');
+            $metragemTot = $request->get('metragemTot');
+            $metragemUtil = $request->get('metragemUtil');
+            $qtComodos = $request->get('qtdCom');
+            $quarto = $request->get('quartos');
+            $suite = $request->get('suites');
+            $cozinha = $request->get('cozinhas');
+            $lavanderia = $request->get('lavanderia');
+            $salaEstar = $request->get('salaEstar');
+            $salaJantar = $request->get('salaJantar');
+            $banheiro = $request->get('banheiros');
+            $garagem = $request->get('vagas');
+            $escritorio = $request->get('escritorio');
+            $jardim = $request->get('jardim');
+            $varanda = $request->get('varanda');
+            $criado = $request->get('criado');
+            $request->input('aguaLuz') == 'on'? $aguaLuz = 'Sim': $aguaLuz = 'Nao';
+            $rgi = $request->get('rgi');
+            $instal = $request->get('instalacao');
+            $iptu = $request->get('iptu');
+            $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
+            $nomeCondo = $request->get('condominioNome');
+            $valorCondo = $request->get('condominioVal');
+            $andar = $request->get('andar');
+            $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
+            $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
+            $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
+            $request->input('resiCheck') == 'on'? $resi = 'residencial': $resi = 'nResidencial';
+            $descImovel = $request->get('descricaoImovel');
+            $descMobilha = $request->get('descricaoMobilia');
+            $descCond = $request->get('descricaoCond');
+            $obs = $request->get('observacao');
+            
+            
+
+            //salvando no DB
+            $imovel-> valor = $valor;
+            $imovel-> endereco = $enderecoImovel;
+            $imovel-> numero = $numeroImovel;
+            $imovel-> bairro = $bairoImovel;
+            $imovel-> municipio = $municipioImovel;
+            $imovel-> complemento = $complementoImovel;
+            $imovel-> metragemTotal = $metragemTot;
+            $imovel-> metragemUtil = $metragemUtil;
+            $imovel-> qtComodos = $qtComodos;
+            $imovel-> quarto = $quarto;
+            $imovel-> suite = $suite;
+            $imovel-> cozinha = $cozinha;
+            $imovel-> lavanderia = $lavanderia;
+            $imovel-> salaEstar = $salaEstar;
+            $imovel-> salaJantar = $salaJantar;
+            $imovel-> banheiro = $banheiro;
+            $imovel-> garagem = $garagem;
+            $imovel-> escritorio = $escritorio;
+            $imovel-> jardim = $jardim;
+            $imovel-> varanda = $varanda;
+            $imovel-> criado = $criado;
+            $imovel-> aguaLuzSeparado = $aguaLuz;
+            $imovel-> RGI = $rgi;
+            $imovel-> instalacao = $instal;
+            $imovel-> IPTU = $iptu;
+            $imovel-> condominio = $condo;
+            $imovel-> nomeCondominio = $nomeCondo;
+            $imovel-> valorCondominio = $valorCondo;
+            $imovel-> andar = $andar;
+            $imovel-> individual = $individual;
+            $imovel-> mobilhado = $mobilhado;
+            $imovel-> pet = $pet;
+            $imovel-> tipo = $resi;
+            $imovel-> sobreImovel = $descImovel;
+            $imovel-> sobreMobilia = $descMobilha;
+            $imovel-> sobreCondominio = $descCond;
+            $imovel-> observacoes = $obs;
+            $imovel-> disponivel = 'Sim';
+            if ($request->hasFile('upFotos')){
+                $aux = 1;
+                foreach ($request->file('upFotos') as $imagem){
+                    $extension = $imagem->extension();
+                    $imageName = md5($imagem->getClientOriginalName().strtotime("now")).'.'.$extension;
+                    $imagem->move(public_path('assets/images/locacao'),$imageName);
+
+                    if($aux == 1){
+                        $imovel-> img1 = $imageName;
+                    }else if($aux == 2){
+                        $imovel-> img2 = $imageName;
+                    }else if($aux == 3){
+                        $imovel-> img3 = $imageName;
+                    }else if($aux == 4){
+                        $imovel-> img4 = $imageName;
+                    }else if($aux == 5){
+                        $imovel-> img5 = $imageName;
+                    }else if($aux == 6){
+                        $imovel-> img6 = $imageName;
+                    }else if($aux == 7){
+                        $imovel-> img7 = $imageName;
+                    }else if($aux == 8){
+                        $imovel-> img8 = $imageName;
+                    }else if($aux == 9){
+                        $imovel-> img9 = $imageName;
+                    }else{
+                        $imovel-> img10 = $imageName;
+                    }
+                    $aux++;
+                }
+            }
+            
+            $imovel->update();
+
+            $imovel = $editarImovel->where('id',$request->get('id'))->get()->first();
+        
+    
+            return redirect()->route('imovel',['locId'=>$imovel->id]);
+        
+        }
     }
 
 

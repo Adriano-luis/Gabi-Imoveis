@@ -205,15 +205,14 @@
             </div>
             <div class="row align-btn">
                 @if (isset($dados))
-                            <div class="card-footer">
-                              <button type="submit" class="btn btn-success">Atualizar</button>
-                            </div> 
-                        @else
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
-                        @endif
-                
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success">Atualizar</button>
+                    </div> 
+                @else
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                @endif
             </div>
         </div>
     </form>

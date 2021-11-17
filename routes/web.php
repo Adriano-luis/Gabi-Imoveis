@@ -41,6 +41,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/locacao/editar-cliente','LocacaoController@editarcliente')->name('loc-editar-cliente');
     Route::post('/locacao/editar-cliente/post','LocacaoController@editarclientePost')->name('loc-editar-cliente-post');
     Route::get('/locacao/editar-imovel','LocacaoController@editarimovel')->name('loc-editar-imovel');
+    Route::post('/locacao/editar-imovel','LocacaoController@editarImovelPost')->name('loc-editar-imovel-post');
 
     //Venda
     Route::get('/venda/cadastrar-imovel','VendaController@novoimovel')->name('ven-novo-imovel');

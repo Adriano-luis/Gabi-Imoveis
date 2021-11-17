@@ -4,7 +4,7 @@
     @if (isset($id))
         <input type="hidden" id="cadastrado" value="Sim">
     @endif
-    <form action="{{route('loc-novo-imovel')}}" method="POST" enctype="multipart/form-data">
+    <form action=" {{ isset($dados) ? route('loc-editar-imovel-post') : route('loc-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
@@ -14,6 +14,7 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
+                <input type="hidden" name="id" value="{{isset($dados) ? $dados->id : ''}}">
                 <input type="hidden" name="idLocador" value="{{$id ?? $dados->idLocador}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
@@ -100,7 +101,7 @@
                 </div><br>
                 <div class="form-group">
                     <label name="aguaLuz" class="form-check-label">Cadastro feito em:</label><br>
-                    <input class="form-control col-2" type="date" name="criado" {{isset($dados) ? $dados->criado: ''}}>
+                    <input class="form-control col-2" type="date" name="criado" value="{{isset($dados) ? $dados->criado: ''}}">
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="aguaLuz" {{isset($dados) && $dados->aguaLuzSeparado == 'Sim' ? "checked='checked'": ''}}>
@@ -188,9 +189,16 @@
                 </div>
             </div>
             <div class="row align-btn">
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
+                @if (isset($dados))
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success">Atualizar</button>
+                    </div> 
+                @else
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                @endif
+            </div>
             </div>
         </div>
     </form>
