@@ -310,4 +310,37 @@ class VendaController extends Controller
 
     }
 
+    public function editarImovelPost(Request $request){
+        
+        //salvando no DB
+        /*$editarImovel = new VendaImoveis();
+        $imovel = $editarImovel->where('telefone',$request->get('telefone'))->get()->first();
+        if($imovel != ''){
+            $editarImovel->where('telefone',$request->get('telefone'))->update([
+                'nome'          => $request->get('nome'),
+                'endereco'      => $request->get('logradouro'),
+                'numero'        => $request->get('numero'),
+                'bairro'        => $request->get('bairro'),
+                'municipio'     => $request->get('municipio'),
+                'complemento'   => $request->get('complemento'),
+                'estadoCivil'   => $request->get('estadoCivil'),
+                'nascimento'    => $request->get('nascimento'),
+                'profissao'     => $request->get('profissao'),
+                'CPF'           => $request->get('cpf'),
+                'RG'            => $request->get('rg'),
+                'telefone'      => $request->get('telefone'),
+                'banco'         => $request->get('banco'),
+                'agencia'       => $request->get('agencia'),
+                'tipoConta'     => $request->get('tipoConta'),
+                'conta'         => $request->get('conta'),
+                'pix'           => $request->get('pix'),
+            ]);
+
+            $imovel = $editarImovel->where('telefone',$request->get('telefone'))->get()->first();
+            
+        }
+        
+        return redirect()->route('home');*/
+    }
+
 }

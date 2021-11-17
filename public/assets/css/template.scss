@@ -1,5 +1,5 @@
 .icheck-primary{
-    display: none;
+    display: none !important;
 }
 
 .card-footer{
@@ -155,6 +155,15 @@ border-top: 2px dashed #bbb;
 }
 
 .locacao-cadastro a{
+    text-decoration: none;
+    color: #000;
+}
+
+.venda-cadastro .carousel-item img{
+    max-height: 7rem;
+}
+
+.venda-cadastro a{
     text-decoration: none;
     color: #000;
 }

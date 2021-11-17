@@ -4,7 +4,7 @@
     @if (isset($id))
         <input type="hidden" id="cadastrado" value="Sim">
     @endif
-    <form action="{{route('ven-novo-imovel')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ isset($dados) ? route('ven-editar-imovel-post') : route('ven-novo-imovel')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card card-primary">
             <div class="card-header">
@@ -203,9 +203,16 @@
                 </div>
             </div>
             <div class="row align-btn">
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
+                @if (isset($dados))
+                            <div class="card-footer">
+                              <button type="submit" class="btn btn-success">Atualizar</button>
+                            </div> 
+                        @else
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        @endif
+                
             </div>
         </div>
     </form>

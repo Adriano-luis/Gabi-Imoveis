@@ -611,8 +611,8 @@
                                 </div>
                                 </div>
                            
-                                <a href="{{route('loc-editar-imovel', ['idLoc'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
-                                <a href="{{route('loc-editar-cliente',['id'=>$dadosImovel->idLocador])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
+                                <a href="{{route('ven-editar-imovel', ['venId'=>$dadosImovel->id])}}"  class="btn btn-primary imovel-btn-print px-2">Editar</a>
+                                <a href="{{route('ven-editar-cliente',['id'=>$dadosImovel->idVendedor])}}" class="btn btn-primary imovel-btn-print">Proprietário</a>
                             </div>
                         </div>
 
