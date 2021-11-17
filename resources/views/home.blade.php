@@ -2,7 +2,7 @@
 @section('content')
     
   <section class="home">
-    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseLoc" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-ajust btn-primary my-2 col" type="button" data-toggle="collapse" data-target="#collapseLoc" aria-expanded="false" aria-controls="collapseExample">
       Filtros Locação
     </button>
     <div class="collapse" id="collapseLoc">
@@ -114,7 +114,7 @@
       </div>
     </div>
 
-    <button class="btn btn-ajust btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseVenda" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-ajust btn-primary my-2 col" type="button" data-toggle="collapse" data-target="#collapseVenda" aria-expanded="false" aria-controls="collapseExample">
       Filtros Venda
     </button>
     <div class="collapse" id="collapseVenda">
@@ -237,7 +237,7 @@
       </div>
     </div>
 
-    <button class="btn btn-ajust btn-clientes btn-primary my-2" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    <button class="btn btn-ajust btn-clientes btn-primary my-2 col" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
       Filtros Clientes
     </button>
     <div class="collapse" id="collapseExample2">
