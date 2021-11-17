@@ -315,13 +315,13 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressadosLoc" data-toggle="modal" data-target="#enviarModal">
+                                        <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressadosLoc" data-toggle="modal" data-target="#interessadosModal">
                                             Adicionar Interessado
                                         </button>
                                         
                                         <!-- Modal -->
                                         
-                                        <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                        <div class="modal" id="interessadosModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -604,13 +604,13 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
-                                            <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressados" data-toggle="modal" data-target="#enviarModal">
+                                            <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressados" data-toggle="modal" data-target="#interessadosModal">
                                                 Adicionar Interessado
                                             </button>
                                             
                                             <!-- Modal -->
                                             
-                                            <div class="modal" id="enviarModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                            <div class="modal" id="interessadosModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
