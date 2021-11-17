@@ -19,6 +19,9 @@ Route::get('/',function(){
 });
 Route::get('/login/{erro?}','LoginController@index')->name('login');
 Route::post('/login', 'LoginController@autenticar')->name('login');
+Route::get('/suporte',function(){
+    return view('suporte');
+});
 
 Route::middleware('login')->prefix('logged')->group(function (){
     //Home

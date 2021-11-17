@@ -192,8 +192,8 @@ return [
     'logout_url' => 'logout',
     'login_url' => '/login',
     'remember' => null,
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
+    'register_url' => '/suporte',
+    'password_reset_url' => false,
     'password_email_url' => 'password/email',
     'profile_url' => false,
 
