@@ -48,7 +48,7 @@ class ImovelController extends Controller
     }
 
     public function novoInteressado(Request $request){
-
+        dd($request);
         $clientes = Clientes::all();
         
         return $clientes;

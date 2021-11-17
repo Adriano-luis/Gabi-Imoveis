@@ -154,6 +154,42 @@
                                 <p>{{$dadosImovel->andar}}º Andar</p>
                             </div>
                         </div>
+                        <hr class="solid">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="row align-row align-items-center p-2">
+                                    <i class="fas fa-dollar-sign fa-2x"></i>
+                                    <p class="font-weight-bold mx-2 imovel-description">Valores</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                    <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li>
+                                    <li class="list-group-item">
+                                        <?php
+                                            if (isset($dadosImovel->IPTU) && $dadosImovel->IPTU != null){
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null) {
+                                                    echo  'Total: R$'.($dadosImovel->IPTU
+                                                    + $dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else{
+                                                    echo  'Total: R$'.($dadosImovel->IPTU 
+                                                    + $dadosImovel->valor);
+                                                }
+                                            }else{
+                                                if(isset($dadosImovel->valorCondominio) && $dadosImovel->valorCondominio != null ) {
+                                                    echo  'Total: R$'.'<i><b>R$</b></i>'.($dadosImovel->valor
+                                                    + $dadosImovel->valorCondominio);
+                                                }else {
+                                                    echo  'Total: R$'.$dadosImovel->valor;
+                                                }
+                                            }
+                                        ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
                         <hr class="solid">
                         <div class="row">
@@ -416,37 +452,58 @@
                                     <p>{{$dadosImovel->garagem}} vaga(s)</p>
                                 </div>
                                 <div class="px-3 align-icons">
-                                    <i class="fas fa-paw fa-2x"></i>
-                                    <p>{{$dadosImovel->pet}}</p>
-                                </div>
-                                <div class="px-3 align-icons">
                                     <i class="fas fa-building fa-2x"></i>
                                     <p>{{$dadosImovel->andar}}º Andar</p>
                                 </div>
                             </div>
+
                             <hr class="solid">
                             <div class="row">
-                            <div class="col-lg-3">
-                                <div class="row align-row align-items-center p-2">
-                                    <i class="fas fa-home fa-2x"></i>
-                                    <p class="font-weight-bold mx-2 imovel-description">Descrição dos cômodos</p>
+                                <div class="col-lg-3">
+                                    <div class="row align-row align-items-center p-2">
+                                        <i class="fas fa-home fa-2x"></i>
+                                        <p class="font-weight-bold mx-2 imovel-description">Descrição dos cômodos</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Quarto(s): {{$dadosImovel->quarto}}</li>
+                                        <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
+                                        <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
+                                        <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
+                                        <li class="list-group-item">Sala(s) de jantar: {{$dadosImovel->salaJantar}}</li>
+                                        <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
+                                        <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
+                                        <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
+                                        <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
+                                        <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Quarto(s): {{$dadosImovel->quarto}}</li>
-                                    <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
-                                    <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
-                                    <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
-                                    <li class="list-group-item">Sala(s) de jantar: {{$dadosImovel->salaJantar}}</li>
-                                    <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
-                                    <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
-                                    <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
-                                    <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
-                                    <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
-                                </ul>
+
+                            <hr class="solid">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="row align-row align-items-center p-2">
+                                        <i class="fas fa-home fa-2x"></i>
+                                        <p class="font-weight-bold mx-2 imovel-description">Descrição dos cômodos</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Quarto(s): {{$dadosImovel->quarto}}</li>
+                                        <li class="list-group-item">Suite(s): {{$dadosImovel->suite}}</li>
+                                        <li class="list-group-item">Banheiro(s): {{$dadosImovel->banheiro}}</li>
+                                        <li class="list-group-item">Sala(s) de estar: {{$dadosImovel->salaEstar}}</li>
+                                        <li class="list-group-item">Sala(s) de jantar: {{$dadosImovel->salaJantar}}</li>
+                                        <li class="list-group-item">Cozinha(s): {{$dadosImovel->cozinha}}</li>
+                                        <li class="list-group-item">Lavanderia(s): {{$dadosImovel->lavanderia}}</li>
+                                        <li class="list-group-item">Escritório(s): {{$dadosImovel->escritorio}}</li>
+                                        <li class="list-group-item">Jardim(s): {{$dadosImovel->jardim}}</li>
+                                        <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
                             <hr class="solid">
                             <div class="row">
                             <div class="col-lg-3">

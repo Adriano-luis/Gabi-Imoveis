@@ -26,7 +26,7 @@ $(document).ready(function(){
         alert('Cliente Cadastrado');
     }
 
-   /* $('#EnviarWhats').click(function() {
+    $('#EnviarWhats').click(function() {
         id          = $('#NomeClienteModal').val();
         metragem    = $('#TelefoneClienteModal').val();
         quartos     =
@@ -53,7 +53,7 @@ $(document).ready(function(){
             }
         });
 
-    });*/
+    });
 
     $('#btnInteressadosLoc').click(function() {
 
