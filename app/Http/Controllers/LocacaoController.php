@@ -178,6 +178,7 @@ class LocacaoController extends Controller
         $escritorio = $request->get('escritorio');
         $jardim = $request->get('jardim');
         $varanda = $request->get('varanda');
+        $criado = $request->get('criado');
         $request->input('aguaLuz') == 'on'? $aguaLuz = 'Sim': $aguaLuz = 'Nao';
         $rgi = $request->get('rgi');
         $instal = $request->get('instalacao');
@@ -222,6 +223,7 @@ class LocacaoController extends Controller
             $novoImovel-> escritorio = $escritorio;
             $novoImovel-> jardim = $jardim;
             $novoImovel-> varanda = $varanda;
+            $novoImovel-> criado = $criado;
             $novoImovel-> aguaLuzSeparado = $aguaLuz;
             $novoImovel-> RGI = $rgi;
             $novoImovel-> instalacao = $instal;

@@ -98,6 +98,10 @@
                             <input type="number" name="varanda" class="form-control" id="varanda" value="{{isset($dados) ? $dados->varanda: ''}}" placeholder="Varanda/sacada">
                     </div>
                 </div><br>
+                <div class="form-group">
+                    <label name="aguaLuz" class="form-check-label">Cadastro feito em:</label><br>
+                    <input class="form-control col-2" type="date" name="criado" {{isset($dados) ? $dados->criado: ''}}>
+                </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="aguaLuz" {{isset($dados) && $dados->aguaLuzSeparado == 'Sim' ? "checked='checked'": ''}}>
                     <label name="aguaLuz" class="form-check-label">Agua e luz separada?</label>
@@ -186,9 +190,6 @@
             <div class="row align-btn">
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Imprimir</button>
                 </div>
             </div>
         </div>

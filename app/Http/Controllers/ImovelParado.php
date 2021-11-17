@@ -18,9 +18,9 @@ class ImovelParado extends Controller
         $listaVend = [];
         foreach($paradosVend as $parado){
             $hoje = new DateTime("now");
-            $criado = new DateTime("$parado->created_at");
+            $criado = new DateTime("$parado->criado");
             $tempo = $hoje->diff($criado);
-            if($tempo->days > 1){
+            if($tempo->days > 182){
                 array_push($listaVend,$parado);
             }
             
@@ -29,9 +29,9 @@ class ImovelParado extends Controller
         $listaLoc = [];
         foreach($paradosLoc as $parado){
             $hoje = new DateTime("now");
-            $criado = new DateTime("$parado->created_at");
+            $criado = new DateTime("$parado->criado");
             $tempo = $hoje->diff($criado);
-            if($tempo->days > 1){
+            if($tempo->days > 182){
                 array_push($listaLoc,$parado);
             }
             

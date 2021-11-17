@@ -126,7 +126,7 @@
                                 {{$dadosImovel->endereco}}, {{$dadosImovel->numero}}
                                 | {{$dadosImovel->bairro}} - {{$dadosImovel->municipio}} 
                             </p>
-                            <p class="text-muted">{{$dadosImovel->created_at}}</p>
+                            <p class="text-muted">{{$dadosImovel->criado}}</p>
                         </div>
                         <div class="row">
                             <div class="px-3 align-icons">

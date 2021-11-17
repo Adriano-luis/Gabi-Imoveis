@@ -184,6 +184,7 @@ class VendaController extends Controller
         $escritorio         = $request->get('escritorio');
         $jardim             = $request->get('jardim');
         $varanda            = $request->get('varanda');
+        $criado = $request->get('criado');
         $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
         $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
         $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
@@ -227,6 +228,7 @@ class VendaController extends Controller
             $novoImovel-> escritorio = $escritorio;
             $novoImovel-> jardim = $jardim;
             $novoImovel-> varanda = $varanda;
+            $novoImovel-> criado = $criado;
             $novoImovel-> contrato = $contrato;
             $novoImovel-> escritura = $escritura;
             $novoImovel-> contratoPoss = $contratoPoss;
