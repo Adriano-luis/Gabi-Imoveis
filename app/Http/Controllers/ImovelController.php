@@ -31,21 +31,6 @@ class ImovelController extends Controller
         
     }
 
-    public function enviar(Request $request){
-        $idLoc = $request->get('envioLoc');
-        $idVen = $request->get('envioVen');
-        $telefone = $request->get('telefoneEnvio');
-
-        if($idLoc != null ){
-            $imovel = LocacaoImoveis::find($idLoc);
-            $URL = "http://wa.me/$telefone?text=valor:%20$imovel->valor%20interesse%20no%20carro%20anunciado";
-            dd($URL);
-        }else{
-            $imovel = VendaImoveis::find($idVen);
-            $URL = "http://wa.me/$telefone?text=valor:%20$imovel->valor%20interesse%20no%20carro%20anunciado";
-            dd($URL);
-        }
-    }
 
     public function novoInteressado(Request $request){
         dd($request);

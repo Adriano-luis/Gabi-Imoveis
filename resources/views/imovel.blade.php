@@ -213,6 +213,26 @@
                                     <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
                                 </ul>
                             </div>
+
+                                <input type="hidden" id="NomeClienteModalLoc" value="{{$dadosImovel->id}}">
+                                <input type="hidden" id="valorLoc" value="{{$dadosImovel->valor}}">
+                                <input type="hidden" id="enderecoLoc" value="{{$dadosImovel->endereco}}">
+                                <input type="hidden" id="bairroLoc" value="{{$dadosImovel->bairro}}">
+                                <input type="hidden" id="numeroLoc" value="{{$dadosImovel->numero}}">
+                                <input type="hidden" id="municipioLoc" value="{{$dadosImovel->municipio}}">
+                                <input type="hidden" id="complementoLoc" value="{{$dadosImovel->complemento}}">
+                                <input type="hidden" id="condominioLoc" value="{{$dadosImovel->condominio}}">
+                                <input type="hidden" id="andarLoc" value="{{$dadosImovel->andar}}">
+                                <input type="hidden" id="quartosLoc" value="{{$dadosImovel->quarto}}">
+                                <input type="hidden" id="suitesLoc" value="{{$dadosImovel->suite}}">
+                                <input type="hidden" id="banheirosLoc" value="{{$dadosImovel->banheiro}}">
+                                <input type="hidden" id="salaEstarLoc" value="{{$dadosImovel->salaEstar}}">
+                                <input type="hidden" id="salaJantarLoc" value="{{$dadosImovel->salaJantar}}">
+                                <input type="hidden" id="cozinhaLoc" value="{{$dadosImovel->cozinha}}">
+                                <input type="hidden" id="lavanderiaLoc" value="{{$dadosImovel->lavanderia}}">
+                                <input type="hidden" id="escritorioLoc" value="{{$dadosImovel->escritorio}}">
+                                <input type="hidden" id="jardimLoc" value="{{$dadosImovel->jardim}}">
+                                <input type="hidden" id="varandaLoc" value="{{$dadosImovel->varanda}}">
                         </div>
                         <hr class="solid">
                         <div class="row align-row">
@@ -330,16 +350,13 @@
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <form action="{{route('interessados-salvar')}}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden"  name="interessadoSalvaLoc" value="{{$dadosImovel->id}}">
-                                                        <div class="modal-body">
-                                                            <select name="InteressadosLoc" id="interessadosLoc" class="col"></select>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
-                                                        </div>
-                                                    </form>
+                                                    <input type="hidden"  name="interessadoSalvaLoc" value="{{$dadosImovel->id}}">
+                                                    <div class="modal-body">
+                                                        <select name="InteressadosLoc" id="interessadosLoc" class="col"></select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div><!-- /.card-body -->
@@ -366,16 +383,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('enviarWhats')}}" method="POST">
-                                            @csrf
-                                            <input type="hidden" id="envioLoc" name="envioLoc" value="{{$dadosImovel->id}}">
-                                            <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
-                                            <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                        <input type="hidden" id="envioLoc" name="envioLoc" value="{{$dadosImovel->id}}">
+                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                        <input type="text"  class="form-control" name="telefoneEnvio" id="TelefoneClienteModalLoc"  placeholder="Ex:55011912345678"><br>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                        <button type="submit" class="btn btn-primary" id="EnviarWhatsLoc">Salvar</button>
                                     </div>
-                                        </form>
                                     </div>
                                 </div>
                                 </div>
@@ -503,6 +517,25 @@
                                         <li class="list-group-item">Varanda(s): {{$dadosImovel->varanda}}</li>
                                     </ul>
                                 </div>
+                                <input type="hidden" id="NomeClienteModalVen" value="{{$dadosImovel->id}}">
+                                <input type="hidden" id="valorVen" value="{{$dadosImovel->valor}}">
+                                <input type="hidden" id="enderecoVen" value="{{$dadosImovel->endereco}}">
+                                <input type="hidden" id="bairroVen" value="{{$dadosImovel->bairro}}">
+                                <input type="hidden" id="numeroVen" value="{{$dadosImovel->numero}}">
+                                <input type="hidden" id="municipioVen" value="{{$dadosImovel->municipio}}">
+                                <input type="hidden" id="complementoVen" value="{{$dadosImovel->complemento}}">
+                                <input type="hidden" id="condominioVen" value="{{$dadosImovel->condominio}}">
+                                <input type="hidden" id="andarVen" value="{{$dadosImovel->andar}}">
+                                <input type="hidden" id="quartosVen" value="{{$dadosImovel->quarto}}">
+                                <input type="hidden" id="suitesVen" value="{{$dadosImovel->suite}}">
+                                <input type="hidden" id="banheirosVen" value="{{$dadosImovel->banheiro}}">
+                                <input type="hidden" id="salaEstarVen" value="{{$dadosImovel->salaEstar}}">
+                                <input type="hidden" id="salaJantarVen" value="{{$dadosImovel->salaJantar}}">
+                                <input type="hidden" id="cozinhaVen" value="{{$dadosImovel->cozinha}}">
+                                <input type="hidden" id="lavanderiaVen" value="{{$dadosImovel->lavanderia}}">
+                                <input type="hidden" id="escritorioVen" value="{{$dadosImovel->escritorio}}">
+                                <input type="hidden" id="jardimVen" value="{{$dadosImovel->jardim}}">
+                                <input type="hidden" id="varandaVen" value="{{$dadosImovel->varanda}}">
                             </div>
                             <hr class="solid">
                             <div class="row">
@@ -619,16 +652,13 @@
                                                             <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <form action="{{route('interessados-salvar')}}" method="POST">
-                                                            @csrf
-                                                            <input type="hidden"  name="interessadoSalvaVen" value="{{$dadosImovel->id}}">
-                                                            <div class="modal-body">
-                                                                <select name="InteressadosVen" id="interessadosVen" class="col"></select>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-primary" id="EnviarWhats">Adiconar</button>
-                                                            </div>
-                                                        </form>
+                                                        <input type="hidden"  name="interessadoSalvaVen" value="{{$dadosImovel->id}}">
+                                                        <div class="modal-body">
+                                                            <select name="InteressadosVen" id="interessadosVen" class="col"></select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary" id="EnviarWhats">Adiconar</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -654,16 +684,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('enviarWhats')}}" method="POST">
-                                            @csrf
-                                            <input type="hidden" id="envioVen" name="envioVen" value="{{$dadosImovel->id}}">
-                                            <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
-                                            <input type="text"  class="form-control" name="telefoneEnvio"  placeholder="Ex:55011912345678"><br>
+                                        <input type="hidden" id="envioVen" name="envioVen" value="{{$dadosImovel->id}}">
+                                        <span>O número deve conter o código do país, DDD e o digíto 9 junto sem contar espaços ou caracteres especiais.</span>
+                                        <input type="text"  class="form-control" name="telefoneEnvio" id="TelefoneClienteModalVen"  placeholder="Ex:55011912345678"><br>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
+                                        <button type="submit" class="btn btn-primary" id="EnviarWhatsVen">Salvar</button>
                                     </div>
-                                        </form>
                                     </div>
                                 </div>
                                 </div>
@@ -714,4 +741,6 @@
             </div>
         </div>
     </section>
+
+    
 @endsection
