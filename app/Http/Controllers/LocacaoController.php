@@ -65,7 +65,7 @@ class LocacaoController extends Controller
 
         }else{
             $locador = 'Já existe um cadastro!';
-            return view('locacao-cadastro',['existeLocador'=>$locador]);
+            return view('locacao-cadastro-cliente',['existeLocador'=>$locador]);
         }
             
 
