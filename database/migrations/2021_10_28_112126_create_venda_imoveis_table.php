@@ -37,6 +37,7 @@ class CreateVendaImoveisTable extends Migration
             $table->integer('jardim');
             $table->integer('varanda');
             $table->date('criado');
+            $table->date('atualizado');
             $table->string('contrato');
             $table->string('escritura');
             $table->string('contratoPoss');

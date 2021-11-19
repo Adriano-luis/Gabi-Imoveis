@@ -37,6 +37,7 @@ class CreateLocacaoImoveisTable extends Migration
             $table->integer('jardim');
             $table->integer('varanda');
             $table->date('criado');
+            $table->date('atualizado');
             $table->string('aguaLuzSeparado');
             $table->string('RGI');
             $table->integer('instalacao');
