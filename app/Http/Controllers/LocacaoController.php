@@ -281,7 +281,7 @@ class LocacaoController extends Controller
         }
 
         
-        $dados = LocacaoImoveis::latest()->get()->first(); 
+        $dados = LocacaoImoveis::where('id',$novoImovel->id)->get()->first(); 
         return view('imovel',['dadosImovel'=>$dados]);
 
     }

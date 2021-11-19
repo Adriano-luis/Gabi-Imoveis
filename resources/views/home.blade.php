@@ -500,7 +500,7 @@
                     @endif
                     <br>{{ isset($ray) && $ray == 'sim' ? $imovel['bairro']:$imovel->bairro}} | {{isset($ray) && $ray == 'sim' ? $imovel['municipio']:$imovel->municipio}}
                   </span>
-                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['created_at']:$imovel->created_at}} </span>
+                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['criado']:$imovel->criado}} </span>
                 </div>
               </div>
               <div class="card-body">

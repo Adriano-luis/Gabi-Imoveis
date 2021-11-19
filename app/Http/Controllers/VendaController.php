@@ -289,7 +289,7 @@ class VendaController extends Controller
         }
         
 
-        $dados = VendaImoveis::latest()->get()->first(); 
+        $dados = VendaImoveis::where('id',$novoImovel->id)->get()->first(); 
         return view('imovel',['dadosImovel'=>$dados]);
 
     }
