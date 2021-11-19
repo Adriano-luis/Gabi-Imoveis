@@ -451,8 +451,8 @@
                     <div class="px-3 btn valorTotal">
                       <b>
                       <?php
-                        if ((isset($imovel->IPTU) && $imovel->IPTU != null) || (isset($ray) && $ray == 'sim' && $imovel['IPTU'] != null)){
-                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                        if ((isset($imovel->IPTU) && $imovel->IPTU != null) || (isset($ray) && $ray == 'sim' && isset($imovel['IPTU']) && $imovel['IPTU'] != null)){
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && isset($imovel['valorCondominio']) && $imovel['valorCondominio'] != null)) {
                             echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU)
                             + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
                             + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
@@ -461,7 +461,7 @@
                             + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor));
                           }
                         }else{
-                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
+                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && isset($imovel['valorCondominio']) && $imovel['valorCondominio'] != null)) {
                             echo  'Total: R$'.'<i><b>R$</b></i>'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor) 
                             + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
                           }else {
