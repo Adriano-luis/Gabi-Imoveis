@@ -206,7 +206,7 @@ class VendaController extends Controller
         //salvando no DB
         $novoImovel = new VendaImoveis();
         $existeImovel = $novoImovel->where('nomeCondominio',$nomeCondo)->first();
-        if($existeImovel == ''){
+        //if($existeImovel == ''){
             $novoImovel-> idVendedor = $id;
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
@@ -283,10 +283,10 @@ class VendaController extends Controller
 
             $novoImovel->save();
 
-        } else{
+        /*} else{
             $imovel = 'Imovel já cadastrado!';
             return view('venda-cadastro',['existeImovel'=>$imovel,'id'=>$id]);
-        }
+        }*/
         
 
         $dados = VendaImoveis::where('id',$novoImovel->id)->get()->first(); 

@@ -201,7 +201,7 @@ class LocacaoController extends Controller
         //salvando no DB
         $novoImovel = new LocacaoImoveis();
         $existeImovel = $novoImovel->where('RGI',$rgi)->first();
-        if($existeImovel == ''){
+        //if($existeImovel == ''){
             $novoImovel-> idLocador = $id;
             $novoImovel-> valor = $valor;
             $novoImovel-> endereco = $enderecoImovel;
@@ -275,10 +275,10 @@ class LocacaoController extends Controller
             
             $novoImovel->save();
 
-        } else{
+        /*} else{
             $imovel = 'Imovel já cadastrado!';
             return view('locacao-cadastro',['existeImovel'=>$imovel,'id'=>$id]);
-        }
+        }*/
 
         
         $dados = LocacaoImoveis::where('id',$novoImovel->id)->get()->first(); 
