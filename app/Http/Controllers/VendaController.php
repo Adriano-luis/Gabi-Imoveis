@@ -90,21 +90,36 @@ class VendaController extends Controller
     }
 
     public function editarcliente(Request $request){
-        $telefone = $request->get('telefone');
-        if(!isset($telefone) || $telefone == ''){
+        $nome = $request->get('nome');
+        if(!isset($nome) || $nome == ''){
             return redirect()->back();
         }
 
         $editarCliente = new Vendedor();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
+        $cliente = $editarCliente->where('nome','like','%'.$nome.'%')->get();
         if($cliente != ''){
-            $imoveis = VendaImoveis::where('idVendedor',$cliente->id)->get();
-            return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
+            return view('lista-venda-cadastro-cliente',['clientes'=>$cliente]);
         } else{
             return redirect()->back();
         }
 
         
+    }
+
+    public function listaClietesAsPropri(Request $request){
+        $id = $request->get('id');
+        if(!isset($id) || $id == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Vendedor();
+        $cliente = $editarCliente->where('id',$id)->get()->first();
+        if($cliente != ''){
+            $imoveis = VendaImoveis::where('idVendedor',$cliente->id)->get();
+            return view('venda-cadastro-cliente',['dados'=>$cliente,'imoveisV'=>$imoveis]);
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function editarclientePost(Request $request){

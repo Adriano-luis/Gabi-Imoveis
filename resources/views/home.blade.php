@@ -238,7 +238,7 @@
     </div>
 
     <button class="btn btn-ajust btn-clientes btn-primary my-2 col" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-      Filtros Clientes
+      Proprietários
     </button>
     <div class="collapse" id="collapseExample2">
       <div class="card card-body position">
@@ -247,8 +247,8 @@
             @csrf
             <div class="card-body">
                 <div class="form-group col-lg-4">
-                    <label for="telefone">Locação: Telefone do Locador</label>
-                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
+                    <label for="nome">Locação:</label>
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" >
                 </div> 
             </div>
             <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>
@@ -257,8 +257,8 @@
             @csrf
             <div class="card-body">
                 <div class="form-group col-lg-4">
-                    <label for="telefone">Venda: Telefone do Proprietário</label>
-                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="(dd)x xxxx-xxxx" >
+                    <label for="nome">Venda:</label>
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" >
                 </div> 
             </div>
             <button class="btn btn-size float-right btn-primary" type="submit"><h5>Buscar</h5></button>

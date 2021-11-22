@@ -42,6 +42,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/locacao/cadastrar-cliente','LocacaoController@novoclientePost')->name('loc-novo-cliente');
     Route::get('/locacao/editar-cliente','LocacaoController@verCliente')->name('loc-editar-cliente');
     Route::post('/locacao/editar-cliente','LocacaoController@editarcliente')->name('loc-editar-cliente');
+    Route::get('/locacao/lista-cliente','LocacaoController@listaClietesAsPropri')->name('loc-lista-editar-cliente');
     Route::post('/locacao/editar-cliente/post','LocacaoController@editarclientePost')->name('loc-editar-cliente-post');
     Route::get('/locacao/editar-imovel','LocacaoController@editarimovel')->name('loc-editar-imovel');
     Route::post('/locacao/editar-imovel','LocacaoController@editarImovelPost')->name('loc-editar-imovel-post');
@@ -53,6 +54,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::post('/venda/cadastrar-cliente','VendaController@novoclientePost')->name('ven-novo-cliente');
     Route::get('/venda/editar-cliente','VendaController@verCliente')->name('ven-editar-cliente');
     Route::post('/venda/editar-cliente','VendaController@editarcliente')->name('ven-editar-cliente');
+    Route::get('/venda/lista-cliente','VendaController@listaClietesAsPropri')->name('ven-lista-editar-cliente');
     Route::post('/venda/editar-cliente/post','VendaController@editarclientePost')->name('ven-editar-cliente-post');
     Route::get('/venda/editar-imovel','VendaController@editarimovel')->name('ven-editar-imovel');
     Route::post('/venda/editar-imovel','VendaController@editarImovelPost')->name('ven-editar-imovel-post');

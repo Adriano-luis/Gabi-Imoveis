@@ -90,21 +90,36 @@ class LocacaoController extends Controller
     }
 
     public function editarcliente(Request $request){
-        $telefone = $request->get('telefone');
-        if(!isset($telefone) || $telefone == ''){
+        $nome = $request->get('nome');
+        if(!isset($nome) || $nome == ''){
             return redirect()->back();
         }
 
         $editarCliente = new Locator();
-        $cliente = $editarCliente->where('telefone',$telefone)->get()->first();
+        $cliente = $editarCliente->where('nome','like','%'.$nome.'%')->get();
         if($cliente != ''){
-            $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
-            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
+            return view('lista-locacao-cadastro-cliente',['clientes'=>$cliente]);
         } else{
             return redirect()->back();
         }
 
         
+    }
+
+    public function listaClietesAsPropri(Request $request){
+        $id = $request->get('id');
+        if(!isset($id) || $id == ''){
+            return redirect()->back();
+        }
+
+        $editarCliente = new Locator();
+        $cliente = $editarCliente->where('id',$id)->get()->first();
+        if($cliente != ''){
+            $imoveis = LocacaoImoveis::where('idLocador',$cliente->id)->get();
+            return view('locacao-cadastro-cliente',['dados'=>$cliente,'imoveis'=>$imoveis]);
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function editarclientePost(Request $request){
