@@ -278,7 +278,7 @@
             <a href="{{route('imovel',['locId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
-            <div class="card card-widget">
+            <div class="card card-widget <?php if(isset($ray) && isset($ray) && $ray == 'sim'){if($imovel['disponivel'] != 'Sim'){echo 'home-card-alugado';}}else{if($imovel->disponivel != 'Sim'){echo 'home-card-alugado';}}?>">
               <div class="card-header imoveisCard">
                 <div class="user-block">
                   <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>
@@ -490,7 +490,7 @@
             <a href="{{route('imovel',['venId'=>$imovel->id])}}"> 
           @endif
           <div class="col-md-3">
-            <div class="card card-widget">
+            <div class="card card-widget <?php if(isset($ray) && isset($ray) && $ray == 'sim'){if($imovel['disponivel'] != 'Sim'){echo 'home-card-alugado';}}else{if($imovel->disponivel != 'Sim'){echo 'home-card-alugado';}}?>">
               <div class="card-header imoveisCard">
                 <div class="user-block">
                   <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>

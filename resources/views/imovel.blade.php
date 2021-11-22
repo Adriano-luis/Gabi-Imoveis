@@ -408,6 +408,7 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Aluguel: R${{$dadosImovel->valor}}</li>
+                                    <li class="list-group-item">Disponível: {{$dadosImovel->disponivel =='Sim'? 'Livre':'Ocupado'}}</li>
                                     @if ($dadosImovel->condominio == 'Sim')
                                         <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
                                     @endif
@@ -710,6 +711,7 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Valor: R${{$dadosImovel->valor}}</li>
+                                    <li class="list-group-item">Disponível: {{$dadosImovel->disponivel =='Sim'? 'Livre':'Ocupado'}}</li>
                                     @if ($dadosImovel->condominio == 'Sim')
                                         <li class="list-group-item">Condomínio: R${{$dadosImovel->valorCondominio}}</li> 
                                     @endif

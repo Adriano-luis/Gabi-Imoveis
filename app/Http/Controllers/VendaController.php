@@ -362,6 +362,7 @@ class VendaController extends Controller
             $andar              = $request->get('andar');
             $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
             $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
+            $request->input('disponivel') == 'on'? $disponivel = 'Sim': $disponivel = 'Nao';
             $descImovel         = $request->get('descricaoImovel');
             $descMobilha        = $request->get('descricaoMobilia');
             $descCond           = $request->get('descricaoCond');
@@ -410,7 +411,7 @@ class VendaController extends Controller
             $imovel-> sobreMobilia = $descMobilha;
             $imovel-> sobreCondominio = $descCond;
             $imovel-> observacoes = $obs;
-            $imovel-> disponivel = 'Sim';
+            $imovel-> disponivel = $disponivel;
             if ($request->hasFile('upFotos')){
                 $aux = 1;
                 foreach ($request->file('upFotos') as $imagem){

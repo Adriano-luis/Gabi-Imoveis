@@ -176,6 +176,12 @@
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
                 </div>
                 <br>
+                @if (isset($dados))
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disponivel" {{isset($dados) && $dados->disponivel == 'Sim' ? "checked='checked'": ''}}>
+                        <label name="pet" class="form-check-label">Disponível?</label>
+                    </div>
+                @endif
             </div>
         </div>
         

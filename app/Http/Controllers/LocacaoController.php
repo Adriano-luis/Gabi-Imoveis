@@ -355,6 +355,7 @@ class LocacaoController extends Controller
             $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
             $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
             $request->input('resiCheck') == 'on'? $resi = 'residencial': $resi = 'nResidencial';
+            $request->input('disponivel') == 'on'? $disponivel = 'Sim': $disponivel = 'Nao';
             $descImovel = $request->get('descricaoImovel');
             $descMobilha = $request->get('descricaoMobilia');
             $descCond = $request->get('descricaoCond');
@@ -400,7 +401,7 @@ class LocacaoController extends Controller
             $imovel-> sobreMobilia = $descMobilha;
             $imovel-> sobreCondominio = $descCond;
             $imovel-> observacoes = $obs;
-            $imovel-> disponivel = 'Sim';
+            $imovel-> disponivel = $disponivel;
             if ($request->hasFile('upFotos')){
                 $aux = 1;
                 foreach ($request->file('upFotos') as $imagem){
