@@ -351,7 +351,7 @@ class LocacaoController extends Controller
             $nomeCondo = $request->get('condominioNome');
             $valorCondo = $request->get('condominioVal');
             $andar = $request->get('andar');
-            $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
+            $request->input('individual') == 'on'? $individual = 'Sim': $individual = 'Nao';
             $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
             $request->input('pet') == 'on'? $pet = 'Sim': $pet = 'Nao';
             $request->input('resiCheck') == 'on'? $resi = 'residencial': $resi = 'nResidencial';

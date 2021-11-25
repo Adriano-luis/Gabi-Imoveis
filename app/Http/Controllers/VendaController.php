@@ -360,7 +360,7 @@ class VendaController extends Controller
             $nomeCondo          = $request->get('condominioNome');
             $valorCondo         = $request->get('condominioVal');
             $andar              = $request->get('andar');
-            $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
+            $request->input('individual') == 'on'? $individual = 'Sim': $individual = 'Nao';
             $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
             $request->input('disponivel') == 'on'? $disponivel = 'Sim': $disponivel = 'Nao';
             $descImovel         = $request->get('descricaoImovel');
