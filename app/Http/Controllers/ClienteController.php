@@ -45,13 +45,13 @@ class ClienteController extends Controller
     }
 
     public function buscaCliente(Request $request){
-        $telefone = $request->get('telefonePesquisa');
-        if(!isset($telefone) || $telefone == ''){
+        $nome = $request->get('nome');
+        if(!isset($nome) || $nome == ''){
             return redirect()->back();
         }
 
         $cliente = new Clientes();
-        $cliente = $cliente->where('telefone',$telefone)->get();
+        $cliente = $cliente->where('nome','like','%'.$nome.'%')->get();
         if($cliente != ''){
             return view('lista-clientes',['clientes'=>$cliente]); 
         } else{

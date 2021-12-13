@@ -8,7 +8,7 @@
                     @csrf
                     <div class="row" style="margin-top: 0.5rem">
                         <div class="form-group col-8">
-                            <input type="text" class="form-control" name="telefonePesquisa" placeholder="(dd)x xxxx-xxxx">
+                            <input type="text" class="form-control" name="nome" placeholder="Nome">
                         </div>
                         
                         <div class="col-4">
@@ -31,11 +31,11 @@
                     <!-- <th>Endereço</th> -->
                     <th>Bairro</th>
                     <!-- <th>m²</th> -->
-                    <!-- <th>Comod.</th> -->
+                    <th>Comod.</th>
                     <th>Quartos</th>
                     <th>Indivi.</th>
                     <!--<th>Condo.</th> -->
-                    <th>Mobi.</th>
+                    <!--<th>Mobi.</th>-->
                     <th>Meses</th>
                     <th>Observações</th>
                     <th>Disp.</th>
@@ -53,11 +53,11 @@
                         <!-- <td>$cliente->endereco</td> -->
                         <td>{{$cliente->bairro}}</td>
                         <!-- <td>$cliente->metragemTotal</td> -->
-                        <!-- <td>$cliente->qtComodos</td> -->
+                        <td>{{$cliente->qtComodos}}</td>
                         <td>{{$cliente->quarto}}</td>
                         <td>{{$cliente->individual}}</td>
                         <!-- <td>$cliente->condominio</td> -->
-                        <td>{{$cliente->mobilhado}}</td>
+                        <!--<td>{{$cliente->mobilhado}}</td>-->
                         <?php $dias = $cliente->created_at->diff(date('Y/m/d H:i')); ?>
                         <td>{{$dias->m}}</td>
                         <td>Observações gerais</td>

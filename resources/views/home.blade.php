@@ -407,7 +407,18 @@
                     <i class="fas fa-ruler-combined pt-2"></i>
         
                     <span class="username px-3">
-                      {{isset($ray) && $ray == 'sim' ? $imovel['metragemTotal']:$imovel->metragemTotal}} m²
+                      <?php
+                        if(isset($ray) && $ray == 'sim'){
+                          if (!array_key_exists("metragemTotal", $imovel)) {
+                            echo 'Sem metragem';
+                          }else{
+                            echo $imovel['metragemTotal'].'m²';
+                          }
+
+                        }else{
+                          echo $imovel->metragemTotal.'m²';
+                        }
+                      ?>
                     </span>
                   </div><br>
                   <div class="d-flex">
