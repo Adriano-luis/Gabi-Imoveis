@@ -179,6 +179,7 @@ border-top: 2px dashed #bbb;
     outline: none;
     height: 2.0625rem;
     width: 16rem;
+    border-bottom:1px solid #000;
 }
 
 

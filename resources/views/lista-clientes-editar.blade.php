@@ -68,7 +68,7 @@
                 </div>
             </div><br>
             <label for="obs">Observações</label>
-            <input type="text" class="form-control" name="obs" id="obs" value="$cliente->observacoes"><br>
+            <input type="text" class="form-control" name="obs" id="obs" value="{{$cliente->observacoes}}"><br>
             <div class="row">
                 <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" name="individualCheck" {{$cliente->individual == 'Sim' ? "checked='checked'":''}}>

@@ -33,6 +33,7 @@ Route::middleware('login')->prefix('logged')->group(function (){
     Route::get('/lista-cliente','ClienteController@index')->name('cliente');
     Route::get('/cadastro-rapido-busca','ClienteController@busca')->name('cliente-busca');
     Route::get('/lista-cliente/editar','ClienteController@editar')->name('cliente-editar');
+    Route::get('/lista-cliente/excluir','ClienteController@excluir')->name('cliente-excluir');
     Route::post('/lista-cliente/busca','ClienteController@buscaCliente')->name('cliente-busca-pagina');
 
     // Cadastros Locação

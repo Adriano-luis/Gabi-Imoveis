@@ -40,7 +40,7 @@ class HomeController extends Controller
         $qtComodos = $request->get('qtCom');
         $qtQuarto = $request->get('qtQuartos');
         //$qtBanheiro = $request->get('qtBanheiros');
-        //$qtVagas = $request->get('qtVagas');
+        $qtVagas = $request->get('qtVagas');
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('condominioCheck') == 'on'? $condo = 'Sim': $condo = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
@@ -97,12 +97,12 @@ class HomeController extends Controller
                 if($qtBanheiro != null){
                     $query->where('banheiro',$qtBanheiro);
                 }
-            })
-            >where(function($query) use ($qtVagas){
+            })*/
+            ->where(function($query) use ($qtVagas){
                 if($qtVagas != null){
                     $query->where('garagem',$qtVagas);
                 }
-            })*/
+            })
             ->where(function($query) use ($individual){
                 if($individual != 'Nao'){
                     $query->where('individual',$individual);
@@ -184,12 +184,12 @@ class HomeController extends Controller
                 if($qtBanheiro != null){
                     $query->where('banheiro',$qtBanheiro);
                 }
-            })
+            })*/
             ->where(function($query) use ($qtVagas){
                 if($qtVagas != null){
                     $query->where('garagem',$qtVagas);
                 }
-            })*/
+            })
             ->where(function($query) use ($individual){
                 if($individual != 'Nao'){
                     $query->where('individual',$individual);

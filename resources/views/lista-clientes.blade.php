@@ -60,10 +60,11 @@
                         <!--<td>{{$cliente->mobilhado}}</td>-->
                         <?php $dias = $cliente->created_at->diff(date('Y/m/d H:i')); ?>
                         <td>{{$dias->m}}</td>
-                        <td>Observações gerais</td>
+                        <td>{{$cliente->observacoes}}</td>
                         <td>{{$cliente->disponivel}}</td>
                         
-                        <td><a href="{{route('cliente-editar', ['id'=>$cliente->id])}}">Editar</a> - <a href="{{route('cliente-busca',['id'=>$cliente->id])}}">Buscar</a> </td>
+                        <td><a href="{{route('cliente-editar', ['id'=>$cliente->id])}}">Editar</a> - <a href="{{route('cliente-busca',['id'=>$cliente->id])}}">Buscar</a>
+                           -  <a href="{{route('cliente-excluir',['id'=>$cliente->id])}}">Excluir</a> </td>
                     </tr>
                 @endforeach
             </tbody>

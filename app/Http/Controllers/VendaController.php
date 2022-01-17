@@ -40,7 +40,7 @@ class VendaController extends Controller
 
         //salvando no DB
         $novoVendedor =  new Vendedor();
-        $existeVendedor = $novoVendedor->where('CPF',$cpf)->get()->first();
+        $existeVendedor = $novoVendedor->where('telefone',$telefone)->get()->first();
         if($existeVendedor == ''){
             $novoVendedor-> nome = $nome;
             $novoVendedor-> endereco = $enderecoVendedor;
@@ -61,7 +61,7 @@ class VendaController extends Controller
             $novoVendedor-> pix = $pix;
             $novoVendedor->save();
 
-            $vendedor = $novoVendedor->where('CPF',$cpf)->get()->first();
+            $vendedor = $novoVendedor->where('telefone',$telefone)->get()->first();
             $idVendedor = $vendedor->id;
 
         }else{

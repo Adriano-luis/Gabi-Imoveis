@@ -74,18 +74,14 @@
                         <label for="qtCom">Quatidade de comodos</label>
                         <input type="number" name="qtCom" class="form-control" id="qtCom" placeholder="Quatidade de comodos">
                     </div>
-                    <div class="form-group mx-3">
-                        <label for="qtQuarto">Quatidade de quarto</label>
-                        <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
-                    </div>
                     <!-- <div class="form-group mx-3">
                         <label for="qtBanheiros">Quatidade de banheiro</label>
                         <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
-                    </div> 
+                    </div> -->
                     <div class="form-group mx-3">
                         <label for="qtVagas">Quatidade de vagas de garagem</label>
                         <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
-                    </div> -->
+                    </div> 
                 </div><br>
                 <div class="row">
                 <div class="form-check mx-3">
@@ -197,18 +193,14 @@
                         <label for="qtCom">Quatidade de comodos</label>
                         <input type="number" name="qtCom" class="form-control" id="qtCom" placeholder="Quatidade de comodos">
                     </div>
-                    <div class="form-group mx-3">
-                        <label for="qtQuarto">Quatidade de quarto</label>
-                        <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" placeholder="Quatidade de quartos">
-                    </div>
                     <!-- <div class="form-group mx-3">
                         <label for="qtBanheiros">Quatidade de banheiro</label>
                         <input type="number" name="qtBanheiros" class="form-control" id="qtBanheiros" placeholder="Quatidade de banheiro">
-                    </div> 
+                    </div> -->
                     <div class="form-group mx-3">
                         <label for="qtVagas">Quatidade de vagas de garagem</label>
                         <input type="number" name="qtVagas" class="form-control" id="qtVagas" placeholder="Qtd de vagas de garagem">
-                    </div> -->
+                    </div>
                 </div><br>
                 <div class="row">
                 <div class="form-check mx-3">
@@ -270,6 +262,9 @@
     <!-- Card do imóvel -->
 
     @if (isset($imoveis))
+    <div style=" padding-right:10px; text-align: end">
+     Total: <?php echo count($imoveis); ?>
+    </div><br>
       <div class="row">
         @foreach ($imoveis as $imovel)
           @if (isset($ray) && isset($ray) && $ray == 'sim')
@@ -493,6 +488,9 @@
     @endif
 
     @if (isset($imoveisV))
+    <div style=" padding-right:10px; text-align: end">
+      Total: <?php echo count($imoveisV); ?>
+     </div><br>
       <div class="row">
         @foreach ($imoveisV as $imovel)
           @if (isset($ray) && isset($ray) && $ray == 'sim')

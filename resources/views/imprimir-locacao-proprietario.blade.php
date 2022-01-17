@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content')
-<section class="imprimir">
+<section class="imprimir" style="font-size:20px">
     <form action="">
         <h2 class="alinhamento-titulo"><b>AUTORIZAÇÃO DE LOCAÇÃO DE IMÓVEL</b></h2>
         <section class="alinhamento-texto">
@@ -34,7 +34,7 @@
             Endereço: <input style='width: 70%' value="{{$locador->endereco}}"> n° <input style='width: 4rem' value="{{$locador->numero}}"><br>
             Estado Civil: <input style='width: auto' value="{{$locador->estadoCivil}}"> Profissão: <input style='width: auto' value="{{$locador->profissao}}"><br>
             CPF: <input style='width: auto' value="{{$locador->CPF}}"> RG: <input style='width: auto' value="{{$locador->RG}}"><br>
-            Telefone: <input style='width: 6.4rem' value="{{$locador->telefone}}">
+            Telefone: <input style='width: 6.4rem' value="{{$locador->telefone}}"><br><br>
                 <h4 class="alinhamento"><b>Conta bancária</b></h4>
             Banco: <input style='width: auto' value="{{$locador->banco}}"> Agência: <input style='width: auto' value="{{$locador->agencia}}"><br>
                 Corrente/Poupança: <input style='width: auto' value="{{$locador->tipoConta}}"> N° conta: <input style='width: auto' value="{{$locador->conta}}"><br>

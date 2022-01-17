@@ -37,7 +37,7 @@ class ImprimirController extends Controller
             if($imovel == null){
                 return redirect()->back();
             }
-            $vendedor =  Locator::where('id',$imovel->idVendedor)->get()->first();
+            $vendedor =  Vendedor::where('id',$imovel->idVendedor)->get()->first();
 
             return view('imprimir-venda-proprietario',['imovel'=>$imovel,'vendedor'=>$vendedor]);
         }

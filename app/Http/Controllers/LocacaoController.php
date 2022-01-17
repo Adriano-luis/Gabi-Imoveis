@@ -38,7 +38,7 @@ class LocacaoController extends Controller
 
         //salvando no DB
         $novoLocador =  new Locator();
-        $existeLocador = $novoLocador->where('CPF',$cpf)->first();
+        $existeLocador = $novoLocador->where('telefone',$telefone)->first();
         if($existeLocador == ''){
             $novoLocador-> nome = $nome;
             $novoLocador-> endereco = $enderecoLocador;
@@ -59,7 +59,7 @@ class LocacaoController extends Controller
             $novoLocador-> pix = $pix;
             $novoLocador->save();
 
-            $locador = $novoLocador->where('CPF',$cpf)->get()->first();
+            $locador = $novoLocador->where('telefone',$telefone)->get()->first();
             $idLocador = $locador->id;
 
 

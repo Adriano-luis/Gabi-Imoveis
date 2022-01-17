@@ -4,7 +4,7 @@
     <form action="">
     <h3 class="alinhamento-titulo">FICHA CAPTAÇÃO DE INQUILINO NÃO - RESIDENCIAL<h3>
 
-    <section class="alinhamento-texto">
+    <section class="alinhamento-texto" style="font-size: 19px">
         <div class="contrato-card">
             <div class="row">
                 Nome:<input style='width: auto'><br>
@@ -64,9 +64,9 @@
                 <h4 class="alinhamento-titulo">Documentos necessários</h4>
                 <ul>
                     <li>Xerox ( RG e CPF )</li>
-                    <li>Taxa R$ 50,00 (pesquisa CPF) por pessoa (Esse valor não será devolvido em hipótese alguma)</li>
+                    <li>Taxa R$ <input type="text"> (pesquisa CPF) por pessoa (Esse valor não será devolvido em hipótese alguma)</li>
                     <li>Se for comercial comprovante de endereço</li>
-                    <li>Caso houver desistência depois do contrato feito, será cobrado R$ 150,00 (cento e cinquenta reais) pelo contrato.</li>
+                    <li>Caso houver desistência depois do contrato feito, será cobrado R$ <input type="text"> (<input type="text">) pelo contrato.</li>
                 </ul><br><br>
 
 

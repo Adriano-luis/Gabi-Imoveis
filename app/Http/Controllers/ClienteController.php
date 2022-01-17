@@ -31,6 +31,7 @@ class ClienteController extends Controller
                 'metragemTotal' => $request->input('metragemTot'),
                 'qtComodos'     => $request->input('qtCom'), 
                 'quarto'        => $request->input('qtQuartos'),
+                'observacoes'   => $request->input('obs'),
                 'individual'    => $request->input('individualCheck') == 'on' ? 'Sim':'Nao',
                 'condominio'    => $request->input('condominioCheck') == 'on' ? 'Sim':'Nao',
                 'mobilhado'     => $request->input('mobiliado') == 'on' ? 'Sim':'Nao',
@@ -261,5 +262,15 @@ class ClienteController extends Controller
         }
 
         return redirect()->route('home',['imoveis'=>$imoveis,'ray' => 'sim']);
+    }
+
+
+    public function excluir(Request $request){
+        $id = $request->get('id');
+
+        $cliente = new Clientes();
+        $cliente = $cliente->where('id',$id)->delete();
+
+        return redirect()->route('cliente'); 
     }
 }
