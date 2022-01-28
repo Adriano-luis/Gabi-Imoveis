@@ -177,9 +177,17 @@ border-top: 2px dashed #bbb;
 .imprimir input{
     border: 0;
     outline: none;
-    height: 2.0625rem;
     width: 16rem;
     border-bottom:1px solid #000;
+}
+
+.imprimir .format{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.imprimir .tabela{
+    border-bottom: 0px !important;
 }
 
 
@@ -190,13 +198,14 @@ border-top: 2px dashed #bbb;
 }
   
 .imprimir .alinhamento-texto{
-margin-left: 15%;
-margin-right: 15%;
+margin-left: 5%;
+margin-right: 5%;
 text-align: justify;
 }
 
 .imprimir .alinhamento-data{
     float: right;
+    padding-right: 5%;
 }
 
 .contrato-card{
@@ -204,6 +213,11 @@ border-radius: 5px;
 border: 2px solid black;
 padding: 1rem;
 }
+
+.imprimir table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
 
 
 @media only screen and (max-width:993px){
@@ -216,4 +230,8 @@ padding: 1rem;
     .hide-print{
         display:none;
     }
+}
+
+input:required {
+    border-color: red;
 }

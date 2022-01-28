@@ -18,25 +18,25 @@
                 <input type="hidden" name="idVendedor" value="{{$id ?? $dados->idVendedor}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
-                    <input type="text" name="valor" class="form-control" id="valor" value="{{isset($dados) ? $dados->valor: ''}}" placeholder="Valor avaliado do imóvel?">
+                    <input required type="text" name="valor" class="form-control" id="valor" value="{{isset($dados) ? $dados->valor: ''}}" placeholder="Valor avaliado do imóvel?">
                 </div><br> 
                 <h5>Endereço</h5>
                 <div class="form-group">
                     <label for="logradouro">Logradouro</label>
-                    <input type="text" name="rua" class="form-control" id="logradouro" value="{{isset($dados) ? $dados->endereco: ''}}" placeholder="Rua...">
+                    <input required type="text" name="rua" class="form-control" id="logradouro" value="{{isset($dados) ? $dados->endereco: ''}}" placeholder="Rua...">
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
                         <label for="numero">Número</label>
-                        <input type="text" name="numero" class="form-control" id="numero" value="{{isset($dados) ? $dados->numero: ''}}" placeholder="Número">
+                        <input required type="text" name="numero" class="form-control" id="numero" value="{{isset($dados) ? $dados->numero: ''}}" placeholder="Número">
                     </div>
                     <div class="form-group mx-1">
                         <label for="bairro">Bairro</label>
-                        <input type="text" name="bairro" class="form-control" id="bairro" value="{{isset($dados) ? $dados->bairro: ''}}" placeholder="Bairro">
+                        <input required type="text" name="bairro" class="form-control" id="bairro" value="{{isset($dados) ? $dados->bairro: ''}}" placeholder="Bairro">
                     </div>
                     <div class="form-group mx-1">
                         <label for="municipio">Município</label>
-                        <input type="text" name="municipio" class="form-control" id="municipio" value="{{isset($dados) ? $dados->municipio: ''}}" placeholder="Município">
+                        <input required type="text" name="municipio" class="form-control" id="municipio" value="{{isset($dados) ? $dados->municipio: ''}}" placeholder="Município">
                     </div>
                     <div class="form-group mx-1">
                         <label for="complemento">Complemento</label>

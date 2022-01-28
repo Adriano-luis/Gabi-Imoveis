@@ -15,7 +15,7 @@
                     <h5>Dados do proprietário</h5>
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" value="{{isset($dados->nome) ? $dados->nome :''}}" placeholder="Nome do proprietário">
+                        <input required type="text" name="nome" class="form-control" id="nome" value="{{isset($dados->nome) ? $dados->nome :''}}" placeholder="Nome do proprietário">
                     </div>
                     <div class="form-group">
                         <label for="logradouro">Logradouro</label>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group col-lg-2">
                             <label for="telefone">Telefone</label>
-                            <input type="phone" name="telefone" class="form-control" value="{{isset($dados->telefone) ? $dados->telefone :''}}" id="telefone" placeholder="(dd)x xxxx-xxxx">
+                            <input required type="phone" name="telefone" class="form-control" value="{{isset($dados->telefone) ? $dados->telefone :''}}" id="telefone" placeholder="(dd)x xxxx-xxxx">
                         </div>
                     </div><br>
                     

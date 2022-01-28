@@ -14,18 +14,18 @@
             <h4 class="alinhamento"><b>Dados do imóvel</b></h4>
             Endereço: <input value="{{$imovel->endereco}}"> n°<input value="{{$imovel->numero}}"><br>
             Bairro: <input value="{{$imovel->bairro}}"> Município: <input value="{{$imovel->municipio}}"> <br>
-            Cômodos:<input style='width: 2rem'value="{{$imovel->qtComodos}}">({{$imovel->quarto > 0?$imovel->quarto.' '.'quarto(s),':''}} {{$imovel->suite >0?$imovel->suite.' '.'suite(s),':''}} {{$imovel->cozinha>0?$imovel->cozinha.' '.'cozinha(s),':''}} {{$imovel->lavanderia>0?$imovel->lavanderia.' '.'lavanderia(s),':''}}, {{$imovel->salaEstar>0?$imovel->salaEstar.' '.'sala(s) de estar,':''}} {{$imovel->salaJantar>0?$imovel->salaJantar.' '.'sala(s) de jantar,':''}} {{$imovel->banheiro>0?$imovel->banheiro.' '.'banheiro(s),':''}} {{$imovel->escritorio>0?$imovel->escritorio.' '.'escritório(s),':''}} {{$imovel->jardim>0?$imovel->jardim.' '.'jardim(ns),':''}} {{$imovel->varanda>0?$imovel->varanda.' '.'varanda(s)':''}})<br>
+            Cômodos:<input style='width: 2rem'value="{{$imovel->qtComodos}}">({{$imovel->quarto > 0?$imovel->quarto.' '.'quarto(s),':''}} {{$imovel->suite >0?$imovel->suite.' '.'suite(s),':''}} {{$imovel->cozinha>0?$imovel->cozinha.' '.'cozinha(s),':''}} {{$imovel->lavanderia>0?$imovel->lavanderia.' '.'lavanderia(s),':''}} {{$imovel->salaEstar>0?$imovel->salaEstar.' '.'sala(s) de estar,':''}} {{$imovel->salaJantar>0?$imovel->salaJantar.' '.'sala(s) de jantar,':''}} {{$imovel->banheiro>0?$imovel->banheiro.' '.'banheiro(s),':''}} {{$imovel->escritorio>0?$imovel->escritorio.' '.'escritório(s),':''}} {{$imovel->jardim>0?$imovel->jardim.' '.'jardim(ns),':''}} {{$imovel->varanda>0?$imovel->varanda.' '.'varanda(s)':''}})<br>
             Garagem (<input style='width: 2rem'value="{{$imovel->garagem > 0?'X':''}}">) Sim (<input style='width: 2rem' value="{{$imovel->garagem <= 0 || $imovel->garagem == '' ?'X':''}}">) Não / Água e luz separada (<input style='width: 2rem' value="{{$imovel->aguaLuzSeparado == 'sim' ? 'x':''}}">) Sim (<input style='width: 2rem' value="{{$imovel->aguaLuzSeparado == 'Nao'?'x':''}}">) Não <br>
             RGI: <input style='width: auto' value="{{$imovel->RGI}}"> Instalação: <input style='width: auto' value="{{$imovel->instalacao}}"> 
         </section>
         <section class="alinhamento-texto">
-            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, sendo: 100% (cem por cento) 
+            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, <b>sendo: 100% (cem por cento)</b> 
             do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e 10% (dez por cento) nos demais meses. A presente autorização tem validade 
             indeterminada. <u>A imobiliária não se responsabiliza pela segurança do imóvel no período em que o mesmo se encontra desocupado.</u> Após o imóvel locado, 
             mesmo com o contrato vencido, o proprietário não poderá renovar o contrato/aditivo de locação diretamente ou através de terceiros ao Locatário apresentado 
-            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de 10% (dez por cento) de administração, referente a 12 meses de locação. Em caso de 
+            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b>10% (dez por cento)</b> de administração, referente a 12 meses de locação. Em caso de 
             venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de 6% (seis por cento) do valor 
-            da venda a GABI IMOVEIS.<p><br>
+            da venda a GABI IMOVEIS.</p>
             
         </section>
         <section class="alinhamento-texto">

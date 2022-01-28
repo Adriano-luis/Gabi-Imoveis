@@ -14,32 +14,34 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
-                <div class="row">
+                <div class="card border-primary p-3">
+                  <div class="row">
+                    <div class="form-group col-lg-5">
+                      <label> Nome do Cliente</label>
+                      <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <label> Telefone do cliente</label>
+                      <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-check mx-3">
+                        <input required class="form-check-input" type="checkbox" name="resiCheck">
+                        <label name="resiCheck" class="form-check-label text-danger"><h5>Residencial<h5></label>
+                      </div><br>
+                      <div class="form-check mx-3">
+                        <input required class="form-check-input" type="checkbox" name="naoResiCheck">
+                        <label  name="naoResiCheck" class="form-check-label text-danger"><h5>Não residencial<h5></label>
+                      </div><br>
+                    </div>
+                  </div>
+                <div class="row px-2">
                   <div class="form-group col-lg-1">
                     <input type="hidden" name="locacao" value="Sim">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
                   </div>
-                  <div class="form-group col-lg-5">
-                    <label> Nome do Cliente</label>
-                    <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <label> Telefone do cliente</label>
-                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="resiCheck">
-                      <label name="resiCheck" class="form-check-label"><h5>Residencial<h5></label>
-                    </div><br>
-                    <div class="form-check mx-3">
-                      <input class="form-check-input" type="checkbox" name="naoResiCheck">
-                      <label name="naoResiCheck" class="form-check-label"><h5>Não residencial<h5></label>
-                    </div><br>
-                  </div>
-                <div class="row">
                   <div class="row">
                       <div class="form-group mx-3">
                         <label>Valor</label>
@@ -122,39 +124,41 @@
                 @if (isset($existeImovel))
                     <div>{{$existeImovel}}</div>
                 @endif
-                <div class="row">
+                <div class="card border-primary p-3">
+                  <div class="row">
+                    <div class="form-group col-lg-5">
+                      <label> Nome do Cliente</label>
+                      <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <label> Telefone do cliente</label>
+                      <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="apCheck">
+                      <label name="apCheck" class="form-check-label text-danger"><h5>Apartamento<h5></label>
+                    </div><br>
+                    <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="casaCheck">
+                      <label name="casaCheck" class="form-check-label text-danger"><h5>Casa<h5></label>
+                    </div><br>
+                    <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="chacaCheck">
+                      <label name="chacaCheck" class="form-check-label text-danger"><h5>Chácaras<h5></label>
+                    </div><br>
+                    <div class="form-check mx-3">
+                      <input class="form-check-input" type="checkbox" name="terreCheck">
+                      <label name="terreCheck" class="form-check-label text-danger"><h5>Terreno<h5></label>
+                    </div><br>
+                </div>
+                </div>
+                <div class="row p-2">
                   <div class="form-group col-lg-1">
                     <label for="idImovel">Id Imóvel</label>
                     <input type="text" name="id" class="form-control" id="idImovel" placeholder="ID imóvel">
                   </div>
-                  <div class="form-group col-lg-5">
-                    <label> Nome do Cliente</label>
-                    <input type="text"  class="form-control" name="NomeCliente" placeholder="Nome Completo">
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <label> Telefone do cliente</label>
-                    <input type="text"  class="form-control col-3" name="TelefoneCliente" placeholder="(dd)x xxxx-xxxx">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-check mx-3">
-                    <input class="form-check-input" type="checkbox" name="apCheck">
-                    <label name="apCheck" class="form-check-label"><h5>Apartamento<h5></label>
-                  </div><br>
-                  <div class="form-check mx-3">
-                    <input class="form-check-input" type="checkbox" name="casaCheck">
-                    <label name="casaCheck" class="form-check-label"><h5>Casa<h5></label>
-                  </div><br>
-                  <div class="form-check mx-3">
-                    <input class="form-check-input" type="checkbox" name="chacaCheck">
-                    <label name="chacaCheck" class="form-check-label"><h5>Chácaras<h5></label>
-                  </div><br>
-                  <div class="form-check mx-3">
-                    <input class="form-check-input" type="checkbox" name="terreCheck">
-                    <label name="terreCheck" class="form-check-label"><h5>Terreno<h5></label>
-                  </div><br>
-                </div>
-                <div class="row">
                   <div class="row">
                     <div class="form-group mx-3">
                         <label for="municipio">Metragem</label>
