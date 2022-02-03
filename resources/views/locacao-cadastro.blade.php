@@ -28,15 +28,15 @@
                 <div class="row">
                     <div class="form-group mx-1">
                         <label for="numero">Número</label>
-                        <input required type="text" name="numero" class="form-control" id="numero" value="{{isset($dados) ? $dados->numero: ''}}" placeholder="Número">
+                        <input  type="text" name="numero" class="form-control" id="numero" value="{{isset($dados) ? $dados->numero: ''}}" placeholder="Número">
                     </div>
                     <div class="form-group mx-1">
                         <label for="bairro">Bairro</label>
-                        <input required type="text" name="bairro" class="form-control" id="bairro" value="{{isset($dados) ? $dados->bairro: ''}}" placeholder="Bairro">
+                        <input  type="text" name="bairro" class="form-control" id="bairro" value="{{isset($dados) ? $dados->bairro: ''}}" placeholder="Bairro">
                     </div>
                     <div class="form-group mx-1">
                         <label for="municipio">Município</label>
-                        <input required type="text" name="municipio" class="form-control" id="municipio" value="{{isset($dados) ? $dados->municipio: ''}}" placeholder="Município">
+                        <input  type="text" name="municipio" class="form-control" id="municipio" value="{{isset($dados) ? $dados->municipio: ''}}" placeholder="Município">
                     </div>
                     <div class="form-group mx-1">
                         <label for="complemento">Complemento</label>

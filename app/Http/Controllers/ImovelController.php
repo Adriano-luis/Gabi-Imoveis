@@ -16,12 +16,79 @@ class ImovelController extends Controller
 
         if($idLoc != null ){
             $imovel = LocacaoImoveis::find($idLoc);
-            $interessados = Clientes::where('idLoc',$imovel->id)->get();
         }else{
             $imovel = VendaImoveis::find($idVen);
-            $interessados = Clientes::where('idVen',$imovel->id)->get();
         }
 
+        $valor = $imovel->valor;
+        $resi = $imovel->tipo;
+        $endereco = $imovel->endereco;
+        $bairro = $imovel->bairro;
+        $metragemTot = $imovel->metragemTotal;
+        $qtComodos = $imovel->qtComodos;
+        $qtQuarto = $imovel->quarto;
+        $condo = $imovel->condominio;
+        $individual = $imovel->individual;
+        $mobilhado = $imovel->mobilhado;
+        $pet = $imovel->pet;
+
+        $interessados = Clientes::where(function($query) use ($valor){
+            if($valor != null){
+                $query->where('valorMin','<=', $valor )
+                ->where('valorMax','>=', $valor );
+            }
+        })
+        ->where(function($query) use ($resi){
+            if($resi != null){
+                $query->where('tipo',$resi);
+            }
+        })
+        ->where(function($query) use ($endereco){
+            if($endereco != null){
+                $query->where('endereco','like','%'.$endereco.'%')
+                ->orWhere('endereco',null);
+            }
+        })
+        ->where(function($query) use ($bairro){
+            if($bairro != null){
+                $query->where('bairro',$bairro)
+                ->orWhere('bairro',null);;
+            }
+        })
+        ->where(function($query) use ($metragemTot){
+            if($metragemTot != null){
+                $query->where('metragemTotal',$metragemTot)
+                ->orWhere('metragemTotal',null);;
+            }
+        })
+        ->where(function($query) use ($qtComodos){
+            if($qtComodos != null){
+                $query->where('qtComodos',$qtComodos)
+                ->orWhere('qtComodos',null);;
+            }
+        })
+        ->where(function($query) use ($qtQuarto){
+            if($qtQuarto != null){
+                $query->where('quarto',$qtQuarto)
+                ->orWhere('quarto',null);
+            }
+        })
+        ->where(function($query) use ($individual){
+            if($individual != 'Nao'){
+                $query->where('individual',$individual);
+            }
+        })
+        ->where(function($query) use ($condo){
+            if($condo != 'Nao'){
+                $query->where('condominio','like','%'.$condo.'%');
+            }
+        })
+        ->where(function($query) use ($mobilhado){
+            if($mobilhado != 'Nao'){
+                $query->where('mobilhado',$mobilhado);
+            }
+        })
+        ->get();
 
         if($clienteCadastrado == 'c'){
             return view('imovel',['c'=>'c','dadosImovel'=>$imovel]);

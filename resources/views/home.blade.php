@@ -27,14 +27,15 @@
                   </div>
                   <div class="row">
                     <div class="form-check mx-3">
-                        <input required class="form-check-input" type="checkbox" name="resiCheck">
+                        <input  class="form-check-input" type="checkbox" name="resiCheck">
                         <label name="resiCheck" class="form-check-label text-danger"><h5>Residencial<h5></label>
                       </div><br>
                       <div class="form-check mx-3">
-                        <input required class="form-check-input" type="checkbox" name="naoResiCheck">
+                        <input  class="form-check-input" type="checkbox" name="naoResiCheck">
                         <label  name="naoResiCheck" class="form-check-label text-danger"><h5>Não residencial<h5></label>
                       </div><br>
                     </div>
+                    * Se nome e telefone for preenchido, selecione o tipo.
                   </div>
                 <div class="row px-2">
                   <div class="form-group col-lg-1">
@@ -153,6 +154,7 @@
                       <label name="terreCheck" class="form-check-label text-danger"><h5>Terreno<h5></label>
                     </div><br>
                 </div>
+                * Se nome e telefone for preenchido, selecione o tipo.
                 </div>
                 <div class="row p-2">
                   <div class="form-group col-lg-1">

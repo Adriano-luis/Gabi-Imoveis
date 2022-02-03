@@ -322,7 +322,6 @@
                                                 <tr>
                                                     <th>Nome</th>
                                                     <th>Telefone</th>
-                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -330,36 +329,10 @@
                                                 <tr>
                                                     <td>{{$interessado->nome}}</td>
                                                     <td>{{$interessado->telefone}}</td>
-                                                    <td><a href="#">Remover</a></td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        <button type="button" class="btn btn-primary imovel-btn-print corTexto" id="btnInteressadosLoc" data-toggle="modal" data-target="#interessadosModal">
-                                            Adicionar Interessado
-                                        </button>
-                                        
-                                        <!-- Modal -->
-                                        
-                                        <div class="modal" id="interessadosModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="ModalLabel">Nome</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <input type="hidden"  name="interessadoSalvaLoc" value="{{$dadosImovel->id}}">
-                                                    <div class="modal-body">
-                                                        <select name="InteressadosLoc" id="interessadosLoc" class="col"></select>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary" id="EnviarWhats">Salvar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.card-body -->
                                     </div>
                                 </div>
                             </div>
