@@ -42,8 +42,7 @@
             <span class="alinhamento-data">Guarulhos<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span><br><br>
         </section>
         <section class="alinhamento-texto">
-            <div>
-                Imobiliária:     ___________________________________<br><br>
+            <div><br>
                 Proprietário(a): ________________________________
             </div>
         </section>

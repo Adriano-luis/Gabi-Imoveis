@@ -304,8 +304,8 @@ class VendaController extends Controller
         }*/
         
 
-        $dados = VendaImoveis::where('id',$novoImovel->id)->get()->first(); 
-        return view('imovel',['dadosImovel'=>$dados]);
+        //$dados = VendaImoveis::where('id',$novoImovel->id)->get()->first(); 
+        return redirect()->route('imovel',['venId'=>$novoImovel->id]);
 
     }
 
