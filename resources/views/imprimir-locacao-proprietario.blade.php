@@ -19,12 +19,24 @@
             RGI: <input style='width: auto' value="{{$imovel->RGI}}"> Instalação: <input style='width: auto' value="{{$imovel->instalacao}}"> 
         </section>
         <section class="alinhamento-texto">
-            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, <b>sendo: 100% (cem por cento)</b> 
+            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, <b>sendo: <input style='width: 3.5rem'> (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento)</b> 
             do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e 10% (dez por cento) nos demais meses. A presente autorização tem validade 
             indeterminada. <u>A imobiliária não se responsabiliza pela segurança do imóvel no período em que o mesmo se encontra desocupado.</u> Após o imóvel locado, 
             mesmo com o contrato vencido, o proprietário não poderá renovar o contrato/aditivo de locação diretamente ou através de terceiros ao Locatário apresentado 
-            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b>10% (dez por cento)</b> de administração, referente a 12 meses de locação. Em caso de 
-            venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de 6% (seis por cento) do valor 
+            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b><input style='width: 3rem'> (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento)</b> de administração, referente a 12 meses de locação. Em caso de 
+            venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de <b><input style='width: 3rem'> (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento)</b>  do valor 
             da venda a GABI IMOVEIS.</p>
             
         </section>
