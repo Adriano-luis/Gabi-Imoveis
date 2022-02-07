@@ -24,7 +24,11 @@
   role="textbox" 
   contenteditable>
 </span> por cento)</b> 
-            do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e 10% (dez por cento) nos demais meses. A presente autorização tem validade 
+            do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e <input style='width: 3.5rem'> (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento)</b> nos demais meses. A presente autorização tem validade 
             indeterminada. <u>A imobiliária não se responsabiliza pela segurança do imóvel no período em que o mesmo se encontra desocupado.</u> Após o imóvel locado, 
             mesmo com o contrato vencido, o proprietário não poderá renovar o contrato/aditivo de locação diretamente ou através de terceiros ao Locatário apresentado 
             por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b><input style='width: 3rem'> (<span 

@@ -131,24 +131,24 @@
                         <input class="form-check-input" type="checkbox" name="outros" {{isset($dados) && $dados->outros == 'Sim' ? "checked='checked'": ''}}>
                         <label name="outros" class="form-check-label">Outros</label>
                     </div>
-                </div><br><br>
+                </div><br>
                 <label>Tipo</label>
                 <div class="row align-row">
                     <div class="form-check ms-3 px-3">
                         <input class="form-check-input " type="checkbox" name="apCheck" {{isset($dados) && $dados->tipo == 'apartamento' ? "checked='checked'": ''}}>
-                        <label name="apCheck" class="form-check-label">Apartamento</label>
+                        <label name="apCheck" class="form-check-label text-danger">Apartamento</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="casaCheck" {{isset($dados) && $dados->tipo == 'casa' ? "checked='checked'": ''}}>
-                        <label name="casaCheck" class="form-check-label">Casa</label>
+                        <label name="casaCheck" class="form-check-label text-danger">Casa</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="chacaCheck" {{isset($dados) && $dados->tipo == 'chacara' ? "checked='checked'": ''}}>
-                        <label name="chacaCheck" class="form-check-label">Chacara</label>
+                        <label name="chacaCheck" class="form-check-label text-danger">Chacara</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="terreCheck" {{isset($dados) && $dados->tipo == 'terreno' ? "checked='checked'": ''}}>
-                        <label name="terreCheck" class="form-check-label">Terreno</label>
+                        <label name="terreCheck" class="form-check-label text-danger">Terreno</label>
                     </div>
                 </div><br><br>
                 <div class="form-check">
@@ -216,10 +216,12 @@
                     </div> 
                 @else
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" id="checkBtn" class="btn btn-primary">Salvar</button>
                     </div>
                 @endif
             </div>
         </div>
     </form>
 @endsection
+
+@

@@ -27,15 +27,15 @@
                 </div>
                 <div class="row">
                     <div class="form-group mx-1">
-                        <label for="numero">Número</label>
+                        <label required for="numero">Número</label>
                         <input  type="text" name="numero" class="form-control" id="numero" value="{{isset($dados) ? $dados->numero: ''}}" placeholder="Número">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="bairro">Bairro</label>
+                        <label required for="bairro">Bairro</label>
                         <input  type="text" name="bairro" class="form-control" id="bairro" value="{{isset($dados) ? $dados->bairro: ''}}" placeholder="Bairro">
                     </div>
                     <div class="form-group mx-1">
-                        <label for="municipio">Município</label>
+                        <label required for="municipio">Município</label>
                         <input  type="text" name="municipio" class="form-control" id="municipio" value="{{isset($dados) ? $dados->municipio: ''}}" placeholder="Município">
                     </div>
                     <div class="form-group mx-1">
@@ -100,9 +100,28 @@
                     </div>
                 </div><br>
                 <div class="form-group">
-                    <label name="aguaLuz" class="form-check-label">Cadastro feito em:</label><br>
+                    <label name="aguaLuz" class="form-check-label"><b>Cadastro feito em:</b></label><br>
                     <input class="form-control col-2" type="date" name="criado" value="{{isset($dados) ? $dados->criado: ''}}">
                 </div>
+                <label>Tipo</label>
+                <div class="row align-row px-3">
+                    <div class="form-check ms-3 px-3">
+                        <input class="form-check-input " type="checkbox" name="apCheck" {{isset($dados) && $dados->tipo == 'apartamento' ? "checked='checked'": ''}}>
+                        <label name="apCheck" class="form-check-label text-danger">Apartamento</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="casaCheck" {{isset($dados) && $dados->tipo == 'casa' ? "checked='checked'": ''}}>
+                        <label name="casaCheck" class="form-check-label text-danger">Casa</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="chacaCheck" {{isset($dados) && $dados->tipo == 'chacara' ? "checked='checked'": ''}}>
+                        <label name="chacaCheck" class="form-check-label text-danger">Chacara</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="terreCheck" {{isset($dados) && $dados->tipo == 'terreno' ? "checked='checked'": ''}}>
+                        <label name="terreCheck" class="form-check-label text-danger">Terreno</label>
+                    </div>
+                </div><br><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="aguaLuz" {{isset($dados) && $dados->aguaLuzSeparado == 'Sim' ? "checked='checked'": ''}}>
                     <label name="aguaLuz" class="form-check-label">Agua e luz separada?</label>
