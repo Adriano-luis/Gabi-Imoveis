@@ -61,7 +61,7 @@
             <div><br>
                 Proprietário(a): ________________________________
             </div>
-        </section>
+        </section><br><br>
         <div class="alinhamento-titulo">
             <button onclick="window.print()" class="btn btn-primary imovel-btn-print py-2 hide-print">Imprimir</button>
         </div>

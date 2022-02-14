@@ -31,7 +31,7 @@
                     <!-- <th>Endereço</th> -->
                     <th>Bairro</th>
                     <!-- <th>m²</th> -->
-                    <th>Comod.</th>
+                    <th>Garagem</th>
                     <th>Quartos</th>
                     <th>Indivi.</th>
                     <!--<th>Condo.</th> -->
@@ -53,11 +53,11 @@
                         <!-- <td>$cliente->endereco</td> -->
                         <td>{{$cliente->bairro}}</td>
                         <!-- <td>$cliente->metragemTotal</td> -->
-                        <td>{{$cliente->qtComodos}}</td>
+                        <td>{{$cliente->garagem}}</td>
                         <td>{{$cliente->quarto}}</td>
                         <td>{{$cliente->individual}}</td>
                         <!-- <td>$cliente->condominio</td> -->
-                        <!--<td>{{$cliente->mobilhado}}</td>-->
+                        <!--<td>$cliente->mobilhado</td>-->
                         <?php $dias = $cliente->created_at->diff(date('Y/m/d H:i')); ?>
                         <td>{{$dias->m}}</td>
                         <td>{{$cliente->observacoes}}</td>

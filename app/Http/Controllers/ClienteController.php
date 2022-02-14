@@ -29,7 +29,7 @@ class ClienteController extends Controller
                 'endereco'      => $request->input('rua'),
                 'bairro'        => $request->input('bairro'),
                 'metragemTotal' => $request->input('metragemTot'),
-                'qtComodos'     => $request->input('qtCom'), 
+                'garagem'       => $request->input('qtVagas'), 
                 'quarto'        => $request->input('qtQuartos'),
                 'observacoes'   => $request->input('obs'),
                 'individual'    => $request->input('individualCheck') == 'on' ? 'Sim':'Nao',
@@ -74,7 +74,7 @@ class ClienteController extends Controller
             $enderecoImovel     = $cliente-> endereco;
             $bairro             = $cliente-> bairro;
             $metragemTot        = $cliente-> metragemTotal;
-            $qtComodos          = $cliente-> qtComodos;
+            $garagem            = $cliente-> garagem;
             $qtQuarto           = $cliente-> quarto;
             $individual         = $cliente-> individual;
             $condo              = $cliente-> condominio;
@@ -110,9 +110,9 @@ class ClienteController extends Controller
                     $query->where('metragemTotal',$metragemTot);
                 }
             })
-            ->where(function($query) use ($qtComodos){
-                if($qtComodos != null){
-                    $query->where('qtComodos',$qtComodos);
+            ->where(function($query) use ($garagem){
+                if($garagem != null){
+                    $query->where('garagem',$garagem);
                 }
             })
             ->where(function($query) use ($qtQuarto){
@@ -162,7 +162,7 @@ class ClienteController extends Controller
             $enderecoImovel     = $cliente-> endereco;
             $bairro             = $cliente-> bairro;
             $metragemTot        = $cliente-> metragemTotal;
-            $qtComodos          = $cliente-> qtComodos;
+            $garagem            = $cliente-> garagem;
             $qtQuarto           = $cliente-> quarto;
             $individual         = $cliente-> individual;
             $condo              = $cliente-> condominio;
@@ -208,9 +208,9 @@ class ClienteController extends Controller
                     $query->where('metragemTotal',$metragemTot);
                 }
             })
-            ->where(function($query) use ($qtComodos){
-                if($qtComodos != null){
-                    $query->where('qtComodos',$qtComodos);
+            ->where(function($query) use ($garagem){
+                if($garagem != null){
+                    $query->where('garagem',$garagem);
                 }
             })
             ->where(function($query) use ($qtQuarto){

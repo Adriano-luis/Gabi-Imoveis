@@ -235,7 +235,7 @@ class HomeController extends Controller
             'endereco'      => $enderecoImovel,
             'bairro'        => $bairro,
             'metragemTotal' => $metragemTot,
-            'qtComodos'     => $qtComodos,
+            'garagem'       => $qtVagas,
             'quarto'        => $qtQuarto,
             'individual'    => $individual,
             'condominio'    => $condo,

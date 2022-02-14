@@ -25,7 +25,7 @@ class ImovelController extends Controller
         $endereco = $imovel->endereco;
         $bairro = $imovel->bairro;
         $metragemTot = $imovel->metragemTotal;
-        $qtComodos = $imovel->qtComodos;
+        $qtgaragem = $imovel->qtVagas;
         $qtQuarto = $imovel->quarto;
         $condo = $imovel->condominio;
         $individual = $imovel->individual;
@@ -35,7 +35,9 @@ class ImovelController extends Controller
         $interessados = Clientes::where(function($query) use ($valor){
             if($valor != null){
                 $query->where('valorMin','<=', $valor )
-                ->where('valorMax','>=', $valor );
+                ->where('valorMax','>=', $valor )
+                ->orWhere('valorMin',null)
+                ->Where('valorMax',null);
             }
         })
         ->where(function($query) use ($resi){
@@ -61,10 +63,10 @@ class ImovelController extends Controller
                 ->orWhere('metragemTotal',null);;
             }
         })
-        ->where(function($query) use ($qtComodos){
-            if($qtComodos != null){
-                $query->where('qtComodos',$qtComodos)
-                ->orWhere('qtComodos',null);;
+        ->where(function($query) use ($qtgaragem){
+            if($qtgaragem != null){
+                $query->where('qtgaragem',$qtgaragem)
+                ->orWhere('qtgaragem',null);;
             }
         })
         ->where(function($query) use ($qtQuarto){

@@ -248,7 +248,6 @@
                                     <li class="list-group-item">Nome do Condomínio: {{$dadosImovel->nomeCondominio}}</li>
                                     <li class="list-group-item">RGI: {{$dadosImovel->RGI}}</li>
                                     <li class="list-group-item">Instalação: {{$dadosImovel->instalacao}}</li>
-                                    <li class="list-group-item">IPTU: {{$dadosImovel->IPTU}}</li>
                                     <li class="list-group-item">Individual: {{$dadosImovel->individual}}</li>
                                     <li class="list-group-item">Andar: {{$dadosImovel->andar}}</li>
                                 </ul>
@@ -525,7 +524,8 @@
                                     <li class="list-group-item">Nome do Condomínio: {{$dadosImovel->nomeCondominio}}</li>
                                     <li class="list-group-item">RGI: {{$dadosImovel->RGI}}</li>
                                     <li class="list-group-item">Instalação: {{$dadosImovel->instalacao}}</li>
-                                    <li class="list-group-item">IPTU: {{$dadosImovel->IPTU}}</li>
+                                    <li class="list-group-item">IPTU: {{$dadosImovel->iptu}}</li>
+                                    <li class="list-group-item">Desdobro: {{$dadosImovel->desdobro}}</li>
                                     <li class="list-group-item">Individual: {{$dadosImovel->individual}}</li>
                                     <li class="list-group-item">Andar: {{$dadosImovel->andar}}</li>
                                 </ul>

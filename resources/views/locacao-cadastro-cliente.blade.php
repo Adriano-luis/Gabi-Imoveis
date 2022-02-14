@@ -337,7 +337,4 @@
     @endif
 </section>
 
-  <script>
-  </script>
-
 @endsection

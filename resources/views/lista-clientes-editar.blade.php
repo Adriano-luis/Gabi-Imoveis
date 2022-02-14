@@ -66,6 +66,10 @@
                     <label for="qtQuarto">Quatidade de quarto</label>
                     <input type="number" name="qtQuartos" class="form-control" id="qtQuarto" value="{{$cliente->quarto}}" placeholder="Quatidade de quartos">
                 </div>
+                <div class="form-group mx-3 col-5">
+                    <label for="qtVagas">Quatidade de garagens</label>
+                    <input type="number" name="qtVagas" class="form-control" id="qtVagas" value="{{$cliente->garagem}}" placeholder="Quatidade de garagens">
+                </div>
             </div><br>
             <label for="obs">Observações</label>
             <input type="text" class="form-control" name="obs" id="obs" value="{{$cliente->observacoes}}"><br>
