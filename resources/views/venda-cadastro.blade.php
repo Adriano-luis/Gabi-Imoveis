@@ -131,24 +131,30 @@
                         <input class="form-check-input" type="checkbox" name="outros" {{isset($dados) && $dados->outros == 'Sim' ? "checked='checked'": ''}}>
                         <label name="outros" class="form-check-label">Outros</label>
                     </div>
-                </div><br><br>
+                </div><br>
+                <div class="row">
+                    <div class="form-group mx-1">
+                        <label for="terreno">IPTU</label>
+                        <input type="text"  name="terreno" class="form-control" id="iptu" value="{{isset($dados) ? $dados->iptu: ''}}">
+                    </div>
+                </div><br>
                 <label>Tipo</label>
                 <div class="row align-row">
                     <div class="form-check ms-3 px-3">
                         <input class="form-check-input " type="checkbox" name="apCheck" {{isset($dados) && $dados->tipo == 'apartamento' ? "checked='checked'": ''}}>
-                        <label name="apCheck" class="form-check-label">Apartamento</label>
+                        <label name="apCheck" class="form-check-label text-danger">Apartamento</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="casaCheck" {{isset($dados) && $dados->tipo == 'casa' ? "checked='checked'": ''}}>
-                        <label name="casaCheck" class="form-check-label">Casa</label>
+                        <label name="casaCheck" class="form-check-label text-danger">Casa</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="chacaCheck" {{isset($dados) && $dados->tipo == 'chacara' ? "checked='checked'": ''}}>
-                        <label name="chacaCheck" class="form-check-label">Chacara</label>
+                        <label name="chacaCheck" class="form-check-label text-danger">Chacara</label>
                     </div>
                     <div class="form-check px-3">
                         <input class="form-check-input" type="checkbox" name="terreCheck" {{isset($dados) && $dados->tipo == 'terreno' ? "checked='checked'": ''}}>
-                        <label name="terreCheck" class="form-check-label">Terreno</label>
+                        <label name="terreCheck" class="form-check-label text-danger">Terreno</label>
                     </div>
                 </div><br><br>
                 <div class="form-check">
@@ -174,6 +180,17 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="mobiliado" {{isset($dados) && $dados->condominio == 'Sim' ? "checked='checked'": ''}}>
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
+                </div><br>
+                <label>Desdobro</label>
+                <div class="row">
+                    <div class="form-check ms-3 px-3 px-2">
+                        <input class="form-check-input " type="checkbox" name="desdobroSim" {{isset($dados) && $dados->desdobro == 'desdobroSim' ? "checked='checked'": ''}}>
+                        <label name="desdobroSim" class="form-check-label">Sim</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="desdobroNao" {{isset($dados) && $dados->desdobro == 'desdobroNao' ? "checked='checked'": ''}}>
+                        <label name="desdobroNao" class="form-check-label">Não</label>
+                    </div>
                 </div>
                 <br>
                 @if (isset($dados))
@@ -216,10 +233,12 @@
                     </div> 
                 @else
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" id="checkBtn" class="btn btn-primary">Salvar</button>
                     </div>
                 @endif
             </div>
         </div>
     </form>
 @endsection
+
+@

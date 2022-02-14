@@ -64,7 +64,15 @@
         <section class="alinhamento-texto">
             <p>Autorizo GABI MOVEIS CRECI 161.918 F, com escritório situado a Rua Guarabira 191, São João - Guarulhos, a promover a intermediação da venda do imóvel descrito nesse documento.
             Declamo estar ciente da obrigação de apresentar todas as certidões que comprovem a regularidade do imóvel e de seus respectivos titulares, por ocasião do recebimento de uma proposta bem como
-            do que os honorários devidos estão fixado em <b>6% (seis porcento)</b> sobre o valor total do negócio (10% do imóvel rural), devendo ser pagos no ato da assinatura do contrato ou,
+            do que os honorários devidos estão fixado em <b><input style='width: 3rem'> (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento)</b>  sobre o valor total do negócio (<span 
+  class="input" 
+  role="textbox" 
+  contenteditable>
+</span> por cento do imóvel rural), devendo ser pagos no ato da assinatura do contrato ou,
             no caso de sua dispensa, no ato da assinatura da escritura pública.</p>
             <p>Como também fazer a divulgação do meu imóvel. A presente autorização terá um prazo de vigência indeterminado:</p>
 

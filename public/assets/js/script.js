@@ -185,3 +185,15 @@ $(document).ready(function(){
     });
 
 });
+
+$(document).ready(function () {
+    $('#checkBtn').click(function() {
+      checked = $("input[type=checkbox]:checked").length;
+
+      if(!checked) {
+        alert("Você precisa marcar um tipo!");
+        return false;
+      }
+
+    });
+});
