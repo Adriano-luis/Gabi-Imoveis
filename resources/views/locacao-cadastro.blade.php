@@ -135,10 +135,6 @@
                     <label for="instalacao">Instalação</label>
                     <input type="text" name="instalacao" class="form-control" id="instalacao" value="{{isset($dados) ? $dados->instalacao: ''}}" placeholder="Instalação">
                 </div>
-                <div class="form-group col-lg-2">
-                    <label for="iptu">IPTU</label>
-                    <input type="text" name="iptu" class="form-control" id="iptu" value="{{isset($dados) ? $dados->IPTU: ''}}" placeholder="IPTU">
-                </div>
                 <br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck" {{isset($dados) && $dados->condominio == 'Sim' ? "checked='checked'": ''}}>

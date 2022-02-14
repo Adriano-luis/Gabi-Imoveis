@@ -132,6 +132,12 @@
                         <label name="outros" class="form-check-label">Outros</label>
                     </div>
                 </div><br>
+                <div class="row">
+                    <div class="form-group mx-1">
+                        <label for="terreno">IPTU</label>
+                        <input type="text"  name="terreno" class="form-control" id="iptu" value="{{isset($dados) ? $dados->iptu: ''}}">
+                    </div>
+                </div><br>
                 <label>Tipo</label>
                 <div class="row align-row">
                     <div class="form-check ms-3 px-3">
@@ -174,6 +180,17 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="mobiliado" {{isset($dados) && $dados->condominio == 'Sim' ? "checked='checked'": ''}}>
                     <label name="mobiliado" class="form-check-label">Mobiliado?</label>
+                </div><br>
+                <label>Desdobro</label>
+                <div class="row">
+                    <div class="form-check ms-3 px-3 px-2">
+                        <input class="form-check-input " type="checkbox" name="desdobroSim" {{isset($dados) && $dados->desdobro == 'desdobroSim' ? "checked='checked'": ''}}>
+                        <label name="desdobroSim" class="form-check-label">Sim</label>
+                    </div>
+                    <div class="form-check px-3">
+                        <input class="form-check-input" type="checkbox" name="desdobroNao" {{isset($dados) && $dados->desdobro == 'desdobroNao' ? "checked='checked'": ''}}>
+                        <label name="desdobroNao" class="form-check-label">Não</label>
+                    </div>
                 </div>
                 <br>
                 @if (isset($dados))
