@@ -21,14 +21,16 @@ class ImprimirController extends Controller
     }
 
     public function locacao(){
-        return view('_components.imprimir-id');
+        //return view('_components.imprimir-id');
+        return view('imprimir-locacao-proprietario');
     }
 
     public function venda(){
-        return view('_components.imprimir-id-venda');
+        //return view('_components.imprimir-id-venda');
+        return view('imprimir-venda-proprietario');
     }
 
-    public function imprimirId(Request $request){
+    /*public function imprimirId(Request $request){
         $id = $request->get('id');
         $idVenda = $request->get('idVenda');
 
@@ -50,5 +52,5 @@ class ImprimirController extends Controller
 
         return view('imprimir-locacao-proprietario',['imovel'=>$imovel,'locador'=>$locador]);
 
-    }
+    }*/
 }

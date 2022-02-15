@@ -14,7 +14,7 @@ class Clientes extends Model
     'endereco',
     'bairro',
     'metragemTotal',
-    'qtComodos',
+    'garagem',
     'quarto',
     'individual',
     'condominio',

@@ -103,7 +103,7 @@
                     <label name="aguaLuz" class="form-check-label"><b>Cadastro feito em:</b></label><br>
                     <input class="form-control col-2" type="date" name="criado" value="{{isset($dados) ? $dados->criado: ''}}">
                 </div>
-                <label>Tipo</label>
+                <!--<label>Tipo</label>
                 <div class="row align-row px-3">
                     <div class="form-check ms-3 px-3">
                         <input class="form-check-input " type="checkbox" name="apCheck" {{isset($dados) && $dados->tipo == 'apartamento' ? "checked='checked'": ''}}>
@@ -121,7 +121,7 @@
                         <input class="form-check-input" type="checkbox" name="terreCheck" {{isset($dados) && $dados->tipo == 'terreno' ? "checked='checked'": ''}}>
                         <label name="terreCheck" class="form-check-label text-danger">Terreno</label>
                     </div>
-                </div><br><br>
+                </div> --><br><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="aguaLuz" {{isset($dados) && $dados->aguaLuzSeparado == 'Sim' ? "checked='checked'": ''}}>
                     <label name="aguaLuz" class="form-check-label">Agua e luz separada?</label>
@@ -172,7 +172,7 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="resiCheck" {{isset($dados) && $dados->individual == 'residencial' ? "checked='checked'": ''}}>
+                    <input class="form-check-input" type="checkbox" name="resiCheck" {{isset($dados) && $dados->tipo == 'residencial' ? "checked='checked'": ''}}>
                     <label name="resiCheck" class="form-check-label">Residencial?</label>
                 </div>
                 <br>

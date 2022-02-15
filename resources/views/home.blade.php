@@ -283,13 +283,13 @@
               <div class="card-header imoveisCard">
                 <div class="user-block">
                   <span class="description">id: {{isset($ray) && $ray == 'sim' ? $imovel['id']:$imovel->id}}</span>
-                  <span class="description">{{isset($ray) && $ray == 'sim' ? $imovel['endereco']:$imovel->endereco}}, {{isset($ray) && $ray == 'sim' ? $imovel['numero']:$imovel->numero}}
+                  <span class="description">{{isset($ray) && $ray == 'sim' ? $imovel['endereco']:$imovel->endereco}},<?php if((isset($ray) && $ray == 'sim') && (isset($imovel['numero'])  || isset($imovel->numero)) ){if(isset($ray) && $ray == 'sim'){echo $imovel['numero'];}else {echo $imovel->numero;}}else{echo '';}?>
                     @if ((isset($imovel->complemento) && $imovel->complemento != '') || (isset($imovel['complemento']) && $imovel['complemento'] != ''))
                       {{ isset($ray) && $ray == 'sim' ? $imovel['complemento']:$imovel->complemento}}
                     @endif
-                    <br>{{ isset($ray) && $ray == 'sim' ? $imovel['bairro']:$imovel->bairro}} | {{isset($ray) && $ray == 'sim' ? $imovel['municipio']:$imovel->municipio}}
+                    <br><?php if((isset($ray) && $ray == 'sim') && (isset($imovel['bairro'])  || isset($imovel->bairro)) ){if(isset($ray) && $ray == 'sim'){echo $imovel['bairro'];}else {echo $imovel->bairro;}}else{echo '';} ?>
                   </span>
-                  <span class="description">cadastrado {{isset($ray) && $ray == 'sim' ? $imovel['criado']:$imovel->criado}} </span>
+                  <span class="description">cadastrado <?php if((isset($ray) && $ray == 'sim') && (isset($imovel['criado'])  || isset($imovel->criado)) ){if(isset($ray) && $ray == 'sim'){echo $imovel['criado'];}else {echo $imovel->criado;}}else{echo '';} ?> </span>
                 </div>
               </div>
       

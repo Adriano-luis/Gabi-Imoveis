@@ -49,6 +49,8 @@ class CreateVendaImoveisTable extends Migration
             $table->integer('andar');
             $table->string('individual');
             $table->string('mobilhado');
+            $table->string('desdobro');
+            $table->string('iptu');
             $table->string('tipo');
             $table->text('sobreImovel');
             $table->text('sobreMobilia');

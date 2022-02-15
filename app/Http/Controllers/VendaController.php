@@ -199,7 +199,7 @@ class VendaController extends Controller
         $escritorio         = $request->get('escritorio');
         $jardim             = $request->get('jardim');
         $varanda            = $request->get('varanda');
-        $criado = $request->get('criado');
+        $criado             = $request->get('criado');
         $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
         $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
         $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
@@ -209,8 +209,10 @@ class VendaController extends Controller
         $nomeCondo          = $request->get('condominioNome');
         $valorCondo         = $request->get('condominioVal');
         $andar              = $request->get('andar');
+        $iptu               = $request->get('iptu');
         $request->input('individualCheck') == 'on'? $individual = 'Sim': $individual = 'Nao';
         $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
+        $request->input('desdobro') == 'on'? $desdobro = 'Sim': $desdobro = 'Nao';
         $descImovel         = $request->get('descricaoImovel');
         $descMobilha        = $request->get('descricaoMobilia');
         $descCond           = $request->get('descricaoCond');
@@ -255,6 +257,8 @@ class VendaController extends Controller
             $novoImovel-> andar = $andar;
             $novoImovel-> individual = $individual;
             $novoImovel-> mobilhado = $mobilhado;
+            $novoImovel-> desdobro = $desdobro;
+            $novoImovel-> iptu = $iptu;
             $request->input('apCheck') == 'on'? $novoImovel-> tipo = 'apartamento' : '';
             $request->input('casaCheck') == 'on'? $novoImovel-> tipo = 'casa' : '';
             $request->input('chacaCheck') == 'on'? $novoImovel-> tipo = 'chacara': '';
@@ -350,7 +354,7 @@ class VendaController extends Controller
             $escritorio         = $request->get('escritorio');
             $jardim             = $request->get('jardim');
             $varanda            = $request->get('varanda');
-            $criado = $request->get('criado');
+            $criado             = $request->get('criado');
             $request->input('contrato') == 'on'? $contrato = 'Sim': $contrato = 'Nao';
             $request->input('escritura') == 'on'? $escritura = 'Sim': $escritura = 'Nao';
             $request->input('contratoPoss') == 'on'? $contratoPoss = 'Sim': $contratoPoss = 'Nao';
@@ -360,9 +364,11 @@ class VendaController extends Controller
             $nomeCondo          = $request->get('condominioNome');
             $valorCondo         = $request->get('condominioVal');
             $andar              = $request->get('andar');
+            $iptu               = $request->get('iptu');
             $request->input('individual') == 'on'? $individual = 'Sim': $individual = 'Nao';
             $request->input('mobiliado') == 'on'? $mobilhado = 'Sim': $mobilhado = 'Nao';
             $request->input('disponivel') == 'on'? $disponivel = 'Sim': $disponivel = 'Nao';
+            $request->input('desdobro') == 'on'? $desdobro = 'Sim': $desdobro = 'Nao';
             $descImovel         = $request->get('descricaoImovel');
             $descMobilha        = $request->get('descricaoMobilia');
             $descCond           = $request->get('descricaoCond');
@@ -403,6 +409,8 @@ class VendaController extends Controller
             $imovel-> andar = $andar;
             $imovel-> individual = $individual;
             $imovel-> mobilhado = $mobilhado;
+            $imovel-> desdobro = $desdobro;
+            $imovel-> iptu = $iptu;
             $request->input('apCheck') == 'on'? $imovel-> tipo = 'apartamento' : '';
             $request->input('casaCheck') == 'on'? $imovel-> tipo = 'casa' : '';
             $request->input('chacaCheck') == 'on'? $imovel-> tipo = 'chacara': '';

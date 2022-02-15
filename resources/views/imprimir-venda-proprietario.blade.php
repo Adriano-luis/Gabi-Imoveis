@@ -4,14 +4,21 @@
     <form action="">
         <h2 class="alinhamento-titulo"><b>AUTORIZAÇÃO DE VENDAS</b></h2><br>
         <section class="alinhamento-texto">
+<<<<<<< HEAD
             <div class="row format alinhamento-texto">
                 Valor Avaliado: R$<input style='width: 4rem' value="{{$imovel->valor}}">
             </div><br>
+=======
+            <div class="row alinhamento-data">
+                Valor Avaliado R$:<input style='width: 4rem'>
+            </div><br><br>
+>>>>>>> 37a120356bd106a51c0cee837c6bda6678ac615a
             <div class="alinhamento-titulo">
                 <h4 class="alinhamento"><b>Dados do proprietário</b></h4>
             </div>
             <section class="alinhamento-texto">
                 <div class="row format">
+<<<<<<< HEAD
                     Nome: <input style='width: 70%' value="{{$vendedor->nome}}"><br>
                     RG: <input style='width: 15%' value="{{$vendedor->RG}}"><br>
                 </div>
@@ -28,6 +35,23 @@
                     Endereço: <input style='width: 60%' value="{{$vendedor->endereco}}"> n°: <input style='width: 4rem' value="{{$vendedor->numero}}"><br>
                     Bairro: <input style='width: 30%' value="{{$vendedor->bairro}}"> Município: <input style='width: 5rem' value="{{$vendedor->municipio}}"><br>
             </section><br>
+=======
+                    Nome: <input style='width: 90%'><br>
+                </div>
+                <div class="row format">
+                    RG: <input style='width: 15%'><br>
+                    Telefone: <input style='width: 69%'>
+                </div>
+            </section><br>
+
+        <div class="alinhamento-titulo">
+            <h4 class="alinhamento"><b>Dados do imóvel</b></h4>
+        </div>
+        <section class="alinhamento-texto">
+                Endereço: <input style='width: 60%'> n°: <input style='width: 4rem'><br>
+                Bairro: <input style='width: 30%'> Município: <input style='width: 5rem'><br>
+        </section><br>
+>>>>>>> 37a120356bd106a51c0cee837c6bda6678ac615a
 
             <div class="alinhamento-titulo">
                 <h4 class="alinhamento"><b>Características do Imóvel</b></h4>

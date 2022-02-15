@@ -25,7 +25,7 @@ class CreateClientesTable extends Migration
             $table->string('endereco');
             $table->string('bairro');
             $table->integer('metragemTotal');
-            $table->integer('qtComodos');
+            $table->integer('garagem');
             $table->integer('quarto');
             $table->string('individual');
             $table->string('condominio');
