@@ -138,25 +138,6 @@
                         <input type="text"  name="iptu" class="form-control" id="iptu" value="{{isset($dados) ? $dados->iptu: ''}}">
                     </div>
                 </div><br>
-                <label>Tipo</label>
-                <div class="row align-row">
-                    <div class="form-check ms-3 px-3">
-                        <input class="form-check-input " type="checkbox" name="apCheck" {{isset($dados) && $dados->tipo == 'apartamento' ? "checked='checked'": ''}}>
-                        <label name="apCheck" class="form-check-label text-danger">Apartamento</label>
-                    </div>
-                    <div class="form-check px-3">
-                        <input class="form-check-input" type="checkbox" name="casaCheck" {{isset($dados) && $dados->tipo == 'casa' ? "checked='checked'": ''}}>
-                        <label name="casaCheck" class="form-check-label text-danger">Casa</label>
-                    </div>
-                    <div class="form-check px-3">
-                        <input class="form-check-input" type="checkbox" name="chacaCheck" {{isset($dados) && $dados->tipo == 'chacara' ? "checked='checked'": ''}}>
-                        <label name="chacaCheck" class="form-check-label text-danger">Chacara</label>
-                    </div>
-                    <div class="form-check px-3">
-                        <input class="form-check-input" type="checkbox" name="terreCheck" {{isset($dados) && $dados->tipo == 'terreno' ? "checked='checked'": ''}}>
-                        <label name="terreCheck" class="form-check-label text-danger">Terreno</label>
-                    </div>
-                </div><br><br>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="condominioCheck" {{isset($dados) && $dados->condominio == 'Sim' ? "checked='checked'": ''}}>
                     <label name="condominioCheck" class="form-check-label">Condomínio?</label>
@@ -232,5 +213,3 @@
         </div>
     </form>
 @endsection
-
-@
