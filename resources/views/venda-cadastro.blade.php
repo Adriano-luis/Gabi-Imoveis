@@ -18,7 +18,7 @@
                 <input type="hidden" name="idVendedor" value="{{$id ?? $dados->idVendedor}}">
                 <div class="form-group col-lg-3">
                     <label for="valor">Valor</label>
-                    <input required type="text" name="valor" class="form-control" id="valor" value="{{isset($dados) ? $dados->valor: ''}}" placeholder="Valor avaliado do imóvel?">
+                    <input required type="text" name="valor" class="form-control formatValor" id="valor" value="{{isset($dados) ? $dados->valor: ''}}" placeholder="Valor avaliado do imóvel?">
                 </div><br> 
                 <h5>Endereço</h5>
                 <div class="form-group">
@@ -169,7 +169,7 @@
                     </div>
                     <div class="form-group mx-1">
                         <label for="condominioVal">Valor do condomínio</label>
-                        <input type="text" name="condominioVal" class="form-control" id="condominioVal" value="{{isset($dados) ? $dados->valorCondominio: ''}}" placeholder="Valor do condomínio">
+                        <input type="text" name="condominioVal" class="form-control formatValor" id="condominioVal" value="{{isset($dados) ? $dados->valorCondominio: ''}}" placeholder="Valor do condomínio">
                     </div>
                     <div class="form-group mx-1">
                         <label for="andar">Andar</label>

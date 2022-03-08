@@ -66,7 +66,7 @@ class VendaController extends Controller
 
         }else{
             $vendedorExiste = 'Já existe um cadastro!';
-            return redirect()->back(['existeVendedor'=>$vendedorExiste]);
+            return redirect()->route('ven-novo-cliente',['existeVendedor'=>$vendedorExiste]);
         }
 
         return redirect()->route('ven-novo-imovel',['id'=>$idVendedor]);

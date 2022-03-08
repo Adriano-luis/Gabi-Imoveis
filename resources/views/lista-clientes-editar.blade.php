@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="form-group mx-3 col-3">
                     <label>Valor</label>
-                    <input type="text" name="valorMin" class="form-control" value="{{$cliente->valorMin}}" placeholder="Minímo">
+                    <input type="text" name="valorMin" class="form-control formatValor" value="{{$cliente->valorMin}}" placeholder="Minímo">
                 </div>
                 <div class="form-group  col-1" style="padding-top: 0.5rem">
                     <label>&nbsp;</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group mx-3 col-3">
                     <label> &nbsp;</label>
-                    <input type="text" name="valorMax" class="form-control" value="{{$cliente->valorMax}}" placeholder="Máximo">
+                    <input type="text" name="valorMax" class="form-control formatValor" value="{{$cliente->valorMax}}" placeholder="Máximo">
                 </div>
             </div>
             </div>

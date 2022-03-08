@@ -196,4 +196,6 @@ $(document).ready(function () {
       }
 
     });
+
+    $(".formatValor").maskMoney({prefix:'', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
 });

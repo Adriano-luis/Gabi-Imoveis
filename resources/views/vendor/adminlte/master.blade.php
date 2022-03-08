@@ -108,6 +108,7 @@
     <script src="{{asset('assets/js/jquery.appear.js')}}"></script>
     <script src="{{asset('assets/js/jquery.easing.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src={{asset('assets/js/jquery.maskMoney.js')}} type="text/javascript"></script>
     <script src="{{asset('assets/js/script.js')}}"></script>
 
 </body>

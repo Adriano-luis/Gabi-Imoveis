@@ -46,13 +46,13 @@
                   <div class="row">
                       <div class="form-group mx-3">
                         <label>Valor</label>
-                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                        <input type="text" name="valorMin" class="form-control formatValor" placeholder="Minímo"> 
                       </div>
                   </div>
                   <div class="row">
                       <div class="form-group mx-3">
                         <label> &nbsp;</label>
-                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                        <input type="text" name="valorMax" class="form-control formatValor" placeholder="Máximo">
                       </div>
                   </div>
                 </div>
@@ -168,13 +168,13 @@
                     </div>
                       <div class="form-group mx-3">
                         <label>Valor</label>
-                        <input type="text" name="valorMin" class="form-control" placeholder="Minímo"> 
+                        <input type="text" name="valorMin" class="form-control formatValor" placeholder="Minímo"> 
                       </div>
                   </div>
                   <div class="row">
                       <div class="form-group mx-3">
                         <label> &nbsp;</label>
-                        <input type="text" name="valorMax" class="form-control" placeholder="Máximo">
+                        <input type="text" name="valorMax" class="form-control formatValor" placeholder="Máximo">
                       </div>
                   </div>
                 </div>
@@ -463,23 +463,7 @@
                     <div class="px-3 btn valorTotal">
                       <b>
                       <?php
-                        if ((isset($imovel->IPTU) && $imovel->IPTU != null) || (isset($ray) && $ray == 'sim' && isset($imovel['IPTU']) && $imovel['IPTU'] != null)){
-                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && isset($imovel['valorCondominio']) && $imovel['valorCondominio'] != null)) {
-                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU)
-                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
-                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
-                          }else{
-                            echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['IPTU']:$imovel->IPTU) 
-                            + (isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor));
-                          }
-                        }else{
-                          if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && isset($imovel['valorCondominio']) && $imovel['valorCondominio'] != null)) {
-                            echo  'Total: R$'.'<i><b>R$</b></i>'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor) 
-                            + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
-                          }else {
-                            echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
-                          }
-                        }
+                        echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
                       ?>
                       </b>
                     </div>
@@ -657,10 +641,7 @@
                       <b>
                       <?php
                         if((isset($imovel->valorCondominio) && $imovel->valorCondominio != null) || (isset($ray) && $ray == 'sim' && $imovel['valorCondominio'] != null)) {
-                          echo  'Total: R$'.((isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor)
-                          + (isset($ray) && $ray == 'sim' ? $imovel['valorCondominio']:$imovel->valorCondominio));
-                        }else{
-                          echo  'Total: R$'.(isset($ray) && $ray == 'sim' ? $imovel['valor']:$imovel->valor);
+                          echo  'Total: R$'.(isset($ray) && $ray == 'sim') ? $imovel['valor']:$imovel->valor;
                         }
                       ?>
                       </b>
