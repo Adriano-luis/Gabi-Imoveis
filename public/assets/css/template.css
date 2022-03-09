@@ -235,3 +235,9 @@ padding: 1rem;
 input:required {
     border-color: red;
 }
+
+.imprimir{
+    font-family: "Source Sans Pro";
+    font-size: 1.3rem;
+
+}

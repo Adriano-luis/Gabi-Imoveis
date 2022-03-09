@@ -5,7 +5,7 @@
         <h2 class="alinhamento-titulo"><b>AUTORIZAÇÃO DE VENDAS</b></h2><br>
         <section class="alinhamento-texto">
             <div class="row alinhamento-data">
-                Valor Avaliado R$:<input style='width: 4rem'>
+                Valor Avaliado R$:<input style='width: 7rem'>
             </div><br><br>
             <div class="alinhamento-titulo">
                 <h4 class="alinhamento"><b>Dados do proprietário</b></h4>
@@ -34,7 +34,7 @@
             <section class="alinhamento-titulo">
                 <table style="width:90%">
                     <tr>
-                        <td colspan="4">Documentação: <input style='width: 4rem' class="tabela"></td>
+                        <td colspan="4">Documentação: <input style='width: 80%' class="tabela"></td>
                     </tr>
                     <tr>
                         <td colspan="4">Metragem: <input style='width: 2rem' class="tabela">m²<br></td>
@@ -58,7 +58,7 @@
                     </tr>
                     
                     <tr>
-                        <td colspan="4">Obs.: <input style='width: auto' class="tabela" ></td>
+                        <td colspan="4">Obs.: <input style='width: 93%' class="tabela" ></td>
                     </tr>
                 </table>
         </section>
@@ -73,7 +73,7 @@
             <p>Como também fazer a divulgação do meu imóvel. A presente autorização terá um prazo de vigência indeterminado:</p>
 
         </section><br>
-        <span class="row alinhamento-data">Guarulhos,<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span><br><br><br><br>
+        <span class="row alinhamento-data">Guarulhos,<input style='width: 2rem'> de <input style='width: 5rem'>de<input style='width: 4rem'></span><br><br>
             
         <section class="alinhamento-texto">
             <div class="row">
@@ -98,8 +98,7 @@
             <div class="row alinhamento-data">
                 <b><span>LEI Nº 6.530 ART. 20 INCISO III</span></b>
             </div>
-        </section>
-             
+        </section>             
         <div class="alinhamento-titulo">
             <button onclick="window.print()" class="btn btn-primary imovel-btn-print py-2 hide-print">Imprimir</button>
         </div>
