@@ -14,33 +14,17 @@
             <h4 class="alinhamento"><b>Dados do imóvel</b></h4>
             Endereço: <input > n°<input ><br>
             Bairro: <input > Município: <input> <br>
-            Cômodos:<input style='width: 2rem'>(<input style='width: 3rem'>)<br>
+            Cômodos:<input style='width: 2rem'>(<input style='width: 52rem'><br><input style='width: 2rem'><input style='width: 57rem'>)<br>
             Garagem (<input style='width: 2rem'>) Sim (<input style='width: 2rem'>) Não / Água e luz separada (<input style='width: 2rem'>) Sim (<input style='width: 2rem'>) Não <br>
             RGI: <input style='width: auto'> Instalação: <input style='width: auto'> 
         </section>
         <section class="alinhamento-texto">
-            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, <b>sendo: <input style='width: 3.5rem'> (<span 
-  class="input" 
-  role="textbox" 
-  contenteditable>
-</span> por cento)</b> 
-            do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e <input style='width: 3.5rem'> (<span 
-  class="input" 
-  role="textbox" 
-  contenteditable>
-</span> por cento)</b> nos demais meses. A presente autorização tem validade 
+            <p class="py-2">A partir do início da locação, me comprometo a pagar os honorários de administração do imóvel, <b>sendo: 100% (cem por cento)</b> 
+            do valor do aluguel no primeiro mês (de cada nova locação/novo cliente) e 10% (dez por cento)</b> nos demais meses. A presente autorização tem validade 
             indeterminada. <u>A imobiliária não se responsabiliza pela segurança do imóvel no período em que o mesmo se encontra desocupado.</u> Após o imóvel locado, 
             mesmo com o contrato vencido, o proprietário não poderá renovar o contrato/aditivo de locação diretamente ou através de terceiros ao Locatário apresentado 
-            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b><input style='width: 3rem'> (<span 
-  class="input" 
-  role="textbox" 
-  contenteditable>
-</span> por cento)</b> de administração, referente a 12 meses de locação. Em caso de 
-            venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de <b><input style='width: 3rem'> (<span 
-  class="input" 
-  role="textbox" 
-  contenteditable>
-</span> por cento)</b>  do valor 
+            por esta imobiliária, sob pena de assim fazendo, pagar o percentual de <b>10% (dez por cento)</b> de administração, referente a 12 meses de locação. Em caso de 
+            venda do imóvel pelo proprietário ao cliente apresentado pela imobiliária, será pago a título de honorários o percentual de <b>6% (seis por cento)</b>  do valor 
             da venda a GABI IMOVEIS.</p>
             
         </section>
