@@ -25,7 +25,7 @@
         </div>
         <section class="alinhamento-texto">
                 Endereço: <input style='width: 60%'> n°: <input style='width: 4rem'><br>
-                Bairro: <input style='width: 30%'> Município: <input style='width: 10rem'><br>
+                Bairro: <input style='width: 30%'> Município: <input style='width: 15rem'><br>
         </section><br>
 
             <div class="alinhamento-titulo">
@@ -40,7 +40,7 @@
                         <td colspan="4">Metragem: <input style='width: 3rem' class="tabela">m²<br></td>
                     </tr>
                     <tr>
-                        <td colspan="4">Desdobro: (<input style='width: 2rem'>) Sim  (<input style='width: 2rem'>) Não <input style='width: 2rem' class="tabela">Inscrição cadastral: <input class="tabela" style='width: 63%'><br></td>
+                        <td colspan="4">Desdobro: (<input style='width: 2rem'>) Sim  (<input style='width: 2rem'>) Não <br>Inscrição cadastral: <input class="tabela" style='width: 71%'><br></td>
                     </tr>
                     <tr>
                         <td>Dormitórios: <input style='width: 66%' class="tabela" ></td>

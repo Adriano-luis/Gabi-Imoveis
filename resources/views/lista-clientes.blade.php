@@ -25,17 +25,10 @@
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
-                    <!-- <th>V.Min</th> -->
                     <th>V.Max</th>
                     <th>Tipo</th>
-                    <!-- <th>Endereço</th> -->
                     <th>Bairro</th>
-                    <!-- <th>m²</th> -->
-                    <th>Garagem</th>
-                    <th>Quartos</th>
                     <th>Indivi.</th>
-                    <!--<th>Condo.</th> -->
-                    <!--<th>Mobi.</th>-->
                     <th>Meses</th>
                     <th>Observações</th>
                     <th>Disp.</th>
@@ -47,17 +40,10 @@
                     <tr>
                         <td>{{$cliente->nome}}</td>
                         <td>{{$cliente->telefone}}</td>
-                        <!-- <td>$cliente->valorMin</td> -->
                         <td>{{$cliente->valorMax}}</td>
                         <td>{{$cliente->tipo}}</td>
-                        <!-- <td>$cliente->endereco</td> -->
                         <td>{{$cliente->bairro}}</td>
-                        <!-- <td>$cliente->metragemTotal</td> -->
-                        <td>{{$cliente->garagem}}</td>
-                        <td>{{$cliente->quarto}}</td>
                         <td>{{$cliente->individual}}</td>
-                        <!-- <td>$cliente->condominio</td> -->
-                        <!--<td>$cliente->mobilhado</td>-->
                         <?php $dias = $cliente->created_at->diff(date('Y/m/d H:i')); ?>
                         <td>{{$dias->m}}</td>
                         <td>{{$cliente->observacoes}}</td>
