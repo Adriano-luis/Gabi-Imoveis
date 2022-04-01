@@ -25,7 +25,7 @@
         </div>
         <section class="alinhamento-texto">
                 Endereço: <input style='width: 60%'> n°: <input style='width: 4rem'><br>
-                Bairro: <input style='width: 30%'> Município: <input style='width: 5rem'><br>
+                Bairro: <input style='width: 30%'> Município: <input style='width: 10rem'><br>
         </section><br>
 
             <div class="alinhamento-titulo">
@@ -37,24 +37,24 @@
                         <td colspan="4">Documentação: <input style='width: 80%' class="tabela"></td>
                     </tr>
                     <tr>
-                        <td colspan="4">Metragem: <input style='width: 2rem' class="tabela">m²<br></td>
+                        <td colspan="4">Metragem: <input style='width: 3rem' class="tabela">m²<br></td>
                     </tr>
                     <tr>
-                        <td colspan="4">Desdobro: () Sim  () Não <input style='width: 2rem' class="tabela">Inscrição cadastral: <input class="tabela"><br></td>
+                        <td colspan="4">Desdobro: (<input style='width: 2rem'>) Sim  (<input style='width: 2rem'>) Não <input style='width: 2rem' class="tabela">Inscrição cadastral: <input class="tabela" style='width: 63%'><br></td>
                     </tr>
                     <tr>
-                        <td>Dormitórios: <input style='width: 4rem' class="tabela" ></td>
-                        <td>Suítes: <input style='width: 4rem' class="tabela" ></td>
-                        <td>Salas: <input style='width: 4rem' class="tabela"></td>
+                        <td>Dormitórios: <input style='width: 66%' class="tabela" ></td>
+                        <td>Suítes: <input style='width: 66%' class="tabela" ></td>
+                        <td>Salas: <input style='width: 66%' class="tabela"></td>
                     </tr>
                         <tr>
-                        <td>WC: <input style='width: 4rem' class="tabela"></td>
-                        <td>Garagem:  <input style='width: 4rem' class="tabela"></td>
-                        <td>Cozinhas: <input style='width: 4rem' class="tabela"></td>
+                        <td>WC: <input style='width: 66%' class="tabela"></td>
+                        <td>Garagem:  <input style='width: 66%' class="tabela"></td>
+                        <td>Cozinhas: <input style='width: 66%' class="tabela"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">Area de serviço: <input style='width: 4rem' class="tabela"></td>
-                        <td style="text-align: left">Terreno livre: <input style='width: 4rem' class="tabela"></td>
+                        <td colspan="2">Area de serviço: <input style='width: 80%' class="tabela"></td>
+                        <td style="text-align: left">Terreno livre: <input style='width: 66%' class="tabela"></td>
                     </tr>
                     
                     <tr>
